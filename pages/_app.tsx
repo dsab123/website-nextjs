@@ -11,7 +11,7 @@ function App({ Component, pageProps }) {
       <meta property="og:title" content="Daniel Sabbagh's Blog" key="title" />
       <meta property="og:description" content="Blog, Book Reviews, Giveaways, and more!" key="description" />
       <meta property="og:type" content="article" key="type" />
-      <meta property="og:image" content="/large-logo.jpg" key="image" />
+      <meta property="og:image" content="https://website-nextjs-nine.vercel.app/large-logo.png" key="image" />
       
       <link rel="manifest" href="/manifest.json" />
       <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
