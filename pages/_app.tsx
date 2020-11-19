@@ -16,7 +16,7 @@ function App({ Component, pageProps }) {
       <link rel="manifest" href="/manifest.json" />
       <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
       
-      <link rel="preconnect stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Caslon+Text&display=swap" crossOrigin />
+      <link rel="preconnect stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Caslon+Text&display=swap" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69638158-1"></script>
     </Head>
     <Component {...pageProps} />
