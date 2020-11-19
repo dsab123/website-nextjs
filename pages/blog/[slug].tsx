@@ -13,7 +13,7 @@ export default function Blog() {
         </Head>
             <Header></Header>
             <p>Header is up here?</p>
-            <h1>Blogs will go here:</h1>
+            <h1>Blog will go here:</h1>
             <Footer></Footer>
         </>
 }
