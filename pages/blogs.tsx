@@ -23,7 +23,7 @@ export default function Blogs() {
                 <meta property="og:title" content="Recent Blog posts | Daniel Sabbagh" key="title" />
                 <meta property="og:description" content="Cool Sweet Blog posts aww yiss" key="description" />
                 <meta property="og:type" content="article" key="type" />
-                <meta property="og:image" content="/favicon.ico" key="image" />
+                <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
             </Head>
             <ul>
                 {posts.map((post) => (
