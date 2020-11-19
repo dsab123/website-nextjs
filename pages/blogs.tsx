@@ -33,9 +33,6 @@ export default function Blogs() {
         return () => (isSubscribed = false);
     }, []);
     
-    //if (posts.length == 0) return <p className="loading">loading...</p>
-
-
     return <>
         <Head>
             <meta property="og:title" content="Recent Blog posts | Daniel Sabbagh" key="title" />
