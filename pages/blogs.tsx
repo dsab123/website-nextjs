@@ -1,48 +1,62 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import useAxios from 'axios-hooks'
+import { useState, useEffect } from 'react';
 
-type BlogpostLookupItem = {
+type BlogPostLookupItem = {
     blogpost_id: number,
     slug: string,
     title: string,
     teaser: string,
-    is_ready: true
+    is_ready: boolean
 };
 
-export default function Blogs() {
-    try {  
-        const [{ data, loading, error }, refetch] = useAxios('https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/blogpost-lookup/');
-        const posts = data as BlogpostLookupItem[];
-        
-        if (loading) return <p>Loading...</p>
-        if (error) return <p>Error!</p>
 
-        return <>
-            <Head>
-                <meta property="og:title" content="Recent Blog posts | Daniel Sabbagh" key="title" />
-                <meta property="og:description" content="Cool Sweet Blog posts aww yiss" key="description" />
-                <meta property="og:type" content="article" key="type" />
-                <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
-            </Head>
-            <ul>
-                {posts.map((post) => (
-                    <li key={post.blogpost_id}>
-                    <Link
-                        href={{
-                            pathname: '/blog/[slug]',
-                            query: { slug: post.slug },
-                        }}
-                    >
-                    <a>{post.title}</a>
-                </Link>
-                </li>
-                ))}
-            </ul>
-        </>
+async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
+    let response = await fetch('/api/blogpost-lookup');
 
-    } catch (error) {
-        console.log('hello, response is bad');
-        console.error(error);
+    if (response.status >= 400) {
+        throw new Error("Bad response from server")
     }
+
+    return await response.json() as BlogPostLookupItem[];
+}
+
+export default function Blogs() {
+    const [posts, setPosts] = useState<BlogPostLookupItem[]>([]);
+    const [error, setError] = useState('');
+    
+    useEffect(() => { 
+        let isSubscribed = true;
+        fetchBlogPostLookup()
+            .then(posts => (isSubscribed ? setPosts(posts) : null))
+            .catch(error => (isSubscribed ? setError(error.toString()) : null));
+        return () => (isSubscribed = false);
+    }, []);
+    
+    //if (posts.length == 0) return <p className="loading">loading...</p>
+
+
+    return <>
+        <Head>
+            <meta property="og:title" content="Recent Blog posts | Daniel Sabbagh" key="title" />
+            <meta property="og:description" content="Cool Sweet Blog posts aww yiss" key="description" />
+            <meta property="og:type" content="article" key="type" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
+        </Head>
+        <ul>
+            {posts.length == 0 && <p className="loading">loading...</p>}
+            {posts.map((post) => (
+                <li key={post.blogpost_id}>
+                <Link
+                    href={{
+                        pathname: '/blog/[slug]',
+                        query: { slug: post.slug },
+                    }}
+                >
+                <a>{post.title}</a>
+            </Link>
+            </li>
+            ))}
+        </ul>
+    </>;
 }
