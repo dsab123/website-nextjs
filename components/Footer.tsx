@@ -10,7 +10,7 @@ export default function Footer() {
                             <input type="hidden" name="cmd" value="_donations" />
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />    
-                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" alt="Buy me a Coffee"> 
+                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
                                 <img src="/coffee_cup.png" className={styles.smallCoffeeCup}/>
                             </button>
                         </form>
@@ -18,7 +18,7 @@ export default function Footer() {
                             <input type="hidden" name="cmd" value="_donations" />
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />
-                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" alt="Buy me a Coffee"> 
+                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
                                 <img src="/coffee_cup.png" className={styles.medCoffeeCup}/>
                             </button>
                         </form>
@@ -26,7 +26,7 @@ export default function Footer() {
                             <input type="hidden" name="cmd" value="_donations" />
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />
-                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" alt="Buy me a Coffee"> 
+                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
                                 <img src="/coffee_cup.png" className={styles.largeCoffeeCup}/>
                             </button>
                         </form>
