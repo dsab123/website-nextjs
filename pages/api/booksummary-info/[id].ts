@@ -16,8 +16,8 @@ type BookSummaryInfo = {
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { id } } = req;
 
-    const raw = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/booksummaryinfo?summary_id=${id}`);
+    const raw = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/booksummaryinfo?summary_id=${id}`)
     const data = await raw.json() as BookSummaryInfo;
-
+    
     res.json(data);
 }

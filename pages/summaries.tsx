@@ -49,14 +49,9 @@ export default function Summarues() {
             {posts.length == 0 && <p className="loading">loading...</p>}
             {posts.map((post) => (
                 <li key={post.summary_id}>
-                <Link
-                    href={{
-                        pathname: '/summary/[slug]',
-                        query: { slug: post.slug },
-                    }}
-                >
-                <a>{post.title}</a>
-            </Link>
+                <Link href='/summary/[id]/[slug]' as={`/summary/${post.summary_id}/${post.slug}`}>
+                    <a>{post.title}</a>
+                </Link>
             </li>
             ))}
         </ul>
