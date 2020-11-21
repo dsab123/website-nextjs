@@ -70,8 +70,8 @@ export default function Summary() {
         
     return <>
         <Head>
-            <meta property="og:title" content={`${summaryInfo.title} | Daniel Sabbagh`} key="title" />
-            <meta property="og:description" content={`${summaryInfo.teaser}`} key="description" />
+            {summaryInfo && <meta property="og:title" content={`${summaryInfo.title} | Daniel Sabbagh`} key="title" />}
+            {summaryInfo && <meta property="og:description" content={`${summaryInfo.teaser}`} key="description" />}
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
         </Head>
