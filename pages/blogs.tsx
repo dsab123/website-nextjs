@@ -42,18 +42,14 @@ export default function Blogs() {
         </Head>
         <ul>
             {posts.length == 0 && <p className="loading">loading...</p>}
+            {posts.length == 0 && error && <p className="error">whoops, looks like an error!</p>}
             {posts.map((post) => (
                 <li key={post.blogpost_id}>
-                <Link
-                    href={{
-                        pathname: '/blog/[slug]',
-                        query: { slug: post.slug },
-                    }}
-                >
-                <a>{post.title}</a>
-            </Link>
+                <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpost_id}/${post.slug}`}>
+                    <a>{post.title}</a>
+                </Link>
             </li>
             ))}
         </ul>
-    </>;
+    </>
 }
