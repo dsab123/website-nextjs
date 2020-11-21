@@ -27,13 +27,13 @@ async function fetchBookSummaryLookup(): Promise<BookSummaryLookupItem[]> {
 }
 
 export default function Summarues() {
-    const [posts, setPosts] = useState<BookSummaryLookupItem[]>([]);
+    const [summaries, setSummaries] = useState<BookSummaryLookupItem[]>([]);
     const [error, setError] = useState('');
     
     useEffect(() => { 
         let isSubscribed = true;
         fetchBookSummaryLookup()
-            .then(posts => (isSubscribed ? setPosts(posts) : null))
+            .then(summaries => (isSubscribed ? setSummaries(summaries) : null))
             .catch(error => (isSubscribed ? setError(error.toString()) : null));
         return () => (isSubscribed = false);
     }, []);
@@ -46,14 +46,14 @@ export default function Summarues() {
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
         </Head>
         <ul>
-            {posts.length == 0 && <p className="loading">loading...</p>}
-            {posts.map((post) => (
-                <li key={post.summary_id}>
-                <Link href='/summary/[id]/[slug]' as={`/summary/${post.summary_id}/${post.slug}`}>
-                    <a>{post.title}</a>
+            {summaries.length == 0 && <p className="loading">loading...</p>}
+            {summaries.map((summary) => (
+                <li key={summary.summary_id}>
+                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summary_id}/${summary.slug}`}>
+                    <a>{summary.title}</a>
                 </Link>
             </li>
             ))}
         </ul>
-    </>;
+    </>
 }
