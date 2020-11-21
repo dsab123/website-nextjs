@@ -41,8 +41,8 @@ async function fetchBookSummaryInfo(id: number): Promise<BookSummaryInfo> {
 }
 
 export default function Summary() {
-    const [contents, setContents] = useState<BookSummaryContents>(null);
-    const [info, setInfo] = useState<BookSummaryInfo>(null);
+    const [summaryContents, setSummaryContents] = useState<BookSummaryContents>(null);
+    const [summaryInfo, setSummaryInfo] = useState<BookSummaryInfo>(null);
     const [error, setError] = useState('');
     const router = useRouter();
     
@@ -54,14 +54,14 @@ export default function Summary() {
 
         if (typeof slug !== 'undefined') {
             fetchBookSummaryContents(slug)
-                .then(summaryContents => (isSubscribed ? setContents(summaryContents) : null))
+                .then(summaryContents => (isSubscribed ? setSummaryContents(summaryContents) : null))
                 .catch(error => (isSubscribed ? setError(error.toString()) : null));    
         }
         
         // this information could be available from summaries page; find out how to pass it to this component
         if (!isNaN(id)) {
             fetchBookSummaryInfo(id)
-                .then(summaryInfo => (isSubscribed ? setInfo(summaryInfo) : null))
+                .then(summaryInfo => (isSubscribed ? setSummaryInfo(summaryInfo) : null))
                 .catch(error => (isSubscribed ? setError(error.toString()) : null));
         }
 
@@ -70,19 +70,19 @@ export default function Summary() {
         
     return <>
         <Head>
-            <meta property="og:title" content="Book Summary | Daniel Sabbagh" key="title" />
-            <meta property="og:description" content="This is a really cool Book Summary" key="description" />
+            <meta property="og:title" content={`${summaryInfo.title} | Daniel Sabbagh`} key="title" />
+            <meta property="og:description" content={`${summaryInfo.teaser}`} key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
         </Head>
             <Header></Header>
             <p>Header is up here?</p>
             <br />
-            {info && <h1>Summary - {info.title}</h1>}
-            {info && <h2>by {info.author}</h2>}
-            {info && <img src={info.image_uri}></img>}
-            {!error && !contents && <p>Loading review...</p>}
-            {contents && <p>{contents.data}</p>}
+            {summaryInfo && <h1>Summary - {summaryInfo.title}</h1>}
+            {summaryInfo && <h2>by {summaryInfo.author}</h2>}
+            {summaryInfo && <img src={summaryInfo.image_uri}></img>}
+            {!error && !summaryContents && <p>Loading review...</p>}
+            {summaryContents && <p>{summaryContents.data}</p>}
             <Footer></Footer>
         </>
 }
