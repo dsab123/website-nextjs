@@ -88,7 +88,7 @@ export default function Summary(props) {
             <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="/silver.jpg" key="image" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
         </Head>
             <Header></Header>
             <p>Header is up here?</p>
