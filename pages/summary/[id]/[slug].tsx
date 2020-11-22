@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Header from '../../../components/Header'
-import Footer from '../../../components/Footer'
 import Head from 'next/head';
 import { GetStaticPropsContext } from 'next';
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 
 type BookSummaryContents = {
     data: string;
@@ -34,14 +34,13 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-    // we have to use the base API route here instead of 
-    const raw = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/booksummary-lookup/`);
+    const raw = await fetch(`${process.env.HOST}/api/booksummary-lookup/`);
     const summaryInfos = await raw.json();
     
     return {
         paths: summaryInfos.map((summaryInfo) => {
             return {
-                params: { id: `${summaryInfo.summary_id}`, slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) },
+                params: { id: `${summaryInfo.summary_id}`, slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) }
             }
         }),
         fallback: true
@@ -50,11 +49,7 @@ export async function getStaticPaths() {
 
 
 async function fetchServerSideBookSummaryInfo(context: GetStaticPropsContext) {
-    const protocol = context.params; //.split('://')[0];
-
-    //const response = await fetch(`${protocol}://${context.params.headers['host']}/api/booksummary-info/${context.params.id}`);
-    //const response = await fetch(`/api/booksummary-info/${context.params.id}`);
-    const response = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/booksummaryinfo?summary_id=${context.params.id}`);
+    const response = await fetch(`${process.env.HOST}/api/booksummary-info/${context.params.id}`);
     if (response.status >= 400) {
         throw new Error("Bad response from server") // todo make this better
     }
@@ -88,7 +83,7 @@ export default function Summary(props) {
             <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
+            <meta property="og:image" content={`${process.env.HOST}/silver.jpg`} key="image" />
         </Head>
             <Header></Header>
             <p>Header is up here?</p>
