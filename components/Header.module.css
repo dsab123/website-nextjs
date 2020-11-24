@@ -40,11 +40,11 @@
 .navItem:before, .navItem:after {
     content: "";
     position: absolute;
-    bottom: 2px;
+    bottom: -6px;
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: black;
 }
 
 
@@ -95,26 +95,6 @@
     padding-bottom: 5px;
     margin-top: 10px;
 }
-
-.converter {
-    position: absolute;
-    left: 80%;
-    z-index: 2;
-    cursor: pointer;
-    
-}
-
-.converterArrow {
-    transform: rotate(2deg);
-}
-
-/*
-.converterText {
-    font-family: var(--small-font-family);
-    color: var(--big-font-color);
-    transform: rotate(4deg);
-}
-*/
 
 .hamburger {
     display: none;
