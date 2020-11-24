@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 type BlogPostLookupItem = {
     blogpost_id: number,
@@ -40,6 +42,7 @@ export default function Blogs() {
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
         </Head>
+        <Header></Header>
         <ul>
             {posts.length == 0 && <p className="loading">loading...</p>}
             {posts.length == 0 && error && <p className="error">whoops, looks like an error!</p>}
@@ -51,5 +54,6 @@ export default function Blogs() {
             </li>
             ))}
         </ul>
+        <Footer></Footer>
     </>
 }

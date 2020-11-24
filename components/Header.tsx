@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import styles from './Header.module.css'
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 
 export default function Header() {
     const toggleHamburger = () => {
@@ -20,18 +18,13 @@ export default function Header() {
         console.log('navigate!');
     }
 
-    //const [hamburger, toggleHamburger] = useState(false);
-
     const navItems = [
-        { id: 0, title: 'Home', uri: '/blog/4/about-me' },
-        { id: 1, title: 'About Me', uri: '/blog/4/about-me' },
+        { id: 0, title: 'Home', uri: '/' },
+        { id: 1, title: 'About Me', uri: '/about' },
         { id: 2, title: 'Blog', uri: '/blogs' },
         { id: 3, title: 'Book Summaries', uri: '/summaries' }
     ];
     
-    // todo get this working; do I need getStaticProps?
-    console.log('random element: ' + navItems[0].uri);
-
     return <>
         <div className={styles.headerContent}>
             <div className={styles.logoRow}>
