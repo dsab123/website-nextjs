@@ -1,0 +1,159 @@
+.dimOverlay {
+	opacity: 0.3;
+}
+
+.summaryBookTitle, .review {
+	font-family: var(--big-font-family);
+	font-size: 30px;
+}
+
+.author {
+	font-family: var(--small-font-family);
+	font-size: 26px;
+}
+
+.metrics {
+    display: flex;
+    flex-direction: row;
+}
+
+.metricsTitles {
+	padding-top: 7px;
+    padding-right: 10px;
+    font-family: var(--big-font-family);
+    font-size: 24px;
+}
+
+.payoffTitle {
+	margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 7px;
+}
+
+.metricsMeasures {
+	font-size: 28px;
+}
+
+.inner {
+	display: flex;
+	flex-direction: row;
+}
+
+.teaserAndButton {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.summaryBookImage {
+	height: 450px;
+    width: 325px;
+    border-radius: 5px;
+    margin-right: 30px;
+}
+
+.buyButton {
+	width: 367px;
+	margin-left: -10px;
+}
+
+.teaser {
+	font-style: italic;
+    font-family: var(--small-font-family);
+	font-size: 20px;
+}
+
+/* post contents html -> markdown formatting */
+.summaryContents {
+	font-family: var(--small-font-family);
+	font-size: 20px;
+}
+
+.summaryContents h4 {
+    margin-block-start: .5em;
+    margin-block-end: -1.5em;
+}
+
+.summaryContents h4 + p {
+	margin-block-start: 2em;
+}
+
+.summaryContents p + ul {
+	margin-block-start: -1em;
+}
+
+.summaryContents ul + p {
+	margin-block-start: -1em;
+}
+
+.summaryContents hr {
+	margin-block-start: -1em;
+	margin-block-end: -1em;
+}
+
+.moneyPlea {
+    font-size: 22px;
+    font-style: italic;
+    font-family: var(--small-font-family);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+
+	.outer {
+		margin-top: 20px;
+	}
+
+	.summaryBookTitle {
+		font-family: var(--big-font-family);
+		font-size: 30px;
+		margin-left: 20px;
+	}
+
+	.author {
+		font-family: var(--small-font-family);
+    	font-size: 26px;
+    	margin-left: 20px;
+	}
+
+	.metrics {
+		display: flex;
+    	flex-direction: row;
+    	margin-left: 20px;
+	}
+
+	.summaryBookImage {
+		height: auto;
+		width: 20em;
+		border-radius: 5px;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.inner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.buyButton {
+		width: 20em;
+	}
+
+	.teaserAndButton {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin-top: 20px;
+		align-items: center;
+	}
+
+	.teaser {
+		font-style: italic;
+		font-family: var(--small-font-family);
+		margin-bottom: 25px;
+		width: 18em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

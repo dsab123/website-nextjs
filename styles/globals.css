@@ -1,9 +1,15 @@
+:root {
+	--post-tag-color: #889194;
+	--big-font-color: #D9A5FF;
+	--big-font-family: 'Libre Caslon Text', serif;
+	--small-font-family: 'Crimson Text', serif;;
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: #d0cfd6;
 }
 
