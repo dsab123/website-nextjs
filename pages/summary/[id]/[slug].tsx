@@ -95,8 +95,9 @@ export default function Summary(props) {
         </Head>
             <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.outer}` : styles.outer}>
                 
-                <p className={styles.summaryBookTitle}>{summaryInfo.title}</p>
-                <p className={styles.author}>{summaryInfo.author}</p>
+                
+                <p className={styles.summaryBookTitle}>{summaryInfo && summaryInfo.title}</p>
+                <p className={styles.author}>{summaryInfo && summaryInfo.author}</p>
 
                 <div className={styles.metrics}>
                     <div className={styles.metricsTitles}>
@@ -104,16 +105,16 @@ export default function Summary(props) {
                         <p className={styles.payoffTitle}>Payoff </p>
                     </div>
                     <div className={styles.metricsMeasures}>
-                        <p className={styles.qualityMeasure}>{getQualityRanking(summaryInfo.quality)}</p>
-                        <p className={styles.payoffMeasure}>{getPayoffRanking(summaryInfo.payoff)}</p>
+                        <p className={styles.qualityMeasure}>{summaryInfo && getQualityRanking(summaryInfo.quality)}</p>
+                        <p className={styles.payoffMeasure}>{summaryInfo && getPayoffRanking(summaryInfo.payoff)}</p>
                     </div>
                 </div>
                 <br />
 
                 <div className={styles.inner}>
-                    <img className={styles.summaryBookImage} src={`/${summaryInfo.image_uri}`} /> 
+                    <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.image_uri}`} /> 
                     <div className={styles.teaserAndButton}>
-                        <p className={styles.teaser}>{summaryInfo.teaser}</p>
+                        <p className={styles.teaser}>{summaryInfo && summaryInfo.teaser}</p>
                         <a href="${link}" target="_blank"><img className={styles.buyButton} src="/amazon-button.png" /> </a>
                     </div>
                 </div>
@@ -128,7 +129,7 @@ export default function Summary(props) {
                 </p>
 
                 <br />
-                <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo.link} target="_blank">here</a>.</p>
+                <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo && summaryInfo.link} target="_blank">here</a>.</p>
                 <br />
                 <br />
             </div>
