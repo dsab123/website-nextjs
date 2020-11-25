@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 type BookSummaryLookupItem = {
     summary_id: number,
@@ -42,12 +40,12 @@ export default function Summarues() {
     
     return <>
         <Head>
+            <title key="main-title">Book Summaries | Daniel Sabbagh</title>
             <meta property="og:title" content="Recent Book Summaries | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="Cool Sweet Book Summaries aww yiss" key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
         </Head>
-        <Header></Header>
         <ul>
             {summaries.length == 0 && <p className="loading">loading...</p>}
             {summaries.map((summary) => (
@@ -58,6 +56,5 @@ export default function Summarues() {
             </li>
             ))}
         </ul>
-        <Footer></Footer>
     </>
 }

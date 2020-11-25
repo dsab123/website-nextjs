@@ -4,13 +4,37 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #d0cfd6;
+}
+
+.content {
+  width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #212324;
 }
 
-* {
-  box-sizing: border-box;
+.topBar {
+  background: black;
+  padding-bottom: 3px;
+  margin-top: -8px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+      width: 90vw;
+  }
+
+  .stickyHeader {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+  }
+
+  code {
+      white-space: pre-wrap;
+  }
 }

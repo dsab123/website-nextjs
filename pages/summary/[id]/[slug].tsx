@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { GetStaticPropsContext } from 'next';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
 
 type BookSummaryContents = {
     data: string;
@@ -85,7 +83,6 @@ export default function Summary(props) {
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content={`${process.env.HOST}/silver.jpg`} key="image" />
         </Head>
-            <Header></Header>
             <p>Header is up here?</p>
             <br />
             {summaryInfo && <h1>Summary - {summaryInfo && summaryInfo.title}</h1>}
@@ -93,6 +90,5 @@ export default function Summary(props) {
             {summaryInfo && <img src={summaryInfo && `/${summaryInfo.image_uri}`}></img>}
             {!error && !summaryContents && <p>Loading review...</p>}
             {summaryContents && <p>{summaryContents.data}</p>}
-            <Footer></Footer>
         </>
 }

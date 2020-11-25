@@ -1,5 +1,3 @@
-import Header from '../../../components/Header'
-import Footer from '../../../components/Footer'
 import Head from 'next/head';
 import React from 'react';
 
@@ -11,9 +9,7 @@ export default function Blog() {
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
         </Head>
-            <Header></Header>
             <p>Header is up here?</p>
             <h1>Blog will go here:</h1>
-            <Footer></Footer>
         </>
 }

@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 type BlogPostLookupItem = {
     blogpost_id: number,
@@ -11,7 +9,6 @@ type BlogPostLookupItem = {
     teaser: string,
     is_ready: boolean
 };
-
 
 async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
     let response = await fetch('/api/blogpost-lookup');
@@ -37,12 +34,12 @@ export default function Blogs() {
     
     return <>
         <Head>
-            <meta property="og:title" content="Recent Blog posts | Daniel Sabbagh" key="title" />
+            <title key="main-title">Blog | Daniel Sabbagh</title>
+            <meta property="og:title" content="Blog | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="Cool Sweet Blog posts aww yiss" key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
         </Head>
-        <Header></Header>
         <ul>
             {posts.length == 0 && <p className="loading">loading...</p>}
             {posts.length == 0 && error && <p className="error">whoops, looks like an error!</p>}
@@ -54,6 +51,5 @@ export default function Blogs() {
             </li>
             ))}
         </ul>
-        <Footer></Footer>
     </>
 }

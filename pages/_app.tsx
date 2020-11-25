@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import '../styles/globals.css'
 
 function App({ Component, pageProps }) {
@@ -19,7 +21,16 @@ function App({ Component, pageProps }) {
       <link rel="preconnect stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Caslon+Text&display=swap" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69638158-1"></script>
     </Head>
-    <Component {...pageProps} />
+
+
+    <div className="content" id="content">
+        <div className="topBar"></div>
+        <div className="stickyHeader">
+          <Header></Header>
+        </div>
+        <Component {...pageProps} />
+        <Footer></Footer>        
+      </div>
     </>
   )
 }
