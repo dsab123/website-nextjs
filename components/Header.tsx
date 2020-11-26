@@ -1,50 +1,65 @@
+import { route } from 'next/dist/next-server/server/router';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import styles from './Header.module.css'
 
 export default function Header() {
-    const toggleHamburger = () => {
-        console.log('toggled!');
-    }
-
-    const toggleHamburgerAndNavigate = () => {
-        console.log('toggleHamburgerAndNavigate!');
-    }
-
-    const hamburgerOpen = () => {
-         console.log('hamburgerOpen!');
-    }
-
-    const navigate = () => {
-        console.log('navigate!');
-    }
-
     const navItems = [
         { id: 0, title: 'Home', uri: '/' },
         { id: 1, title: 'About Me', uri: '/about' },
         { id: 2, title: 'Blog', uri: '/blogs' },
-        { id: 3, title: 'Book Summaries', uri: '/summaries' }
+        { id: 3, title: 'Books', uri: '/summaries' }
     ];
+
+    let [hamburgerOpen, setHamburgerOpen] = useState(false);
+    const router = useRouter();
+
+    console.log(`hamburgerOpen is: ${hamburgerOpen}`);
+
+    const toggleHamburger = () => {
+        console.log('toggled!');
+        setHamburgerOpen(!hamburgerOpen);
+    }
+    
+    const toggleHamburgerAndNavigate = (href: string) => {
+        console.log('toggleHamburgerAndNavigate!');
+        setHamburgerOpen(!hamburgerOpen);
+
+        // dim contents somehow
+        router.push(href);
+    }
     
     return <>
         <div className={styles.headerContent}>
             <div className={styles.logoRow}>
-                <Link href="http://localhost:3000">
+                <Link href="/">
                     <a><div className={styles.title}></div></a>
                 </Link>
-                <div className={styles.hamburger} onClick={toggleHamburger}>
+                <div className={hamburgerOpen ? `${styles.hamburger} ${styles.toggle}` : `${styles.hamburger}`} onClick={toggleHamburger}>
                     <div className={styles.bar1}></div>
                     <div className={styles.bar2}></div>
                     <div className={styles.bar3}></div>
                 </div>
             </div>
-        </div>
 
-        <div className={styles.navigation}>
-            {navItems.map((item) => (
-                <Link key={item.id} href={item.uri}>
-                    <a className={styles.navItem}>{item.title}</a>
-                </Link>
-            ))}
-        </div> 
+            <div className={hamburgerOpen ? `${styles.hamburgerMenu} ${styles.hamburgerMenuOpened}` : `${styles.hamburgerMenu} ${styles.hamburgerMenuClosed}`}>
+                {navItems.map((item) => (
+                    <a key={item.id} 
+                        className={hamburgerOpen ? `${styles.hamburgerNavItem} ${styles.active}` : `${styles.hamburgerNavItem}`}
+                        onClick={() => toggleHamburgerAndNavigate(item.uri)}>{item.title}
+                    </a>
+                ))}
+            </div>
+
+            {/* desktop nav */}
+            <div className={styles.navigation}>
+                {navItems.map((item) => (
+                    <Link key={item.id} href={item.uri}>
+                        <a className={styles.navItem}>{item.title}</a>
+                    </Link>
+                ))}
+            </div> 
+        </div>
     </>
 }
