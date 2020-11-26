@@ -1,9 +1,3 @@
-.root {
-    --separator-color: #e9ad68;
-    --big-font-family: 'Libre Caslon Text', serif;
-    --small-font-family: 'Crimson Text', serif;;
-}
-
 .topHorizontalSeparator {
     height: 2px;
     background: var(--separator-color);
