@@ -69,28 +69,6 @@
 	font-size: 20px;
 }
 
-.summaryContents h4 {
-    margin-block-start: .5em;
-    margin-block-end: -1.5em;
-}
-
-.summaryContents h4 + p {
-	margin-block-start: 2em;
-}
-
-.summaryContents p + ul {
-	margin-block-start: -1em;
-}
-
-.summaryContents ul + p {
-	margin-block-start: -1em;
-}
-
-.summaryContents hr {
-	margin-block-start: -1em;
-	margin-block-end: -1em;
-}
-
 .moneyPlea {
     font-size: 22px;
     font-style: italic;
@@ -99,7 +77,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
 	.outer {
 		margin-top: 20px;
 	}
@@ -108,6 +85,7 @@
 		font-family: var(--big-font-family);
 		font-size: 30px;
 		margin-left: 20px;
+		margin-bottom: 20px;
 	}
 
 	.author {

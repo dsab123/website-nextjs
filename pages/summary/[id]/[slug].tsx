@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { GetStaticPropsContext } from 'next';
+import remark from 'remark'
+import html from 'remark-html'
 import styles from '../../../styles/Summary.module.css';
+
+async function markdownToHtml(markdown: string) {
+    const result = await remark().use(html).process(markdown)
+    return result.toString()
+}
 
 type BookSummaryContents = {
     data: string;
@@ -75,14 +82,19 @@ function getQualityRanking(payoff: number) {
 
 
 export default function Summary(props) {
-    const [summaryContents, setSummaryContents] = useState<BookSummaryContents>(null);
+    const [summaryContents, setSummaryContents] = useState('');
     const [error, setError] = useState('');
     
     const summaryInfo = props.summaryInfo && JSON.parse(props.summaryInfo) as BookSummaryInfo;
 
     if (props.slug) {
         fetchBookSummaryContents(props.slug)
-            .then(summaryContents => setSummaryContents(summaryContents))
+            .then(summaryContents => {
+                markdownToHtml(summaryContents.data)
+                .then(processedContent => {
+                    setSummaryContents(processedContent);
+                })
+            })
             .catch(error => setError(error.toString()));
     }
 
@@ -123,10 +135,10 @@ export default function Summary(props) {
                 <p className={styles.review}>Review</p>
                 <br />
 
-                <p className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.summaryContents}` : styles.summaryContents}>
-                    {!error && !summaryContents && <p>Loading review...</p>}
-                    {summaryContents && summaryContents.data}
-                </p>
+                {!summaryContents && <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.summaryContents}` : styles.summaryContents}>
+                    <p>Loading review...</p>
+                </div>}
+                <div className={styles.summaryContents} dangerouslySetInnerHTML={{ __html: summaryContents }}></div>
 
                 <br />
                 <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo && summaryInfo.link} target="_blank">here</a>.</p>
