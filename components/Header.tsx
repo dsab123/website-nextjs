@@ -15,15 +15,11 @@ export default function Header() {
     const router = useRouter();
 
     const toggleHamburger = () => {
-        console.log('toggled!');
         setHamburgerOpen(!hamburgerOpen);
     }
     
     const toggleHamburgerAndNavigate = (href: string) => {
-        console.log('toggleHamburgerAndNavigate!');
         setHamburgerOpen(!hamburgerOpen);
-
-        // dim contents somehow
         router.push(href);
     }
     

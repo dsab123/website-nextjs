@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import styles from '../styles/Home.module.css';
 
 export default function About() {
 
@@ -9,6 +10,6 @@ export default function About() {
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
         </Head>
-        <h3>This will be the about page</h3>
+        <h2 className={styles.title}>Coming Soon!</h2>
     </>
 }
