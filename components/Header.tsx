@@ -1,4 +1,3 @@
-import { route } from 'next/dist/next-server/server/router';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -14,8 +13,6 @@ export default function Header() {
 
     let [hamburgerOpen, setHamburgerOpen] = useState(false);
     const router = useRouter();
-
-    console.log(`hamburgerOpen is: ${hamburgerOpen}`);
 
     const toggleHamburger = () => {
         console.log('toggled!');
