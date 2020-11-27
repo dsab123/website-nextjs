@@ -1,3 +1,7 @@
+.dimOverlay {
+	opacity: 0.3;
+}
+
 .postLinks {
     text-decoration: none;
     cursor: pointer;
