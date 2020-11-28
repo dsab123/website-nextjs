@@ -130,9 +130,9 @@
 
     .title {
         justify-content: space-between;
-        background-image: url("/logo-mobile.png");
+        background-image: url("/mobile-logo.png");
         background-size: cover;
-        width: 120px;
+        width: 162px;
         height: 70px;
         cursor: pointer;
     }
