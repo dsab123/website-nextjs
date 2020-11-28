@@ -31,6 +31,26 @@ a {
   margin-top: -8px;
 }
 
+/* this class is used in markdown content, so needs to be here */
+.postImageContainer {
+  text-align: center;
+}
+
+.postImage {
+  width: 28em;
+  height: auto;
+  transition: transform .2s;
+}
+
+.postImage:hover {
+  transform: scale(1.03) rotate(2deg);
+}
+
+.nonMovingPostimage {
+  width: 28em;
+  height: auto;
+}
+
 @media screen and (max-width: 768px) {
   .content {
       width: 90vw;
@@ -45,4 +65,10 @@ a {
   code {
       white-space: pre-wrap;
   }
+
+  .postImage {
+    text-align: center;
+    width: 16em;
+    height: auto;
+  }  
 }
