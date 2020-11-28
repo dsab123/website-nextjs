@@ -85,7 +85,7 @@ export default function Blogs() {
             {posts.map((post) => (
                 <div key={post.blogpost_id} className={styles.cardPostContainer}>
                     <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpost_id}/${post.slug}`}>
-                        <a className={styles.postLinks}>
+                        <a className={styles.postLinks} onClick={() => setIsLoading(true)}>
                             <div className={styles.cardPostContent}>
                                 <img className={styles.cardPostImage} src="/silver.jpg" />
                                 <p className={styles.cardPostTitle}>{post.title}</p>
