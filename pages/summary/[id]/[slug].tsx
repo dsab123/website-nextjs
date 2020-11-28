@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import { GetStaticPropsContext } from 'next';
+import Head from 'next/head';
 import remark from 'remark'
 import html from 'remark-html'
 import styles from '../../../styles/Summary.module.css';

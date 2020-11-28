@@ -1,0 +1,131 @@
+.pageTitle {
+	font-family: var(--big-font-family);
+	font-size: 24px;
+}
+
+.postImage {
+	margin: auto;
+	width: 45em;
+	height: auto;
+}
+
+.preloadPost {
+	overflow-y: hidden;
+	max-height: 0px; /* approximate max height */
+
+	transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, .1, 0.5, 1);
+	font-family: var(--small-font-family);
+}
+
+.slidePostIn {
+	max-height: 900000px;
+}
+
+.preloadRelatedPosts {
+	overflow-y: hidden;
+	max-height: 0px; /* approximate max height */
+
+	transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, .1, 0.5, 1);
+	font-family: var(--small-font-family);
+}
+
+.slideRelatedPostsIn {
+	max-height: 600px;
+}
+
+.slideRelatedPostsOut {
+	max-height: 0px;
+}
+
+.postTagContainer {
+	padding-top: 8px;
+    font-family: var(--big-font-family);
+    display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.postTags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.postTag {
+	background: var(--post-tag-color);
+	margin-left: 10px;
+	padding: 8px;
+	text-decoration: none;
+	cursor: pointer;
+	font-family: var(--big-font-family);
+    font-size: 16px;
+    transition: transform .2s;
+}
+
+.postTag:hover {
+    transform: scale(1.1);
+}
+
+.relatedPostsText {
+	font-size: 18px;
+}
+
+.postLinks {
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.dimOverlay {
+	opacity: 0.3;
+}
+
+.postContents {
+	white-space: normal;
+    font-size: 20px;
+    font-family: var(--small-font-family);
+}
+
+
+.moneyPlea {
+	font-style: italic;
+	font-family: var(--small-font-family);	
+}
+
+@media screen and (max-width: 768px) {
+	.pageTitle {
+		font-family: var(--big-font-family);
+		text-align: center;
+	}
+
+	.blogLayout {
+		font-size: 12px;
+	}
+
+	.postTag {
+		font-size: 16px;
+		margin-top: 10px;
+	}
+
+	.postTagContainer {
+		padding-bottom: 8px;
+	}
+
+	.relatedPostsText {
+		font-size: 17px;
+	}
+
+	.postLinks {
+		text-decoration: none;
+		font-size: 18px;
+	}
+
+	.postImage {
+		margin-left: auto;
+		margin-right: auto;
+		width: 28em;
+		height: auto;
+	}	
+}
