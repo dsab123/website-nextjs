@@ -103,7 +103,7 @@ export default function Summary(props) {
             <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={`${process.env.HOST}/silver.jpg`} key="image" />
+            <meta property="og:image" content={summaryInfo && summaryInfo.image_uri} key="image" />
         </Head>
             <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.outer}` : styles.outer}>
                 
