@@ -76,15 +76,12 @@ export default function Summaries() {
                         </div>
                         <div className={styles.cardText}>
                             <div className={isLoading ? styles.loadingBookText : ''}>
-                            {/* <div className={styles.loadingBookText}> */}
                                 <p className={styles.bookTitle}>{summary.title}</p>
                             </div>
                             <div className={isLoading ? styles.loadingBookText : ''}>
-                            {/* <div className={styles.loadingBookText}> */}
                                 <p className={styles.bookAuthor}>{summary.author}</p>
                             </div>
                             <div className={isLoading ? styles.loadingBookText : ''}>
-                            {/* <div className={styles.loadingBookText}> */}
                                 <p className={styles.bookTeaser}>{summary.teaser}</p>
                             </div>
                             <div className={styles.summaryDetail}>
