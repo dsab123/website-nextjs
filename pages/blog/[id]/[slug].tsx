@@ -124,8 +124,8 @@ export default function Blog(props) {
 
     return <>
             <Head>
-                <meta property="og:title" content="Blog Post | Daniel Sabbagh" key="title" />
-                <meta property="og:description" content="This is a really cool blog post" key="description" />
+                <meta property="og:title" content={postInfo.title} key="title" />
+                <meta property="og:description" content={postInfo.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
             </Head>

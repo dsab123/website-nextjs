@@ -72,7 +72,7 @@ export default function Blogs() {
         <Head>
             <title key="main-title">Blog | Daniel Sabbagh</title>
             <meta property="og:title" content="Blog | Daniel Sabbagh" key="title" />
-            <meta property="og:description" content="Cool Sweet Blog posts aww yiss" key="description" />
+            <meta property="og:description" content="Blog posts about reading consistently, plus other stuff" key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
         </Head>
