@@ -142,7 +142,7 @@ export default function Blog(props) {
 
                 
                 <div>
-                    {postInfo && postInfo.tags.length > 0 && 
+                    {postInfo.tags && postInfo.tags.length > 0 && 
                     <div className={styles.postTagContainer}>
                         <div>
                             <p className={styles.relatedPostsText}>related:</p>
@@ -183,7 +183,7 @@ export default function Blog(props) {
                             )}
                         </ul>}
                         
-                        {postInfo.tags.length == 0 && <p>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
+                        {postInfo.tags && postInfo.tags.length == 0 && <p>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
                     </div>
                 </div>
                 <br />
