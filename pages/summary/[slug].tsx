@@ -32,7 +32,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         const summaryInfo = await fetchServerSideBookSummaryInfo(context);
 
         return {
-            props: { id: context.params.id, slug: context.params.slug, summaryInfo: JSON.stringify(summaryInfo) }
+            props: { slug: context.params.slug, summaryInfo: JSON.stringify(summaryInfo) }
         }
     } catch (error) {
         return { notFound: true }
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
     return {
         paths: summaryInfos.map((summaryInfo) => {
             return {
-                params: { id: `${summaryInfo.summary_id}`, slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) }
+                params: { slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) }
             }
         }),
         fallback: true
@@ -103,7 +103,7 @@ export default function Summary(props) {
             <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={summaryInfo && `/${summaryInfo.image_uri}`} key="image" />
+            <meta property="og:image" content={summaryInfo && `${process.env.HOST}/${summaryInfo.image_uri}`} key="image" />
         </Head>
             <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.outer}` : styles.outer}>
                 
