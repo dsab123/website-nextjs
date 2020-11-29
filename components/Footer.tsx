@@ -42,5 +42,19 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+
+            <div className={styles.bottomHorizontalSeparator}></div>
+    
+    <div>
+        <ul className={styles.contactList}>
+            <li className={styles.contactListItem}><a href="https://github.com/dsab123" target="_blank"><img className={styles.socialIcon} src="/github-circled.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="https://twitter.com/_danielsabbagh" target="_blank"><img className={styles.socialIcon} src="/twitter-circled.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="mailto:dsabbaghumd@gmail.com" target="_blank"><img className={styles.socialIcon} src="/email.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="https://facebook.com/dsab123" target="_blank"><img className={styles.socialIcon} src="/facebook-circled.png"></img></a></li>
+        </ul>
+    </div>
+
+    <p className={styles.emailMadeWithHeart}>~ Made with <span className={styles.heart}>❤️</span> by Emily ~</p>
+
     </div>
 }

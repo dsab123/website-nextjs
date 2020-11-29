@@ -24,7 +24,6 @@ function App({ Component, pageProps }) {
 
     <div className="topBar"></div>
     <div className="content" id="content">
-        
         <div className="stickyHeader">
           <Header></Header>
         </div>
