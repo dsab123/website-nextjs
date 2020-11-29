@@ -2,6 +2,10 @@
     font-family: var(--big-font-family);
 }
 
+.dimOverlay {
+	opacity: 0.3;
+}
+
 .outer {
     display: flex;
     flex-direction: column;
@@ -13,28 +17,58 @@
     font-size: 16px;
 }
 
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+   }
+    100% {
+        background-position: 468px 0;
+   }
+}
+
+.loadingBookText {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    width: 500px;
+    height: 20px;
+}
+
+.loadingBookText {
+    font-family: var(--big-font-family);
+    font-size: 20px;
+    text-align: left;
+}
+
 .bookTitle {
     font-family: var(--big-font-family);
     font-size: 24px;
     text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .bookAuthor {
     font-family: var(--small-font-family);
     font-size: 20px;
     text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.disclaimerText {
-    font-style: italic;
-    font-family: var(--small-font-family);
-    margin-bottom: 40px;
-}
-
-.bookSummary {
+.bookTeaser {
     font-style: italic;
     font-family: var(--small-font-family);
     text-align: left;
+    font-size: 19px;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .topMoneyPlea {
@@ -50,6 +84,20 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin-top: 25px;
+}
+
+.loadingBookImage {
+    animation-duration: 8.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    height: 240px;
+    width: 150px;
+    border-radius: 5px;
 }
 
 .bookImage {
@@ -120,8 +168,18 @@
     cursor: pointer;
 }
 
+.inactiveLink {
+    pointer-events: none;
+}
+
 .amazonLink:hover {
     transform: scale(1.1);
+}
+
+.disclaimerText {
+    font-style: italic;
+    font-family: var(--small-font-family);
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width: 768px) {
@@ -157,6 +215,27 @@
         height: auto;
         width: 18em;
         border-radius: 5px;
+    }
+
+    .loadingBookImage {
+        animation-duration: 1.25s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: #ebe8e8;
+        background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+        position: relative;
+        height: 445px;
+        width: 18em;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .loadingBookText {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 130%;
     }
 
     .bookSummary {

@@ -60,6 +60,7 @@ a {
       position: sticky;
       position: -webkit-sticky;
       top: 0;
+      background-color: var(--background-color);
   }
 
   code {
