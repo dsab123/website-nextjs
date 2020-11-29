@@ -22,9 +22,9 @@ function App({ Component, pageProps }) {
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69638158-1"></script>
     </Head>
 
-
+    <div className="topBar"></div>
     <div className="content" id="content">
-        <div className="topBar"></div>
+        
         <div className="stickyHeader">
           <Header></Header>
         </div>

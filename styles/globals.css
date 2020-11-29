@@ -28,7 +28,7 @@ a {
 .topBar {
   background: black;
   padding-bottom: 3px;
-  margin-top: -8px;
+  margin-top: 0px;
 }
 
 /* this class is used in markdown content, so needs to be here */

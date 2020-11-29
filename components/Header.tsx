@@ -6,7 +6,7 @@ import styles from './Header.module.css'
 export default function Header() {
     const navItems = [
         { id: 0, title: 'Home', uri: '/' },
-        { id: 1, title: 'About Me', uri: '/about' },
+        { id: 1, title: 'Why?', uri: '/about' },
         { id: 2, title: 'Blog', uri: '/blogs' },
         { id: 3, title: 'Books', uri: '/summaries' }
     ];
