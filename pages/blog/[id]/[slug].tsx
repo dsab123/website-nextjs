@@ -124,13 +124,13 @@ export default function Blog(props) {
 
     return <>
             <Head>
-                <meta property="og:title" content={postInfo.title} key="title" />
-                <meta property="og:description" content={postInfo.teaser} key="description" />
+                <meta property="og:title" content={postInfo && postInfo.title} key="title" />
+                <meta property="og:description" content={postInfo && postInfo.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
             </Head>
             <div className={isLoading ? `${styles.dimOverlay} ${styles.blogLayout}` : `${styles.blogLayout}`}>
-                <h2 className={styles.pageTitle}>{postInfo.title}</h2>
+                <h2 className={styles.pageTitle}>{postInfo && postInfo.title}</h2>
 
                 {!postContents && 
                 <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
@@ -142,7 +142,7 @@ export default function Blog(props) {
 
                 
                 <div>
-                    {postInfo.tags.length > 0 && 
+                    {postInfo && postInfo.tags.length > 0 && 
                     <div className={styles.postTagContainer}>
                         <div>
                             <p className={styles.relatedPostsText}>related:</p>
