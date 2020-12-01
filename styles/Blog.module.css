@@ -94,6 +94,10 @@
 	font-family: var(--small-font-family);	
 }
 
+.noRelatedPostsText {
+	font-size: 16px;
+}
+
 @media screen and (max-width: 768px) {
 	.pageTitle {
 		font-family: var(--big-font-family);
@@ -111,6 +115,7 @@
 
 	.postTagContainer {
 		padding-bottom: 8px;
+		flex-wrap: wrap;
 	}
 
 	.relatedPostsText {
@@ -128,4 +133,8 @@
 		width: 28em;
 		height: auto;
 	}	
+
+	.noRelatedPostsText {
+		font-size: 15px;
+	}
 }

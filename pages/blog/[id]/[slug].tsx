@@ -183,7 +183,7 @@ export default function Blog(props) {
                             )}
                         </ul>}
                         
-                        {postInfo && postInfo.tags && postInfo.tags.length == 0 && <p>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
+                        {relatedPosts.length == 0 && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
                     </div>
                 </div>
                 <br />
