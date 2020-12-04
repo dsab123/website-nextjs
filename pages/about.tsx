@@ -12,7 +12,7 @@ export default function About() {
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
         </Head>
         
-        <h2 className={styles.title}>Coming soon!</h2>
+        <h1 className={styles.title}>Coming soon!</h1>
         <p className={styles.teaser}>Until then, go look at my <Link href="/summaries"><a>book summaries</a></Link> or <Link href="/blogs"><a>blog posts</a></Link>!</p>
     </>
 }

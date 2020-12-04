@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2 className={styles.title}>Coming soon!</h2>
+      <h1 className={styles.title}>Coming soon!</h1>
       <p className={styles.teaser}>Until then, go look at my <Link href="/summaries"><a>book summaries</a></Link> or <Link href="/blogs"><a>blog posts</a></Link>!</p>
   </>;
 }

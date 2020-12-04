@@ -61,7 +61,7 @@ export default function Summaries() {
         </Head>
         
         <div className={styles.outer}>
-            <h2 className={styles.pageTitle}>Featured Book Summaries</h2>
+            <h1 className={styles.pageTitle}>Featured Book Summaries</h1>
 
             <div className={isLoading ? styles.dimOverlay : ''}>
                 <p className={styles.introText}>{intro}</p>

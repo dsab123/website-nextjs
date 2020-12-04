@@ -77,7 +77,7 @@ export default function Blogs() {
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
         </Head>
 
-        <h2 className={styles.pageTitle}>Recent Posts</h2>
+        <h1 className={styles.pageTitle}>Recent Posts</h1>
 
         <div className={isLoading ? styles.dimOverlay : ''}>
             {isLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
