@@ -9,7 +9,7 @@ export default function About() {
             <meta property="og:title" content="Why? | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="My goal is to help you read more this year." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
         </Head>
         
         <h2 className={styles.title}>Coming soon!</h2>

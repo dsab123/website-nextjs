@@ -72,9 +72,9 @@ export default function Blogs() {
         <Head>
             <title key="main-title">Blog | Daniel Sabbagh</title>
             <meta property="og:title" content="Blog | Daniel Sabbagh" key="title" />
-            <meta property="og:description" content="Resources for reading more and reading better." key="description" />
+            <meta property="og:description" content="Resources to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
         </Head>
 
         <h2 className={styles.pageTitle}>Recent Posts</h2>

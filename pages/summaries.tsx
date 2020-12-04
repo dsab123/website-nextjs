@@ -54,10 +54,10 @@ export default function Summaries() {
     return <>
         <Head>
             <title key="main-title">Book Summaries | Daniel Sabbagh</title>
-            <meta property="og:title" content="Recent Book Summaries | Daniel Sabbagh" key="title" />
-            <meta property="og:description" content="Book Summaries to help you read better" key="description" />
+            <meta property="og:title" content="Book Summaries | Daniel Sabbagh" key="title" />
+            <meta property="og:description" content="Book Summaries to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/favicon.ico" key="image" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
         </Head>
         
         <div className={styles.outer}>
