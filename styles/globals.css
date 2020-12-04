@@ -5,8 +5,12 @@
   --small-font-family: 'Crimson Text', serif;
   --background-color: #D0CFD6;
   --separator-color: #e9ad68;
+  --warning-color: #fddc33;
+  --error-color: #991b1b;
+  --loading-color: #348fbd;
+  --success-color: #209720;
+  --empty-color: hsla(0, 0%, 98%, 0);
 }
-
 
 html,
 body {

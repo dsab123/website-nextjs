@@ -237,6 +237,71 @@
     margin-top: 15px;
 }
 
+.emailSubscriptionStatusText {
+    margin: 2px;
+    color: black;
+    height: 26px;
+}
+
+.emailSubscribeStatus {
+    border-radius: 5px;
+    border-style: unset;
+    text-align: center;
+    height: 26px;
+    width: 200px;
+    align-self: center;
+    transition: all 240ms ease-in-out;
+    z-index: 1;
+    margin-bottom: -38px;
+    position: relative;
+    top: -26px;
+    text-align: center;
+}
+
+.arrowDown {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    margin-top: -5px;
+    left: 50%;
+    margin-left: 45%;
+
+    border-top-color: inherit;
+    display: inherit;
+    transition: all 10ms ease-out;
+    
+
+    border-top-width: 10px;
+    border-top-style: solid;
+  }
+
+.emailSubscribeStatusLoading {
+    background-color: var(--loading-color);
+    border-top-color: var(--loading-color);
+}
+
+.emailSubscribeStatusError {
+    background-color: var(--error-color);
+    border-top-color: var(--error-color);
+}
+
+.emailSubscribeStatusInvalid {
+    background-color: var(--warning-color);
+    border-top-color: var(--warning-color);
+}
+
+.emailSubscribeStatusSuccess {
+    background-color: var(--success-color);
+    border-top-color: var(--success-color);
+}
+
+.emailSubscribeStatusNone {
+    background-color: var(--empty-color);
+    border-top-color: var(--empty-color);
+}
+
 .bottomHorizontalSeparator {
     height: 1px;
     background: var(--separator-color);
