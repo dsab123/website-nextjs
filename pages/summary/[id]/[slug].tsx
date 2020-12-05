@@ -105,9 +105,8 @@ export default function Summary(props) {
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content={summaryInfo && `${process.env.HOST}/${summaryInfo.image_uri}`} key="image" />
         </Head>
-            <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.outer}` : styles.outer}>
-                
-                
+            <div className={styles.outer}>
+            
                 <p className={styles.summaryBookTitle}>{summaryInfo && summaryInfo.title}</p>
                 <p className={styles.author}>{summaryInfo && summaryInfo.author}</p>
 
@@ -135,15 +134,18 @@ export default function Summary(props) {
                 <p className={styles.review}>Review</p>
                 <br />
 
-                {!summaryContents && <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.summaryContents}` : styles.summaryContents}>
-                    <p>Loading review...</p>
-                </div>}
-                <div className={styles.summaryContents} dangerouslySetInnerHTML={{ __html: summaryContents }}></div>
+                <div className={!error && !summaryContents ? styles.dimOverlay : ''}>
 
-                <br />
-                <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo && summaryInfo.link} target="_blank">here</a>.</p>
-                <br />
-                <br />
+                    {!summaryContents && <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.summaryContents}` : styles.summaryContents}>
+                        <p>Loading review...</p>
+                    </div>}
+                    <div className={styles.summaryContents} dangerouslySetInnerHTML={{ __html: summaryContents }}></div>
+
+                    <br />
+                    <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo && summaryInfo.link} target="_blank">here</a>.</p>
+                    <br />
+                    <br />
+                </div>
             </div>
         </>
 }

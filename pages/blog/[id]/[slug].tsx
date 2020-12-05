@@ -129,65 +129,68 @@ export default function Blog(props) {
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
             </Head>
-            <div className={isLoading ? `${styles.dimOverlay} ${styles.blogLayout}` : `${styles.blogLayout}`}>
+            <div className={styles.blogLayout}>
                 <h1 className={styles.pageTitle}>{postInfo && postInfo.title}</h1>
 
-                {!postContents && 
-                <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
-                        <p>Loading blog post...</p>
-                </div>}
-                <div className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
+                <div className={isLoading ? `${styles.dimOverlay}` : ''}>
 
-                <br />
-
-                
-                <div>
-                    {postInfo && postInfo.tags && postInfo.tags.length > 0 && 
-                    <div className={styles.postTagContainer}>
-                        <div>
-                            <p className={styles.relatedPostsText}>related:</p>
-                        </div>
-                        {postInfo.tags.map((tag) => (
-                        <div key={tag} className={styles.postTags}>
-                            <a className={styles.postTag} 
-                            onClick={() => displayBlogPostsByTag(tag)}>
-                                {tag}
-                            </a>
-                        </div>
-                        ))}
+                    {!postContents && 
+                    <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
+                            <p>Loading blog post...</p>
                     </div>}
+                    <div className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
 
                     <br />
 
-                    <div className={showRelatedPosts ? `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsIn} ${styles.relatedPosts}` : `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsOut} ${styles.relatedPosts}`}>
-                        {relatedPosts.length > 0 && 
-                        <p className={styles.relatedPostsText}>
-                            <span>other posts tagged: <i>{tag}</i></span>
-                        </p>}
-                        
-                        {relatedPosts.length > 0 &&
-                        <ul>
-                            {relatedPosts.map((relatedPost) =>
-                            <li key={relatedPost.blogpost_id}>
-                                <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpost_id}/${relatedPost.slug}`}>
-                                    <a className={styles.postLinks}>
-                                    {relatedPost.title}
-                                    <ul>
-                                        <li>
-                                            {relatedPost.teaser}
-                                        </li>
-                                    </ul>
-                                    </a>
-                                </Link>
-                            </li>
-                            )}
-                        </ul>}
-                        
-                        {relatedPosts.length == 0 && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
+                    
+                    <div>
+                        {postInfo && postInfo.tags && postInfo.tags.length > 0 && 
+                        <div className={styles.postTagContainer}>
+                            <div>
+                                <p className={styles.relatedPostsText}>related:</p>
+                            </div>
+                            {postInfo.tags.map((tag) => (
+                            <div key={tag} className={styles.postTags}>
+                                <a className={styles.postTag} 
+                                onClick={() => displayBlogPostsByTag(tag)}>
+                                    {tag}
+                                </a>
+                            </div>
+                            ))}
+                        </div>}
+
+                        <br />
+
+                        <div className={showRelatedPosts ? `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsIn} ${styles.relatedPosts}` : `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsOut} ${styles.relatedPosts}`}>
+                            {relatedPosts.length > 0 && 
+                            <p className={styles.relatedPostsText}>
+                                <span>other posts tagged: <i>{tag}</i></span>
+                            </p>}
+                            
+                            {relatedPosts.length > 0 &&
+                            <ul>
+                                {relatedPosts.map((relatedPost) =>
+                                <li key={relatedPost.blogpost_id}>
+                                    <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpost_id}/${relatedPost.slug}`}>
+                                        <a className={styles.postLinks}>
+                                        {relatedPost.title}
+                                        <ul>
+                                            <li>
+                                                {relatedPost.teaser}
+                                            </li>
+                                        </ul>
+                                        </a>
+                                    </Link>
+                                </li>
+                                )}
+                            </ul>}
+                            
+                            {relatedPosts.length == 0 && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
+                        </div>
                     </div>
-                </div>
-                <br />
-                <br />
+                    <br />
+                    <br />
+                    </div>
                 </div>
             </>
 }
