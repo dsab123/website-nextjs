@@ -130,7 +130,7 @@ export default function Blog(props) {
                 <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
             </Head>
             <div className={isLoading ? `${styles.dimOverlay} ${styles.blogLayout}` : `${styles.blogLayout}`}>
-                <h2 className={styles.pageTitle}>{postInfo && postInfo.title}</h2>
+                <h1 className={styles.pageTitle}>{postInfo && postInfo.title}</h1>
 
                 {!postContents && 
                 <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
