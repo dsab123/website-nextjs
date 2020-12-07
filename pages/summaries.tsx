@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '../styles/Summaries.module.css';
 
-type BookSummaryLookupItem = {
+type BookSummaryInfo = {
     summary_id: number,
     title: string,
     author: string,
@@ -17,18 +17,18 @@ type BookSummaryLookupItem = {
 };
 
 
-async function fetchBookSummaryLookup(): Promise<BookSummaryLookupItem[]> {
+async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
     let response = await fetch('/api/booksummary-lookup');
 
     if (response.status >= 400) {
         throw new Error("Bad response from server")
     }
 
-    return await response.json() as BookSummaryLookupItem[];
+    return await response.json() as BookSummaryInfo[];
 }
 
 export default function Summaries() {
-    const [summaries, setSummaries] = useState<BookSummaryLookupItem[]>([
+    const [summaries, setSummaries] = useState<BookSummaryInfo[]>([
         {summary_id: 1, title: '', author: '', link: '', teaser: '', image_uri: '',
             is_ready: true, slug: '', quality: 4, payoff: 4},
         {summary_id: 2, title: '', author: '', link: '', teaser: '', image_uri: '',
