@@ -124,6 +124,12 @@ export default function Blog(props) {
             .catch(error => setError(error.toString()));
     }
 
+    // clear related posts when loading new blog post
+    useEffect(() => {
+        console.log('clearing related posts yo');
+        setRelatedPosts([]);
+    }, [isLoading]);
+
     return <>
             <Head>
                 <title key="original-title">{`${postInfo && postInfo.title} | Daniel Sabbagh`}</title>
@@ -140,7 +146,7 @@ export default function Blog(props) {
 
                     {!postContents && 
                     <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
-                            <p>Loading blog post...</p>
+                            <p>Loading ...</p>
                     </div>}
                     <div className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
                     <br />
@@ -174,7 +180,7 @@ export default function Blog(props) {
                                 {relatedPosts.map((relatedPost) =>
                                 <li key={relatedPost.blogpostId}>
                                     <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
-                                        <a className={styles.postLinks}>
+                                        <a className={styles.postLinks} onClick={() => setIsLoading(true)}>
                                         {relatedPost.title}
                                         <ul>
                                             <li>
