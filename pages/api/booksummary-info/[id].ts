@@ -17,10 +17,13 @@ type BookSummaryInfo = {
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { id } } = req;
-    const bookSummary = summary.summaries.find(x => x.summaryId == Number(id));
+
+    const ids = ((String) (id)).split(',').map(i => parseInt(i));
+
+    const summaries = summary.summaries.filter(x => ids.includes(x.summaryId));
     
-    if (bookSummary) {
-        return res.status(200).json(bookSummary);
+     if (summaries.length > 0) {
+        return res.status(200).json(summaries);
     }
 
     return res.status(404).end();

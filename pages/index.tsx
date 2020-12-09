@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import styles from '../styles/Home.module.css';
+import SummaryStyles from '../styles/Summaries.module.css';
 import BlogPostCard from '../components/BlogPostCard';
 import QuotableCard from '../components/QuotableCard';
 
@@ -72,7 +73,20 @@ async function fetchLatestQuotable(): Promise<Quotable> {
   return quotables.shift();
 }
 
+async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
+  const ids = [4, 5];
+
+  let response = await fetch(`/api/booksummary-info/${ids.join(',')}`);
+
+  if (response.status >= 400) {
+    throw new Error("Bad response from server");
+  }
+
+  return await response.json() as BookSummaryInfo[];
+}
+
 export default function Home() {
+  // Blog post state
   const [isPostLoading, setIsPostLoading] = useState(true);
   const [postInfo, setPostInfo] = useState<BlogPostInfo>(
     {blogpostId: 1, slug: "", title: "", teaser: "", isReady: true}
@@ -88,15 +102,16 @@ export default function Home() {
       });
   }, [isPostLoading]);
 
+  // Quotable state
   const [isQuotableLoading, setIsQuotableLoading] = useState(true);
   const [quotable, setQuotable] = useState<Quotable>(
     {
       quotableId: 1,
-      title: "",
-      imageUri: "",
-      teaser: "",
-      slug: "",
-      content: ""
+      title: '',
+      imageUri: '/quotable/books.jpg',
+      teaser: '',
+      slug: '',
+      content: ''
     }
   );
 
@@ -104,12 +119,52 @@ export default function Home() {
     fetchLatestQuotable()
       .then(quotable => {
         if (isQuotableLoading) {
-          // figure this out because this is an array right now
           setQuotable(quotable);
           setIsQuotableLoading(false);
         }
       });
   }, [isQuotableLoading]);
+
+  // BookSummary state
+  const [isSummariesLoading, setIsSummariesLoading] = useState(true);
+  const [summaries, setSummaries] = useState<BookSummaryInfo[]>(
+    [
+      {
+        summaryId: 999,
+        title: '',
+        author: '',
+        link: '',
+        teaser: '',
+        imageUri: '/summary/review.jpg',
+        isReady: true,
+        slug: '',
+        quality: 1,
+        payoff: 1
+      },
+      {
+        summaryId: 9999,
+        title: '',
+        author: '',
+        link: '',
+        teaser: '',
+        imageUri: '/summary/review.jpg',
+        isReady: true,
+        slug: '',
+        quality: 1,
+        payoff: 1
+      }
+    ]
+  );
+
+  useEffect(() => {
+    fetchFrontPageBookSummaries()
+      .then(summaries2 => {
+        if (isSummariesLoading) {
+          setSummaries(summaries2);
+          setIsSummariesLoading(false);
+        }
+      });
+  }, [isSummariesLoading]);
 
   return <>
       <Head>
@@ -120,7 +175,7 @@ export default function Home() {
       <h1 className={styles.title}>Welcome!</h1>
 
       <div className={styles.aboutPageTeaser}>
-        <h2 className={styles.header}>My mission is to help you read more this year.</h2>
+        <h2 className={styles.headerTeaser}>My mission is to help you read more this year.</h2>
         
         <div className={styles.rightSideLink}>
           <Link href="/blog/4/about"><a className={styles.teaserLink}>Why?</a></Link>
@@ -128,7 +183,7 @@ export default function Home() {
       </div>
 
       <div className={styles.blogsPageTeaser}>
-      <h2 className={styles.header}>From the Blog</h2>
+      <h2 className={styles.title}>From the Blog</h2>
 
         <div className={isPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
           <BlogPostCard isLoading={isPostLoading} post={postInfo} setIsLoading={setIsPostLoading}></BlogPostCard>
@@ -136,13 +191,45 @@ export default function Home() {
         </div>
       </div>
 
+      <br />
       <div className={styles.summariesPageTeaser}>
-        <h2 className={styles.header}>Featured Book Summaries</h2>
+        <h2 className={styles.title}>Featured Book Summaries</h2>
+        <br />
 
-        {/* one christian book and one bestseller */}
-
-
+        <div className={isSummariesLoading ? styles.dimOverlay: ''}>
+          {summaries.map((summary) => (
+              <div key={summary.summaryId} className={SummaryStyles.card}>
+              <div className={isSummariesLoading ? SummaryStyles.loadingBookImage : ''}>
+                  {!isSummariesLoading && 
+                  <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                      <img className={summary.isReady ? SummaryStyles.bookImage : SummaryStyles.nonAnimatedBookImage} src={summary.imageUri} />
+                  </Link>}
+              </div>
+              <div className={SummaryStyles.cardText}>
+                  <div className={isSummariesLoading ? SummaryStyles.loadingBookText : ''}>
+                      <p className={SummaryStyles.bookTitle}>{summary.title}</p>
+                  </div>
+                  <div className={isSummariesLoading ? SummaryStyles.loadingBookText : ''}>
+                      <p className={SummaryStyles.bookAuthor}>{summary.author}</p>
+                  </div>
+                  <div className={isSummariesLoading ? SummaryStyles.loadingBookText : ''}>
+                      <p className={SummaryStyles.bookTeaser}>{summary.teaser}</p>
+                  </div>
+                  <div className={SummaryStyles.summaryDetail}>
+                      <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                          <a className={summary.isReady ? SummaryStyles.readMore : SummaryStyles.hidden}>
+                              read review
+                          </a>
+                      </Link>
+                      <p className={summary.isReady ? SummaryStyles.hidden : SummaryStyles.comingSoon}>
+                          review coming soon
+                      </p>
+                      <a className={isSummariesLoading ? `${SummaryStyles.amazonLink} ${SummaryStyles.inactiveLink}` : SummaryStyles.amazonLink} href={isSummariesLoading ? '' : summary.link} target="_blank">buy from amazon</a>
+                  </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      
   </>;
 }
