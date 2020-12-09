@@ -245,6 +245,11 @@
     cursor: pointer;
     background-color: #212324;
     color: #ffffff;
+    transition: transform .2s;
+}
+
+.emailSubscribeButton:hover {
+    transform: scale(1.1);
 }
 
 .emailSubscribeText {

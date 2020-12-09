@@ -126,7 +126,7 @@ export default function Footer() {
                         <button className={styles.emailSubscribeButton} onClick={() => subscribeEmail(email, pageUri, setSubscriptionStatus)}>
                             Subscribe
                         </button>
-                        <p className={styles.emailSubscribeText}><strong>Subscribe</strong> to receive sweet new content right in your inbox, plus info on giveaways.</p>
+                        <p className={styles.emailSubscribeText}><strong>Subscribe</strong> to receive resources that will help you read better this year.</p>
                     </div>
                 </div>
             </div>
