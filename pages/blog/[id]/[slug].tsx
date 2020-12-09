@@ -126,7 +126,6 @@ export default function Blog(props) {
 
     // clear related posts when loading new blog post
     useEffect(() => {
-        console.log('clearing related posts yo');
         setRelatedPosts([]);
     }, [isLoading]);
 
