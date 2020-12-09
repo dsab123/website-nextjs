@@ -43,7 +43,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-    const raw = await fetch(`${process.env.HOST}/api/blogpost-lookup/`);
+    const raw = await fetch(`${process.env.HOST}/api/blogpost-lookup`);
     
     const blogPosts = await raw.json();
     
@@ -112,7 +112,7 @@ export default function Blog(props) {
         setIsRelatedPostsLoading(false);
     }
 
-    if (props.slug) {
+    useEffect(() => {
         fetchBlogPostContents(props.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)
@@ -122,7 +122,7 @@ export default function Blog(props) {
                 });
             })
             .catch(error => setError(error.toString()));
-    }
+        }, [props.slug]);
 
     // clear related posts when loading new blog post
     useEffect(() => {
