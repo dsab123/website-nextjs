@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import remark from 'remark'
-import html from 'remark-html'
+import remark from 'remark';
+import html from 'remark-html';
 import styles from '../../../styles/Blog.module.css';
 
 async function markdownToHtml(markdown: string) {
