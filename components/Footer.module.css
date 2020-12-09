@@ -158,22 +158,37 @@
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
-    overflow: hidden;   
+    overflow: visible;
 }
 
 .smallCoffeeCup {
     width: 50px;
     height: 60px;
+    transition: transform .2s;
+}
+
+.smallCoffeeCup:hover {
+    transform: scale(1.1);
 }
 
 .medCoffeeCup {
     width: 60px;
     height: 80px;
+    transition: transform .2s;
+}
+
+.medCoffeeCup:hover {
+    transform: scale(1.1);
 }
 
 .largeCoffeeCup {
     width: 60px;
     height: 110px;
+    transition: transform .2s;
+}
+
+.largeCoffeeCup:hover {
+    transform: scale(1.1);
 }
 
 .footerMoneyPlea {
