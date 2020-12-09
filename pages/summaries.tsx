@@ -4,18 +4,17 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Summaries.module.css';
 
 type BookSummaryInfo = {
-    summary_id: number,
+    summaryId: number,
     title: string,
     author: string,
     link: string,
     teaser: string,
-    image_uri: string,
-    is_ready: boolean,
+    imageUri: string,
+    isReady: boolean,
     slug: string,
     quality: number,
     payoff: number
 };
-
 
 async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
     let response = await fetch('/api/booksummary-lookup');
@@ -29,12 +28,12 @@ async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
 
 export default function Summaries() {
     const [summaries, setSummaries] = useState<BookSummaryInfo[]>([
-        {summary_id: 1, title: '', author: '', link: '', teaser: '', image_uri: '',
-            is_ready: true, slug: '', quality: 4, payoff: 4},
-        {summary_id: 2, title: '', author: '', link: '', teaser: '', image_uri: '',
-            is_ready: true, slug: '', quality: 4, payoff: 4},
-        {summary_id: 3, title: '', author: '', link: '', teaser: '', image_uri: '',
-            is_ready: true, slug: '', quality: 4, payoff: 4},
+        {summaryId: 1, title: '', author: '', link: '', teaser: '', imageUri: '',
+            isReady: true, slug: '', quality: 4, payoff: 4},
+        {summaryId: 2, title: '', author: '', link: '', teaser: '', imageUri: '',
+            isReady: true, slug: '', quality: 4, payoff: 4},
+        {summaryId: 3, title: '', author: '', link: '', teaser: '', imageUri: '',
+            isReady: true, slug: '', quality: 4, payoff: 4},
     ]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
@@ -53,11 +52,11 @@ export default function Summaries() {
     
     return <>
         <Head>
-            <title key="main-title">Book Summaries | Daniel Sabbagh</title>
-            <meta property="og:title" content="Book Summaries | Daniel Sabbagh" key="title" />
+            <title key="original-title">Book Summaries to Help You Read Better | Daniel Sabbagh</title>
+            <meta property="og:title" content="Book Summaries to Help You Read Better | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="Book Summaries to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/static/mobile-logo.jpg" key="image" />
         </Head>
         
         <div className={styles.outer}>
@@ -67,11 +66,11 @@ export default function Summaries() {
                 <p className={styles.introText}>{intro}</p>
                 <br />
                 {summaries.map((summary) => (
-                    <div key={summary.summary_id} className={styles.card}>
+                    <div key={summary.summaryId} className={styles.card}>
                         <div className={isLoading ? styles.loadingBookImage : ''}>
                             {!isLoading && 
-                            <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summary_id}/${summary.slug}`}>
-                                <img className={styles.bookImage} src={summary.image_uri} />
+                            <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                                <img className={summary.isReady ? styles.bookImage : styles.nonAnimatedBookImage} src={summary.imageUri} />
                             </Link>}
                         </div>
                         <div className={styles.cardText}>
@@ -85,12 +84,12 @@ export default function Summaries() {
                                 <p className={styles.bookTeaser}>{summary.teaser}</p>
                             </div>
                             <div className={styles.summaryDetail}>
-                                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summary_id}/${summary.slug}`}>
-                                    <a className={summary.is_ready ? styles.readMore : styles.hidden}>
+                                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                                    <a className={summary.isReady ? styles.readMore : styles.hidden}>
                                         read review
                                     </a>
                                 </Link>
-                                <p className={summary.is_ready ? styles.hidden : styles.comingSoon}>
+                                <p className={summary.isReady ? styles.hidden : styles.comingSoon}>
                                     review coming soon
                                 </p>
                                 <a className={isLoading ? `${styles.amazonLink} ${styles.inactiveLink}` : styles.amazonLink} href={isLoading ? '' : summary.link} target="_blank">buy from amazon</a>

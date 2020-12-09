@@ -8,12 +8,12 @@ function App({ Component, pageProps }) {
     <>
     <Head>
       <meta charSet="utf-8" /> 
-      <title>Daniel Sabbagh</title>
+      <title key="original-title">Daniel Sabbagh | Reading Is Essential</title>
       <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
       <meta property="og:title" content="Daniel Sabbagh" key="title" />
       <meta property="og:description" content="Reading is Essential - This Blog will help you read more." key="description" />
       <meta property="og:type" content="article" key="type" />
-      <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
+      <meta property="og:image" content="https://website-nextjs-nine.vercel.app/static/mobile-logo.jpg" key="image" />
       
       <link rel="manifest" href="/manifest.json" />
       <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />

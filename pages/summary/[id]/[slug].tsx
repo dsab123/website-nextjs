@@ -15,13 +15,13 @@ type BookSummaryContents = {
 };
 
 type BookSummaryInfo = {
-    summary_id: number,
+    summaryId: number,
     title: string
     author: string,
     link: string,
     teaser: string
-    image_uri: string
-    is_ready: boolean,
+    imageUri: string
+    isReady: boolean,
     slug: string,
     quality: number,
     payoff: number
@@ -42,11 +42,11 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 export async function getStaticPaths() {
     const raw = await fetch(`${process.env.HOST}/api/booksummary-lookup/`);
     const summaryInfos = await raw.json();
-    
+
     return {
         paths: summaryInfos.map((summaryInfo) => {
             return {
-                params: { id: `${summaryInfo.summary_id}`, slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) }
+                params: { id: `${summaryInfo.summaryId}`, slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) }
             }
         }),
         fallback: true
@@ -100,10 +100,11 @@ export default function Summary(props) {
 
     return <>
         <Head>
+            <title key="original-title">{`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`}</title>
             <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={summaryInfo && `${process.env.HOST}/${summaryInfo.image_uri}`} key="image" />
+            <meta property="og:image" content={summaryInfo && `${process.env.HOST}/${summaryInfo.imageUri}`} key="image" />
         </Head>
             <div className={styles.outer}>
             
@@ -123,10 +124,10 @@ export default function Summary(props) {
                 <br />
 
                 <div className={styles.inner}>
-                    <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.image_uri}`} /> 
+                    <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.imageUri}`} /> 
                     <div className={styles.teaserAndButton}>
                         <p className={styles.teaser}>{summaryInfo && summaryInfo.teaser}</p>
-                        <a href="${link}" target="_blank"><img className={styles.buyButton} src="/amazon-button.png" /> </a>
+                        <a href="${link}" target="_blank"><img className={styles.buyButton} src="/static/amazon-button.png" /> </a>
                     </div>
                 </div>
 

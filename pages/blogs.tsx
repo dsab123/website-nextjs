@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
 
 type BlogPostLookupItem = {
-    blogpost_id: number,
+    blogpostId: number,
     slug: string,
     title: string,
     teaser: string,
-    is_ready: boolean
+    isReady: boolean
 };
 
 async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
@@ -25,12 +25,12 @@ async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
 // async function fetchFakeBlogPostLookup(): Promise<BlogPostLookupItem[]> {
 //     await sleep(15000);
 //     return [
-//         {blogpost_id: 1, slug: "slug", title: "string", teaser: "string", is_ready: true},
-//         {blogpost_id: 2, slug: "slug", title: "string", teaser: "string", is_ready: true},
-//         {blogpost_id: 3, slug: "slug", title: "string", teaser: "string", is_ready: true},
-//         {blogpost_id: 4, slug: "slug", title: "string", teaser: "string", is_ready: true},
-//         {blogpost_id: 5, slug: "slug", title: "string", teaser: "string", is_ready: true},
-//         {blogpost_id: 6, slug: "slug", title: "string", teaser: "string", is_ready: true},
+//         {blogpostId: 1, slug: "slug", title: "string", teaser: "string", isReady: true},
+//         {blogpostId: 2, slug: "slug", title: "string", teaser: "string", isReady: true},
+//         {blogpostId: 3, slug: "slug", title: "string", teaser: "string", isReady: true},
+//         {blogpostId: 4, slug: "slug", title: "string", teaser: "string", isReady: true},
+//         {blogpostId: 5, slug: "slug", title: "string", teaser: "string", isReady: true},
+//         {blogpostId: 6, slug: "slug", title: "string", teaser: "string", isReady: true},
 //     ] as BlogPostLookupItem[];
 // }
   
@@ -42,12 +42,12 @@ export default function Blogs() {
     let dots = ['.', '..', '...', '..'];
 
     const [posts, setPosts] = useState<BlogPostLookupItem[]>([
-        {blogpost_id: 1, slug: "", title: "", teaser: "", is_ready: true},
-        {blogpost_id: 2, slug: "", title: "", teaser: "", is_ready: true},
-        {blogpost_id: 3, slug: "", title: "", teaser: "", is_ready: true},
-        {blogpost_id: 4, slug: "", title: "", teaser: "", is_ready: true},
-        {blogpost_id: 5, slug: "", title: "", teaser: "", is_ready: true},
-        {blogpost_id: 6, slug: "", title: "", teaser: "", is_ready: true},
+        {blogpostId: 1, slug: "", title: "", teaser: "", isReady: true},
+        {blogpostId: 2, slug: "", title: "", teaser: "", isReady: true},
+        {blogpostId: 3, slug: "", title: "", teaser: "", isReady: true},
+        {blogpostId: 4, slug: "", title: "", teaser: "", isReady: true},
+        {blogpostId: 5, slug: "", title: "", teaser: "", isReady: true},
+        {blogpostId: 6, slug: "", title: "", teaser: "", isReady: true},
     ]);
 
     useEffect(() => {        
@@ -70,11 +70,11 @@ export default function Blogs() {
     
     return <>
         <Head>
-            <title key="main-title">Blog | Daniel Sabbagh</title>
+            <title key="original-title">Recent Blog Posts | Daniel Sabbagh</title>
             <meta property="og:title" content="Blog | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="Resources to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/mobile-logo.jpg" key="image" />
+            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/static/mobile-logo.jpg" key="image" />
         </Head>
 
         <h1 className={styles.pageTitle}>Recent Posts</h1>
@@ -83,11 +83,11 @@ export default function Blogs() {
             {isLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
             <div className={styles.cardRecentPostsContainer}>  
             {posts.map((post) => (
-                <div key={post.blogpost_id} className={styles.cardPostContainer}>
-                    <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpost_id}/${post.slug}`}>
+                <div key={post.blogpostId} className={styles.cardPostContainer}>
+                    <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpostId}/${post.slug}`}>
                         <a className={styles.postLinks} onClick={() => setIsLoading(true)}>
                             <div className={styles.cardPostContent}>
-                                <img className={styles.cardPostImage} src="/silver.jpg" />
+                                <img className={styles.cardPostImage} src="/blogpost/silver.jpg" />
                                 <p className={styles.cardPostTitle}>{post.title}</p>
                                 <p className={styles.cardPostTeaser}>{!isLoading && `${post.teaser} ...`}</p>
                             </div>

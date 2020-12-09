@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import blogpost from '../../../data/blogpost.json';
 
 type BlogPostInfo = {
-    blogpost_id: number,
+    blogpostId: number,
     slug: string,
     title: string,
     teaser: string,
@@ -10,9 +11,11 @@ type BlogPostInfo = {
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { id } } = req;
+    const post = blogpost.blogposts.find(x => x.blogpostId == Number(id));
+    
+    if (post) {
+        return res.status(200).json(post);
+    }
 
-    const raw = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/blogpostinfo/${id}`);
-    const data = await raw.json() as BlogPostInfo;
-
-    return res.json(data);
+    res.status(404).end();
 }

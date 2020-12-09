@@ -1,17 +1,22 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import blogpost from '../../../data/blogpost.json';
+
 
 type BlogPostInfoByTag = {
-    blogpost_id: number,
+    blogpostId: number,
     slug: string,
     title: string,
+    tags: string[],
     teaser: string
 };
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { tag } } = req;
-
-    const raw = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/tags/${tag}/`);
-    const data = await raw.json() as BlogPostInfoByTag;
+    const posts = blogpost.blogposts.filter(x => x.tags.includes(String(tag).toLowerCase()));
     
-    res.json(data);
+     if (posts) {
+        return res.status(200).json(posts);
+    }
+
+    return res.status(404).end();
 }

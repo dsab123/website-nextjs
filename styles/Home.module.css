@@ -1,10 +1,31 @@
-.teaser {
-	font-style: italic;
-    font-family: var(--small-font-family);
-	font-size: 20px;
-}
-
 .title {
     font-family: var(--big-font-family);
 	font-size: 30px;
+}
+
+.header {
+    font-family: var(--small-font-family);
+	font-size: 26px;
+}
+
+.teaserLink {
+	text-decoration: none;
+    font-family: var(--small-font-family);
+	font-size: 26px;
+	font-style: italic;
+}
+
+.rightSideLink {
+	text-align: end;
+}
+
+.dimOverlay {
+	opacity: 0.3;
+}
+
+.blogsPageTeaserContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;   
 }

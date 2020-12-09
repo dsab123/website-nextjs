@@ -1,21 +1,20 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import summary from '../../data/summary.json';
 
 type BookSummaryLookupItem = {
-    summary_id: number,
+    summaryId: number,
     title: string,
     author: string,
     link: string,
     teaser: string,
-    image_uri: string,
-    is_ready: boolean,
+    imageUri: string,
+    isReady: boolean,
     slug: string,
     quality: number,
-    payoff: number
+    payoff: number,
+    category: string
 };
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-    const raw = await fetch(`https://7dfaiqkhk5.execute-api.us-east-1.amazonaws.com/stage/booksummary-lookup/`);
-    const data = await raw.json() as BookSummaryLookupItem[];
-    
-    res.json(data);
+    res.status(200).json(summary.summaries);
 }

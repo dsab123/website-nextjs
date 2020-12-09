@@ -18,7 +18,7 @@
     width: 350px;
     height: 40px;
     cursor: pointer;
-    background-image: url("/large-logo.png");
+    background-image: url("/static/large-logo.png");
 }
 
 .navItem {
@@ -129,7 +129,7 @@
 
     .title {
         justify-content: space-between;
-        background-image: url("/mobile-logo.png");
+        background-image: url("/static/mobile-logo.png");
         background-size: cover;
         width: 162px;
         height: 70px;

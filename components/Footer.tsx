@@ -92,7 +92,7 @@ export default function Footer() {
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />    
                             <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <img src="/coffee_cup.png" className={styles.smallCoffeeCup}/>
+                                <img src="/static/coffee_cup.png" className={styles.smallCoffeeCup}/>
                             </button>
                         </form>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -100,7 +100,7 @@ export default function Footer() {
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />
                             <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <img src="/coffee_cup.png" className={styles.medCoffeeCup}/>
+                                <img src="/static/coffee_cup.png" className={styles.medCoffeeCup}/>
                             </button>
                         </form>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -108,7 +108,7 @@ export default function Footer() {
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />
                             <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <img src="/coffee_cup.png" className={styles.largeCoffeeCup}/>
+                                <img src="/static/coffee_cup.png" className={styles.largeCoffeeCup}/>
                             </button>
                         </form>
                 </div>
@@ -135,9 +135,9 @@ export default function Footer() {
     
     <div>
         <ul className={styles.contactList}>
-            <li className={styles.contactListItem}><a href="https://twitter.com/_danielsabbagh" target="_blank"><img className={styles.socialIcon} src="/twitter-circled.png"></img></a></li>
-            <li className={styles.contactListItem}><a href="mailto:dsabbaghumd@gmail.com" target="_blank"><img className={styles.socialIcon} src="/email.png"></img></a></li>
-            <li className={styles.contactListItem}><a href="https://facebook.com/dsab123" target="_blank"><img className={styles.socialIcon} src="/facebook-circled.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="https://twitter.com/_danielsabbagh" target="_blank"><img className={styles.socialIcon} src="/static/twitter-circled.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="mailto:dsabbaghumd@gmail.com" target="_blank"><img className={styles.socialIcon} src="/static/email.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="https://facebook.com/dsab123" target="_blank"><img className={styles.socialIcon} src="/static/facebook-circled.png"></img></a></li>
         </ul>
     </div>
 

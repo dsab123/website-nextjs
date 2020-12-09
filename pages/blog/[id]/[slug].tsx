@@ -8,7 +8,7 @@ import styles from '../../../styles/Blog.module.css';
 
 async function markdownToHtml(markdown: string) {
     const result = await remark().use(html).process(markdown)
-    return result.toString()
+    return result.toString();
 }
 
 type BlogPostContents = {
@@ -16,7 +16,7 @@ type BlogPostContents = {
 };
 
 type BlogPostInfo = {
-    blogpost_id: number,
+    blogpostId: number,
     slug: string,
     title: string,
     teaser: string,
@@ -24,7 +24,7 @@ type BlogPostInfo = {
 };
 
 type BlogPostInfoByTag = {
-    blogpost_id: number,
+    blogpostId: number,
     slug: string,
     title: string,
     teaser: string
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
     return {
         paths: blogPosts.map((blogPostInfo) => {
             return {
-                params: { id: `${blogPostInfo.blogpost_id}`, slug: blogPostInfo.slug, blogPostInfo: JSON.stringify(blogPostInfo) }
+                params: { id: `${blogPostInfo.blogpostId}`, slug: blogPostInfo.slug, blogPostInfo: JSON.stringify(blogPostInfo) }
             }
         }),
         fallback: true
@@ -84,14 +84,13 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
     return await response.json() as Promise<BlogPostInfoByTag[]>;
 }
 
-
-
 export default function Blog(props) {
     const [postContents, setPostContents] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [showRelatedPosts, setShowRelatedPosts] = useState(false);
 
+    const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
 
@@ -102,11 +101,15 @@ export default function Blog(props) {
             setShowRelatedPosts(!showRelatedPosts);
             return;
         }
-        const related = await fetchBlogPostInfoByTag(newTag);
-    
+
+        setIsRelatedPostsLoading(true);
+
+        const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== postInfo.blogpostId);
+        
         setRelatedPosts(related);
         setShowRelatedPosts(true);
         setTag(newTag);
+        setIsRelatedPostsLoading(false);
     }
 
     if (props.slug) {
@@ -121,10 +124,10 @@ export default function Blog(props) {
             .catch(error => setError(error.toString()));
     }
 
-
     return <>
             <Head>
-                <meta property="og:title" content={postInfo && postInfo.title} key="title" />
+                <title key="original-title">{`${postInfo && postInfo.title} | Daniel Sabbagh`}</title>
+                <meta property="og:title" content={`${postInfo && postInfo.title} | Daniel Sabbagh`} key="title" />
                 <meta property="og:description" content={postInfo && postInfo.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
@@ -132,6 +135,7 @@ export default function Blog(props) {
             <div className={styles.blogLayout}>
                 <h1 className={styles.pageTitle}>{postInfo && postInfo.title}</h1>
 
+                <br />
                 <div className={isLoading ? `${styles.dimOverlay}` : ''}>
 
                     {!postContents && 
@@ -139,10 +143,8 @@ export default function Blog(props) {
                             <p>Loading blog post...</p>
                     </div>}
                     <div className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
-
                     <br />
 
-                    
                     <div>
                         {postInfo && postInfo.tags && postInfo.tags.length > 0 && 
                         <div className={styles.postTagContainer}>
@@ -150,7 +152,7 @@ export default function Blog(props) {
                                 <p className={styles.relatedPostsText}>related:</p>
                             </div>
                             {postInfo.tags.map((tag) => (
-                            <div key={tag} className={styles.postTags}>
+                            <div key={tag} className={isRelatedPostsLoading ? `${styles.postTags} ${styles.dimOverlay}` : styles.postTags}>
                                 <a className={styles.postTag} 
                                 onClick={() => displayBlogPostsByTag(tag)}>
                                     {tag}
@@ -170,8 +172,8 @@ export default function Blog(props) {
                             {relatedPosts.length > 0 &&
                             <ul>
                                 {relatedPosts.map((relatedPost) =>
-                                <li key={relatedPost.blogpost_id}>
-                                    <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpost_id}/${relatedPost.slug}`}>
+                                <li key={relatedPost.blogpostId}>
+                                    <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
                                         <a className={styles.postLinks}>
                                         {relatedPost.title}
                                         <ul>
