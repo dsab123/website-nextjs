@@ -3,6 +3,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import remark from 'remark'
 import html from 'remark-html'
+import summary from '../../../data/summary.json';
 import styles from '../../../styles/Summary.module.css';
 
 async function markdownToHtml(markdown: string) {
@@ -40,8 +41,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-    const raw = await fetch(`${process.env.HOST}/api/booksummary-lookup/`);
-    const summaryInfos = await raw.json();
+    const summaryInfos = summary.summaries;
 
     return {
         paths: summaryInfos.map((summaryInfo) => {
@@ -52,7 +52,6 @@ export async function getStaticPaths() {
         fallback: true
     };
   }
-
 
 async function fetchServerSideBookSummaryInfo(context: GetStaticPropsContext) {
     const response = await fetch(`${process.env.HOST}/api/booksummary-info/${context.params.id}`);

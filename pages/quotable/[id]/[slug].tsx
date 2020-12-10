@@ -35,7 +35,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-    const quotables = quotable.quotables as Quotable[];
+    const quotables = quotable.quotables;
     
     return {
         paths: quotables.map((quotable) => {
@@ -77,7 +77,7 @@ export default function Quotable(props) {
             <br />
 
             <div className={styles.inner}>
-                <img className={styles.quotableImage} src={`/${quotable.imageUri}`} /> 
+                <img className={styles.quotableImage} src={quotable && `/${quotable.imageUri}`} /> 
                 <div className={styles.teaserAndButton}>
                     <p className={styles.teaser}>{quotable && quotable.teaser}</p>
                 </div>
@@ -86,7 +86,7 @@ export default function Quotable(props) {
             <br />
             
             <div>
-                <div className={styles.summaryContents}>{quotable.content}</div>
+                <div className={styles.summaryContents}>{quotable && quotable.content}</div>
             </div>
 
             {/* <div className={styles.tags}>

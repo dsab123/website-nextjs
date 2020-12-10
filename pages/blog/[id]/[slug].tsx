@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import remark from 'remark';
 import html from 'remark-html';
+import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
 
 async function markdownToHtml(markdown: string) {
@@ -43,9 +44,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-    const raw = await fetch(`${process.env.HOST}/api/blogpost-lookup`);
-    
-    const blogPosts = await raw.json();
+    const blogPosts = blogpost.blogposts;
     
     return {
         paths: blogPosts.map((blogPostInfo) => {
@@ -122,7 +121,7 @@ export default function Blog(props) {
                 });
             })
             .catch(error => setError(error.toString()));
-        }, [props.slug]);
+    }, [props.slug]);
 
     // clear related posts when loading new blog post
     useEffect(() => {
