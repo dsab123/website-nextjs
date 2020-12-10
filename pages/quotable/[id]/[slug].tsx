@@ -89,13 +89,14 @@ export default function Quotable(props) {
                 <div className={styles.summaryContents}>{quotable.content}</div>
             </div>
 
-            <div className={styles.tags}>
+            {/* <div className={styles.tags}>
                 {quotable.tags.map((tag) =>
                     <div key={tag} className={styles.tag}>
                         <p>{tag}</p>
                     </div>
                 )}
-            </div>
+            </div> */}
+
         </div>
     </>;
 }

@@ -3,23 +3,17 @@
         {
             "quotableId": 1,
             "title": "Quotable: 'Christ Lives for Us!'",
-            "author": "John Calvin",
             "imageUri": "quotable/christ-lives-for-us.png",
             "teaser": "What is Jesus doing right now? Living for us.",
             "slug": "christ-lives-for-us",
-            "tags": ["calvin, theology"],
-            "quote": "What sort of pledge, and how great is this love towards us? Christ lives for us, not for Himself!",
             "content": "This is Calvin on Hebrews 7:25 - 'For He is able to save to the uttermost those who draw...'"
         },
         {
             "quotableId": 2,
             "title": "Something about Books",
-            "author": "Some person",
             "imageUri": "quotable/books.jpg",
             "teaser": "Of the making of books there is no end",
             "slug": "something-about-books",
-            "tags": ["test, theology"],
-            "quote": "You would know the quote is the content",
             "content": "2 This is Calvin on Hebrews 7:25 - 'For He is able to save to the uttermost those who draw...'"
         }
     ]
