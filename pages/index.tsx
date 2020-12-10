@@ -63,7 +63,7 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
 }
 
 async function fetchLatestQuotable(): Promise<Quotable> {
-  let response = await fetch('/api/quotables');
+  let response = await fetch('/api/quotable-lookup');
 
   if (response.status >= 400) {
     throw new Error("Bad response from server");

@@ -23,6 +23,10 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     const summaries = summary.summaries.filter(x => ids.includes(x.summaryId));
     
      if (summaries.length > 0) {
+         if (summaries.length == 1) {
+            return res.status(200).json(summaries.shift());    
+         }
+         
         return res.status(200).json(summaries);
     }
 

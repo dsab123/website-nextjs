@@ -108,7 +108,7 @@ export default function Summary(props) {
         </Head>
             <div className={styles.outer}>
             
-                <p className={styles.summaryBookTitle}>{summaryInfo && summaryInfo.title}</p>
+                <h1 className={styles.summaryBookTitle}>{summaryInfo && summaryInfo.title}</h1>
                 <p className={styles.author}>{summaryInfo && summaryInfo.author}</p>
 
                 <div className={styles.metrics}>
