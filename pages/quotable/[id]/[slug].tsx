@@ -3,6 +3,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import remark from 'remark';
 import html from 'remark-html';
+import quotable from '../../../data/quotable.json';
 import styles from '../../../styles/Quotable.module.css';
 
 async function markdownToHtml(markdown: string) {
@@ -34,9 +35,8 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
-    const raw = await fetch(`${process.env.HOST}/api/quotable-lookup`);
-    const quotables = await raw.json();
-
+    const quotables = quotable.quotables as Quotable[];
+    
     return {
         paths: quotables.map((quotable) => {
             return {
