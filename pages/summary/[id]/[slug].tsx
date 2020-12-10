@@ -86,6 +86,9 @@ export default function Summary(props) {
     
     const summaryInfo = props.summaryInfo && JSON.parse(props.summaryInfo) as BookSummaryInfo;
 
+    console.log('on load, summaryInfo is: ');
+    console.table(summaryInfo);
+
     if (props.slug) {
         fetchBookSummaryContents(props.slug)
             .then(summaryContents => {
