@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 }
 
 async function fetchServerSideQuotable(context: GetStaticPropsContext) {
-    const response = await fetch(`${process.env.HOST}/api/quotable-info/${context.params.id}`);
+    const response = await fetch(`${process.env.VERCEL_URL}/api/quotable-info/${context.params.id}`);
 
     if (response.status >= 400) {
         throw new Error("Bad response from server") // todo make this better        

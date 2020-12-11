@@ -54,7 +54,7 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBookSummaryInfo(context: GetStaticPropsContext) {
-    const response = await fetch(`${process.env.HOST}/api/booksummary-info/${context.params.id}`);
+    const response = await fetch(`${process.env.VERCEL_URL}/api/booksummary-info/${context.params.id}`);
     if (response.status >= 400) {
         throw new Error("Bad response from server") // todo make this better
     }
@@ -103,7 +103,7 @@ export default function Summary(props) {
             <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={summaryInfo && `${process.env.HOST}/${summaryInfo.imageUri}`} key="image" />
+            <meta property="og:image" content={summaryInfo && `${process.env.VERCEL_URL}/${summaryInfo.imageUri}`} key="image" />
         </Head>
             <div className={styles.outer}>
             
