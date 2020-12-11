@@ -13,14 +13,14 @@
         },
         {
             "quotableId": 2,
-            "title": "Something about Books",
-            "author": "John Calvin",
-            "imageUri": "quotable/books.jpg",
-            "teaser": "Of the making of books there is no end",
+            "title": "Quotable: 'Books Don't Change People ... Sentences Do.'",
+            "author": "John Piper",
+            "imageUri": "quotable/sentences.jpg",
+            "teaser": "Books don't change people ... sentences do.",
             "slug": "something-about-books",
             "tags": ["calvin", "theology"],
-            "quote": "What sort of pledge, and how great is this love towards us! Christ lives for us, not for Himself!",
-            "content": "2 This is Calvin on Hebrews 7:25 - 'For He is able to save to the uttermost those who draw...'"
+            "quote": "Books don't change people; paragraphs do, sometimes even sentences.",
+            "content": ""
         }
     ]
 }
