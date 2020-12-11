@@ -31,6 +31,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             props: {id: context.params.id, slug: context.params.slug, quotable: JSON.stringify(quotable) }
         }
     } catch (error) {
+        console.log("error in getstaticprops")
         return { notFound: true }
     }
 }
@@ -52,11 +53,12 @@ async function fetchServerSideQuotable(context: GetStaticPropsContext) {
     const response = await fetch(`${process.env.VERCEL_URL}/api/quotable-info/${context.params.id}`);
 
     if (response.status >= 400) {
+        console.log("error in fetchssrq")
         throw new Error("Bad response from server") // todo make this better        
     }
-
+    console.log("response is good??");
     const r = await response.json();
-
+    console.log("response is json good??");
     return r;
 }
 
