@@ -13,10 +13,10 @@
         },
         {
             "quotableId": 2,
-            "title": "Quotable: 'Books Don't Change People ... Sentences Do.'",
+            "title": "Quotable: 'Books Don't Change People...'",
             "author": "John Piper",
             "imageUri": "quotable/sentences.jpg",
-            "teaser": "Books don't change people ... sentences do.",
+            "teaser": "Books don't change people... sentences do.",
             "slug": "something-about-books",
             "tags": ["calvin", "theology"],
             "quote": "Books don't change people; paragraphs do, sometimes even sentences.",

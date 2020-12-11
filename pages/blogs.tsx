@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
+import blogpostLookup from './api/blogpost-lookup';
 
 type BlogPostLookupItem = {
     blogpostId: number,
@@ -9,6 +10,18 @@ type BlogPostLookupItem = {
     title: string,
     teaser: string,
     isReady: boolean
+};
+
+type Quotable = {
+    quotableId: number,
+    title: string,
+    author: string,
+    imageUri: string,
+    teaser: string,
+    slug: string,
+    tags: Array<string>,
+    quote: string,
+    content: string
 };
 
 async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
@@ -19,6 +32,16 @@ async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
     }
 
     return await response.json() as BlogPostLookupItem[];
+}
+
+async function fetchQuotableLookup(): Promise<Quotable[]> {
+    let response = await fetch('/api/quotable-lookup');
+
+    if (response.status >= 400) {
+        throw new Error("Bad response from server")
+    }
+
+    return await response.json() as Quotable[];
 }
 
 // for testing
@@ -37,7 +60,7 @@ async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
 export default function Blogs() {
     const [error, setError] = useState('');
     const [loadingText, setLoadingText] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const [isBlogPostsLoading, setIsBlogPostsLoading] = useState(true);
     const [dotCount, setDotCount] = useState(0);
     let dots = ['.', '..', '...', '..'];
 
@@ -52,20 +75,39 @@ export default function Blogs() {
 
     useEffect(() => {        
         setTimeout(() => {
-            if (isLoading) setDotCount(dotCount + 1);
+            if (isBlogPostsLoading) setDotCount(dotCount + 1);
             setLoadingText('Loading' + dots[dotCount % dots.length]);        
         }, 300);
-    }, [dotCount, isLoading]);
+    }, [dotCount, isBlogPostsLoading]);
 
     useEffect(() => {
         fetchBlogPostLookup()
             .then(posts => {
-                if (isLoading) {
+                if (isBlogPostsLoading) {
                     setPosts(posts);
-                    setIsLoading(false);
+                    setIsBlogPostsLoading(false);
                 }
             })
-            .catch(error => isLoading ? setError(error.toString()) : null);
+            .catch(error => isBlogPostsLoading ? setError(error.toString()) : null);
+    }, []);
+
+
+    const [isQuotablesLoading, setIsQuotablesLoading] = useState(true);
+    const [quotables, setQuotables] = useState<Quotable[]>([
+        {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "",tags: [],quote: "",content: ""},
+        {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "",tags: [],quote: "",content: ""},
+        {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "",tags: [],quote: "",content: ""}
+    ]);
+    
+    useEffect(() => {
+        fetchQuotableLookup()
+            .then(quotables => {
+                if (isQuotablesLoading) {
+                    setQuotables(quotables);
+                    setIsQuotablesLoading(false);
+                }
+            })
+            .catch(error => isQuotablesLoading ? setError(error.toString()) : null);
     }, []);
     
     return <>
@@ -79,17 +121,38 @@ export default function Blogs() {
 
         <h1 className={styles.pageTitle}>Recent Posts</h1>
 
-        <div className={isLoading ? styles.dimOverlay : ''}>
-            {isLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
+        <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
+            {isBlogPostsLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
             <div className={styles.cardRecentPostsContainer}>  
             {posts.map((post) => (
                 <div key={post.blogpostId} className={styles.cardPostContainer}>
                     <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpostId}/${post.slug}`}>
-                        <a className={styles.postLinks} onClick={() => setIsLoading(true)}>
+                        <a className={styles.postLinks} onClick={() => setIsBlogPostsLoading(true)}>
                             <div className={styles.cardPostContent}>
                                 <img className={styles.cardPostImage} src="/blogpost/silver.jpg" />
                                 <p className={styles.cardPostTitle}>{post.title}</p>
-                                <p className={styles.cardPostTeaser}>{!isLoading && `${post.teaser} ...`}</p>
+                                <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser} ...`}</p>
+                            </div>
+                        </a>
+                    </Link>
+                </div>
+            ))}    
+            </div>
+        </div>
+
+        <h1 className={styles.pageTitle}>Recent Quotables</h1>
+
+        <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
+            {isBlogPostsLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
+            <div className={styles.cardRecentPostsContainer}>  
+            {quotables.map((post) => (
+                <div key={post.quotableId} className={styles.cardPostContainer}>
+                    <Link href='/blog/[id]/[slug]' as={`/blog/${post.quotableId}/${post.slug}`}>
+                        <a className={styles.postLinks} onClick={() => setIsBlogPostsLoading(true)}>
+                            <div className={styles.cardPostContent}>
+                                <img className={styles.cardPostImage} src={`/${post.imageUri}`} />
+                                <p className={styles.cardPostTitle}>{post.title}</p>
+                                <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser} ...`}</p>
                             </div>
                         </a>
                     </Link>
