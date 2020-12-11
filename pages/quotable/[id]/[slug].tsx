@@ -3,6 +3,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import remark from 'remark';
 import html from 'remark-html';
+import RelatedItems from '../../../components/RelatedItems';
 import quotable from '../../../data/quotable.json';
 import styles from '../../../styles/Quotable.module.css';
 
@@ -18,7 +19,7 @@ type Quotable = {
     imageUri: string,
     teaser: string,
     slug: string,
-    tags: string[],
+    tags: Array<string>,
     quote: string,
     content: string
 }
@@ -61,7 +62,7 @@ async function fetchServerSideQuotable(context: GetStaticPropsContext) {
 
 export default function Quotable(props) {
     const quotable = props.quotable && JSON.parse(props.quotable) as Quotable;
-
+    
     return <>
         <Head>
             <title key="original-title">{`${quotable && quotable.title} | Daniel Sabbagh`}</title>
@@ -71,31 +72,29 @@ export default function Quotable(props) {
             <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
         </Head>
 
-        <div className={styles.outer}>            
+        <div className={styles.wrapper}>            
             <h1 className={styles.quotableTitle}>{quotable && quotable.title}</h1>
-
             <br />
 
-            <div className={styles.inner}>
+            <div className={styles.quotableContentWrapper}>
                 <img className={styles.quotableImage} src={quotable && `/${quotable.imageUri}`} /> 
-                <div className={styles.teaserAndButton}>
-                    <p className={styles.teaser}>{quotable && quotable.teaser}</p>
-                </div>
-            </div>
-
+                <p className={styles.quotableQuoteWrapper}>
+                    <span className={styles.quotableQuote}>{quotable && quotable.quote}</span>
+                    &nbsp;—&nbsp;
+                    <span className={styles.quotableAuthor}>{quotable && quotable.author}</span>
+                </p>
+            
             <br />
             
-            <div>
-                <div className={styles.summaryContents}>{quotable && quotable.content}</div>
+                <div className={styles.quotableAdditionalContent}>{quotable && quotable.content}</div>
             </div>
-
-            {/* <div className={styles.tags}>
-                {quotable.tags.map((tag) =>
-                    <div key={tag} className={styles.tag}>
-                        <p>{tag}</p>
-                    </div>
-                )}
-            </div> */}
+            
+            <br />
+            <div className={styles.relatedTagsWrapper}>
+                {quotable && quotable.tags && quotable.tags.length > 0 && 
+                    <RelatedItems isLoading={false} items={quotable.tags} displayPost={() => {}}></RelatedItems>
+                }
+            </div>
 
         </div>
     </>;

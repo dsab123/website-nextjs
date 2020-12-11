@@ -1,0 +1,31 @@
+.postTagContainer {
+	padding-top: 8px;
+    font-family: var(--big-font-family);
+    display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.postTags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.postTag {
+	background: var(--post-tag-color);
+	margin-left: 10px;
+	padding: 8px;
+	text-decoration: none;
+	cursor: pointer;
+	font-family: var(--big-font-family);
+    font-size: 16px;
+    transition: transform .2s;
+}
+
+.postTag:hover {
+    transform: scale(1.1);
+}
+
+.relatedPostsText {
+	font-size: 18px;
+}
