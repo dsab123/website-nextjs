@@ -147,7 +147,7 @@ export default function Blogs() {
             <div className={styles.cardRecentPostsContainer}>  
             {quotables.map((post) => (
                 <div key={post.quotableId} className={styles.cardPostContainer}>
-                    <Link href='/blog/[id]/[slug]' as={`/blog/${post.quotableId}/${post.slug}`}>
+                    <Link href='/quotable/[id]/[slug]' as={`/quotable/${post.quotableId}/${post.slug}`}>
                         <a className={styles.postLinks} onClick={() => setIsBlogPostsLoading(true)}>
                             <div className={styles.cardPostContent}>
                                 <img className={styles.cardPostImage} src={`/${post.imageUri}`} />
