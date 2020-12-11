@@ -69,7 +69,7 @@ export default function Quotable(props) {
             <meta property="og:title" content={`${quotable && quotable.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={quotable && quotable.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
+            <meta property="og:image" content={`${process.env.VERCEL_URL}/${quotable && quotable.imageUri}`} key="image" />
         </Head>
 
         <div className={styles.wrapper}>            

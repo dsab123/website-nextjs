@@ -134,7 +134,7 @@ export default function Blog(props) {
                 <meta property="og:title" content={`${postInfo && postInfo.title} | Daniel Sabbagh`} key="title" />
                 <meta property="og:description" content={postInfo && postInfo.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
-                <meta property="og:image" content="https://website-nextjs-nine.vercel.app/silver.jpg" key="image" />
+                <meta property="og:image" content={`${process.env.VERCEL_URL}/blogpost/silver.jpg`} key="image" />
             </Head>
             <div className={styles.blogLayout}>
                 <h1 className={styles.pageTitle}>{postInfo && postInfo.title}</h1>
