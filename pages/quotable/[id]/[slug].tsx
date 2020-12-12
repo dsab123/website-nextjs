@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 }
 
 async function fetchServerSideQuotable(context: GetStaticPropsContext) {
-    return quotable.quotables;
+    return quotable.quotables.filter(x => x.quotableId == Number(context.params.id));
 }
 
 export default function Quotable(props) {

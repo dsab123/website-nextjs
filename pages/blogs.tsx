@@ -65,12 +65,12 @@ export default function Blogs() {
     let dots = ['.', '..', '...', '..'];
 
     const [posts, setPosts] = useState<BlogPostLookupItem[]>([
-        {blogpostId: 1, slug: "", title: "", teaser: "", isReady: true},
-        {blogpostId: 2, slug: "", title: "", teaser: "", isReady: true},
-        {blogpostId: 3, slug: "", title: "", teaser: "", isReady: true},
-        {blogpostId: 4, slug: "", title: "", teaser: "", isReady: true},
-        {blogpostId: 5, slug: "", title: "", teaser: "", isReady: true},
-        {blogpostId: 6, slug: "", title: "", teaser: "", isReady: true},
+        {blogpostId: 1, slug: "slug", title: "", teaser: "", isReady: true},
+        {blogpostId: 2, slug: "slug", title: "", teaser: "", isReady: true},
+        {blogpostId: 3, slug: "slug", title: "", teaser: "", isReady: true},
+        {blogpostId: 4, slug: "slug", title: "", teaser: "", isReady: true},
+        {blogpostId: 5, slug: "slug", title: "", teaser: "", isReady: true},
+        {blogpostId: 6, slug: "slug", title: "", teaser: "", isReady: true},
     ]);
 
     useEffect(() => {        
@@ -94,9 +94,9 @@ export default function Blogs() {
 
     const [isQuotablesLoading, setIsQuotablesLoading] = useState(true);
     const [quotables, setQuotables] = useState<Quotable[]>([
-        {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "",tags: [],quote: "",content: ""},
-        {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "",tags: [],quote: "",content: ""},
-        {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "",tags: [],quote: "",content: ""}
+        {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
+        {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
+        {quotableId: 3,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""}
     ]);
     
     useEffect(() => {
