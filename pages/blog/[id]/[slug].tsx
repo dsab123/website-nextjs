@@ -87,10 +87,10 @@ export default function Blog(props) {
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
 
-    const [postInfo, setPostInfo] = useState<BlogPostInfo>(null);
-    console.log('\nblogpost is: ' + props);
-    console.table(props);
-    
+    const [postInfo, setPostInfo] = useState<BlogPostInfo>({
+        blogpostId: 1, slug: '', title: '', teaser: '', tags: []
+    });
+
     useEffect(() => {
         props && setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);
     },[props]);
@@ -103,7 +103,7 @@ export default function Blog(props) {
 
         setIsRelatedPostsLoading(true);
 
-        const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== postInfo.blogpostId);
+        const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== props.postInfo.blogpostId);
         
         setRelatedPosts(related);
         setShowRelatedPosts(true);
@@ -112,7 +112,7 @@ export default function Blog(props) {
     }
 
     useEffect(() => {
-        props && fetchBlogPostContents(postInfo.slug)
+        fetchBlogPostContents(postInfo.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)
                 .then(processedContent => {
@@ -121,7 +121,7 @@ export default function Blog(props) {
                 });
             })
             .catch(error => setError(error.toString()));
-    }, [props]);
+    }, [postInfo.slug]);
 
     // clear related posts when loading new blog post
     useEffect(() => {
