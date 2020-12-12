@@ -35,7 +35,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const postInfo = await fetchServerSideBlogPostInfo(context);
         return {
-            props: { id: context.params.id, slug: context.params.slug, postInfo: JSON.stringify(postInfo) }
+            props: { id: context.params.id, slug: context.params.slug, title: postInfo.title, teaser: postInfo.teaser, postInfo: JSON.stringify(postInfo) }
         }
     } catch (error) {
         return { notFound: true }
@@ -48,7 +48,7 @@ export async function getStaticPaths() {
     return {
         paths: blogPosts.map((blogPostInfo) => {
             return {
-                params: { id: `${blogPostInfo.blogpostId}`, slug: blogPostInfo.slug, blogPostInfo: JSON.stringify(blogPostInfo) }
+                params: { id: `${blogPostInfo.blogpostId}`, slug: blogPostInfo.slug, title: blogPostInfo.title, teaser: blogPostInfo.teaser, blogPostInfo: JSON.stringify(blogPostInfo) }
             }
         }),
         fallback: true
@@ -103,7 +103,7 @@ export default function Blog(props) {
 
         setIsRelatedPostsLoading(true);
 
-        const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== props.postInfo.blogpostId);
+        const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== postInfo.blogpostId);
         
         setRelatedPosts(related);
         setShowRelatedPosts(true);
@@ -130,14 +130,14 @@ export default function Blog(props) {
 
     return <>
             <Head>
-                <title key="original-title">{`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`}</title>
-                <meta property="og:title" content={`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`} key="title" />
-                <meta property="og:description" content={props.postInfo && props.postInfo.teaser} key="description" />
+                <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
+                <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
+                <meta property="og:description" content={props.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content={`www.danielsabbagh.com/blogpost/silver.jpg`} key="image" />
             </Head>
             <div className={styles.blogLayout}>
-                <h1 className={styles.pageTitle}>{postInfo && postInfo.title}</h1>
+                <h1 className={styles.pageTitle}>{props.title}</h1>
 
                 <br />
                 <div className={isLoading ? `${styles.dimOverlay}` : ''}>
