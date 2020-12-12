@@ -77,7 +77,7 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
     return await response.json() as Promise<BlogPostInfoByTag[]>;
 }
 
-export default function Blog(blogpost) {
+export default function Blog(props) {
     const [postContents, setPostContents] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
@@ -87,7 +87,13 @@ export default function Blog(blogpost) {
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
 
-    const postInfo = blogpost && JSON.parse(blogpost) as BlogPostInfo;
+    const [postInfo, setPostInfo] = useState<BlogPostInfo>(null);
+    console.log('\nblogpost is: ' + props);
+    console.table(props);
+    
+    useEffect(() => {
+        setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);
+    },[props.postInfo]);
 
     async function displayBlogPostsByTag(newTag: string) {
         if (newTag == tag) {
@@ -115,7 +121,7 @@ export default function Blog(blogpost) {
                 });
             })
             .catch(error => setError(error.toString()));
-    }, [postInfo.slug]);
+    }, [props.slug]);
 
     // clear related posts when loading new blog post
     useEffect(() => {
@@ -124,9 +130,9 @@ export default function Blog(blogpost) {
 
     return <>
             <Head>
-                <title key="original-title">{`${blogpost && blogpost.title} | Daniel Sabbagh`}</title>
-                <meta property="og:title" content={`${blogpost && blogpost.title} | Daniel Sabbagh`} key="title" />
-                <meta property="og:description" content={blogpost && blogpost.teaser} key="description" />
+                <title key="original-title">{`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`}</title>
+                <meta property="og:title" content={`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`} key="title" />
+                <meta property="og:description" content={props.postInfo && props.postInfo.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content={`www.danielsabbagh.com/blogpost/silver.jpg`} key="image" />
             </Head>
