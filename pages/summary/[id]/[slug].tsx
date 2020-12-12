@@ -109,7 +109,7 @@ export default function Summary(props) {
     });
 
     useEffect(() => {
-        postInfo.slug && fetchBookSummaryContents(props.slug)
+        summaryInfo.slug && fetchBookSummaryContents(props.slug)
             .then(summaryContents => {
                 markdownToHtml(summaryContents.data)
                 .then(processedContent => {
@@ -117,7 +117,7 @@ export default function Summary(props) {
                 })
             })
         .catch(error => setError(error.toString()));
-    }, [postInfo.slug]);
+    }, [summaryInfo.slug]);
     
     return <>
         <Head>
