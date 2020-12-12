@@ -92,8 +92,8 @@ export default function Blog(props) {
     console.table(props);
     
     useEffect(() => {
-        setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);
-    },[props.postInfo]);
+        props && setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);
+    },[props]);
 
     async function displayBlogPostsByTag(newTag: string) {
         if (newTag == tag) {
@@ -112,7 +112,7 @@ export default function Blog(props) {
     }
 
     useEffect(() => {
-        fetchBlogPostContents(postInfo.slug)
+        props && fetchBlogPostContents(postInfo.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)
                 .then(processedContent => {
@@ -121,7 +121,7 @@ export default function Blog(props) {
                 });
             })
             .catch(error => setError(error.toString()));
-    }, [props.slug]);
+    }, [props]);
 
     // clear related posts when loading new blog post
     useEffect(() => {
