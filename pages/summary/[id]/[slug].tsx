@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import remark from 'remark'
@@ -17,11 +17,11 @@ type BookSummaryContents = {
 
 type BookSummaryInfo = {
     summaryId: number,
-    title: string
+    title: string,
     author: string,
     link: string,
-    teaser: string
-    imageUri: string
+    teaser: string,
+    imageUri: string,
     isReady: boolean,
     slug: string,
     quality: number,
@@ -33,7 +33,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         const summaryInfo = await fetchServerSideBookSummaryInfo(context);
 
         return {
-            props: { id: context.params.id, slug: context.params.slug, summaryInfo: JSON.stringify(summaryInfo) }
+            props: { id: context.params.id, slug: context.params.slug, title: summaryInfo.title, teaser: summaryInfo.teaser, summaryInfo: JSON.stringify(summaryInfo) }
         }
     } catch (error) {
         return { notFound: true }
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
     return {
         paths: summaryInfos.map((summaryInfo) => {
             return {
-                params: { id: `${summaryInfo.summaryId}`, slug: summaryInfo.slug, summaryInfo: JSON.stringify(summaryInfo) }
+                params: { id: `${summaryInfo.summaryId}`, slug: summaryInfo.slug, title: summaryInfo.title, teaser: summaryInfo.teaser, summaryInfo: JSON.stringify(summaryInfo) }
             }
         }),
         fallback: true
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBookSummaryInfo(context: GetStaticPropsContext) {
-    return summary.summaries;
+    return summary.summaries.find(x => x.summaryId == Number(context.params.id));
 }
 
 async function fetchBookSummaryContents(slug: string): Promise<BookSummaryContents> {
@@ -78,8 +78,22 @@ function getQualityRanking(payoff: number) {
 export default function Summary(props) {
     const [summaryContents, setSummaryContents] = useState('');
     const [error, setError] = useState('');
-    
-    const summaryInfo = props.summaryInfo && JSON.parse(props.summaryInfo) as BookSummaryInfo;
+    const [summaryInfo, setSummaryInfo] = useState<BookSummaryInfo>({
+        summaryId: 0,
+        title: '',
+        author: '',
+        link: ',',
+        teaser: '',
+        imageUri: '',
+        isReady: false,
+        slug: '',
+        quality: 0,
+        payoff: 0
+    });
+
+    useEffect(() => {
+        props.summaryInfo && setSummaryInfo(JSON.parse(props.summaryInfo) as BookSummaryInfo);
+    });
 
     if (props.slug) {
         fetchBookSummaryContents(props.slug)
@@ -89,16 +103,16 @@ export default function Summary(props) {
                     setSummaryContents(processedContent);
                 })
             })
-            .catch(error => setError(error.toString()));
+        .catch(error => setError(error.toString()));
     }
 
     return <>
         <Head>
-            <title key="original-title">{`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`}</title>
-            <meta property="og:title" content={`${summaryInfo && summaryInfo.title} | Daniel Sabbagh`} key="title" />
-            <meta property="og:description" content={summaryInfo && summaryInfo.teaser} key="description" />
+            <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
+            <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
+            <meta property="og:description" content={props.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={summaryInfo && `${process.env.VERCEL_URL}/${summaryInfo.imageUri}`} key="image" />
+            <meta property="og:image" content={props.imageUri} key="image" />
         </Head>
             <div className={styles.outer}>
             
