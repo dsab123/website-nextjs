@@ -108,8 +108,8 @@ export default function Summary(props) {
         props.summaryInfo && setSummaryInfo(JSON.parse(props.summaryInfo) as BookSummaryInfo);
     });
 
-    if (props.slug) {
-        fetchBookSummaryContents(props.slug)
+    useEffect(() => {
+        postInfo.slug && fetchBookSummaryContents(props.slug)
             .then(summaryContents => {
                 markdownToHtml(summaryContents.data)
                 .then(processedContent => {
@@ -117,8 +117,8 @@ export default function Summary(props) {
                 })
             })
         .catch(error => setError(error.toString()));
-    }
-
+    }, [postInfo.slug]);
+    
     return <>
         <Head>
             <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
