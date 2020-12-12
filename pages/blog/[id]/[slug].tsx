@@ -134,7 +134,7 @@ export default function Blog(props) {
                 <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
                 <meta property="og:description" content={props.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
-                <meta property="og:image" content={`www.danielsabbagh.com/blogpost/silver.jpg`} key="image" />
+                <meta property="og:image" content={`https://danielsabbagh.com/blogpost/silver.jpg`} key="image" />
             </Head>
             <div className={styles.blogLayout}>
                 <h1 className={styles.pageTitle}>{props.title}</h1>

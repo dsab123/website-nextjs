@@ -1,5 +1,6 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
 import RelatedItems from '../../../components/RelatedItems';
 import quotable from '../../../data/quotable.json';
 import styles from '../../../styles/Quotable.module.css';
@@ -20,7 +21,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const quotable = await fetchServerSideQuotable(context);
         return {
-            props: {id: context.params.id, slug: context.params.slug, quotable: JSON.stringify(quotable) }
+            props: {id: context.params.id, slug: context.params.slug, title: quotable.title, teaser: quotable.teaser, imageUri: quotable.imageUri, quotable: JSON.stringify(quotable) }
         }
     } catch (error) {
         return { notFound: true }
@@ -33,7 +34,7 @@ export async function getStaticPaths() {
     return {
         paths: quotables.map((quotable) => {
             return {
-                params: {id: `${quotable.quotableId}`, slug: quotable.slug, quotable: JSON.stringify(quotable) }
+                params: {id: `${quotable.quotableId}`, slug: quotable.slug, title: quotable.title, teaser: quotable.teaser, imageUri: quotable.imageUri, quotable: JSON.stringify(quotable) }
             }
         }),
         fallback: true
@@ -41,27 +42,41 @@ export async function getStaticPaths() {
 }
 
 async function fetchServerSideQuotable(context: GetStaticPropsContext) {
-    return quotable.quotables.filter(x => x.quotableId == Number(context.params.id));
+    return quotable.quotables.find(x => x.quotableId == Number(context.params.id));
 }
 
 export default function Quotable(props) {
-    const quotable = props.quotable && JSON.parse(props.quotable) as Quotable;
+    const [quotable, setQuotable]  = useState<Quotable>({
+        quotableId: 0,
+        title: '',
+        author: '',
+        imageUri: '',
+        teaser: '',
+        slug: '',
+        tags: [],
+        quote: '',
+        content: ''
+    });
+
+    useEffect(() => {
+        props.quotable && setQuotable(JSON.parse(props.quotable) as Quotable);
+    },[props]);
     
     return <>
         <Head>
-            <title key="original-title">{`${quotable && quotable.title} | Daniel Sabbagh`}</title>
-            <meta property="og:title" content={`${quotable && quotable.title} | Daniel Sabbagh`} key="title" />
-            <meta property="og:description" content={quotable && quotable.teaser} key="description" />
+            <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
+            <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
+            <meta property="og:description" content={props.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={`${process.env.VERCEL_URL}/${quotable && quotable.imageUri}`} key="image" />
+            <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
         </Head>
 
         <div className={styles.wrapper}>            
-            <h1 className={styles.quotableTitle}>{quotable && quotable.title}</h1>
+            <h1 className={styles.quotableTitle}>{props.title}</h1>
             <br />
 
             <div className={styles.quotableContentWrapper}>
-                <img className={styles.quotableImage} src={quotable && `/${quotable.imageUri}`} /> 
+                <img className={styles.quotableImage} src={`/${props.imageUri}`} /> 
                 <p className={styles.quotableQuoteWrapper}>
                     <span className={styles.quotableQuote}>{quotable && quotable.quote}</span>
                     &nbsp;—&nbsp;
