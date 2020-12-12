@@ -143,11 +143,11 @@ export default function Blog(props) {
 
     return <>
             <Head>
-                <title key="original-title">{`${postInfo && postInfo.title} | Daniel Sabbagh`}</title>
-                <meta property="og:title" content={`${postInfo && postInfo.title} | Daniel Sabbagh`} key="title" />
-                <meta property="og:description" content={postInfo && postInfo.teaser} key="description" />
+                <title key="original-title">{`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`}</title>
+                <meta property="og:title" content={`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`} key="title" />
+                <meta property="og:description" content={props.postInfo && props.postInfo.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
-                <meta property="og:image" content={`${process.env.VERCEL_URL}/blogpost/silver.jpg`} key="image" />
+                <meta property="og:image" content={`www.danielsabbagh.com/blogpost/silver.jpg`} key="image" />
             </Head>
             <div className={styles.blogLayout}>
                 <h1 className={styles.pageTitle}>{postInfo && postInfo.title}</h1>
