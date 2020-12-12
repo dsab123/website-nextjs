@@ -21,7 +21,14 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const quotable = await fetchServerSideQuotable(context);
         return {
-            props: {id: context.params.id, slug: context.params.slug, title: quotable.title, teaser: quotable.teaser, imageUri: quotable.imageUri, quotable: JSON.stringify(quotable) }
+            props: {
+                id: context.params.id, 
+                slug: context.params.slug, 
+                title: quotable.title, 
+                teaser: quotable.teaser, 
+                imageUri: quotable.imageUri, 
+                quotable: JSON.stringify(quotable) 
+            }
         }
     } catch (error) {
         return { notFound: true }
@@ -34,7 +41,14 @@ export async function getStaticPaths() {
     return {
         paths: quotables.map((quotable) => {
             return {
-                params: {id: `${quotable.quotableId}`, slug: quotable.slug, title: quotable.title, teaser: quotable.teaser, imageUri: quotable.imageUri, quotable: JSON.stringify(quotable) }
+                params: {
+                    id: `${quotable.quotableId}`, 
+                    slug: quotable.slug, 
+                    title: quotable.title, 
+                    teaser: quotable.teaser, 
+                    imageUri: quotable.imageUri, 
+                    quotable: JSON.stringify(quotable) 
+                }
             }
         }),
         fallback: true

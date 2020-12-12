@@ -33,7 +33,13 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         const summaryInfo = await fetchServerSideBookSummaryInfo(context);
 
         return {
-            props: { id: context.params.id, slug: context.params.slug, title: summaryInfo.title, teaser: summaryInfo.teaser, summaryInfo: JSON.stringify(summaryInfo) }
+            props: { 
+                id: context.params.id, 
+                slug: context.params.slug, 
+                title: summaryInfo.title, 
+                teaser: summaryInfo.teaser, 
+                imageUri: summaryInfo.imageUri,
+                summaryInfo: JSON.stringify(summaryInfo) }
         }
     } catch (error) {
         return { notFound: true }
@@ -46,7 +52,14 @@ export async function getStaticPaths() {
     return {
         paths: summaryInfos.map((summaryInfo) => {
             return {
-                params: { id: `${summaryInfo.summaryId}`, slug: summaryInfo.slug, title: summaryInfo.title, teaser: summaryInfo.teaser, summaryInfo: JSON.stringify(summaryInfo) }
+                params: { 
+                    id: `${summaryInfo.summaryId}`, 
+                    slug: summaryInfo.slug, 
+                    title: summaryInfo.title, 
+                    teaser: summaryInfo.teaser, 
+                    imageUri: summaryInfo.imageUri,
+                    summaryInfo: JSON.stringify(summaryInfo) 
+                }
             }
         }),
         fallback: true
