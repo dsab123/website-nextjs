@@ -58,8 +58,6 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
-    console.log('fetchServerSideBlogPostInfo; vercel_url: ' + process.env.VERCEL_URL + 
-    "; id: " + context.params.id);
     const response = await fetch(`${process.env.VERCEL_URL}/api/blogpost-info/${context.params.id}`);
     if (response.status >= 400) {
         throw new Error("Bad response from server") // todo make this better
@@ -122,6 +120,12 @@ export default function Blog(props) {
     }
 
     useEffect(() => {
+        console.log('postInfo:');
+        console.table(postInfo);
+
+        console.log('props:');
+        console.table(props);
+
         fetchBlogPostContents(props.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)
