@@ -88,7 +88,7 @@ export default function Blog(props) {
     const [tag, setTag] = useState('');
 
     const [postInfo, setPostInfo] = useState<BlogPostInfo>({
-        blogpostId: 1, slug: '', title: '', teaser: '', tags: []
+        blogpostId: 1, slug: null, title: '', teaser: '', tags: []
     });
 
     useEffect(() => {
@@ -112,7 +112,7 @@ export default function Blog(props) {
     }
 
     useEffect(() => {
-        fetchBlogPostContents(postInfo.slug)
+        postInfo.slug && fetchBlogPostContents(postInfo.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)
                 .then(processedContent => {
