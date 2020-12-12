@@ -34,11 +34,12 @@ type BlogPostInfoByTag = {
 export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const postInfo = await fetchServerSideBlogPostInfo(context);
-
+        console.log('no error in blogpost getStaticProps');
         return {
             props: { id: context.params.id, slug: context.params.slug, postInfo: JSON.stringify(postInfo) }
         }
     } catch (error) {
+        console.log('error in blogpost getStaticProps - ' + error);
         return { notFound: true }
     }
 }
@@ -57,6 +58,8 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
+    console.log('fetchServerSideBlogPostInfo; vercel_url: ' + process.env.VERCEL_URL + 
+    "; id: " + context.params.id);
     const response = await fetch(`${process.env.VERCEL_URL}/api/blogpost-info/${context.params.id}`);
     if (response.status >= 400) {
         throw new Error("Bad response from server") // todo make this better
@@ -94,6 +97,13 @@ export default function Blog(props) {
     const [tag, setTag] = useState('');
 
     const postInfo = props.postInfo && JSON.parse(props.postInfo) as BlogPostInfo;
+
+    if (props.notFound) {
+        console.log("OH PROPS NOT FOUND");
+    }
+
+    console.log('postInfo: ');
+    console.table(postInfo);
 
     async function displayBlogPostsByTag(newTag: string) {
         if (newTag == tag) {
