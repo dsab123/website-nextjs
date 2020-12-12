@@ -34,12 +34,10 @@ type BlogPostInfoByTag = {
 export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const postInfo = await fetchServerSideBlogPostInfo(context);
-        console.log('no error in blogpost getStaticProps');
         return {
             props: { id: context.params.id, slug: context.params.slug, postInfo: JSON.stringify(postInfo) }
         }
     } catch (error) {
-        console.log('error in blogpost getStaticProps - ' + error);
         return { notFound: true }
     }
 }
@@ -58,10 +56,6 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
-    const posts = blogpost.blogposts;
-
-    console.log('in fetchServerSideBlogPostInfo; posts are: ')
-    console.table(posts);
     return blogpost.blogposts;
 }
 
@@ -95,13 +89,6 @@ export default function Blog(props) {
 
     const postInfo = props.postInfo && JSON.parse(props.postInfo) as BlogPostInfo;
 
-    if (props.notFound) {
-        console.log("OH PROPS NOT FOUND");
-    }
-
-    console.log('postInfo: ');
-    console.table(postInfo);
-
     async function displayBlogPostsByTag(newTag: string) {
         if (newTag == tag) {
             setShowRelatedPosts(!showRelatedPosts);
@@ -119,12 +106,6 @@ export default function Blog(props) {
     }
 
     useEffect(() => {
-        console.log('postInfo:');
-        console.table(postInfo);
-
-        console.log('props:');
-        console.table(props);
-
         fetchBlogPostContents(props.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)

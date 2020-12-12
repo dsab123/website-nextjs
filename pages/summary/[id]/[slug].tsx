@@ -54,12 +54,7 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBookSummaryInfo(context: GetStaticPropsContext) {
-    const response = await fetch(`${process.env.VERCEL_URL}/api/booksummary-info/${context.params.id}`);
-    if (response.status >= 400) {
-        throw new Error("Bad response from server") // todo make this better
-    }
-
-    return await response.json();
+    return summary.summaries;
 }
 
 async function fetchBookSummaryContents(slug: string): Promise<BookSummaryContents> {

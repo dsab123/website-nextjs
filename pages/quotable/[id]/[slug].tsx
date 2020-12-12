@@ -1,16 +1,8 @@
-import { useEffect, useState } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import remark from 'remark';
-import html from 'remark-html';
 import RelatedItems from '../../../components/RelatedItems';
 import quotable from '../../../data/quotable.json';
 import styles from '../../../styles/Quotable.module.css';
-
-async function markdownToHtml(markdown: string) {
-    const result = await remark().use(html).process(markdown)
-    return result.toString();
-}
 
 type Quotable = {
     quotableId: number,
@@ -31,7 +23,6 @@ export async function getStaticProps(context: GetStaticPropsContext) {
             props: {id: context.params.id, slug: context.params.slug, quotable: JSON.stringify(quotable) }
         }
     } catch (error) {
-        console.log("error in getstaticprops")
         return { notFound: true }
     }
 }
@@ -50,16 +41,7 @@ export async function getStaticPaths() {
 }
 
 async function fetchServerSideQuotable(context: GetStaticPropsContext) {
-    const response = await fetch(`${process.env.VERCEL_URL}/api/quotable-info/${context.params.id}`);
-console.log('vercel url is: ' + process.env.VERCEL_URL)
-    if (response.status >= 400) {
-        console.log("error in fetchssrq")
-        throw new Error("Bad response from server") // todo make this better        
-    }
-    console.log("response is good??");
-    const r = await response.json();
-    console.log("response is json good??");
-    return r;
+    return quotable.quotables;
 }
 
 export default function Quotable(props) {
