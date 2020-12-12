@@ -56,7 +56,7 @@ export async function getStaticPaths() {
   }
 
 async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
-    return blogpost.blogposts;
+    return blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
 }
 
 async function fetchBlogPostContents(slug: string): Promise<BlogPostContents> {
@@ -77,7 +77,7 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
     return await response.json() as Promise<BlogPostInfoByTag[]>;
 }
 
-export default function Blog(props) {
+export default function Blog(blogpost) {
     const [postContents, setPostContents] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
@@ -87,7 +87,7 @@ export default function Blog(props) {
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
 
-    const postInfo = props.postInfo && JSON.parse(props.postInfo) as BlogPostInfo;
+    const postInfo = blogpost && JSON.parse(blogpost) as BlogPostInfo;
 
     async function displayBlogPostsByTag(newTag: string) {
         if (newTag == tag) {
@@ -106,7 +106,7 @@ export default function Blog(props) {
     }
 
     useEffect(() => {
-        fetchBlogPostContents(props.slug)
+        fetchBlogPostContents(postInfo.slug)
             .then(postContents => {
                 markdownToHtml(postContents.data)
                 .then(processedContent => {
@@ -115,7 +115,7 @@ export default function Blog(props) {
                 });
             })
             .catch(error => setError(error.toString()));
-    }, [props.slug]);
+    }, [postInfo.slug]);
 
     // clear related posts when loading new blog post
     useEffect(() => {
@@ -124,9 +124,9 @@ export default function Blog(props) {
 
     return <>
             <Head>
-                <title key="original-title">{`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`}</title>
-                <meta property="og:title" content={`${props.postInfo && props.postInfo.title} | Daniel Sabbagh`} key="title" />
-                <meta property="og:description" content={props.postInfo && props.postInfo.teaser} key="description" />
+                <title key="original-title">{`${blogpost && blogpost.title} | Daniel Sabbagh`}</title>
+                <meta property="og:title" content={`${blogpost && blogpost.title} | Daniel Sabbagh`} key="title" />
+                <meta property="og:description" content={blogpost && blogpost.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content={`www.danielsabbagh.com/blogpost/silver.jpg`} key="image" />
             </Head>
