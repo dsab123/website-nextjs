@@ -86,18 +86,20 @@
 		font-size: 30px;
 		margin-left: 20px;
 		margin-bottom: 20px;
+		text-align: center;
 	}
 
 	.author {
 		font-family: var(--small-font-family);
     	font-size: 26px;
-    	margin-left: 20px;
+		margin-left: 20px;
+		text-align: center;
 	}
 
 	.metrics {
 		display: flex;
     	flex-direction: row;
-    	margin-left: 20px;
+		margin-left: 20px;
 	}
 
 	.summaryBookImage {
