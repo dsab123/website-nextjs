@@ -106,10 +106,10 @@ export default function Summary(props) {
 
     useEffect(() => {
         props.summaryInfo && setSummaryInfo(JSON.parse(props.summaryInfo) as BookSummaryInfo);
-    });
+    }, [props]);
 
     useEffect(() => {
-        summaryInfo.slug && fetchBookSummaryContents(props.slug)
+        summaryInfo.slug && fetchBookSummaryContents(summaryInfo.slug)
             .then(summaryContents => {
                 markdownToHtml(summaryContents.data)
                 .then(processedContent => {
