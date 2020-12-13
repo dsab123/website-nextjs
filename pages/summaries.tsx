@@ -56,7 +56,7 @@ export default function Summaries() {
             <meta property="og:title" content="Book Summaries to Help You Read Better | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="Book Summaries to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={`${process.env.VERCEL_URL}/static/mobile-logo.jpg`} key="image" />
+            <meta property="og:image" content={`https://danielsabbagh.com/static/mobile-logo.jpg`} key="image" />
         </Head>
         
         <div className={styles.outer}>

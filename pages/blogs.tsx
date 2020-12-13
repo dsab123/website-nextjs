@@ -116,7 +116,7 @@ export default function Blogs() {
             <meta property="og:title" content="Blog | Daniel Sabbagh" key="title" />
             <meta property="og:description" content="Resources to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={`${process.env.VERCEL_URL}/static/mobile-logo.jpg`} key="image" />
+            <meta property="og:image" content={`https://danielsabbagh.com/static/mobile-logo.jpg`} key="image" />
         </Head>
 
         <h1 className={styles.pageTitle}>Recent Posts</h1>

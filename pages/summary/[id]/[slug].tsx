@@ -125,7 +125,7 @@ export default function Summary(props) {
             <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={props.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={props.imageUri} key="image" />
+            <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
         </Head>
             <div className={styles.outer}>
             
