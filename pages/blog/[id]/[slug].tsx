@@ -126,6 +126,7 @@ export default function Blog(props) {
     // clear related posts when loading new blog post
     useEffect(() => {
         setRelatedPosts([]);
+        setShowRelatedPosts(false);
     }, [isLoading]);
 
     return <>
@@ -191,7 +192,7 @@ export default function Blog(props) {
                                 )}
                             </ul>}
                             
-                            {relatedPosts.length == 0 && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
+                            {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
                         </div>
                     </div>
                     <br />
