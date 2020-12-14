@@ -104,6 +104,12 @@
     height: 240px;
     width: 150px;
     border-radius: 5px;
+    transition: .5s ease;
+
+}
+
+.nonAnimatedBookImage:hover {
+    opacity: 0.5;
 }
 
 .bookImage {
@@ -117,7 +123,6 @@
 .bookImage:hover {
     transform: scale(1.1) rotate(-7deg);
 }
-
 
 .cardText {
     display: flex;
@@ -218,6 +223,12 @@
     }
 
     .bookImage {
+        height: auto;
+        width: 18em;
+        border-radius: 5px;
+    }
+
+    .nonAnimatedBookImage {
         height: auto;
         width: 18em;
         border-radius: 5px;

@@ -38,7 +38,7 @@ export default function Summaries() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     
-    const intro = "I like to read pretty widely, from tech to theology to bestsellers. Below you'll find a review for each of the books I've read, along with a link to buy. Drop me a line if you purchase any of these!";
+    const intro = "Here is a curated list of recent books I've read that have helped me to become a better reader and thinker. Let me know if you buy any of these!";
     const disclaimer = "I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.";
 
     useEffect(() => { 
@@ -67,11 +67,15 @@ export default function Summaries() {
                 <br />
                 {summaries.map((summary) => (
                     <div key={summary.summaryId} className={styles.card}>
-                        <div className={isLoading ? styles.loadingBookImage : ''}>
-                            {!isLoading && 
+                        <div className={isLoading ? styles.loadingBookImage : ''}>     
+                            {summary.isReady && 
                             <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
-                                <img className={summary.isReady ? styles.bookImage : styles.nonAnimatedBookImage} src={summary.imageUri} />
+                                <img className={styles.bookImage} src={summary.imageUri} />
                             </Link>}
+                            {!summary.isReady &&
+                            <div>
+                                <img className={styles.nonAnimatedBookImage} src={summary.imageUri} />
+                            </div>}
                         </div>
                         <div className={styles.cardText}>
                             <div className={isLoading ? styles.loadingBookText : ''}>
