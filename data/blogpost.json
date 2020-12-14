@@ -15,7 +15,7 @@
             "title": "Calvin on God's Garden",
             "teaser": "Did you know that the Bible speaks at length about gardens? It begins ...",
             "tags": ["biblical theology", "scripture", "theology", "calvin"],
-            "imageUri": "blogpost/silver.jpg",
+            "imageUri": "blogpost/garden.jpg",
             "isReady": true
         },
         {
@@ -42,7 +42,7 @@
             "title": "Augustine, Luther and Calvin on Prayer",
             "teaser": "Prayer by Tim Keller collects the thoughts of three great ...",
             "tags": ["theology", "reading", "calvin", "luther", "augustine"],
-            "imageUri": "blogpost/silver.jpg",
+            "imageUri": "blogpost/prayer.jpg",
             "isReady": true
         },
         {
@@ -51,7 +51,7 @@
             "title": "Excerpts From 'Sapiens'",
             "teaser": "When I read a great book, I like to collect phrases and quotes ...",
             "tags": ["theology", "calvin", "reading"],
-            "imageUri": "blogpost/silver.jpg",
+            "imageUri": "blogpost/sapiens.jpg",
             "isReady": true
         },
         {
@@ -87,7 +87,7 @@
             "title": "Some Observations on Married Life",
             "teaser": "So a wonderful couple at our church is moving away for a while ...",
             "tags": ["marriage", "reading"],
-            "imageUri": "blogpost/silver.jpg",
+            "imageUri": "blogpost/couple.jpg",
             "isReady": true
         }
     ]
