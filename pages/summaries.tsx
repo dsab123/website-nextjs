@@ -67,15 +67,17 @@ export default function Summaries() {
                 <br />
                 {summaries.map((summary) => (
                     <div key={summary.summaryId} className={styles.card}>
-                        <div className={isLoading ? styles.loadingBookImage : ''}>     
-                            {summary.isReady && 
+                        {/* <div className={isLoading ? styles.loadingBookImage : ''}>      */}
+                        <div className={styles.loadingBookImage}>     
+
+                            {/* {summary.isReady && 
                             <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                                 <img className={styles.bookImage} src={summary.imageUri} />
                             </Link>}
                             {!summary.isReady &&
                             <div>
                                 <img className={styles.nonAnimatedBookImage} src={summary.imageUri} />
-                            </div>}
+                            </div>} */}
                         </div>
                         <div className={styles.cardText}>
                             <div className={isLoading ? styles.loadingBookText : ''}>
