@@ -28,6 +28,50 @@
     height: 260px;
 }
 
+.hiddenImage {
+    display: none;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+   }
+    100% {
+        background-position: 468px 0;
+   }
+}
+
+.loadingQuotableImage {
+    animation-duration: 3.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 260px;
+    height: 257px;
+}
+
+.loadingQuotableText {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    width: 245px;
+    margin-left: 10px;
+    border-radius: 3px;
+    height: 20px;
+    margin-top: 10px;
+}
+
 .quotableCardTitle {
     font-family: var(--big-font-family);
     font-size: 20px;

@@ -187,7 +187,7 @@ export default function Home() {
 
         <div className={isPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
           <BlogPostCard isLoading={isPostLoading} post={postInfo} setIsLoading={setIsPostLoading}></BlogPostCard>
-          <QuotableCard isLoading={isPostLoading} quotable={quotable} setIsLoading={setIsPostLoading}></QuotableCard>          
+          <QuotableCard isLoading={isQuotableLoading} quotable={quotable} setIsLoading={setIsQuotableLoading}></QuotableCard>          
         </div>
       </div>
 
