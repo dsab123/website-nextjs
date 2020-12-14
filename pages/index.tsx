@@ -108,7 +108,7 @@ export default function Home() {
     {
       quotableId: 1,
       title: '',
-      imageUri: '/quotable/books.jpg',
+      imageUri: '',
       teaser: '',
       slug: '',
       content: ''
@@ -135,7 +135,7 @@ export default function Home() {
         author: '',
         link: '',
         teaser: '',
-        imageUri: '/summary/review.jpg',
+        imageUri: '',
         isReady: true,
         slug: '',
         quality: 1,
@@ -147,7 +147,7 @@ export default function Home() {
         author: '',
         link: '',
         teaser: '',
-        imageUri: '/summary/review.jpg',
+        imageUri: '',
         isReady: true,
         slug: '',
         quality: 1,

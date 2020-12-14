@@ -13,6 +13,7 @@
     font-family: var(--small-font-family);
 	font-size: 26px;
 	font-style: italic;
+	margin-right: 70px;
 }
 
 .rightSideLink {
@@ -28,4 +29,14 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;   
+}
+
+@media screen and (max-width: 768px) {
+	.teaserLink {
+		text-decoration: none;
+		font-family: var(--small-font-family);
+		font-size: 26px;
+		font-style: italic;
+		margin-right: 45px;
+	}
 }
