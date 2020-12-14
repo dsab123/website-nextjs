@@ -9,6 +9,7 @@ type BlogPostLookupItem = {
     slug: string,
     title: string,
     teaser: string,
+    imageUri: string,
     isReady: boolean
 };
 
@@ -64,12 +65,12 @@ export default function Blogs() {
     let dots = ['.', '..', '...', '..'];
 
     const [posts, setPosts] = useState<BlogPostLookupItem[]>([
-        {blogpostId: 1, slug: "slug", title: "", teaser: "", isReady: true},
-        {blogpostId: 2, slug: "slug", title: "", teaser: "", isReady: true},
-        {blogpostId: 3, slug: "slug", title: "", teaser: "", isReady: true},
-        {blogpostId: 4, slug: "slug", title: "", teaser: "", isReady: true},
-        {blogpostId: 5, slug: "slug", title: "", teaser: "", isReady: true},
-        {blogpostId: 6, slug: "slug", title: "", teaser: "", isReady: true},
+        {blogpostId: 1, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
+        {blogpostId: 2, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
+        {blogpostId: 3, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
+        {blogpostId: 4, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
+        {blogpostId: 5, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
+        {blogpostId: 6, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
     ]);
 
     useEffect(() => {
@@ -88,7 +89,6 @@ export default function Blogs() {
     const [quotables, setQuotables] = useState<Quotable[]>([
         {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
         {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
-        {quotableId: 3,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""}
     ]);
     
     useEffect(() => {
@@ -120,9 +120,15 @@ export default function Blogs() {
                     <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpostId}/${post.slug}`}>
                         <a className={styles.postLinks} onClick={() => setIsBlogPostsLoading(true)}>
                             <div className={styles.cardPostContent}>
-                                <img className={styles.cardPostImage} src="/blogpost/silver.jpg" />
-                                <p className={styles.cardPostTitle}>{post.title}</p>
-                                <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser} ...`}</p>
+                                <div className={isBlogPostsLoading ? styles.loadingPostImage : ''}>
+                                    <img className={!isBlogPostsLoading ? styles.cardPostImage : styles.hiddenImage} src={`/${post.imageUri}`}/>
+                                </div>
+                                <div className={isBlogPostsLoading ? styles.loadingPostText : ''}>
+                                    <p className={styles.cardPostTitle}>{post.title}</p>
+                                </div>
+                                <div className={isBlogPostsLoading ? styles.loadingPostText : ''}>
+                                    <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser}`} </p>
+                                </div>
                             </div>
                         </a>
                     </Link>
@@ -133,16 +139,22 @@ export default function Blogs() {
 
         <h1 className={styles.pageTitle}>Recent Quotables</h1>
 
-        <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
+        <div className={isQuotablesLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
             {quotables.map((post) => (
                 <div key={post.quotableId} className={styles.cardPostContainer}>
                     <Link href='/quotable/[id]/[slug]' as={`/quotable/${post.quotableId}/${post.slug}`}>
-                        <a className={styles.postLinks} onClick={() => setIsBlogPostsLoading(true)}>
+                        <a className={styles.postLinks} onClick={() => setIsQuotablesLoading(true)}>
                             <div className={styles.cardPostContent}>
-                                <img className={styles.cardPostImage} src={`/${post.imageUri}`} />
-                                <p className={styles.cardPostTitle}>{post.title}</p>
-                                <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser} ...`}</p>
+                            <div className={isQuotablesLoading ? styles.loadingPostImage : ''}>
+                                    <img className={!isQuotablesLoading ? styles.cardPostImage : styles.hiddenImage} src={`/${post.imageUri}`}/>
+                                </div>
+                                <div className={isQuotablesLoading ? styles.loadingPostText : ''}>
+                                    <p className={styles.cardPostTitle}>{post.title}</p>
+                                </div>
+                                <div className={isQuotablesLoading ? styles.loadingPostText : ''}>
+                                    <p className={styles.cardPostTeaser}>{!isQuotablesLoading && `${post.teaser}`} </p>
+                                </div>
                             </div>
                         </a>
                     </Link>

@@ -6,6 +6,7 @@
             "title": "\"O Consider His Loveliness and Beauty\"",
             "teaser": "This is an excerpt of a letter from Samuel Rutherford, a Scottish ...",
             "tags": ["puritan", "theology"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -14,6 +15,7 @@
             "title": "Calvin on God's Garden",
             "teaser": "Did you know that the Bible speaks at length about gardens? It begins ...",
             "tags": ["biblical theology", "scripture", "theology", "calvin"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -22,6 +24,7 @@
             "title": "My Outline for Bible Study",
             "teaser": "I've read a few books on how to study the Bible ...",
             "tags": ["scripture", "theology", "fun"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -30,6 +33,7 @@
             "title": "Why?",
             "teaser": "My mission is to get you to read to the end of this post.",
             "tags": ["meta", "fun", "marriage"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -38,6 +42,7 @@
             "title": "Augustine, Luther and Calvin on Prayer",
             "teaser": "Prayer by Tim Keller collects the thoughts of three great ...",
             "tags": ["theology", "reading", "calvin", "luther", "augustine"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -46,6 +51,7 @@
             "title": "Excerpts From 'Sapiens'",
             "teaser": "When I read a great book, I like to collect phrases and quotes ...",
             "tags": ["theology", "calvin", "reading"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -54,6 +60,7 @@
             "title": "Psalms 97,98 - Salvation and Holiness",
             "teaser": "I had a really good reading this morning in Psalms By the Day ...",
             "tags": ["theology”, “psalms"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -62,6 +69,7 @@
             "title": "Thoughts on 'Untangling Emotions'",
             "teaser": "I’ve been reading a fascinating book! Untangling Emotions ...",
             "tags": ["puritan", "theology", "biblical theology", "reading"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -70,6 +78,7 @@
             "title": "Thoughts on 'Lit!'",
             "teaser": "\"The motto of the reading christian is a dazzling doxology: ...",
             "tags": ["reading", "theology", "scripture"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
         {
@@ -78,6 +87,7 @@
             "title": "Some Observations on Married Life",
             "teaser": "So a wonderful couple at our church is moving away for a while ...",
             "tags": ["marriage", "reading"],
+            "imageUri": "blogpost/silver.jpg",
             "isReady": true
         }
     ]

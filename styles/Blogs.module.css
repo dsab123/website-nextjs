@@ -38,6 +38,20 @@
     transform: scale(1.1);
 }
 
+.hiddenImage {
+    display: none;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0;
+   }
+    100% {
+        background-position: 468px 0;
+   }
+}
+
+
 
 .cardPostContent {
     display: flex;
@@ -58,6 +72,37 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 0px;
+}
+
+.loadingPostImage {
+    animation-duration: 3.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 260px;
+    height: 257px;
+}
+
+.loadingPostText {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    width: 245px;
+    margin-left: 10px;
+    border-radius: 3px;
+    height: 20px;
+    margin-top: 10px;
 }
 
 .cardPostTeaser {
