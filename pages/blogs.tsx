@@ -59,7 +59,6 @@ async function fetchQuotableLookup(): Promise<Quotable[]> {
   
 export default function Blogs() {
     const [error, setError] = useState('');
-    const [loadingText, setLoadingText] = useState('');
     const [isBlogPostsLoading, setIsBlogPostsLoading] = useState(true);
     const [dotCount, setDotCount] = useState(0);
     let dots = ['.', '..', '...', '..'];
@@ -72,13 +71,6 @@ export default function Blogs() {
         {blogpostId: 5, slug: "slug", title: "", teaser: "", isReady: true},
         {blogpostId: 6, slug: "slug", title: "", teaser: "", isReady: true},
     ]);
-
-    useEffect(() => {        
-        setTimeout(() => {
-            if (isBlogPostsLoading) setDotCount(dotCount + 1);
-            setLoadingText('Loading' + dots[dotCount % dots.length]);        
-        }, 300);
-    }, [dotCount, isBlogPostsLoading]);
 
     useEffect(() => {
         fetchBlogPostLookup()
@@ -122,7 +114,6 @@ export default function Blogs() {
         <h1 className={styles.pageTitle}>Recent Posts</h1>
 
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
-            {isBlogPostsLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
             <div className={styles.cardRecentPostsContainer}>  
             {posts.map((post) => (
                 <div key={post.blogpostId} className={styles.cardPostContainer}>
@@ -143,7 +134,6 @@ export default function Blogs() {
         <h1 className={styles.pageTitle}>Recent Quotables</h1>
 
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
-            {isBlogPostsLoading && <h3 className={styles.loadingText}>{loadingText}</h3>}
             <div className={styles.cardRecentPostsContainer}>  
             {quotables.map((post) => (
                 <div key={post.quotableId} className={styles.cardPostContainer}>
