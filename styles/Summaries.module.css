@@ -6,6 +6,10 @@
 	opacity: 0.3;
 }
 
+.hidden {
+    opacity: 0;
+}
+
 .outer {
     display: flex;
     flex-direction: column;
@@ -105,7 +109,6 @@
     width: 150px;
     border-radius: 5px;
     transition: .5s ease;
-
 }
 
 .nonAnimatedBookImage:hover {

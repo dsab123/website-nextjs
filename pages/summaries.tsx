@@ -70,11 +70,11 @@ export default function Summaries() {
                         <div className={isLoading ? styles.loadingBookImage : ''}>
                             {summary.isReady && 
                             <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
-                                <img className={styles.bookImage} src={summary.imageUri} />
+                                <img className={!isLoading ? styles.bookImage : styles.hidden} src={summary.imageUri} />
                             </Link>}
                             {!summary.isReady &&
                             <div>
-                                <img className={styles.nonAnimatedBookImage} src={summary.imageUri} />
+                                <img className={!isLoading ? styles.nonAnimatedBookImage : styles.hidden} src={summary.imageUri} />
                             </div>}
                         </div>
                         <div className={styles.cardText}>
