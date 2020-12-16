@@ -127,7 +127,7 @@ export default function Blogs() {
                                     <p className={styles.cardPostTitle}>{post.title}</p>
                                 </div>
                                 <div className={isBlogPostsLoading ? styles.loadingPostText : ''}>
-                                    <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser}`} </p>
+                                    <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser}`}</p>
                                 </div>
                             </div>
                         </a>
