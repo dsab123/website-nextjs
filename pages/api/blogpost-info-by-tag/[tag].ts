@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import blogpost from '../../../data/blogpost.json';
 
-
+// need to remove these typedefs
 type BlogPostInfoByTag = {
     blogpostId: number,
     slug: string,

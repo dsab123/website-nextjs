@@ -29,6 +29,7 @@ type BlogPostInfo = {
     slug: string,
     title: string,
     teaser: string,
+    imageUri: string,
     tags: Array<string>
 };
 
@@ -43,7 +44,13 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const postInfo = await fetchServerSideBlogPostInfo(context);
         return {
-            props: { id: context.params.id, slug: context.params.slug, title: postInfo.title, teaser: postInfo.teaser, postInfo: JSON.stringify(postInfo) }
+            props: { 
+                id: context.params.id, 
+                slug: context.params.slug, 
+                title: postInfo.title, 
+                teaser: postInfo.teaser, 
+                imageUri: postInfo.imageUri,
+                postInfo: JSON.stringify(postInfo) }
         }
     } catch (error) {
         return { notFound: true }
@@ -56,7 +63,14 @@ export async function getStaticPaths() {
     return {
         paths: blogPosts.map((blogPostInfo) => {
             return {
-                params: { id: `${blogPostInfo.blogpostId}`, slug: blogPostInfo.slug, title: blogPostInfo.title, teaser: blogPostInfo.teaser, blogPostInfo: JSON.stringify(blogPostInfo) }
+                params: { 
+                    id: `${blogPostInfo.blogpostId}`, 
+                    slug: blogPostInfo.slug, 
+                    title: blogPostInfo.title, 
+                    teaser: blogPostInfo.teaser, 
+                    imageUri: blogPostInfo.imageUri,
+                    blogPostInfo: JSON.stringify(blogPostInfo) 
+                }
             }
         }),
         fallback: true
@@ -121,9 +135,7 @@ export default function Blog(props) {
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
 
-    const [postInfo, setPostInfo] = useState<BlogPostInfo>({
-        blogpostId: 1, slug: null, title: '', teaser: '', tags: []
-    });
+    const [postInfo, setPostInfo] = useState<BlogPostInfo>({ blogpostId: 1, slug: null, title: '', teaser: '', imageUri: '', tags: [] });
 
     useEffect(() => {
         props && setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);
@@ -169,14 +181,14 @@ export default function Blog(props) {
                 <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
                 <meta property="og:description" content={props.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
-                <meta property="og:image" content={`https://danielsabbagh.com/blogpost/silver.jpg`} key="image" />
+                <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
                 
                 <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
                 <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
-                <meta name="twitter:card" content={`https://danielsabbagh.com/blogpost/silver.jpg`} key="twitter-image" />
                 <meta name="twitter:description" content={props.teaser} key="twitter-description" />
-                <meta name="twitter:image" content={`https://danielsabbagh.com/blogpost/silver.jpg`} key="twitter-image" />
-                <meta name="twitter:creator" content="@_danielsabbagh" />
+                <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
+                <meta name="twitter:card" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-card" />
+                <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
 
                 {/* need to add twitter og tags */}
             </Head>
