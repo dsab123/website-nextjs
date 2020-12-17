@@ -23,6 +23,23 @@
 	max-height: 900000px;
 }
 
+.socialPopoverWrapper {
+	background: var(--post-tag-color);
+	border-radius: 3px;
+	padding-top: 3px;
+	padding-bottom: 0px;
+	padding-left: 12px;
+	padding-right: 12px;
+	font-size: 30px;
+}
+
+.socialIcon {
+	width: 25px; 
+	height: 25px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 .preloadRelatedPosts {
 	overflow-y: hidden;
 	max-height: 0px; /* approximate max height */

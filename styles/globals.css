@@ -55,6 +55,10 @@ a {
   height: auto;
 }
 
+::selection { 
+	background-color: #cfd1cf; 
+}
+
 @media screen and (max-width: 768px) {
   .content {
       width: 90vw;

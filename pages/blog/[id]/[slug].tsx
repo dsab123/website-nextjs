@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -6,6 +6,14 @@ import remark from 'remark';
 import html from 'remark-html';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
+import dynamic from 'next/dynamic'
+
+const Popover = dynamic(
+  () => import('react-text-selection-popover'),
+  { ssr: false }
+)
+
+const MyPopover: any = Popover; // to get around selectionRef not being defined
 
 async function markdownToHtml(markdown: string) {
     const result = await remark().use(html).process(markdown)
@@ -77,12 +85,38 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
     return await response.json() as Promise<BlogPostInfoByTag[]>;
 }
 
+function buildShareToSocialLink(socialPlatform: string, setSocialLink: Function): string {
+    if (typeof window === "undefined") {
+        return;
+    }
+
+    let link = "";
+    const url = window.URL;
+    const selection = window.getSelection().toString().slice(0, 140) + '...';
+
+    if (socialPlatform == "twitter") {
+        link += "https://twitter.com/intent/tweet?";
+        link += "url=" + escape(document.URL);
+        link += "&text=" + escape(selection);
+    } else if (socialPlatform == "facebook") {
+        link += "https://www.facebook.com/dialog/share?&display=popup";
+        link += `&href=${document.URL}`;
+        link += "&app_id=2863776890531694";
+        link += `&redirect_uri=${document.URL}`;
+        link += "&quote=" + escape(selection);
+    }
+
+    setSocialLink(link);
+}
+
 export default function Blog(props) {
+    const refContainer = useRef();
+    const [socialLink, setSocialLink] = useState('');
+
     const [postContents, setPostContents] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [showRelatedPosts, setShowRelatedPosts] = useState(false);
-
     const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
@@ -136,6 +170,7 @@ export default function Blog(props) {
                 <meta property="og:description" content={props.teaser} key="description" />
                 <meta property="og:type" content="article" key="type" />
                 <meta property="og:image" content={`https://danielsabbagh.com/blogpost/silver.jpg`} key="image" />
+                {/* need to add twitter og tags */}
             </Head>
             <div className={styles.blogLayout}>
                 <h1 className={styles.pageTitle}>{props.title}</h1>
@@ -147,7 +182,21 @@ export default function Blog(props) {
                     <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
                             <p>Loading ...</p>
                     </div>}
-                    <div className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
+                    <MyPopover selectionRef={refContainer} >
+                        <div className={styles.socialPopoverWrapper}>
+                            <a href={socialLink} onClick={() => buildShareToSocialLink("facebook", setSocialLink)} target="_blank">
+                                <img
+                                className={styles.socialIcon} 
+                                alt="facebook share"
+                                src="/static/facebook-filled.png"></img>
+                            </a>
+                            &nbsp; 
+                            <a href={socialLink} onClick={() => buildShareToSocialLink("twitter", setSocialLink)} target="_blank">
+                                <img className={styles.socialIcon} alt="twitter share" src="/static/twitter-filled.png"></img>
+                            </a>
+                        </div>
+                    </MyPopover>
+                    <div ref={refContainer} contentEditable="false" className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
                     <br />
 
                     <div>
