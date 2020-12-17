@@ -152,10 +152,12 @@ export default function Summary(props) {
                 <br />
 
                 <div className={styles.inner}>
-                    <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.imageUri}`} /> 
+                    <a href={summaryInfo.link} target="_blank">
+                        <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.imageUri}`} /> 
+                    </a>
                     <div className={styles.teaserAndButton}>
                         <p className={styles.teaser}>{summaryInfo && summaryInfo.teaser}</p>
-                        <a href="${link}" target="_blank"><img className={styles.buyButton} src="/static/amazon-button.png" /> </a>
+                        <a href={summaryInfo.link} target="_blank"><img className={styles.buyButton} src="/static/amazon-button.png" /> </a>
                     </div>
                 </div>
 
