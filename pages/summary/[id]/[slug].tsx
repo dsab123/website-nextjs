@@ -39,7 +39,8 @@ export async function getStaticProps(context: GetStaticPropsContext) {
                 title: summaryInfo.title, 
                 teaser: summaryInfo.teaser, 
                 imageUri: summaryInfo.imageUri,
-                summaryInfo: JSON.stringify(summaryInfo) }
+                summaryInfo: JSON.stringify(summaryInfo) 
+            }
         }
     } catch (error) {
         return { notFound: true }
