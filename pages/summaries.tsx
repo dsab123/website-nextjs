@@ -57,6 +57,13 @@ export default function Summaries() {
             <meta property="og:description" content="Book Summaries to help you read more." key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="image" />
+
+            <meta name="twitter:title" content="Book Summaries to Help You Read Better | Daniel Sabbagh" key="twitter-title" />
+            <meta name="twitter:description" content="Book Summaries to help you read more." key="twitter-description" />
+            <meta name="twitter:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+            <meta name="twitter:card" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+            <meta name="twitter:creator" content="@_danielsabbagh" />
+            <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
         </Head>
         
         <div className={styles.outer}>

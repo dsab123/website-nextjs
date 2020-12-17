@@ -106,9 +106,16 @@ export default function Blogs() {
         <Head>
             <title key="original-title">Recent Blog Posts | Daniel Sabbagh</title>
             <meta property="og:title" content="Blog | Daniel Sabbagh" key="title" />
-            <meta property="og:description" content="Resources to help you read more." key="description" />
+            <meta property="og:description" content="Resources to help you read better." key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="image" />
+
+            <meta name="twitter:title" content="Resources to Help You Read Better | Daniel Sabbagh" key="twitter-title" />
+            <meta name="twitter:description" content="Resources to help you read better." key="twitter-description" />
+            <meta name="twitter:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+            <meta name="twitter:card" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+            <meta name="twitter:creator" content="@_danielsabbagh" />
+            <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
         </Head>
 
         <h1 className={styles.pageTitle}>Recent Posts</h1>

@@ -126,6 +126,13 @@ export default function Summary(props) {
             <meta property="og:description" content={props.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
             <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
+
+            <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
+            <meta name="twitter:description" content={props.teaser} key="twitter-description" />
+            <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
+            <meta name="twitter:card" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
+            <meta name="twitter:creator" content="@_danielsabbagh" />
+            <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
         </Head>
             <div className={styles.outer}>
             

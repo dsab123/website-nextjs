@@ -169,6 +169,18 @@ export default function Home() {
   return <>
       <Head>
         <title key="original-title">Daniel Sabbagh | Reading Is Essential</title>
+        <meta property="og:title" content="Daniel Sabbagh | Reading Is Essential" key="title" />
+          <meta property="og:description" content="Reading Is Essential." key="description" />
+          <meta property="og:type" content="article" key="type" />
+          <meta property="og:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="image" />
+
+          <meta name="twitter:title" content="Daniel Sabbagh | Reading Is Essential" key="twitter-title" />
+          <meta name="twitter:description" content="Reading Is Essential." key="twitter-description" />
+          <meta name="twitter:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+          <meta name="twitter:card" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+          <meta name="twitter:creator" content="@_danielsabbagh" />
+          <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
