@@ -59,25 +59,7 @@
             "slug": "psalms-97-98-salvation-and-holiness",
             "title": "Psalms 97,98 - Salvation and Holiness",
             "teaser": "I had a really good reading this morning in Psalms By the Day ...",
-            "tags": ["theology”, “psalms"],
-            "imageUri": "blogpost/silver.jpg",
-            "isReady": true
-        },
-        {
-            "blogpostId": 10,
-            "slug": "thoughts-on-untangling-emotions",
-            "title": "Thoughts on 'Untangling Emotions'",
-            "teaser": "I’ve been reading a fascinating book! Untangling Emotions ...",
-            "tags": ["puritan", "theology", "biblical theology", "reading"],
-            "imageUri": "blogpost/silver.jpg",
-            "isReady": true
-        },
-        {
-            "blogpostId": 11,
-            "slug": "thoughts-on-lit",
-            "title": "Thoughts on 'Lit!'",
-            "teaser": "\"The motto of the reading christian is a dazzling doxology: ...",
-            "tags": ["reading", "theology", "scripture"],
+            "tags": ["theology", "psalms"],
             "imageUri": "blogpost/silver.jpg",
             "isReady": true
         },
