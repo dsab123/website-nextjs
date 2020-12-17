@@ -152,7 +152,7 @@ export default function Summary(props) {
                 <br />
 
                 <div className={styles.inner}>
-                    <a href={summaryInfo.link} target="_blank">
+                    <a className={styles.bookLink} href={summaryInfo.link} target="_blank">
                         <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.imageUri}`} /> 
                     </a>
                     <div className={styles.teaserAndButton}>
@@ -163,7 +163,6 @@ export default function Summary(props) {
 
                 <br />
                 <p className={styles.review}>Review</p>
-                <br />
 
                 <div className={!error && !summaryContents ? styles.dimOverlay : ''}>
 
