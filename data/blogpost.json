@@ -43,7 +43,7 @@
             "teaser": "Prayer by Tim Keller collects the thoughts of three great ...",
             "tags": ["theology", "reading", "calvin", "luther", "augustine"],
             "imageUri": "blogpost/prayer.jpg",
-            "isReady": true
+            "isReady": false
         },
         {
             "blogpostId": 6,

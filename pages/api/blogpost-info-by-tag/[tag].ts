@@ -12,7 +12,7 @@ type BlogPostInfoByTag = {
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { tag } } = req;
-    const posts = blogpost.blogposts.filter(x => x.tags.includes(String(tag).toLowerCase()));
+    const posts = blogpost.blogposts.filter(x => x.isReady && x.tags.includes(String(tag).toLowerCase()));
     
      if (posts) {
         return res.status(200).json(posts);

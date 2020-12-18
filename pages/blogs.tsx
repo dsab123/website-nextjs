@@ -32,7 +32,9 @@ async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
         throw new Error("Bad response from server")
     }
 
-    return await response.json() as BlogPostLookupItem[];
+    const blogpostLookup =  await response.json() as BlogPostLookupItem[];
+
+    return blogpostLookup.filter(x => x.isReady);
 }
 
 async function fetchQuotableLookup(): Promise<Quotable[]> {
