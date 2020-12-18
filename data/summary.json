@@ -59,7 +59,7 @@
             "link": "https://amzn.to/2IwMi8g",
             "teaser": "You're not a rocket scientist, but sometimes life is that hard. Learn how to think like one.",
             "imageUri": "summary/rocket-scientist.jpg",
-            "isReady": true,
+            "isReady": false,
             "slug": "how-to-think-like-a-rocket-scientist",
             "quality": 5,
             "payoff": 10,
