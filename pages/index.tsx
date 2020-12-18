@@ -93,7 +93,7 @@ export default function Home() {
   );
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(2) // hardcoded for now
+    fetchLatestBlogPostInfo(14) // hardcoded for now
       .then(info => {
         if (isPostLoading) {
           setPostInfo(info);
