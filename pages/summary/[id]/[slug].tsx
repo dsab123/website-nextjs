@@ -22,6 +22,7 @@ type BookSummaryInfo = {
     link: string,
     teaser: string,
     imageUri: string,
+    ogImageUri: string,
     isReady: boolean,
     slug: string,
     quality: number,
@@ -39,6 +40,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
                 title: summaryInfo.title, 
                 teaser: summaryInfo.teaser, 
                 imageUri: summaryInfo.imageUri,
+                ogImageUri: summaryInfo.ogImageUri,
                 summaryInfo: JSON.stringify(summaryInfo) 
             }
         }
@@ -59,6 +61,7 @@ export async function getStaticPaths() {
                     title: summaryInfo.title, 
                     teaser: summaryInfo.teaser, 
                     imageUri: summaryInfo.imageUri,
+                    ogImageUri: summaryInfo.ogImageUri,
                     summaryInfo: JSON.stringify(summaryInfo) 
                 }
             }
@@ -99,6 +102,7 @@ export default function Summary(props) {
         link: ',',
         teaser: '',
         imageUri: '',
+        ogImageUri: '',
         isReady: false,
         slug: '',
         quality: 0,
@@ -126,12 +130,12 @@ export default function Summary(props) {
             <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
             <meta property="og:description" content={props.teaser} key="description" />
             <meta property="og:type" content="article" key="type" />
-            <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
+            <meta property="og:image" content={`https://danielsabbagh.com/${props.ogImageUri}`} key="image" />
 
             <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
             <meta name="twitter:description" content={props.teaser} key="twitter-description" />
-            <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
-            <meta name="twitter:card" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-card" />
+            <meta name="twitter:image" content={`https://danielsabbagh.com/${props.ogImageUri}`} key="twitter-image" />
+            <meta name="twitter:card" content={`https://danielsabbagh.com/${props.ogImageUri}`} key="twitter-card" />
             <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
             <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
         </Head>
