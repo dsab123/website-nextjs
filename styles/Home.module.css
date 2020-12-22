@@ -10,10 +10,22 @@
 
 .teaserLink {
 	text-decoration: none;
+	cursor: pointer;
     font-family: var(--small-font-family);
 	font-size: 26px;
 	font-style: italic;
 	margin-right: 70px;
+	background-color: var(--post-tag-color);
+	padding: 4px;
+	padding-right: 8px;
+}
+
+.teaserLinkContainer {
+	transition: transform .2s;
+}
+
+.teaserLinkContainer:hover {
+	transform: scale(1.1);
 }
 
 .rightSideLink {

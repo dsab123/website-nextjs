@@ -190,7 +190,11 @@ export default function Home() {
         <h2 className={styles.headerTeaser}>My mission is to help you read more this year.</h2>
         
         <div className={styles.rightSideLink}>
-          <Link href="/blog/4/about"><a className={styles.teaserLink}>Why?</a></Link>
+          <Link href="/blog/4/about">
+              <div className={styles.teaserLinkContainer}>
+                <a className={styles.teaserLink}>Why?</a>
+              </div>
+            </Link>
         </div>
       </div>
 
