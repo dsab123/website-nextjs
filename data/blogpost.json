@@ -1,6 +1,15 @@
 {
     "blogposts": [
         {
+            "blogpostId": 16,
+            "slug": "top-5-books-of-2020",
+            "title": "My Top 5 Books of 2020",
+            "teaser": "Here are the top five books I read this year.",
+            "tags": ["reading", "yearly"],
+            "imageUri": "blogpost/bookstack.jpg",
+            "isReady": true
+        },
+        {
             "blogpostId": 15,
             "slug": "o-consider-his-loveliness-and-beauty",
             "title": "\"O Consider His Loveliness and Beauty\"",

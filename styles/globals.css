@@ -50,6 +50,16 @@ a {
   transform: scale(1.03) rotate(2deg);
 }
 
+.smallPostImage {
+  width: 12em;
+  height: auto;
+  transition: transform .2s; 
+}
+
+.smallPostImage:hover {
+  transform: scale(1.03) rotate(2deg);
+}
+
 .nonMovingPostimage {
   width: 28em;
   height: auto;
