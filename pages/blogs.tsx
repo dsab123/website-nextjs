@@ -115,7 +115,7 @@ export default function Blogs() {
             <meta name="twitter:title" content="Resources to Help You Read Better | Daniel Sabbagh" key="twitter-title" />
             <meta name="twitter:description" content="Resources to help you read better." key="twitter-description" />
             <meta name="twitter:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
-            <meta name="twitter:card" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-card" />
+            <meta name="twitter:card" content="summary_large_image" key="twitter-card" />
             <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
             <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
         </Head>

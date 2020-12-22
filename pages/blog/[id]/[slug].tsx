@@ -194,7 +194,7 @@ export default function Blog(props) {
                 <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
                 <meta name="twitter:description" content={props.teaser} key="twitter-description" />
                 <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
-                <meta name="twitter:card" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-card" />
+                <meta name="twitter:card"  content="summary_large_image" key="twitter-card" />
                 <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
 
                 {/* need to add twitter og tags */}
