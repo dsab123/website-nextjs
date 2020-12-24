@@ -44,11 +44,50 @@
 }
 
 @media screen and (max-width: 768px) {
+	.title {
+		font-family: var(--big-font-family);
+		font-size: 30px;
+		text-align: center;
+	}	
+
 	.teaserLink {
 		text-decoration: none;
 		font-family: var(--small-font-family);
 		font-size: 26px;
 		font-style: italic;
 		margin-right: 45px;
+	}
+
+	.rightSideLink {
+		text-align: center;
+		display: block;
+	}
+
+	.headerTeaser {
+		font-family: var(--small-font-family);
+		font-size: 26px;
+		text-align: center;
+	}
+
+	.teaserLink {
+		text-decoration: none;
+		cursor: pointer;
+		font-family: var(--small-font-family);
+		font-size: 26px;
+		font-style: italic;
+		margin-right: 0px;
+		background-color: var(--post-tag-color);
+		padding: 4px;
+		padding-right: 8px;
+		transition: transform .2s;
+		text-align: center;
+	}
+
+	.blogsPageTeaserContainer {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: -35px;
 	}
 }

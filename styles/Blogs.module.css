@@ -120,3 +120,19 @@
     margin-right: 10px;
     flex-grow: 2;
 }
+
+@media screen and (max-width: 768px) {
+    .pageTitle {
+        font-family: var(--big-font-family);
+        font-size: 31px;
+        text-align: center;
+    }
+
+    .cardRecentPostsContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: -30px;
+    }
+}
