@@ -191,10 +191,8 @@ export default function Home() {
         
         <div className={styles.rightSideLink}>
           <Link href="/blog/4/about">
-              <div className={styles.teaserLinkContainer}>
-                <a className={styles.teaserLink}>Why?</a>
-              </div>
-            </Link>
+            <a className={styles.teaserLink}>Why?</a>
+          </Link>
         </div>
       </div>
 

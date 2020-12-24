@@ -18,17 +18,16 @@
 	background-color: var(--post-tag-color);
 	padding: 4px;
 	padding-right: 8px;
-}
-
-.teaserLinkContainer {
 	transition: transform .2s;
 }
 
-.teaserLinkContainer:hover {
+.teaserLink:hover {
 	transform: scale(1.1);
 }
 
 .rightSideLink {
+	display: flex;
+	flex-direction: row-reverse;
 	text-align: end;
 }
 
