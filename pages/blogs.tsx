@@ -130,6 +130,7 @@ export default function Blogs() {
             ))}
             </div>
         </div>
+        <br />
 
         <h1 className={styles.pageTitle}>Recent Quotables</h1>
 

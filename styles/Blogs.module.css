@@ -7,7 +7,11 @@
     cursor: pointer;
 }
 
-.pageTitle, 
+.pageTitle {
+    font-family: var(--big-font-family);
+    font-size: 31px;
+}
+
 .loadingText {
     font-family: var(--big-font-family);
     font-size: 24px;
@@ -22,7 +26,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;   
+    justify-content: space-between;
+    margin-top: -30px;
 }
 
 .cardPostContainer {
