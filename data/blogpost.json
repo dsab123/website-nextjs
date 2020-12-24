@@ -12,8 +12,8 @@
         {
             "blogpostId": 15,
             "slug": "o-consider-his-loveliness-and-beauty",
-            "title": "\"O Consider His Loveliness and Beauty\"",
-            "teaser": "This is an excerpt of a letter from Samuel Rutherford, a Scottish ...",
+            "title": "\"O Consider His Loveliness\"",
+            "teaser": "This is an excerpt of a letter from Samuel Rutherford...",
             "tags": ["puritan", "theology"],
             "imageUri": "blogpost/silver.jpg",
             "isReady": true
@@ -22,7 +22,7 @@
             "blogpostId": 14,
             "slug": "calvin-on-gods-garden",
             "title": "Calvin on God's Garden",
-            "teaser": "Did you know that the Bible speaks at length about gardens? It begins ...",
+            "teaser": "Did you know that the Bible speaks at length about gardens?",
             "tags": ["biblical theology", "scripture", "theology", "calvin"],
             "imageUri": "blogpost/garden.jpg",
             "isReady": true
@@ -31,7 +31,7 @@
             "blogpostId": 1,
             "slug": "outline-for-bible-study",
             "title": "My Outline for Bible Study",
-            "teaser": "I've read a few books on how to study the Bible ...",
+            "teaser": "How do you study the Bible? ",
             "tags": ["scripture", "theology", "fun"],
             "imageUri": "blogpost/silver.jpg",
             "isReady": true
@@ -40,7 +40,7 @@
             "blogpostId": 4,
             "slug": "about",
             "title": "Why?",
-            "teaser": "My mission is to get you to read to the end of this post.",
+            "teaser": "My mission is to get you to read to the end of this...",
             "tags": ["meta", "fun", "marriage"],
             "imageUri": "blogpost/silver.jpg",
             "isReady": true
@@ -67,7 +67,7 @@
             "blogpostId": 9,
             "slug": "psalms-97-98-salvation-and-holiness",
             "title": "Psalms 97,98 - Salvation and Holiness",
-            "teaser": "I had a really good reading this morning in Psalms By the Day ...",
+            "teaser": "I had a really good reading this morning...",
             "tags": ["theology", "psalms"],
             "imageUri": "blogpost/silver.jpg",
             "isReady": true
@@ -76,7 +76,7 @@
             "blogpostId": 12,
             "slug": "some-observations-on-married-life",
             "title": "Some Observations on Married Life",
-            "teaser": "So a wonderful couple at our church is moving away for a while ...",
+            "teaser": "So a dear couple at our church is moving away...",
             "tags": ["marriage", "reading"],
             "imageUri": "blogpost/couple.jpg",
             "isReady": true
