@@ -11,24 +11,6 @@ async function markdownToHtml(markdown: string) {
     return result.toString()
 }
 
-type BookSummaryContents = {
-    data: string;
-};
-
-type BookSummaryInfo = {
-    summaryId: number,
-    title: string,
-    author: string,
-    link: string,
-    teaser: string,
-    imageUri: string,
-    ogImageUri: string,
-    isReady: boolean,
-    slug: string,
-    quality: number,
-    payoff: number
-};
-
 export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const summaryInfo = await fetchServerSideBookSummaryInfo(context);
@@ -90,7 +72,6 @@ function getPayoffRanking(payoff: number) {
 function getQualityRanking(payoff: number) {
     return Array(payoff).fill('⭐');
 }
-
 
 export default function Summary(props) {
     const [summaryContents, setSummaryContents] = useState('');
