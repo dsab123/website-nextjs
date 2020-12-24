@@ -198,16 +198,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.blogsPageTeaser}>
-      <h2 className={styles.title}>From the Blog</h2>
-
-        <div className={isPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
-          <BlogPostCard isLoading={isPostLoading} post={postInfo} setIsLoading={setIsPostLoading}></BlogPostCard>
-          <QuotableCard isLoading={isQuotableLoading} quotable={quotable} setIsLoading={setIsQuotableLoading}></QuotableCard>          
-        </div>
-      </div>
-
-      <br />
       <div className={styles.summariesPageTeaser}>
         <h2 className={styles.title}>Featured Book Summaries</h2>
         <br />
@@ -245,6 +235,16 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+      <br />
+
+      <div className={styles.blogsPageTeaser}>
+        <h2 className={styles.title}>From the Blog</h2>
+
+        <div className={isPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
+          <BlogPostCard isLoading={isPostLoading} post={postInfo} setIsLoading={setIsPostLoading}></BlogPostCard>
+          <QuotableCard isLoading={isQuotableLoading} quotable={quotable} setIsLoading={setIsQuotableLoading}></QuotableCard>          
         </div>
       </div>
   </>;
