@@ -200,8 +200,6 @@ export default function Home() {
 
       <div className={styles.summariesPageTeaser}>
         <h2 className={styles.title}>Featured Book Summaries</h2>
-        <br />
-
         <div className={isSummariesLoading ? styles.dimOverlay: ''}>
           {summaries.map((summary) => (
               <div key={summary.summaryId} className={SummaryStyles.card}>
