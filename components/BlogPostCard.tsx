@@ -10,7 +10,7 @@ export default function BlogPostCard(props: { post: BlogPostInfo; isLoading: boo
                 <a className={styles.postLinks} onClick={() => setIsLoading(true)}>
                     <div className={styles.postCardContent}>
                         <div className={isLoading ? styles.loadingPostImage : ''}>
-                                <img className={!isLoading ? styles.postCardImage : styles.hiddenImage} src={`/${post.imageUri}`}/>
+                            <img className={!isLoading ? styles.postCardImage : styles.hiddenImage} src={`/${post.imageUri}`}/>
                         </div>
                         <div className={isLoading ? styles.loadingPostText : ''}>
                             <p className={styles.postCardTitle}>{post.title}</p>
