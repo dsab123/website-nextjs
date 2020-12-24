@@ -40,9 +40,9 @@
             "blogpostId": 4,
             "slug": "about",
             "title": "Why?",
-            "teaser": "My mission is to get you to read to the end of this...",
+            "teaser": "My mission is to get you to read to the end of this post.",
             "tags": ["meta", "fun", "marriage"],
-            "imageUri": "blogpost/silver.jpg",
+            "imageUri": "blogpost/book-sign.jpg",
             "isReady": true
         },
         {

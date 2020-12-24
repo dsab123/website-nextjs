@@ -137,7 +137,7 @@ export default function Footer() {
         <ul className={styles.contactList}>
             <li className={styles.contactListItem}><a href="https://twitter.com/_danielsabbagh" target="_blank"><img className={styles.socialIcon} src="/static/twitter-circled.png"></img></a></li>
             <li className={styles.contactListItem}><a href="mailto:dsabbaghumd@gmail.com" target="_blank"><img className={styles.socialIcon} src="/static/email.png"></img></a></li>
-            <li className={styles.contactListItem}><a href="https://facebook.com/dsab123" target="_blank"><img className={styles.socialIcon} src="/static/facebook-circled.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="https://www.facebook.com/isReadingEssential" target="_blank"><img className={styles.socialIcon} src="/static/facebook-circled.png"></img></a></li>
         </ul>
     </div>
 
