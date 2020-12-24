@@ -1,6 +1,6 @@
 .postCardContainer {
-    width: 260px;
-    height: 400px;
+    width: 317px;
+    height: 425px;
     border: 1px solid gray;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -23,8 +23,8 @@
 }
 
 .postCardImage {
-    width: 260px;
-    height: 260px;
+    width: 317px;
+    height: 317px;
     object-fit: cover;
 }
 
@@ -52,8 +52,8 @@
     position: relative;
     border-radius: 5px;
     margin-bottom: 20px;
-    width: 260px;
-    height: 257px;
+    width: 317px;
+    height: 317px;
 }
 
 .loadingPostText {
@@ -65,7 +65,7 @@
     background: #ebe8e8;
     background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
     position: relative;
-    width: 245px;
+    width: 300px;
     margin-left: 10px;
     border-radius: 3px;
     height: 20px;
@@ -76,7 +76,7 @@
     font-family: var(--big-font-family);
     font-size: 20px;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 5px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 0px;
@@ -87,7 +87,7 @@
     font-size: 15px;
     text-align: center;
     font-style: italic;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     flex-grow: 2;
 }

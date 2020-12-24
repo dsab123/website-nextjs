@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
-import blogpostLookup from './api/blogpost-lookup';
+import BlogPostCard from '../components/BlogPostCard';
+import QuotableCard from '../components/QuotableCard';
 
 type BlogPostLookupItem = {
     blogpostId: number,
@@ -125,24 +126,8 @@ export default function Blogs() {
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
             {posts.map((post) => (
-                <div key={post.blogpostId} className={styles.cardPostContainer}>
-                    <Link href='/blog/[id]/[slug]' as={`/blog/${post.blogpostId}/${post.slug}`}>
-                        <a className={styles.postLinks} onClick={() => setIsBlogPostsLoading(true)}>
-                            <div className={styles.cardPostContent}>
-                                <div className={isBlogPostsLoading ? styles.loadingPostImage : ''}>
-                                    <img className={!isBlogPostsLoading ? styles.cardPostImage : styles.hiddenImage} src={`/${post.imageUri}`}/>
-                                </div>
-                                <div className={isBlogPostsLoading ? styles.loadingPostText : ''}>
-                                    <p className={styles.cardPostTitle}>{post.title}</p>
-                                </div>
-                                <div className={isBlogPostsLoading ? styles.loadingPostText : ''}>
-                                    <p className={styles.cardPostTeaser}>{!isBlogPostsLoading && `${post.teaser}`}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-                </div>
-            ))}    
+                <BlogPostCard isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading}></BlogPostCard>
+            ))}
             </div>
         </div>
 
@@ -150,25 +135,9 @@ export default function Blogs() {
 
         <div className={isQuotablesLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
-            {quotables.map((post) => (
-                <div key={post.quotableId} className={styles.cardPostContainer}>
-                    <Link href='/quotable/[id]/[slug]' as={`/quotable/${post.quotableId}/${post.slug}`}>
-                        <a className={styles.postLinks} onClick={() => setIsQuotablesLoading(true)}>
-                            <div className={styles.cardPostContent}>
-                            <div className={isQuotablesLoading ? styles.loadingPostImage : ''}>
-                                    <img className={!isQuotablesLoading ? styles.cardPostImage : styles.hiddenImage} src={`/${post.imageUri}`}/>
-                                </div>
-                                <div className={isQuotablesLoading ? styles.loadingPostText : ''}>
-                                    <p className={styles.cardPostTitle}>{post.title}</p>
-                                </div>
-                                <div className={isQuotablesLoading ? styles.loadingPostText : ''}>
-                                    <p className={styles.cardPostTeaser}>{!isQuotablesLoading && `${post.teaser}`} </p>
-                                </div>
-                            </div>
-                        </a>
-                    </Link>
-                </div>
-            ))}    
+            {quotables.map((quotable) => (
+              <QuotableCard isLoading={isQuotablesLoading} quotable={quotable} setIsLoading={setIsQuotablesLoading}></QuotableCard>          
+            ))}
             </div>
         </div>
     </>
