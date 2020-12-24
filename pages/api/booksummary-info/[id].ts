@@ -1,20 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import summary from '../../../data/summary.json';
 
-type BookSummaryInfo = {
-    summaryId: number,
-    title: string,
-    author: string,
-    link: string,
-    teaser: string,
-    imageUri: string,
-    isReady: boolean,
-    slug: string,
-    quality: number,
-    payoff: number,
-    category: string
-};
-
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { id } } = req;
 

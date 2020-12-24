@@ -1,9 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-type BookSummaryContents = {
-    data: string;
-};
-
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { slug } } = req;
 

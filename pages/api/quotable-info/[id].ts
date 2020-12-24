@@ -1,16 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import quotable from '../../../data/quotable.json';
 
-type Quotable = {
-    quotableId: number,
-    title: string,
-    imageUri: string,
-    teaser: string,
-    slug: string,
-    tags: string[],
-    content: string
-}
-
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { id } } = req;
 

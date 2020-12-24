@@ -1,15 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import summary from '../../../data/summary.json';
 
-
-type BlogPostInfoByTag = {
-    blogpostId: number,
-    slug: string,
-    title: string,
-    tags: string[],
-    teaser: string
-};
-
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { category } } = req;
 

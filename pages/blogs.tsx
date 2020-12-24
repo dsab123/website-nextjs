@@ -1,39 +1,17 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { useState, useEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
 import BlogPostCard from '../components/BlogPostCard';
 import QuotableCard from '../components/QuotableCard';
 
-type BlogPostLookupItem = {
-    blogpostId: number,
-    slug: string,
-    title: string,
-    teaser: string,
-    imageUri: string,
-    isReady: boolean
-};
-
-type Quotable = {
-    quotableId: number,
-    title: string,
-    author: string,
-    imageUri: string,
-    teaser: string,
-    slug: string,
-    tags: Array<string>,
-    quote: string,
-    content: string
-};
-
-async function fetchBlogPostLookup(): Promise<BlogPostLookupItem[]> {
+async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
     let response = await fetch('/api/blogpost-lookup');
 
     if (response.status >= 400) {
         throw new Error("Bad response from server")
     }
 
-    const blogpostLookup =  await response.json() as BlogPostLookupItem[];
+    const blogpostLookup =  await response.json() as BlogPostInfo[];
 
     return blogpostLookup.filter(x => x.isReady);
 }
@@ -48,32 +26,16 @@ async function fetchQuotableLookup(): Promise<Quotable[]> {
     return await response.json() as Quotable[];
 }
 
-// for testing
-// async function fetchFakeBlogPostLookup(): Promise<BlogPostLookupItem[]> {
-//     await sleep(15000);
-//     return [
-//         {blogpostId: 1, slug: "slug", title: "string", teaser: "string", isReady: true},
-//         {blogpostId: 2, slug: "slug", title: "string", teaser: "string", isReady: true},
-//         {blogpostId: 3, slug: "slug", title: "string", teaser: "string", isReady: true},
-//         {blogpostId: 4, slug: "slug", title: "string", teaser: "string", isReady: true},
-//         {blogpostId: 5, slug: "slug", title: "string", teaser: "string", isReady: true},
-//         {blogpostId: 6, slug: "slug", title: "string", teaser: "string", isReady: true},
-//     ] as BlogPostLookupItem[];
-// }
-  
 export default function Blogs() {
-    const [error, setError] = useState('');
     const [isBlogPostsLoading, setIsBlogPostsLoading] = useState(true);
-    const [dotCount, setDotCount] = useState(0);
-    let dots = ['.', '..', '...', '..'];
 
-    const [posts, setPosts] = useState<BlogPostLookupItem[]>([
-        {blogpostId: 1, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
-        {blogpostId: 2, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
-        {blogpostId: 3, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
-        {blogpostId: 4, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
-        {blogpostId: 5, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
-        {blogpostId: 6, slug: "slug", title: "", teaser: "", imageUri: "", isReady: true},
+    const [posts, setPosts] = useState<BlogPostInfo[]>([
+        {blogpostId: 1, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
+        {blogpostId: 2, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
+        {blogpostId: 3, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
+        {blogpostId: 4, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
+        {blogpostId: 5, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
+        {blogpostId: 6, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
     ]);
 
     useEffect(() => {
@@ -84,7 +46,7 @@ export default function Blogs() {
                     setIsBlogPostsLoading(false);
                 }
             })
-            .catch(error => isBlogPostsLoading ? setError(error.toString()) : null);
+            .catch(error => isBlogPostsLoading ? console.log(error.toString()) : null);
     }, []);
 
 
@@ -102,7 +64,7 @@ export default function Blogs() {
                     setIsQuotablesLoading(false);
                 }
             })
-            .catch(error => isQuotablesLoading ? setError(error.toString()) : null);
+            .catch(error => isQuotablesLoading ? console.log(error.toString()) : null);
     }, []);
     
     return <>
@@ -126,7 +88,7 @@ export default function Blogs() {
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
             {posts.map((post) => (
-                <BlogPostCard isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading}></BlogPostCard>
+                <BlogPostCard key={post.blogpostId} isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading}></BlogPostCard>
             ))}
             </div>
         </div>
@@ -137,7 +99,7 @@ export default function Blogs() {
         <div className={isQuotablesLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
             {quotables.map((quotable) => (
-              <QuotableCard isLoading={isQuotablesLoading} quotable={quotable} setIsLoading={setIsQuotablesLoading}></QuotableCard>          
+              <QuotableCard key={quotable.quotableId} isLoading={isQuotablesLoading} quotable={quotable} setIsLoading={setIsQuotablesLoading}></QuotableCard>          
             ))}
             </div>
         </div>

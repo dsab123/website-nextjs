@@ -7,6 +7,7 @@
             "teaser": "Here are the top five books I read this year.",
             "tags": ["reading", "yearly"],
             "imageUri": "blogpost/bookstack.jpg",
+            "date": "12-23-2020",
             "isReady": true
         },
         {
@@ -16,6 +17,7 @@
             "teaser": "This is an excerpt of a letter from Samuel Rutherford...",
             "tags": ["puritan", "theology"],
             "imageUri": "blogpost/silver.jpg",
+            "date": "11-12-2020",
             "isReady": true
         },
         {
@@ -25,6 +27,7 @@
             "teaser": "Did you know that the Bible speaks at length about gardens?",
             "tags": ["biblical theology", "scripture", "theology", "calvin"],
             "imageUri": "blogpost/garden.jpg",
+            "date": "11-20-2020",
             "isReady": true
         },
         {
@@ -34,6 +37,7 @@
             "teaser": "How do you study the Bible? ",
             "tags": ["scripture", "theology", "fun"],
             "imageUri": "blogpost/silver.jpg",
+            "date": "11-06-2020",
             "isReady": true
         },
         {
@@ -43,6 +47,7 @@
             "teaser": "My mission is to get you to read to the end of this post.",
             "tags": ["meta", "fun", "marriage"],
             "imageUri": "blogpost/book-sign.jpg",
+            "date": "11-01-2020",
             "isReady": true
         },
         {
@@ -52,6 +57,7 @@
             "teaser": "Prayer by Tim Keller collects the thoughts of three great ...",
             "tags": ["theology", "reading", "calvin", "luther", "augustine"],
             "imageUri": "blogpost/prayer.jpg",
+            "date": "12-03-2020",
             "isReady": false
         },
         {
@@ -61,6 +67,7 @@
             "teaser": "When I read a great book, I like to collect phrases and quotes ...",
             "tags": ["theology", "calvin", "reading"],
             "imageUri": "blogpost/sapiens.jpg",
+            "date": "10-10-2020",
             "isReady": true
         },
         {
@@ -70,15 +77,17 @@
             "teaser": "I had a really good reading this morning...",
             "tags": ["theology", "psalms"],
             "imageUri": "blogpost/silver.jpg",
+            "date": "10-02-2020",
             "isReady": true
         },
         {
             "blogpostId": 12,
             "slug": "some-observations-on-married-life",
-            "title": "Some Observations on Married Life",
+            "title": "Wise Words on Marriage",
             "teaser": "So a dear couple at our church is moving away...",
             "tags": ["marriage", "reading"],
             "imageUri": "blogpost/couple.jpg",
+            "date": "10-19-2020",
             "isReady": true
         }
     ]

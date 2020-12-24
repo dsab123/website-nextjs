@@ -1,10 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-type EmailItem = {
-    email: string,
-    pageUri: string
-};
-
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     switch(req.method) {
         case 'POST':

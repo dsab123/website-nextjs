@@ -20,26 +20,6 @@ async function markdownToHtml(markdown: string) {
     return result.toString();
 }
 
-type BlogPostContents = {
-    data: string;
-};
-
-type BlogPostInfo = {
-    blogpostId: number,
-    slug: string,
-    title: string,
-    teaser: string,
-    imageUri: string,
-    tags: Array<string>
-};
-
-type BlogPostInfoByTag = {
-    blogpostId: number,
-    slug: string,
-    title: string,
-    teaser: string
-};
-
 export async function getStaticProps(context: GetStaticPropsContext) {
     try {
         const postInfo = await fetchServerSideBlogPostInfo(context);
@@ -142,7 +122,9 @@ export default function Blog(props) {
     const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
     const [tag, setTag] = useState('');
 
-    const [postInfo, setPostInfo] = useState<BlogPostInfo>({ blogpostId: 1, slug: null, title: '', teaser: '', imageUri: '', tags: [] });
+    const [postInfo, setPostInfo] = useState<BlogPostInfo>(
+        { blogpostId: 1, slug: null, title: '', teaser: '', isReady: true, date: '', imageUri: '', tags: [] }
+    );
 
     useEffect(() => {
         props && setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);

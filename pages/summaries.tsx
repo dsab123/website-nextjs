@@ -3,19 +3,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '../styles/Summaries.module.css';
 
-type BookSummaryInfo = {
-    summaryId: number,
-    title: string,
-    author: string,
-    link: string,
-    teaser: string,
-    imageUri: string,
-    isReady: boolean,
-    slug: string,
-    quality: number,
-    payoff: number
-};
-
 async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
     let response = await fetch('/api/booksummary-lookup');
 
@@ -28,11 +15,11 @@ async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
 
 export default function Summaries() {
     const [summaries, setSummaries] = useState<BookSummaryInfo[]>([
-        {summaryId: 1, title: '', author: '', link: '', teaser: '', imageUri: '',
+        {summaryId: 1, title: '', author: '', link: '', teaser: '', imageUri: '', ogImageUri: '',
             isReady: true, slug: '', quality: 4, payoff: 4},
-        {summaryId: 2, title: '', author: '', link: '', teaser: '', imageUri: '',
+        {summaryId: 2, title: '', author: '', link: '', teaser: '', imageUri: '', ogImageUri: '',
             isReady: true, slug: '', quality: 4, payoff: 4},
-        {summaryId: 3, title: '', author: '', link: '', teaser: '', imageUri: '',
+        {summaryId: 3, title: '', author: '', link: '', teaser: '', imageUri: '', ogImageUri: '',
             isReady: true, slug: '', quality: 4, payoff: 4},
     ]);
     const [isLoading, setIsLoading] = useState(true);

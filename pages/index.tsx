@@ -7,49 +7,11 @@ import SummaryStyles from '../styles/Summaries.module.css';
 import BlogPostCard from '../components/BlogPostCard';
 import QuotableCard from '../components/QuotableCard';
 
-type BlogPostInfo = {
-  blogpostId: number,
-  slug: string,
-  title: string,
-  teaser: string,
-  isReady: boolean
-};
-
-type BookSummaryInfo = {
-  summaryId: number,
-  title: string,
-  author: string,
-  link: string,
-  teaser: string,
-  imageUri: string,
-  isReady: boolean,
-  slug: string,
-  quality: number,
-  payoff: number
-};
-
-type Quotable = {
-  quotableId: number,
-  title: string,
-  imageUri: string,
-  teaser: string,
-  slug: string,
-  content: string
-};
-
-type FrontPageInfo = {
-  postInfo: BlogPostInfo[],
-  quotable: Quotable[],
-  summaries: BookSummaryInfo[]
-};
-
 // TODO make api route to grab front page info - one blog post, one quotable, two
 // summaries, where one is christian and the other is bestseller or something
-async function fetchFrontPageInfo(): Promise<FrontPageInfo> {
-  return null;
-
-  
-};
+// async function fetchFrontPageInfo(): Promise<FrontPageInfo> {
+//   return null;  
+// };
 
 
 async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
@@ -89,7 +51,7 @@ export default function Home() {
   // Blog post state
   const [isPostLoading, setIsPostLoading] = useState(true);
   const [postInfo, setPostInfo] = useState<BlogPostInfo>(
-    {blogpostId: 1, slug: "", title: "", teaser: "", isReady: true}
+    {blogpostId: 1, slug: '', title: '', teaser: '', tags: [], imageUri: '', date: '', isReady: true},
   );
 
   useEffect(() => {
@@ -108,9 +70,12 @@ export default function Home() {
     {
       quotableId: 1,
       title: '',
+      author: '',
       imageUri: '',
       teaser: '',
       slug: '',
+      tags: [],
+      quote: '',
       content: ''
     }
   );
@@ -136,6 +101,7 @@ export default function Home() {
         link: '',
         teaser: '',
         imageUri: '',
+        ogImageUri: '',
         isReady: true,
         slug: '',
         quality: 1,
@@ -148,6 +114,7 @@ export default function Home() {
         link: '',
         teaser: '',
         imageUri: '',
+        ogImageUri: '',
         isReady: true,
         slug: '',
         quality: 1,
