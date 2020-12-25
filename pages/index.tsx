@@ -49,46 +49,62 @@ async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
 
 export default function Home() {
   // Blog post state
-  const [isPostLoading, setIsPostLoading] = useState(true);
-  const [postInfo, setPostInfo] = useState<BlogPostInfo>(
+  const [isFirstPostLoading, setIsFirstPostLoading] = useState(true);
+  const [firstPostInfo, setFirstPostInfo] = useState<BlogPostInfo>(
     {blogpostId: 1, slug: '', title: '', teaser: '', tags: [], imageUri: '', date: '', isReady: true},
   );
+
+  const [isSecondPostLoading, setIsSecondPostLoading] = useState(true);
+  const [secondPostInfo, setSecondPostInfo] = useState<BlogPostInfo>(
+    {blogpostId: 1, slug: '', title: '', teaser: '', tags: [], imageUri: '', date: '', isReady: true},
+  );
+  
 
   useEffect(() => {
     fetchLatestBlogPostInfo(16) // hardcoded for now
       .then(info => {
-        if (isPostLoading) {
-          setPostInfo(info);
-          setIsPostLoading(false);
+        if (isFirstPostLoading) {
+          setFirstPostInfo(info);
+          setIsFirstPostLoading(false);
         }
       });
-  }, [isPostLoading]);
-
-  // Quotable state
-  const [isQuotableLoading, setIsQuotableLoading] = useState(true);
-  const [quotable, setQuotable] = useState<Quotable>(
-    {
-      quotableId: 1,
-      title: '',
-      author: '',
-      imageUri: '',
-      teaser: '',
-      slug: '',
-      tags: [],
-      quote: '',
-      content: ''
-    }
-  );
+  }, [isFirstPostLoading]);
 
   useEffect(() => {
-    fetchLatestQuotable()
-      .then(quotable => {
-        if (isQuotableLoading) {
-          setQuotable(quotable);
-          setIsQuotableLoading(false);
+    fetchLatestBlogPostInfo(14) // hardcoded for now
+      .then(info => {
+        if (isSecondPostLoading) {
+          setSecondPostInfo(info);
+          setIsSecondPostLoading(false);
         }
       });
-  }, [isQuotableLoading]);
+  }, [isSecondPostLoading]);
+
+  // Quotable state
+  // const [isQuotableLoading, setIsQuotableLoading] = useState(true);
+  // const [quotable, setQuotable] = useState<Quotable>(
+  //   {
+  //     quotableId: 1,
+  //     title: '',
+  //     author: '',
+  //     imageUri: '',
+  //     teaser: '',
+  //     slug: '',
+  //     tags: [],
+  //     quote: '',
+  //     content: ''
+  //   }
+  // );
+
+  // useEffect(() => {
+  //   fetchLatestQuotable()
+  //     .then(quotable => {
+  //       if (isQuotableLoading) {
+  //         setQuotable(quotable);
+  //         setIsQuotableLoading(false);
+  //       }
+  //     });
+  // }, [isQuotableLoading]);
 
   // BookSummary state
   const [isSummariesLoading, setIsSummariesLoading] = useState(true);
@@ -205,9 +221,10 @@ export default function Home() {
       <div className={styles.blogsPageTeaser}>
         <h2 className={styles.title}>From the Blog</h2>
 
-        <div className={isPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
-          <BlogPostCard isLoading={isPostLoading} post={postInfo} setIsLoading={setIsPostLoading}></BlogPostCard>
-          <QuotableCard isLoading={isQuotableLoading} quotable={quotable} setIsLoading={setIsQuotableLoading}></QuotableCard>          
+        <div className={isFirstPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
+          <BlogPostCard isLoading={isFirstPostLoading} post={firstPostInfo} setIsLoading={setIsFirstPostLoading}></BlogPostCard>
+          <BlogPostCard isLoading={isSecondPostLoading} post={secondPostInfo} setIsLoading={setIsSecondPostLoading}></BlogPostCard>
+          {/* <QuotableCard isLoading={isQuotableLoading} quotable={quotable} setIsLoading={setIsQuotableLoading}></QuotableCard> */}
         </div>
       </div>
   </>;

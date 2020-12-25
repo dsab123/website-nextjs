@@ -50,22 +50,22 @@ export default function Blogs() {
     }, []);
 
 
-    const [isQuotablesLoading, setIsQuotablesLoading] = useState(true);
-    const [quotables, setQuotables] = useState<Quotable[]>([
-        {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
-        {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
-    ]);
+    // const [isQuotablesLoading, setIsQuotablesLoading] = useState(true);
+    // const [quotables, setQuotables] = useState<Quotable[]>([
+    //     {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
+    //     {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
+    // ]);
     
-    useEffect(() => {
-        fetchQuotableLookup()
-            .then(quotables => {
-                if (isQuotablesLoading) {
-                    setQuotables(quotables);
-                    setIsQuotablesLoading(false);
-                }
-            })
-            .catch(error => isQuotablesLoading ? console.log(error.toString()) : null);
-    }, []);
+    // useEffect(() => {
+    //     fetchQuotableLookup()
+    //         .then(quotables => {
+    //             if (isQuotablesLoading) {
+    //                 setQuotables(quotables);
+    //                 setIsQuotablesLoading(false);
+    //             }
+    //         })
+    //         .catch(error => isQuotablesLoading ? console.log(error.toString()) : null);
+    // }, []);
     
     return <>
         <Head>
@@ -94,7 +94,7 @@ export default function Blogs() {
         </div>
         <br />
 
-        <h1 className={styles.pageTitle}>Recent Quotables</h1>
+        {/* <h1 className={styles.pageTitle}>Recent Quotables</h1>
 
         <div className={isQuotablesLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
@@ -103,5 +103,6 @@ export default function Blogs() {
             ))}
             </div>
         </div>
+         */}
     </>
 }
