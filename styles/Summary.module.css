@@ -45,6 +45,37 @@
     justify-content: space-around;
 }
 
+.teaserWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.socialWrapper {
+	border-radius: 3px;
+	margin-top: 12px;
+	margin-bottom: 10px;
+	padding-left: 12px;
+	padding-right: 12px;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.socialIcon {
+	width: 25px; 
+	height: 25px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: transform .2s;
+}
+
+.socialIcon:hover {
+	transform: scale(1.9);	
+}
+
 .summaryBookImage {
 	height: 450px;
     width: 325px;
@@ -71,6 +102,8 @@
 	font-style: italic;
     font-family: var(--small-font-family);
 	font-size: 20px;
+	text-align: center;
+	margin-bottom: 0px;
 }
 
 /* post contents html -> markdown formatting */
@@ -138,7 +171,7 @@
 
 	.teaserAndButton {
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		justify-content: space-around;
 		margin-top: 20px;
 		align-items: center;
@@ -148,8 +181,34 @@
 		font-style: italic;
 		font-family: var(--small-font-family);
 		margin-bottom: 25px;
-		width: 18em;
+		width: 17em;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.teaserWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+	.socialWrapper {
+		border-radius: 3px;
+		margin-top: 0px;
+		margin-bottom: 10px;
+		padding-left: 12px;
+		padding-right: 12px;
+		font-size: 30px;
+		display: flex;
+		justify-content: center;
+	}
+
+	.socialIcon {
+		width: 40px; 
+		height: 40px;
+		cursor: pointer;
+		text-decoration: none;
 	}
 }

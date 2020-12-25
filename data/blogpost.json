@@ -11,16 +11,6 @@
             "isReady": true
         },
         {
-            "blogpostId": 15,
-            "slug": "o-consider-his-loveliness-and-beauty",
-            "title": "\"O Consider His Loveliness\"",
-            "teaser": "This is an excerpt of a letter from Samuel Rutherford...",
-            "tags": ["puritan", "theology"],
-            "imageUri": "blogpost/silver.jpg",
-            "date": "11-12-2020",
-            "isReady": false
-        },
-        {
             "blogpostId": 14,
             "slug": "calvin-on-gods-garden",
             "title": "Calvin on God's Garden",
@@ -88,6 +78,16 @@
             "tags": ["marriage", "reading"],
             "imageUri": "blogpost/couple.jpg",
             "date": "10-19-2020",
+            "isReady": true
+        },
+        {
+            "blogpostId": 15,
+            "slug": "o-consider-his-loveliness-and-beauty",
+            "title": "\"O Consider His Loveliness\"",
+            "teaser": "This is an excerpt of a letter from Samuel Rutherford...",
+            "tags": ["puritan", "theology"],
+            "imageUri": "blogpost/silver.jpg",
+            "date": "11-12-2020",
             "isReady": true
         }
     ]

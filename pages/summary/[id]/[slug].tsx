@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import remark from 'remark'
@@ -73,7 +73,32 @@ function getQualityRanking(payoff: number) {
     return Array(payoff).fill('⭐');
 }
 
+function buildShareToSocialLink(selection: string, socialPlatform: string, setSocialLink: Function): string {
+    if (typeof window === "undefined") {
+        return;
+    }
+
+    let link = "";
+
+    if (socialPlatform == "twitter") {
+        link += "https://twitter.com/intent/tweet?";
+        link += "url=" + escape(document.URL);
+        link += "&text=" + escape(selection + ' ...');
+    } else if (socialPlatform == "facebook") {
+        link += "https://www.facebook.com/dialog/share?&display=popup";
+        link += `&href=${document.URL}`;
+        link += "&app_id=2863776890531694";
+        link += `&redirect_uri=${document.URL}`;
+        link += "&quote=" + escape(selection) + ' ...';
+    }
+
+    setSocialLink(link);
+}
+
 export default function Summary(props) {
+    const refContainer = useRef();
+    const [socialLink, setSocialLink] = useState('');
+
     const [summaryContents, setSummaryContents] = useState('');
     const [error, setError] = useState('');
     const [summaryInfo, setSummaryInfo] = useState<BookSummaryInfo>({
@@ -142,8 +167,19 @@ export default function Summary(props) {
                         <img className={styles.summaryBookImage} src={summaryInfo && `/${summaryInfo.imageUri}`} /> 
                     </a>
                     <div className={styles.teaserAndButton}>
-                        <p className={styles.teaser}>{summaryInfo && summaryInfo.teaser}</p>
-                        <a href={summaryInfo.link} target="_blank"><img className={styles.buyButton} src="/static/amazon-button.png" /> </a>
+                        <div className={styles.teaserWrapper}>
+                            <p className={styles.teaser}>{summaryInfo && summaryInfo.teaser}</p>
+                            <div className={styles.socialWrapper}>
+                                <a href={socialLink} onClick={() => buildShareToSocialLink(summaryInfo.teaser, "facebook", setSocialLink)} target="_blank">
+                                    <img className={styles.socialIcon} alt="facebook share" src="/static/facebook-filled.png"></img>
+                                </a>
+                                &nbsp; 
+                                <a href={socialLink} onClick={() => buildShareToSocialLink(summaryInfo.teaser, "twitter", setSocialLink)} target="_blank">
+                                    <img className={styles.socialIcon} alt="twitter share" src="/static/twitter-filled.png"></img>
+                                </a>
+                            </div>
+                        </div>
+                        <a href={summaryInfo.link} target="_blank"><img className={styles.buyButton} src="/static/amazon-button.png"/> </a>
                     </div>
                 </div>
 
@@ -155,7 +191,7 @@ export default function Summary(props) {
                     {!summaryContents && <div className={!error && !summaryContents ? `${styles.dimOverlay} ${styles.summaryContents}` : styles.summaryContents}>
                         <p>Loading review...</p>
                     </div>}
-                    <div className={styles.summaryContents} dangerouslySetInnerHTML={{ __html: summaryContents }}></div>
+                    <div ref={refContainer} contentEditable="false" className={styles.summaryContents} dangerouslySetInnerHTML={{ __html: summaryContents }}></div>
 
                     <br />
                     <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo && summaryInfo.link} target="_blank">here</a>.</p>

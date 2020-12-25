@@ -6,7 +6,7 @@ import remark from 'remark';
 import html from 'remark-html';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
 const Popover = dynamic(
   () => import('react-text-selection-popover'),
@@ -80,11 +80,11 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
 }
 
 // this only used by the about page, which I should move to its own page
-function getNumberOfDaysMarried(): number {
-    const today = new Date().getTime();
-    const married = new Date('08-01-2020').getTime();
-    return Math.floor((today - married) / (1000 * 3600 * 24));
-}
+// function getNumberOfDaysMarried(): number {
+//     const today = new Date().getTime();
+//     const married = new Date('08-01-2020').getTime();
+//     return Math.floor((today - married) / (1000 * 3600 * 24));
+// }
 
 function buildShareToSocialLink(socialPlatform: string, setSocialLink: Function): string {
     if (typeof window === "undefined") {
@@ -92,7 +92,6 @@ function buildShareToSocialLink(socialPlatform: string, setSocialLink: Function)
     }
 
     let link = "";
-    const url = window.URL;
     const selection = window.getSelection().toString().slice(0, 140) + '...';
 
     if (socialPlatform == "twitter") {
@@ -113,6 +112,10 @@ function buildShareToSocialLink(socialPlatform: string, setSocialLink: Function)
 export default function Blog(props) {
     const refContainer = useRef();
     const [socialLink, setSocialLink] = useState('');
+
+    // hope to get this working soon
+    // const daysMarried = useRef();
+    // daysMarried.current = getNumberOfDaysMarried();
 
     const [postContents, setPostContents] = useState('');
     const [error, setError] = useState('');
@@ -191,7 +194,7 @@ export default function Blog(props) {
                     <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
                             <p>Loading ...</p>
                     </div>}
-                    <MyPopover selectionRef={refContainer} >
+                    <MyPopover selectionRef={refContainer}>
                         <div className={styles.socialPopoverWrapper}>
                             <a href={socialLink} onClick={() => buildShareToSocialLink("facebook", setSocialLink)} target="_blank">
                                 <img
