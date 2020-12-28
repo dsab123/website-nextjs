@@ -58,14 +58,14 @@
         },
         {
             "summaryId": 5,
-            "title": "How to Think Like a Rocket Scientist",
+            "title": "Think Like a Rocket Scientist",
             "author": "Ozan Varol",
-            "link": "https://amzn.to/2IwMi8g",
+            "link": "https://amzn.to/3nYLDvQ",
             "teaser": "You're not a rocket scientist, but sometimes life is that hard. Learn how to think like one.",
             "imageUri": "summary/rocket-scientist.jpg",
             "ogImageUri": "summary/rocket-science-book.png",
-            "isReady": false,
-            "slug": "how-to-think-like-a-rocket-scientist",
+            "isReady": true,
+            "slug": "think-like-a-rocket-scientist",
             "quality": 5,
             "payoff": 10,
             "category": "bestseller"
