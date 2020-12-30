@@ -1,6 +1,16 @@
 {
     "blogposts": [
         {
+            "blogpostId": 17,
+            "slug": "a-princeton-professors-productivity",
+            "title": "A Princeton Professor's Productivity",
+            "teaser": "Samuel Miller was one of the brightest minds ...",
+            "tags": ["reading", "yearly", "theoogy"],
+            "imageUri": "blogpost/bookstack.jpg",
+            "date": "1-11-2020",
+            "isReady": false
+        },
+        {
             "blogpostId": 16,
             "slug": "top-5-books-of-2020",
             "title": "My Top 5 Books of 2020",
