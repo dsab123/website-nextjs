@@ -224,8 +224,11 @@ export default function Home() {
         <div className={isFirstPostLoading ? `${styles.dimOverlay} ${styles.blogsPageTeaserContainer}` : `${styles.blogsPageTeaserContainer}`}>
           <BlogPostCard isLoading={isFirstPostLoading} post={firstPostInfo} setIsLoading={setIsFirstPostLoading}></BlogPostCard>
           <BlogPostCard isLoading={isSecondPostLoading} post={secondPostInfo} setIsLoading={setIsSecondPostLoading}></BlogPostCard>
-          {/* <QuotableCard isLoading={isQuotableLoading} quotable={quotable} setIsLoading={setIsQuotableLoading}></QuotableCard> */}
         </div>
+      </div>
+
+      <div>
+        <p className={styles.disclaimerText}>I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
       </div>
   </>;
 }
