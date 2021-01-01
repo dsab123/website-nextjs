@@ -190,12 +190,6 @@
     transform: scale(1.1);
 }
 
-.disclaimerText {
-    font-style: italic;
-    font-family: var(--small-font-family);
-    margin-bottom: 40px;
-}
-
 @media screen and (max-width: 768px) {
     .bookTitle {
         font-size: 20px;

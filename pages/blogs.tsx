@@ -94,15 +94,8 @@ export default function Blogs() {
         </div>
         <br />
 
-        {/* <h1 className={styles.pageTitle}>Recent Quotables</h1>
-
-        <div className={isQuotablesLoading ? styles.dimOverlay : ''}>
-            <div className={styles.cardRecentPostsContainer}>  
-            {quotables.map((quotable) => (
-              <QuotableCard key={quotable.quotableId} isLoading={isQuotablesLoading} quotable={quotable} setIsLoading={setIsQuotablesLoading}></QuotableCard>          
-            ))}
-            </div>
+        <div>
+            <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
         </div>
-         */}
     </>
 }

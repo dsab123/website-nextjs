@@ -194,9 +194,11 @@ export default function Summary(props) {
                     <div ref={refContainer} contentEditable="false" className={styles.summaryContents} dangerouslySetInnerHTML={{ __html: summaryContents }}></div>
 
                     <br />
-                    <p className={styles.summaryContents}>You can get yourself a copy of the book <a href={summaryInfo && summaryInfo.link} target="_blank">here</a>.</p>
                     <br />
-                    <br />
+                </div>
+
+                <div>
+                    <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
                 </div>
             </div>
         </>

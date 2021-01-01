@@ -96,7 +96,7 @@ export default function Summaries() {
                     </div>
                 ))}
 
-                {!isLoading && <p className={styles.disclaimerText}>{disclaimer}</p>}
+                {!isLoading && <p className="disclaimerText">{disclaimer}</p>}
                 <br />
             </div>
         </div>
