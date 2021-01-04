@@ -8,7 +8,7 @@
             "tags": ["reading", "yearly", "theoogy"],
             "imageUri": "blogpost/university.jpg",
             "date": "1-04-2021",
-            "isReady": false
+            "isReady": true
         },
         {
             "blogpostId": 16,
