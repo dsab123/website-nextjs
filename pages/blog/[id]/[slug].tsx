@@ -55,7 +55,7 @@ export async function getStaticPaths() {
         }),
         fallback: true
     };
-  }
+}
 
 async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
     return blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
