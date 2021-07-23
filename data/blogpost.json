@@ -4,11 +4,11 @@
             "blogpostId": 19,
             "slug": "privacy-policy",
             "title": "This is my Privacy Policy",
-            "teaser": "Because Big Tech hurts the little guy",
+            "teaser": "No 🍪, just your email, I promise",
             "tags": ["privacy"],
-            "imageUri": "blogpost/bookstack.jpg",
+            "imageUri": "blogpost/privacy.jpg",
             "date": "7-21-2021",
-            "isReady": true
+            "isReady": false
         },
         {
             "blogpostId": 18,
