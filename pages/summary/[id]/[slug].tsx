@@ -197,9 +197,6 @@ export default function Summary(props) {
                     <br />
                 </div>
 
-                <div>
-                    <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
-                </div>
             </div>
         </>
 }

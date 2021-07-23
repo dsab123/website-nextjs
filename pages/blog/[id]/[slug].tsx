@@ -256,10 +256,6 @@ export default function Blog(props) {
                             {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
                         </div>
 
-                        <br />
-                        <div>
-                            <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
-                        </div>
                     </div>
                     </div>
                 </div>

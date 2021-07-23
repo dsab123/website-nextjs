@@ -78,7 +78,6 @@ export default function Footer() {
             const timer = setTimeout(() => {
                 setSubscriptionStatus(SubscriptionStatus.NONE);
               }, 3000);
-            // return () => clearTimeout(timer);
         }
     }, [subscriptionStatus]);
 
@@ -138,6 +137,7 @@ export default function Footer() {
             <li className={styles.contactListItem}><a href="https://twitter.com/_danielsabbagh" target="_blank"><img className={styles.socialIcon} src="/static/twitter-circled.png"></img></a></li>
             <li className={styles.contactListItem}><a href="mailto:dsabbaghumd@gmail.com" target="_blank"><img className={styles.socialIcon} src="/static/email.png"></img></a></li>
             <li className={styles.contactListItem}><a href="https://www.facebook.com/isReadingEssential" target="_blank"><img className={styles.socialIcon} src="/static/facebook-circled.png"></img></a></li>
+            <li className={styles.contactListItem}><a href="/blog/19/privacy-policy" target="_blank"><img className={styles.socialIcon} src="/static/lock.png"></img></a></li>
         </ul>
     </div>
 
