@@ -1,11 +1,26 @@
 {
     "blogposts": [
         {
+            "blogpostId": 20,
+            "slug": "top-books-of-2021",
+            "title": "Top Books of 2021",
+            "teaser": "What books did you read this past year? Here are my favorites.",
+            "tags": [
+                "reading",
+                "yearly"
+            ],
+            "imageUri": "blogpost/bookstack.jpg",
+            "date": "1-2-2022",
+            "isReady": true
+        },
+        {
             "blogpostId": 19,
             "slug": "privacy-policy",
             "title": "This is my Privacy Policy",
             "teaser": "No 🍪, just your email, I promise",
-            "tags": ["privacy"],
+            "tags": [
+                "privacy"
+            ],
             "imageUri": "blogpost/privacy.jpg",
             "date": "7-21-2021",
             "isReady": false
@@ -15,7 +30,11 @@
             "slug": "up-your-2021-reading-with-evernote-and-tomatoes",
             "title": "Up Your 2021 Reading with Evernote (and Tomatoes)",
             "teaser": "Do you want to read more this year?",
-            "tags": ["reading", "yearly", "evernote"],
+            "tags": [
+                "reading",
+                "yearly",
+                "evernote"
+            ],
             "imageUri": "blogpost/person-in-blue-button-up-shirt-eating-cherry-tomatoes.jpg",
             "date": "1-14-2021",
             "isReady": true
@@ -25,7 +44,11 @@
             "slug": "a-princeton-professors-productivity",
             "title": "A Princeton Professor's Productivity",
             "teaser": "Samuel Miller was one of the brightest minds ...",
-            "tags": ["reading", "yearly", "theology"],
+            "tags": [
+                "reading",
+                "yearly",
+                "theology"
+            ],
             "imageUri": "blogpost/university.jpg",
             "date": "1-04-2021",
             "isReady": true
@@ -35,7 +58,10 @@
             "slug": "top-5-books-of-2020",
             "title": "My Top 5 Books of 2020",
             "teaser": "Here are the top five books I read this year.",
-            "tags": ["reading", "yearly"],
+            "tags": [
+                "reading",
+                "yearly"
+            ],
             "imageUri": "blogpost/bookstack.jpg",
             "date": "12-23-2020",
             "isReady": true
@@ -45,7 +71,12 @@
             "slug": "calvin-on-gods-garden",
             "title": "Calvin on God's Garden",
             "teaser": "Did you know that the Bible speaks at length about gardens?",
-            "tags": ["biblical theology", "scripture", "theology", "calvin"],
+            "tags": [
+                "biblical theology",
+                "scripture",
+                "theology",
+                "calvin"
+            ],
             "imageUri": "blogpost/garden.jpg",
             "date": "11-20-2020",
             "isReady": true
@@ -55,7 +86,11 @@
             "slug": "outline-for-bible-study",
             "title": "My Outline for Bible Study",
             "teaser": "How do you study the Bible? ",
-            "tags": ["scripture", "theology", "fun"],
+            "tags": [
+                "scripture",
+                "theology",
+                "fun"
+            ],
             "imageUri": "blogpost/silver.jpg",
             "date": "11-06-2020",
             "isReady": false
@@ -65,7 +100,11 @@
             "slug": "about",
             "title": "Why?",
             "teaser": "My mission is to get you to read to the end of this post.",
-            "tags": ["meta", "fun", "marriage"],
+            "tags": [
+                "meta",
+                "fun",
+                "marriage"
+            ],
             "imageUri": "blogpost/book-sign.jpg",
             "date": "11-01-2020",
             "isReady": true
@@ -75,7 +114,13 @@
             "slug": "augustine-luther-and-calvin-on-prayer",
             "title": "Augustine, Luther and Calvin on Prayer",
             "teaser": "Prayer by Tim Keller collects the thoughts of three great ...",
-            "tags": ["theology", "reading", "calvin", "luther", "augustine"],
+            "tags": [
+                "theology",
+                "reading",
+                "calvin",
+                "luther",
+                "augustine"
+            ],
             "imageUri": "blogpost/prayer.jpg",
             "date": "12-03-2020",
             "isReady": false
@@ -85,7 +130,11 @@
             "slug": "excerpts-from-sapiens",
             "title": "Excerpts From 'Sapiens'",
             "teaser": "When I read a great book, I like to collect phrases and quotes ...",
-            "tags": ["theology", "calvin", "reading"],
+            "tags": [
+                "theology",
+                "calvin",
+                "reading"
+            ],
             "imageUri": "blogpost/sapiens.jpg",
             "date": "10-10-2020",
             "isReady": true
@@ -95,7 +144,10 @@
             "slug": "psalms-97-98-salvation-and-holiness",
             "title": "Psalms 97,98 - Salvation and Holiness",
             "teaser": "I had a really good reading this morning...",
-            "tags": ["theology", "psalms"],
+            "tags": [
+                "theology",
+                "psalms"
+            ],
             "imageUri": "blogpost/silver.jpg",
             "date": "10-02-2020",
             "isReady": false
@@ -105,7 +157,10 @@
             "slug": "some-observations-on-married-life",
             "title": "Wise Words on Marriage",
             "teaser": "So a dear couple at our church is moving away...",
-            "tags": ["marriage", "reading"],
+            "tags": [
+                "marriage",
+                "reading"
+            ],
             "imageUri": "blogpost/couple.jpg",
             "date": "10-19-2020",
             "isReady": true
@@ -115,7 +170,10 @@
             "slug": "o-consider-his-loveliness-and-beauty",
             "title": "\"O Consider His Loveliness\"",
             "teaser": "This is an excerpt of a letter from Samuel Rutherford...",
-            "tags": ["puritan", "theology"],
+            "tags": [
+                "puritan",
+                "theology"
+            ],
             "imageUri": "blogpost/silver.jpg",
             "date": "11-12-2020",
             "isReady": true
