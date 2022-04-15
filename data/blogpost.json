@@ -1,6 +1,20 @@
 {
     "blogposts": [
         {
+            "blogpostId": 21,
+            "slug": "thoughts-on-universalism",
+            "title": "Thoughts on Universalism",
+            "teaser": "Recently I had an exchange with a friend on Universalism...",
+            "tags": [
+                "theology",
+                "universalism",
+                "gospels"
+            ],
+            "imageUri": "blogpost/world.jpg",
+            "date": "4-15-2022",
+            "isReady": true
+        },
+        {
             "blogpostId": 20,
             "slug": "top-books-of-2021",
             "title": "Top Books of 2021",
