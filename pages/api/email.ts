@@ -9,8 +9,8 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
                 res.setHeader('content-type', 'application/json');
                 return res.status(400).end();
             }
-            
-            const response = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
+
+            const response = await fetch(process.env.EMAIL_POST_API_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
