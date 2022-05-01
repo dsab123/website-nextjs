@@ -1,10 +1,22 @@
 {
     "blogposts": [
         {
+            "blogpostId": 22,
+            "slug": "how-to-read-one-chapter-of-a-book",
+            "title": "How to Read One Chapter of a Book",
+            "teaser": "In the second post in this series...",
+            "tags": [
+                "reading"
+            ],
+            "imageUri": "blogpost/open-book.jpg",
+            "date": "5-2-2022",
+            "isReady": true
+        },
+        {
             "blogpostId": 21,
             "slug": "thoughts-on-universalism",
             "title": "Thoughts on Universalism",
-            "teaser": "Recently I had an exchange with a friend on Universalism...",
+            "teaser": "I had an exchange with a friend on Universalism...",
             "tags": [
                 "theology",
                 "universalism",
@@ -18,7 +30,7 @@
             "blogpostId": 20,
             "slug": "top-books-of-2021",
             "title": "Top Books of 2021",
-            "teaser": "What books did you read this past year? Here are my favorites.",
+            "teaser": "What did you read this past year?",
             "tags": [
                 "reading",
                 "yearly"
@@ -84,7 +96,7 @@
             "blogpostId": 14,
             "slug": "calvin-on-gods-garden",
             "title": "Calvin on God's Garden",
-            "teaser": "Did you know that the Bible speaks at length about gardens?",
+            "teaser": "The Bible speaks at length about gardens...",
             "tags": [
                 "biblical theology",
                 "scripture",
@@ -113,7 +125,7 @@
             "blogpostId": 4,
             "slug": "about",
             "title": "Why?",
-            "teaser": "My mission is to get you to read to the end of this post.",
+            "teaser": "My mission is to get you to read ...",
             "tags": [
                 "meta",
                 "fun",
@@ -126,8 +138,8 @@
         {
             "blogpostId": 2,
             "slug": "augustine-luther-and-calvin-on-prayer",
-            "title": "Augustine, Luther and Calvin on Prayer",
-            "teaser": "Prayer by Tim Keller collects the thoughts of three great ...",
+            "title": "The Reformers on Prayer",
+            "teaser": "Prayer by Tim Keller collects the thoughts of ...",
             "tags": [
                 "theology",
                 "reading",
@@ -137,13 +149,13 @@
             ],
             "imageUri": "blogpost/prayer.jpg",
             "date": "12-03-2020",
-            "isReady": false
+            "isReady": true
         },
         {
             "blogpostId": 6,
             "slug": "excerpts-from-sapiens",
             "title": "Excerpts From 'Sapiens'",
-            "teaser": "When I read a great book, I like to collect phrases and quotes ...",
+            "teaser": "When I read a great book, I like to collect ...",
             "tags": [
                 "theology",
                 "calvin",
@@ -183,7 +195,7 @@
             "blogpostId": 15,
             "slug": "o-consider-his-loveliness-and-beauty",
             "title": "\"O Consider His Loveliness\"",
-            "teaser": "This is an excerpt of a letter from Samuel Rutherford...",
+            "teaser": "This is an excerpt of a letter from Samuel ...",
             "tags": [
                 "puritan",
                 "theology"
