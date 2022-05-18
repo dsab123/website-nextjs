@@ -36,7 +36,7 @@ async function fetchLatestQuotable(): Promise<Quotable> {
 }
 
 async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
-  const ids = [4, 5];
+  const ids = [1, 3];
 
   let response = await fetch(`/api/booksummary-info/${ids.join(',')}`);
 
@@ -61,7 +61,7 @@ export default function Home() {
   
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(20) // hardcoded for now
+    fetchLatestBlogPostInfo(23) // hardcoded for now
       .then(info => {
         if (isFirstPostLoading) {
           setFirstPostInfo(info);
@@ -71,7 +71,7 @@ export default function Home() {
   }, [isFirstPostLoading]);
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(18) // hardcoded for now
+    fetchLatestBlogPostInfo(22) // hardcoded for now
       .then(info => {
         if (isSecondPostLoading) {
           setSecondPostInfo(info);
