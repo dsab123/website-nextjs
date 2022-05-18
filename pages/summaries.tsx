@@ -26,6 +26,7 @@ export default function Summaries() {
     const [error, setError] = useState('');
     
     const intro = "Here is a curated list of recent books I've read that have helped me to become a better reader and thinker. Let me know if you buy any of these!";
+    const disclaimer = "I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.";
 
     useEffect(() => { 
         fetchBookSummaryLookup()
@@ -95,6 +96,7 @@ export default function Summaries() {
                     </div>
                 ))}
 
+                {!isLoading && <p className="disclaimerText">{disclaimer}</p>}
                 <br />
             </div>
         </div>
