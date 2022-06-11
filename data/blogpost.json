@@ -1,6 +1,21 @@
 {
     "blogposts": [
         {
+            "blogpostId": 24,
+            "slug": "medicine-for-lucy",
+            "title": "'Medicine For Lucy'",
+            "teaser": "Before he could, his own father passed away.",
+            "tags": [
+                "reading",
+                "family",
+                "theology",
+                "Joseph Addison Alexander"
+            ],
+            "imageUri": "blogpost/the-life-of-joseph-addison-alexander.png",
+            "date": "6-19-2022",
+            "isReady": false
+        },
+        {
             "blogpostId": 23,
             "slug": "comfort-in-national-crises",
             "title": "Comfort in National Crises",
@@ -200,7 +215,8 @@
             "teaser": "So a dear couple at our church is moving away...",
             "tags": [
                 "marriage",
-                "reading"
+                "reading",
+                "family"
             ],
             "imageUri": "blogpost/couple.jpg",
             "date": "10-19-2020",
