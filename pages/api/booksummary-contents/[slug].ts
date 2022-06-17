@@ -7,7 +7,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     let raw;
 
     if (process.env.NODE_ENV === "development") {
-        console.log('endpoint: ' + process.env.SUMMARY_CONTENTS_ENDPOINT);
         raw = fs.readFileSync(process.env.SUMMARY_CONTENTS_ENDPOINT + `${slug}.md`, 'utf8');
         return res.send({data: raw});
     }
