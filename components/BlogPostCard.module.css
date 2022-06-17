@@ -16,12 +16,6 @@
     cursor: pointer;
 }
 
-.postCardContent {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-}
-
 .postCardImage {
     width: 317px;
     height: 317px;
@@ -72,6 +66,13 @@
     margin-top: 10px;
 }
 
+.postCardContent {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: space-between;
+}
+
 .postCardTitle {
     font-family: var(--big-font-family);
     font-size: 20px;
@@ -90,4 +91,17 @@
     margin-left: 5px;
     margin-right: 5px;
     flex-grow: 2;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.postCardDate {
+    font-family: var(--small-font-family);
+    font-size: 15px;
+    text-align: center;
+    font-style: italic;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0em;
+    margin-bottom: 5px;
 }
