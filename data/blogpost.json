@@ -13,7 +13,7 @@
             ],
             "imageUri": "blogpost/the-life-of-joseph-addison-alexander.png",
             "date": "6-19-2022",
-            "isReady": false
+            "isReady": true
         },
         {
             "blogpostId": 23,
