@@ -8,7 +8,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     if (process.env.NODE_ENV === "development") {
         raw = fs.readFileSync(process.env.BLOGPOST_CONTENTS_ENDPOINT + `${slug}.md`, 'utf8');
-        return res.send({data: raw});
+        return res.send({ data: raw });
     }
 
     raw = await fetch(process.env.BLOGPOST_CONTENTS_ENDPOINT + `${slug}.md`);
