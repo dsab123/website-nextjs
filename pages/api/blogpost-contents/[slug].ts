@@ -4,7 +4,7 @@ import fs from 'fs';
 export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { query: { slug } } = req;
 
-    let raw;
+    let raw: string | Response;
 
     if (process.env.NODE_ENV === "development") {
         raw = fs.readFileSync(process.env.BLOGPOST_CONTENTS_ENDPOINT + `${slug}.md`, 'utf8');
