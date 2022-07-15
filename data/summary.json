@@ -69,6 +69,20 @@
             "quality": 5,
             "payoff": 10,
             "category": "bestseller"
+        },
+        {
+            "summaryId": 6,
+            "title": "The Gospel Comes With A House Key",
+            "author": "Rosaria Butterfield",
+            "link": "https://www.amazon.com/Gospel-Comes-House-Key-Post-Christian/dp/143355786X",
+            "teaser": "Radical Ordinary Hospitality is not a natural thing for a Christian to participate in.",
+            "imageUri": "summary/gospel-comes-with-a-house-key.png",
+            "ogImageUri": "summary/gospel-comes-with-a-house-key-book.png",
+            "isReady": true,
+            "slug": "gospel-comes-with-a-house-key",
+            "quality": 5,
+            "payoff": 10,
+            "category": "christian"
         }
     ]
 }
