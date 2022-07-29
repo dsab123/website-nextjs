@@ -211,7 +211,7 @@ export default function Blog(props) {
                 <br />
 
                 <div>
-                    {postInfo && postInfo.tags && postInfo.tags.length > 0 &&
+                    {postContents && postInfo && postInfo.tags && postInfo.tags.length > 0 &&
                         <div className={styles.postTagContainer}>
                             <div>
                                 <p className={styles.relatedPostsText}>related:</p>
