@@ -43,22 +43,8 @@ type BookSummaryContents = {
 };
 
 // -----
-type Quotable = {
-    quotableId: number,
-    title: string,
-    author: string,
-    imageUri: string,
-    teaser: string,
-    slug: string,
-    tags: Array<string>,
-    quote: string,
-    content: string
-};
-
-// -----
 type FrontPageInfo = {
     postInfo: BlogPostInfo[],
-    quotable: Quotable[],
     summaries: BookSummaryInfo[]
 };
 

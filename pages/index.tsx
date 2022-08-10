@@ -5,14 +5,6 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import SummaryStyles from '../styles/Summaries.module.css';
 import BlogPostCard from '../components/BlogPostCard';
-import QuotableCard from '../components/QuotableCard';
-
-// TODO make api route to grab front page info - one blog post, one quotable, two
-// summaries, where one is christian and the other is bestseller or something
-// async function fetchFrontPageInfo(): Promise<FrontPageInfo> {
-//   return null;  
-// };
-
 
 async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
   let response = await fetch(`/api/blogpost-info/${blogPostId}`);
@@ -23,17 +15,6 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
 
   return await response.json() as BlogPostInfo;
 }
-
-// async function fetchLatestQuotable(): Promise<Quotable> {
-//   let response = await fetch('/api/quotable-lookup');
-
-//   if (response.status >= 400) {
-//     throw new Error("Bad response from server");
-//   }
-
-//   const quotables = await response.json() as Quotable[];
-//   return quotables.shift();
-// }
 
 async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
   const ids = [6, 7];
@@ -79,32 +60,6 @@ export default function Home() {
         }
       });
   }, [isSecondPostLoading]);
-
-  // Quotable state
-  // const [isQuotableLoading, setIsQuotableLoading] = useState(true);
-  // const [quotable, setQuotable] = useState<Quotable>(
-  //   {
-  //     quotableId: 1,
-  //     title: '',
-  //     author: '',
-  //     imageUri: '',
-  //     teaser: '',
-  //     slug: '',
-  //     tags: [],
-  //     quote: '',
-  //     content: ''
-  //   }
-  // );
-
-  // useEffect(() => {
-  //   fetchLatestQuotable()
-  //     .then(quotable => {
-  //       if (isQuotableLoading) {
-  //         setQuotable(quotable);
-  //         setIsQuotableLoading(false);
-  //       }
-  //     });
-  // }, [isQuotableLoading]);
 
   // BookSummary state
   const [isSummariesLoading, setIsSummariesLoading] = useState(true);

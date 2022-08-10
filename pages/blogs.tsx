@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useState, useEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
 import BlogPostCard from '../components/BlogPostCard';
-import QuotableCard from '../components/QuotableCard';
 
 async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
     let response = await fetch('/api/blogpost-lookup');
@@ -14,16 +13,6 @@ async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
     const blogpostLookup =  await response.json() as BlogPostInfo[];
 
     return blogpostLookup.filter(x => x.isReady);
-}
-
-async function fetchQuotableLookup(): Promise<Quotable[]> {
-    let response = await fetch('/api/quotable-lookup');
-
-    if (response.status >= 400) {
-        throw new Error("Bad response from server")
-    }
-
-    return await response.json() as Quotable[];
 }
 
 export default function Blogs() {
@@ -49,24 +38,6 @@ export default function Blogs() {
             .catch(error => isBlogPostsLoading ? console.log(error.toString()) : null);
     }, []);
 
-
-    // const [isQuotablesLoading, setIsQuotablesLoading] = useState(true);
-    // const [quotables, setQuotables] = useState<Quotable[]>([
-    //     {quotableId: 1,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
-    //     {quotableId: 2,title: "",author: "",imageUri: "",teaser: "",slug: "slug",tags: [],quote: "",content: ""},
-    // ]);
-    
-    // useEffect(() => {
-    //     fetchQuotableLookup()
-    //         .then(quotables => {
-    //             if (isQuotablesLoading) {
-    //                 setQuotables(quotables);
-    //                 setIsQuotablesLoading(false);
-    //             }
-    //         })
-    //         .catch(error => isQuotablesLoading ? console.log(error.toString()) : null);
-    // }, []);
-    
     return <>
         <Head>
             <title key="original-title">Recent Blog Posts | Daniel Sabbagh</title>
