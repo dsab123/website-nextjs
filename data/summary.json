@@ -83,6 +83,20 @@
             "quality": 5,
             "payoff": 10,
             "category": "christian"
+        },
+        {
+            "summaryId": 7,
+            "title": "Sharing a Meal with Jesus",
+            "author": "Tim Chester",
+            "link": "https://www.amazon.com/Meal-Jesus-Discovering-Community-Mission/dp/1433521369",
+            "teaser": "'In Luke's Gospel Jesus got Himself killed because of the way He ate.'",
+            "imageUri": "summary/sharing-a-meal-with-jesus.jpg",
+            "ogImageUri": "summary/sharing-a-meal-with-jesus-book.png",
+            "isReady": true,
+            "slug": "sharing-a-meal-with-jesus",
+            "quality": 5,
+            "payoff": 10,
+            "category": "christian"
         }
     ]
 }
