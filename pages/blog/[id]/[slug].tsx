@@ -71,18 +71,8 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
   return await response.json() as Promise<BlogPostInfoByTag[]>;
 }
 
-// this only used by the about page, which I should move to its own page
-// function getNumberOfDaysMarried(): number {
-//   const today = new Date().getTime();
-//   const married = new Date('08-01-2020').getTime();
-//   return Math.floor((today - married) / (1000 * 3600 * 24));
-// }
 
 export default function Blog(props) {
-  // hope to get this working soon
-  // const daysMarried = useRef();
-  // daysMarried.current = getNumberOfDaysMarried();
-
   const [postContents, setPostContents] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
