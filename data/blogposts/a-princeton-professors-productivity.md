@@ -1,0 +1,14 @@
+<div class="postImageContainer"><img src="/blogpost/university.jpg" class="wideNonMovingPostimage" alt="university" /></div>
+
+Samuel Miller was one of the brightest minds America ever produced. He served as one of the founding professors of Princeton Seminary. A peaceful man by heart, Miller was drawn into many controversies surrounding the development of American Presbyterian thought in the eighteenth and nineteenth centuries. He protected the American church from drifting into Unitarianism, wrote essays on Infant Baptism and the position of Elder in the church, and on raising young children. He was simply a prodigious reader and writer.
+
+In his journal, he noted six reasons why he was able to read and write so much:
+
+1. <b>_I do not allow myself to be hurried; or to press my health, strength or spirits beyond what they will bear, by writing at late hours, or by overstrained exertion at any one time_</b>. … I am persuaded that, in every sort of labor, the old Latin maxim, Festina Lente (meaning "more haste, less speed"), is of exceeding great importance.
+2. <b>_I have been, for many years, in the habit of going to bed early._</b> I wish always to be in bed a little after ten o’clock, certainly before eleven. Sitting up late, and studying much by candle light, are very destructive to health, and ultimately, retard, rather than promote, literary labor.
+3. <b>_I make a point of rising very early_</b>: in winter, an hour before day, making my own fire, and getting ready for work, before I can be interrupted by company, etc.; and in summer, soon after sunrise. This is very important to him who would do much.
+4. <b>_I try to improve every fragment of time_</b>; and although my interruptions are incessant, yet I am so happy as to be able, after an interruption, to take up a subject where I left it, without much loss of time in going back to find the clew. This has long been of great use to me, and made my fragments of time more precious.
+5. Whenever I have been compelled to make an extra effort, in the way of studying or writing,_I have found incalculable advance in going through it fasting, or, at least, eating very little_. In these circumstances my mental operations are always more active and successful; and I, of course, suffer much less from mental applications, and from want of exercise, than if I ate as usual.
+6. I must do honor to divine aid. I have always found, that <b>_the more I acknowledged God in my studies, the more comfortably and successfully they proceeded_</b>.
+
+Copied from _<a href="https://amzn.to/34WBlF3" target="_blank">Princeton Seminary, Volume I by David Calhoun</a>_.
