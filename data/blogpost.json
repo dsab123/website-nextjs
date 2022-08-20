@@ -204,9 +204,9 @@
                 "theology",
                 "psalms"
             ],
-            "imageUri": "blogpost/silver.jpg",
+            "imageUri": "blogpost/psalms-by-the-day.png",
             "date": "10-02-2020",
-            "isReady": false
+            "isReady": true
         },
         {
             "blogpostId": 12,
