@@ -1,30 +1,41 @@
 import { useEffect, useState } from 'react';
-import { GetStaticPropsContext } from 'next';
+import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import remark from 'remark';
-import html from 'remark-html';
+import fs from 'fs';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
+import { serialize } from 'next-mdx-remote/serialize';
+import DaysMarried from '../../../components/DaysMarried';
+import { MDXRemote } from 'next-mdx-remote';
+import path from 'path';
 
-async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown)
-  return result.toString();
-}
-
-export async function getStaticProps(context: GetStaticPropsContext) {
+const components = { DaysMarried }
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
-    const postInfo = await fetchServerSideBlogPostInfo(context);
+    const postInfo = blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
+
+    const postsDirectory = path.join(process.cwd(), 'data/blogposts');
+    const full = `${postsDirectory}/${context.params.slug}.md`;
+
+    const postContents = fs.readFileSync(full, 'utf8');
+
+    const mdxSource = await serialize(postContents);
+
     return {
       props: { 
         id: context.params.id, 
-        slug: context.params.slug, 
+        slug: context.params.slug.toString(), 
         title: postInfo.title, 
         teaser: postInfo.teaser, 
         imageUri: postInfo.imageUri,
-        postInfo: JSON.stringify(postInfo) }
+        postInfo: JSON.stringify(postInfo),
+        postContents: mdxSource
+      }
     }
   } catch (error) {
+    console.log('error error error');
+    console.log(error);
     return { notFound: true }
   }
 }
@@ -53,14 +64,14 @@ async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
   return blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
 }
 
-async function fetchBlogPostContents(slug: string): Promise<BlogPostContents> {
-  let response = await fetch(`/api/blogpost-contents/${slug}`);
-  if (response.status >= 400) {
-    throw new Error("Bad response from server") // todo make this better
-  }
+// async function fetchBlogPostContents(slug: string): Promise<BlogPostContents> {
+//   let response = await fetch(`/api/blogpost-contents/${slug}`);
+//   if (response.status >= 400) {
+//     throw new Error("Bad response from server") // todo make this better
+//   }
 
-  return await response.json() as Promise<BlogPostContents>;
-}
+//   return await response.json() as Promise<BlogPostContents>;
+// }
 
 async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]> {
   let response = await fetch(`/api/blogpost-info-by-tag/${tag}`);
@@ -73,8 +84,8 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
 
 
 export default function Blog(props) {
-  const [postContents, setPostContents] = useState('');
-  const [error, setError] = useState('');
+  //const [postContents, setPostContents] = useState('');
+  //const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [showRelatedPosts, setShowRelatedPosts] = useState(false);
   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
@@ -105,18 +116,6 @@ export default function Blog(props) {
     setIsRelatedPostsLoading(false);
   }
 
-  useEffect(() => {
-    postInfo.slug && fetchBlogPostContents(postInfo.slug)
-      .then(postContents => {
-        markdownToHtml(postContents.data)
-        .then(processedContent => {
-          setPostContents(processedContent);
-          setIsLoading(false);
-        });
-      })
-      .catch(error => setError(error.toString()));
-  }, [postInfo.slug]);
-
   // clear related posts when loading new blog post
   useEffect(() => {
     setRelatedPosts([]);
@@ -144,16 +143,11 @@ export default function Blog(props) {
         <h1 className={styles.pageTitle}>{props.title}</h1>
 
         <br />
-        <div className={isLoading ? `${styles.dimOverlay}` : ''}>
-
-          {!postContents &&
-          <div className={isLoading ? `${styles.preloadPost} ${styles.slidePostIn} ${styles.postContents}` : `${styles.preloadPost} ${styles.postContents}`}>
-              <p>Loading ...</p>
-          </div>}
-
+        <div >
           <br />
-          <div contentEditable="false" className={styles.postContents} dangerouslySetInnerHTML={{ __html: postContents }}></div>
-
+          <div className={styles.postContents}>
+            <MDXRemote {...props.postContents} components={components}></MDXRemote>
+          </div>
           <div>
             {postInfo && postInfo.tags && postInfo.tags.length > 0 && 
             <div className={styles.postTagContainer}>
