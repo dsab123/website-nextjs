@@ -16,9 +16,9 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
     const postInfo = blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
 
     const postsDirectory = path.join(process.cwd(), 'data/blogposts');
-    const full = `${postsDirectory}/${context.params.slug}.md`;
+    const fullPath = `${postsDirectory}/${context.params.slug}.md`;
 
-    const postContents = fs.readFileSync(full, 'utf8');
+    const postContents = fs.readFileSync(fullPath, 'utf8');
 
     const mdxSource = await serialize(postContents);
 
@@ -34,8 +34,6 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
       }
     }
   } catch (error) {
-    console.log('error error error');
-    console.log(error);
     return { notFound: true }
   }
 }
@@ -64,15 +62,6 @@ async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
   return blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
 }
 
-// async function fetchBlogPostContents(slug: string): Promise<BlogPostContents> {
-//   let response = await fetch(`/api/blogpost-contents/${slug}`);
-//   if (response.status >= 400) {
-//     throw new Error("Bad response from server") // todo make this better
-//   }
-
-//   return await response.json() as Promise<BlogPostContents>;
-// }
-
 async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]> {
   let response = await fetch(`/api/blogpost-info-by-tag/${tag}`);
   if (response.status >= 400) {
@@ -84,8 +73,6 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
 
 
 export default function Blog(props) {
-  //const [postContents, setPostContents] = useState('');
-  //const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [showRelatedPosts, setShowRelatedPosts] = useState(false);
   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
