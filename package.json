@@ -25,6 +25,6 @@
     "@types/node": "^14.14.7",
     "@types/react": "^16.14.30",
     "remark-mdx": "^2.1.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.3.2"
   }
 }

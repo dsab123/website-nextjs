@@ -1,16 +1,15 @@
+import fs from 'fs';
+import path from 'path';
 import { useEffect, useState } from 'react';
-import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import fs from 'fs';
+import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
+import DaysMarried from '../../../components/DaysMarried';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
-import { serialize } from 'next-mdx-remote/serialize';
-import DaysMarried from '../../../components/DaysMarried';
-import { MDXRemote } from 'next-mdx-remote';
-import path from 'path';
 
-const components = { DaysMarried }
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
     const postInfo = blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
@@ -29,7 +28,6 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         title: postInfo.title, 
         teaser: postInfo.teaser, 
         imageUri: postInfo.imageUri,
-        postInfo: JSON.stringify(postInfo),
         postContents: mdxSource
       }
     }
@@ -46,20 +44,12 @@ export async function getStaticPaths() {
       return {
         params: { 
           id: `${blogPostInfo.blogpostId}`, 
-          slug: blogPostInfo.slug, 
-          title: blogPostInfo.title, 
-          teaser: blogPostInfo.teaser, 
-          imageUri: blogPostInfo.imageUri,
-          blogPostInfo: JSON.stringify(blogPostInfo) 
+          slug: blogPostInfo.slug
         }
       }
     }),
-    fallback: true
+    fallback: false
   };
-}
-
-async function fetchServerSideBlogPostInfo(context: GetStaticPropsContext) {
-  return blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
 }
 
 async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]> {
@@ -71,21 +61,12 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
   return await response.json() as Promise<BlogPostInfoByTag[]>;
 }
 
-
 export default function Blog(props) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [showRelatedPosts, setShowRelatedPosts] = useState(false);
   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
   const [tag, setTag] = useState('');
-
-  const [postInfo, setPostInfo] = useState<BlogPostInfo>(
-    { blogpostId: 1, slug: null, title: '', teaser: '', isReady: true, date: '', imageUri: '', tags: [] }
-  );
-
-  useEffect(() => {
-    props && setPostInfo(JSON.parse(props.postInfo) as BlogPostInfo);
-  },[props]);
 
   async function displayBlogPostsByTag(newTag: string) {
     if (newTag == tag) {
@@ -95,7 +76,7 @@ export default function Blog(props) {
 
     setIsRelatedPostsLoading(true);
 
-    const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== postInfo.blogpostId);
+    const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== props.blogpostId);
     
     setRelatedPosts(related);
     setShowRelatedPosts(true);
@@ -133,15 +114,15 @@ export default function Blog(props) {
         <div >
           <br />
           <div className={styles.postContents}>
-            <MDXRemote {...props.postContents} components={components}></MDXRemote>
+            <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
           </div>
           <div>
-            {postInfo && postInfo.tags && postInfo.tags.length > 0 && 
+            {props?.tags?.length > 0 && 
             <div className={styles.postTagContainer}>
               <div>
                 <p className={styles.relatedPostsText}>related:</p>
               </div>
-              {postInfo.tags.map((tag) => (
+              {props.tags.map((tag) => (
               <div key={tag} className={isRelatedPostsLoading ? `${styles.postTags} ${styles.dimOverlay}` : styles.postTags}>
                 <a className={styles.postTag}
                 onClick={() => displayBlogPostsByTag(tag)}>
