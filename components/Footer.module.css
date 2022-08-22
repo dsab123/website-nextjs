@@ -49,13 +49,6 @@
     position: relative;
 }
 
-.socialIcon {
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    position: relative;
-}
-
 .contactListItem:before, .contactListItem:after {
     content: "";
     position: absolute;

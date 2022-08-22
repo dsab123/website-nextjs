@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react';
+import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
 import styles from './Footer.module.css'
 import * as EmailValidator from 'email-validator';
 
@@ -134,10 +135,18 @@ export default function Footer() {
     
     <div>
         <ul className={styles.contactList}>
-            <li className={styles.contactListItem}><a href="https://twitter.com/_danielsabbagh" target="_blank"><img className={styles.socialIcon} src="/static/twitter-circled.png"></img></a></li>
-            <li className={styles.contactListItem}><a href="mailto:dsabbaghumd@gmail.com" target="_blank"><img className={styles.socialIcon} src="/static/email.png"></img></a></li>
-            <li className={styles.contactListItem}><a href="https://www.facebook.com/isReadingEssential" target="_blank"><img className={styles.socialIcon} src="/static/facebook-circled.png"></img></a></li>
-            <li className={styles.contactListItem}><a href="/blog/19/privacy-policy" target="_blank"><img className={styles.socialIcon} src="/static/lock.png"></img></a></li>
+            <li className={styles.contactListItem}>
+                <a href="https://www.facebook.com/isReadingEssential" target="_blank"><Facebook color="black" size="medium"></Facebook></a>
+            </li>
+            <li className={styles.contactListItem}>
+                <a href="https://twitter.com/_danielsabbagh" target="_blank"><Twitter color="black" size="medium"></Twitter></a>
+            </li>
+            <li className={styles.contactListItem}>
+                <a href="mailto:dsabbaghumd@gmail.com" target="_blank"><Send className={styles.socialIcon} color="black" size="medium"></Send></a>
+            </li>
+            <li className={styles.contactListItem}>
+                <a href="/blog/19/privacy-policy" target="_blank"><Secure color="black" size="medium" className={styles.socialIcon}></Secure></a>
+            </li>
         </ul>
     </div>
 
