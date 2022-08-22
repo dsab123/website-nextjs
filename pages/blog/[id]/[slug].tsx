@@ -28,6 +28,7 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         title: postInfo.title, 
         teaser: postInfo.teaser, 
         imageUri: postInfo.imageUri,
+        tags: postInfo.tags,
         postContents: mdxSource
       }
     }
@@ -63,7 +64,7 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
 
 export default function Blog(props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [showRelatedPosts, setShowRelatedPosts] = useState(false);
+  const [showRelatedPosts, setShowRelatedPosts] = useState(true);
   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
   const [tag, setTag] = useState('');
@@ -76,8 +77,8 @@ export default function Blog(props) {
 
     setIsRelatedPostsLoading(true);
 
-    const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId !== props.blogpostId);
-    
+    const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId != props.id);
+  
     setRelatedPosts(related);
     setShowRelatedPosts(true);
     setTag(newTag);
@@ -117,7 +118,7 @@ export default function Blog(props) {
             <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
           </div>
           <div>
-            {props?.tags?.length > 0 && 
+            {props.tags?.length > 0 && 
             <div className={styles.postTagContainer}>
               <div>
                 <p className={styles.relatedPostsText}>related:</p>
