@@ -7,6 +7,7 @@ import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Likes from '../../../components/Likes';
 import DaysMarried from '../../../components/DaysMarried';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
@@ -87,20 +88,6 @@ export default function Blog(props) {
     setIsRelatedPostsLoading(false);
   }
 
-  const addLike = async () => {
-    const response = await fetch(`/api/likes`, {
-      method: 'POST',
-      headers: {
-          'content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        id: props.id,
-        slug: props.slug
-      })
-    });
-    const data = await response.json() as LikesItem;
-    setPostLikes(data.likes);
-  }
 
   // clear related posts when loading new blog post
   useEffect(() => {
@@ -110,21 +97,7 @@ export default function Blog(props) {
     setTag('');
   }, [dynamicRoute]);
 
-  useEffect(() => {
-    const getLikes = async () => {
-      const response = await fetch(`/api/likes?id=${props.id}&slug=${props.slug}`, {
-        method: 'GET',
-        headers: {
-            'content-Type': 'application/json'
-        },
-      });
 
-      const data = await response.json() as LikesItem;
-      setPostLikes(data.likes);
-    }
-
-    getLikes();
-  }, [postLikes, dynamicRoute]);
 
   return <>
     <Head>
@@ -197,9 +170,7 @@ export default function Blog(props) {
             {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
           </div>
 
-          <a onClick={() => addLike()}>
-            <p>LIKES: {postLikes}</p>
-          </a>
+          <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
 
           <br />
           <div>
