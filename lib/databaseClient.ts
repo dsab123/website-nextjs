@@ -7,9 +7,8 @@ const client = new faunadb.Client({
 });
 
 export const databaseClient = {
-  getLikes: async (id: number, slug: string): Promise<number> => { 
-    console.log('id is: ' + id)
-
+  getLikes: async (id: number, slug: string): Promise<FaunaResponse> => { 
+    // if does not exist, create record with 0 likes
     const doesDocExist = await client.query(
       q.Exists(q.Match(q.Index('blogLikes'), slug))
     );
@@ -25,15 +24,17 @@ export const databaseClient = {
     const document = await client.query(
       q.Get(q.Match(q.Index('blogLikes'), slug))
     ) as any;
-    console.table(document);
-    console.log('returning: ' + document.data.likes)
-    return document.data.likes; // make this return better, with statuscode of course
 
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        likes: document.data.likes
+      })
+    };
   },
 
-  postLikes: async (id: number, slug: string): Promise<number> => {
+  postLikes: async (id: number, slug: string): Promise<FaunaResponse> => {
     // if already exist, upsert
-    console.log('IN POST IN POST: ' + id)
     const doesDocExist = await client.query(
       q.Exists(q.Match(q.Index('blogLikes'), slug))
     );
@@ -60,8 +61,13 @@ export const databaseClient = {
   
     const updatedDocument = await client.query(
       q.Get(q.Match(q.Index('blogLikes'), slug))
-    )as any;
+    ) as any;
 
-      return updatedDocument.data.likes;
-    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        likes: updatedDocument.data.likes
+      })
+    };
+  }
 }
