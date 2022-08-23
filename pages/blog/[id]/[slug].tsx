@@ -29,6 +29,7 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         teaser: postInfo.teaser, 
         imageUri: postInfo.imageUri,
         tags: postInfo.tags,
+        date: postInfo.date,
         postContents: mdxSource
       }
     }
@@ -119,59 +120,70 @@ export default function Blog(props) {
     <div className={styles.blogLayout}>
       <h1 className={styles.pageTitle}>{props.title}</h1>
 
-      <br />
+
+      <div className={styles.topMatter}>
+        <p className={styles.date}><em>{props.date}</em></p>
+        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
+      </div>
+      <div className={styles.separator}></div>
+
       <div >
         <br />
         <div className={styles.postContents}>
           <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
         </div>
-        <div>
+
+        <br />
+
+        <div className={styles.likesWrapper}>
+            <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
+        </div>
+
+        <div className={styles.bottomMatter}>
           {props.tags?.length > 0 &&
-          <div className={styles.postTagContainer}>
-            <div>
-              <p className={styles.relatedPostsText}>related:</p>
+          <div className={styles.relatedPostsContainer}>
+            <div className={styles.postTagContainer}>
+              <div>
+                <p className={styles.relatedPostsText}>related:</p>
+              </div>
+              {props.tags.map((tag) => (
+              <div key={tag} className={isRelatedPostsLoading ? `${styles.postTags} ${styles.dimOverlay}` : styles.postTags}>
+                <a className={styles.postTag}
+                onClick={() => displayBlogPostsByTag(tag)}>
+                  {tag}
+                </a>
+              </div>
+              ))}
             </div>
-            {props.tags.map((tag) => (
-            <div key={tag} className={isRelatedPostsLoading ? `${styles.postTags} ${styles.dimOverlay}` : styles.postTags}>
-              <a className={styles.postTag}
-              onClick={() => displayBlogPostsByTag(tag)}>
-                {tag}
-              </a>
-            </div>
-            ))}
-          </div>}
 
-          <br />
+            <div className={showRelatedPosts ? `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsIn} ${styles.relatedPosts}` : `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsOut} ${styles.relatedPosts}`}>
+              {relatedPosts.length > 0 &&
+              <p className={styles.relatedPostsText}>
+                <span>other posts tagged: <i>{tag}</i></span>
+              </p>}
 
-          <div className={showRelatedPosts ? `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsIn} ${styles.relatedPosts}` : `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsOut} ${styles.relatedPosts}`}>
-            {relatedPosts.length > 0 &&
-            <p className={styles.relatedPostsText}>
-              <span>other posts tagged: <i>{tag}</i></span>
-            </p>}
-            
-            {relatedPosts.length > 0 &&
-            <ul>
-              {relatedPosts.map((relatedPost) =>
-              <li key={relatedPost.blogpostId}>
-                <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
-                  <a className={styles.postLinks}>
-                  {relatedPost.title}
-                  <ul>
-                    <li>
-                      {relatedPost.teaser}
-                    </li>
-                  </ul>
-                  </a>
-                </Link>
-              </li>
-              )}
-            </ul>}
+              {relatedPosts.length > 0 &&
+              <ul>
+                {relatedPosts.map((relatedPost) =>
+                <li key={relatedPost.blogpostId}>
+                  <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
+                    <a className={styles.postLinks}>
+                    {relatedPost.title}
+                    <ul>
+                      <li>
+                        {relatedPost.teaser}
+                      </li>
+                    </ul>
+                    </a>
+                  </Link>
+                </li>
+                )}
+              </ul>}
+
             
             {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
           </div>
-
-          <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
-
+        </div>}
           <br />
           <div>
             <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>

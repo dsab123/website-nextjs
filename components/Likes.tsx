@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Like } from 'grommet-icons';
 import styles from './Likes.module.css';
 
 
@@ -35,9 +35,10 @@ export default function Likes(props: {id: number, slug: string, navigationChange
     props.setPostLikes(data.likes);
   }
 
-  return <>
-    <a onClick={() => addLike(props.id, props.slug)}>
-      <p>LIKES: {props.postLikes}</p>
+  return <div className={styles.outerLikesContainer}>
+    <a className={styles.likesContainer} onClick={() => addLike(props.id, props.slug)}>    
+      <Like size="medium" className={styles.likesIcon}/> 
+      <p className={styles.likesNumber}>{props.postLikes}</p>
     </a>
-  </>;
+  </div>
 }
