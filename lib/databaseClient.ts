@@ -17,7 +17,7 @@ export const databaseClient = {
     if (!doesDocExist) {
       await client.query(
         q.Create(q.Collection('blogLikes'), {
-          data: { slug: slug, likes: 1 },
+          data: { slug: slug, likes: 0 },
         })
       );
     }
@@ -33,7 +33,7 @@ export const databaseClient = {
 
   postLikes: async (id: number, slug: string): Promise<number> => {
     // if already exist, upsert
-    console.log('post; id is: ' + id)
+    console.log('IN POST IN POST: ' + id)
     const doesDocExist = await client.query(
       q.Exists(q.Match(q.Index('blogLikes'), slug))
     );
@@ -41,7 +41,7 @@ export const databaseClient = {
     if (!doesDocExist) {
       await client.query(
         q.Create(q.Collection('blogLikes'), {
-          data: { slug: slug, likes: 1 },
+          data: { slug: slug, likes: 0 },
         })
       );
     }

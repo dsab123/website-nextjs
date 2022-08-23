@@ -64,5 +64,4 @@ type GTagEvent = {
 type LikesItem = {
   id: number;
   likes: number;
-  data: LikesItem; // so bad
 }
