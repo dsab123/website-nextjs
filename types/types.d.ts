@@ -55,8 +55,14 @@ type EmailItem = {
 };
 
 type GTagEvent = {
-    action: string;
-    category: string;
-    label: string;
-    value: number;
-  };
+  action: string;
+  category: string;
+  label: string;
+  value: number;
+};
+
+type LikesItem = {
+  id: number;
+  likes: number;
+  data: LikesItem; // so bad
+}

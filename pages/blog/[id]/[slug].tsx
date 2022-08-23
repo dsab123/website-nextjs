@@ -68,7 +68,10 @@ export default function Blog(props) {
   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
   const [tag, setTag] = useState('');
+  const [likes, setLikes] = useState(0);
+  const [postLikes, setPostLikes] = useState(0);
 
+  // examine this; it looks really bad to have four setters at the end there
   async function displayBlogPostsByTag(newTag: string) {
     if (newTag == tag) {
       setShowRelatedPosts(!showRelatedPosts);
@@ -85,11 +88,48 @@ export default function Blog(props) {
     setIsRelatedPostsLoading(false);
   }
 
+    const addLike = async () => {
+     const response = await fetch(`/api/likes`, {
+        method: 'POST',
+        headers: {
+            'content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: props.id,
+          slug: props.slug
+        })
+      });
+      const data = await response.json() as LikesItem;
+
+      console.log('setting post likes:')
+      setPostLikes(data.likes)
+    }
+
+
   // clear related posts when loading new blog post
   useEffect(() => {
     setRelatedPosts([]);
     setShowRelatedPosts(false);
   }, [isLoading]);
+
+  useEffect(() => {
+    const getLikes = async (id: number) => {
+      console.log('slug: ' + props.slug)
+      const response = await fetch(`/api/likes?id=${id}&slug=${props.slug}`, {
+        method: 'GET',
+        headers: {
+            'content-Type': 'application/json'
+        },
+      });
+
+      const data = await response.json() as LikesItem;
+      setLikes(data.likes);
+    }
+
+    getLikes(props.id);
+  }, [postLikes]);
+
+
 
   return <>
       <Head>
@@ -161,6 +201,10 @@ export default function Blog(props) {
               
               {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
             </div>
+
+            <a onClick={() => {console.log('whodunit'); addLike()}}>
+              <p>LIKES: {likes}</p>
+            </a>
 
             <br />
             <div>
