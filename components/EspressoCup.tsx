@@ -1,6 +1,6 @@
-import styles from './CoffeeMug.module.css';
+import styles from './EspressoCup.module.css';
 
-export default function CofeeMug() {
+export default function EspressoCup() {
   return <>
     <div className={styles.container}>
       <div className={styles.steamContainer}>
