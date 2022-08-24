@@ -91,7 +91,7 @@ export default function Footer() {
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                             <input type="hidden" name="cmd" value="_donations" />
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
-                            <input type="hidden" name="currency_code" value="USD" />    
+                            <input type="hidden" name="currency_code" value="USD" />
                             <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
                                 <EspressoCup />
                             </button>
