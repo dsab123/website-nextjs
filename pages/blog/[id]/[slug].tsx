@@ -4,21 +4,21 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { useRouter } from 'next/router';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Likes from '../../../components/Likes';
 import DaysMarried from '../../../components/DaysMarried';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
+    // get blog post (move to separate function)
     const postInfo = blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
-
     const postsDirectory = path.join(process.cwd(), 'data/blogposts');
     const fullPath = `${postsDirectory}/${context.params.slug}.md`;
-
     const postContents = fs.readFileSync(fullPath, 'utf8');
-
     const mdxSource = await serialize(postContents);
 
     return {
@@ -29,6 +29,7 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         teaser: postInfo.teaser, 
         imageUri: postInfo.imageUri,
         tags: postInfo.tags,
+        date: postInfo.date,
         postContents: mdxSource
       }
     }
@@ -63,12 +64,15 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
 }
 
 export default function Blog(props) {
-  const [isLoading, setIsLoading] = useState(false);
   const [showRelatedPosts, setShowRelatedPosts] = useState(true);
   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
   const [tag, setTag] = useState('');
+  const [postLikes, setPostLikes] = useState(0);
 
+  const dynamicRoute = useRouter().asPath;
+
+  // examine this; it looks really bad to have four setters at the end there
   async function displayBlogPostsByTag(newTag: string) {
     if (newTag == tag) {
       setShowRelatedPosts(!showRelatedPosts);
@@ -85,40 +89,59 @@ export default function Blog(props) {
     setIsRelatedPostsLoading(false);
   }
 
+
   // clear related posts when loading new blog post
   useEffect(() => {
     setRelatedPosts([]);
     setShowRelatedPosts(false);
-  }, [isLoading]);
+    setPostLikes(0);
+    setTag('');
+  }, [dynamicRoute]);
+
+
 
   return <>
-      <Head>
-        <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
-        <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
-        <meta property="og:description" content={props.teaser} key="description" />
-        <meta property="og:type" content="article" key="type" />
-        <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
-        
-        <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
-        <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
-        <meta name="twitter:description" content={props.teaser} key="twitter-description" />
-        <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
-        <meta name="twitter:card"  content="summary_large_image" key="twitter-card" />
-        <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
+    <Head>
+    <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
+    <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
+    <meta property="og:description" content={props.teaser} key="description" />
+    <meta property="og:type" content="article" key="type" />
+    <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
+    
+    <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
+    <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
+    <meta name="twitter:description" content={props.teaser} key="twitter-description" />
+    <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
+    <meta name="twitter:card"  content="summary_large_image" key="twitter-card" />
+    <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
 
-        {/* need to add twitter og tags */}
-      </Head>
-      <div className={styles.blogLayout}>
-        <h1 className={styles.pageTitle}>{props.title}</h1>
+    {/* need to add twitter og tags */}
+    </Head>
+    <div className={styles.blogLayout}>
+      <h1 className={styles.pageTitle}>{props.title}</h1>
+
+
+      <div className={styles.topMatter}>
+        <p className={styles.date}><em>{props.date}</em></p>
+        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
+      </div>
+      <div className={styles.separator}></div>
+
+      <div >
+        <br />
+        <div className={styles.postContents}>
+          <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
+        </div>
 
         <br />
-        <div >
-          <br />
-          <div className={styles.postContents}>
-            <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
-          </div>
-          <div>
-            {props.tags?.length > 0 && 
+
+        <div className={styles.likesWrapper}>
+            <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
+        </div>
+
+        <div className={styles.bottomMatter}>
+          {props.tags?.length > 0 &&
+          <div className={styles.relatedPostsContainer}>
             <div className={styles.postTagContainer}>
               <div>
                 <p className={styles.relatedPostsText}>related:</p>
@@ -131,22 +154,20 @@ export default function Blog(props) {
                 </a>
               </div>
               ))}
-            </div>}
-
-            <br />
+            </div>
 
             <div className={showRelatedPosts ? `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsIn} ${styles.relatedPosts}` : `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsOut} ${styles.relatedPosts}`}>
               {relatedPosts.length > 0 &&
               <p className={styles.relatedPostsText}>
                 <span>other posts tagged: <i>{tag}</i></span>
               </p>}
-              
+
               {relatedPosts.length > 0 &&
               <ul>
                 {relatedPosts.map((relatedPost) =>
                 <li key={relatedPost.blogpostId}>
                   <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
-                    <a className={styles.postLinks} onClick={() => setIsLoading(true)}>
+                    <a className={styles.postLinks}>
                     {relatedPost.title}
                     <ul>
                       <li>
@@ -158,16 +179,17 @@ export default function Blog(props) {
                 </li>
                 )}
               </ul>}
-              
-              {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
-            </div>
 
-            <br />
-            <div>
-              <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
-            </div>
+            
+            {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
           </div>
+        </div>}
+          <br />
+          <div>
+            <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
           </div>
         </div>
-      </>
+        </div>
+      </div>
+    </>
 }

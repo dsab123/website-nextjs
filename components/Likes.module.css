@@ -1,0 +1,57 @@
+.outerLikesContainer {
+  max-width: 60px;
+}
+
+.likesContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  cursor: pointer;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(7deg);
+  }
+  25% {
+    transform: rotateZ(-8deg);
+  }
+  30% {
+    transform: rotateZ(5deg);
+  }
+  35% {
+    transform: rotateZ(-2deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+.likesContainer:hover {
+  transform: scale(1.1);
+}
+
+.likesContainer:active {
+  animation-duration: .5s;
+  animation-name: wiggle;
+}
+
+.likesIcon {
+  margin-bottom: 4px;
+}
+
+.likesNumber {
+  font-family: var(--small-font-family);
+  font-size: 20px;
+  text-align: center;
+  margin-block-start: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}

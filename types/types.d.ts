@@ -60,3 +60,13 @@ type GTagEvent = {
   label: string;
   value: number;
 };
+
+type LikesItem = {
+  id: number;
+  likes: number;
+}
+
+type FaunaResponse = {
+  statusCode: number;
+  body: string;
+}
