@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
 import styles from './Footer.module.css'
 import * as EmailValidator from 'email-validator';
+import CoffeeMug from './CoffeeMug';
 
 export enum SubscriptionStatus {
     NONE = "",
@@ -92,7 +93,7 @@ export default function Footer() {
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />    
                             <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <img src="/static/coffee_cup.png" className={styles.smallCoffeeCup}/>
+                                <CoffeeMug />
                             </button>
                         </form>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
