@@ -1,6 +1,36 @@
 {
     "blogposts": [
         {
+            "blogpostId": 26,
+            "slug": "obedience-to-christ-gives-assurance",
+            "title": "Obedience to Christ gives Assurance",
+            "teaser": "'If any man wills to do His will, he shall know ...",
+            "tags": [
+                "reading",
+                "sermon",
+                "theology",
+                "Archibald Alexander"
+            ],
+            "imageUri": "blogpost/archibald-alexander.jpg",
+            "date": "8-29-2022",
+            "isReady": true
+        },
+        {
+            "blogpostId": 25,
+            "slug": "how-do-you-know-the-bible-is",
+            "title": "How do you know the Bible is the Word of God?",
+            "teaser": "The answer is not to satisfy the skeptic ...",
+            "tags": [
+                "reading",
+                "theology",
+                "Calvin",
+                "Archibald Alexander"
+            ],
+            "imageUri": "blogpost/open-bible.jpg",
+            "date": "8-29-2022",
+            "isReady": true
+        },
+        {
             "blogpostId": 24,
             "slug": "medicine-for-lucy",
             "title": "'Medicine For Lucy'",
