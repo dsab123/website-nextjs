@@ -6,23 +6,26 @@ const client = new faunadb.Client({
   secret: `${process.env.FAUNA_KEY}` 
 });
 
+const indexName = process.env.NODE_ENV === 'production' ? 'blogLikes' : 'blogLikesTest';
+const collectionName = indexName;
+
 export const databaseClient = {
   getLikes: async (id: number, slug: string): Promise<FaunaResponse> => { 
     // if does not exist, create record with 0 likes
     const doesDocExist = await client.query(
-      q.Exists(q.Match(q.Index('blogLikes'), slug))
+      q.Exists(q.Match(q.Index(indexName), slug))
     );
   
     if (!doesDocExist) {
       await client.query(
-        q.Create(q.Collection('blogLikes'), {
+        q.Create(q.Collection(collectionName), {
           data: { slug: slug, likes: 0 },
         })
       );
     }
   
     const document = await client.query(
-      q.Get(q.Match(q.Index('blogLikes'), slug))
+      q.Get(q.Match(q.Index(indexName), slug))
     ) as any;
 
     return {
@@ -36,19 +39,19 @@ export const databaseClient = {
   postLikes: async (id: number, slug: string): Promise<FaunaResponse> => {
     // if already exist, upsert
     const doesDocExist = await client.query(
-      q.Exists(q.Match(q.Index('blogLikes'), slug))
+      q.Exists(q.Match(q.Index(indexName), slug))
     );
     
     if (!doesDocExist) {
       await client.query(
-        q.Create(q.Collection('blogLikes'), {
+        q.Create(q.Collection(collectionName), {
           data: { slug: slug, likes: 0 },
         })
       );
     }
   
     const document = await client.query(
-      q.Get(q.Match(q.Index('blogLikes'), slug))
+      q.Get(q.Match(q.Index(indexName), slug))
     ) as any;
   
     await client.query(
@@ -60,7 +63,7 @@ export const databaseClient = {
     );
   
     const updatedDocument = await client.query(
-      q.Get(q.Match(q.Index('blogLikes'), slug))
+      q.Get(q.Match(q.Index(indexName), slug))
     ) as any;
 
     return {
