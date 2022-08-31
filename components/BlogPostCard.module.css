@@ -2,9 +2,9 @@
     width: 317px;
     height: 425px;
     border: 1px solid gray;
-    margin-top: 40px;
-    margin-bottom: 20px;
     transition: transform .2s;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .postCardContainer:hover {
@@ -14,6 +14,8 @@
 .postLinks {
     text-decoration: none;
     cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .postCardImage {

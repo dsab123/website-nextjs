@@ -52,7 +52,7 @@ export default function Home() {
   }, [isFirstPostLoading]);
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(22) // hardcoded for now
+    fetchLatestBlogPostInfo(26) // hardcoded for now
       .then(info => {
         if (isSecondPostLoading) {
           setSecondPostInfo(info);
@@ -64,8 +64,7 @@ export default function Home() {
   // BookSummary state
   const [isSummariesLoading, setIsSummariesLoading] = useState(true);
   const [summaries, setSummaries] = useState<BookSummaryInfo[]>(
-    [
-      {
+    [{
         summaryId: 999,
         title: '',
         author: '',
@@ -90,8 +89,7 @@ export default function Home() {
         slug: '',
         quality: 1,
         payoff: 1
-      }
-    ]
+      }]
   );
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
 import BlogPostCard from '../components/BlogPostCard';
 
@@ -27,7 +27,7 @@ export default function Blogs() {
         {blogpostId: 6, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
     ]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         fetchBlogPostLookup()
             .then(posts => {
                 if (isBlogPostsLoading) {
