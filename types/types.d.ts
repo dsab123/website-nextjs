@@ -12,7 +12,8 @@ type BlogPostInfo = {
   imageUri: string,
   isReady: boolean,
   date: string,
-  tags: Array<string>
+  tags: Array<string>,
+  likes?: number
 };
 
 type BlogPostInfoByTag = {
@@ -64,6 +65,7 @@ type GTagEvent = {
 type LikesItem = {
   id: number;
   likes: number;
+  slug?: string;
 }
 
 type FaunaResponse = {

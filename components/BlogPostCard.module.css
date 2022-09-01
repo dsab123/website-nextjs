@@ -26,6 +26,7 @@
 
 .hiddenImage {
     display: none;
+    object-fit: cover;
 }
 
 @keyframes placeHolderShimmer {
@@ -56,9 +57,24 @@
     background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
     position: relative;
     border-radius: 5px;
-    margin-bottom: 20px;
+    
     width: 317px;
     height: 317px;
+}
+
+.loadingPostText {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #ebe8e8;
+    background: linear-gradient(to right, var(--post-tag-color) 8%, var(--background-color) 18%, var(--post-tag-color) 33%);
+    position: relative;
+    width: 300px;
+    margin-left: 10px;
+    border-radius: 3px;
+    height: 20px;
 }
 
 .loadingTitleText {
@@ -74,7 +90,6 @@
     margin-left: 10px;
     border-radius: 3px;
     height: 30px;
-    margin-top: 10px;
 }
 
 .loadingTeaserText {
@@ -90,7 +105,6 @@
     margin-left: 10px;
     border-radius: 3px;
     height: 20px;
-    margin-top: 10px;
 }
 
 .loadingDateText {
@@ -122,7 +136,7 @@
     font-family: var(--big-font-family);
     font-size: 20px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 0px;
@@ -135,7 +149,6 @@
     font-style: italic;
     margin-left: 5px;
     margin-right: 5px;
-    flex-grow: 2;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -149,4 +162,22 @@
     margin-right: 5px;
     margin-top: 0em;
     margin-bottom: 5px;
+}
+
+.likesNumber {
+    font-family: var(--small-font-family);
+    font-size: 20px;
+    text-align: center;
+    margin-block-start: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.postText {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    width: 145px;
 }

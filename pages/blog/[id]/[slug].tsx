@@ -123,7 +123,7 @@ export default function Blog(props) {
 
       <div className={styles.topMatter}>
         <p className={styles.date}><em>{props.date}</em></p>
-        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
+        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
       </div>
       <div className={styles.separator}></div>
 
@@ -136,7 +136,7 @@ export default function Blog(props) {
         <br />
 
         <div className={styles.likesWrapper}>
-            <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} postLikes={postLikes} setPostLikes={setPostLikes}/>
+            <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
         </div>
 
         <div className={styles.bottomMatter}>
