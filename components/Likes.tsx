@@ -36,7 +36,7 @@ export default function Likes(props: {id: number, slug: string, navigationChange
   }
 
   return <div className={styles.outerLikesContainer}>
-    <a className={styles.likesContainer} onClick={() => addLike(props.id, props.slug)}>    
+    <a className={styles.likesContainer} onClick={() => addLike(props.id, props.slug)}>
       <Like size="medium" className={styles.likesIcon}/> 
       <p className={styles.likesNumber}>{props.postLikes}</p>
     </a>
