@@ -1,6 +1,6 @@
-<div class="postImageContainer"><img src="/blogpost/open-bible.jpg" class="wideNonMovingPostimage" alt="crisis" title="crisis" /></div>
+<div className="postImageContainer"><img src="/blogpost/open-bible.jpg" className="wideNonMovingPostimage" alt="crisis" title="crisis" /></div>
 
-<div class="captionText">Thanks to Aaron Burden for making this <a href="https://unsplash.com/photos/UIib0bAvWfs" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
+<div className="captionText">Thanks to Aaron Burden for making this <a href="https://unsplash.com/photos/UIib0bAvWfs" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
 
 "How do you know the Bible is the word of God?" Have you ever been asked this question? Usually it's asked in a derogatory manner, possibly as a preface to other questions like "Why is Christianity an exclusivist religion?" or "Why isn't the Koran _also_ the word of God?" Sometimes, however, the question is asked out of genuine interest. Maybe you're the one asking the question.
 

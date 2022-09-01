@@ -1,4 +1,4 @@
-<div class="postImageContainer"><img src="/blogpost/the-life-of-joseph-addison-alexander.png" class="wideNonMovingPostimage" alt="The Life of Joseph Addison Alexander" title="The Life of Joseph Addison Alexander" /></div>
+<div className="postImageContainer"><img src="/blogpost/the-life-of-joseph-addison-alexander.png" className="wideNonMovingPostimage" alt="The Life of Joseph Addison Alexander" title="The Life of Joseph Addison Alexander" /></div>
 
 Dr. Addison Alexander, one of the last great Princeton Theologians, was asked for some gospel comfort from a little girl named Lucy, whose father had recently died. Before Dr. Alexander could write to her, however, his own father passed away.
 

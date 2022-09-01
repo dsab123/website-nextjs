@@ -9,7 +9,7 @@ If you find any of them interesting, click on the picture of the book to purchas
 
 ### Job: The Wisdom Of The Cross by Christopher Ash
 
-<div class="postImageContainer"><a href="https://amzn.to/31lMIog" target="_blank"><img src="/summary/job.jpg" class="smallPostImage" alt="Job book" title="absolutely LOVED this commentary" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/31lMIog" target="_blank"><img src="/summary/job.jpg" className="smallPostImage" alt="Job book" title="absolutely LOVED this commentary" /></a></div>
 
 **Why**: I read this commentary because my family and I went weathered some significant sufferings this year.
 
@@ -20,7 +20,7 @@ I wrote a summary of this commentary, which you can read [here](../../summary/3/
 
 ### Rich Dad, Poor Dad by Robert Kiyosaki
 
-<div class="postImageContainer"><a href="https://amzn.to/3nKTDAj" target="_blank"><img src="/blogpost/rich-dad.jpg" class="smallPostImage" alt="Rich dad book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/3nKTDAj" target="_blank"><img src="/blogpost/rich-dad.jpg" className="smallPostImage" alt="Rich dad book" title="" /></a></div>
 
 **Why**: I read this book because I got married this year and I had no framework for how to think about money other than “spend less than what you make.”
 
@@ -33,7 +33,7 @@ If you have little education about money, you’re probably more like the poor d
 
 ### Antifragile by Nicholas Nassim Taleb
 
-<div class="postImageContainer"><a href="https://amzn.to/2LZkSsZ" target="_blank"><img src="/blogpost/antifragile.jpg" class="smallPostImage" alt="antifragile book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/2LZkSsZ" target="_blank"><img src="/blogpost/antifragile.jpg" className="smallPostImage" alt="antifragile book" title="" /></a></div>
 
 **Why**: I read this book on recommendation from a close brother in my local church.
 
@@ -48,7 +48,7 @@ This book has reinforced my belief that the uncommon paths in life are usually t
 
 ### The Moon Is Down by John Steinbeck
 
-<div class="postImageContainer"><a href="https://amzn.to/3avn6KR" target="_blank"><img src="/blogpost/the-moon-is-down.jpg" class="smallPostImage" alt="The moon is down book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/3avn6KR" target="_blank"><img src="/blogpost/the-moon-is-down.jpg" className="smallPostImage" alt="The moon is down book" title="" /></a></div>
 
 **Why**: I like Steinbeck’s brand of historical fiction, and it was only a hundred pages long.
 
@@ -63,7 +63,7 @@ This novel was the most printed piece of propaganda in occupied Europe during th
 
 ### My Wife’s Prayer Journal
 
-<div class="postImageContainer"><a href="https://amzn.to/2KrNydI" target="_blank"><img src="/blogpost/confessions.jpg" class="smallPostImage" alt="Confessions book" title="wait, that's not my wife's prayer journal" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/2KrNydI" target="_blank"><img src="/blogpost/confessions.jpg" className="smallPostImage" alt="Confessions book" title="wait, that's not my wife's prayer journal" /></a></div>
 
 **Why**: I read my wife’s prayer journal (with permission, of course) because I wanted to be encouraged by her prayer life.
 

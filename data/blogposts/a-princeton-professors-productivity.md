@@ -1,4 +1,4 @@
-<div class="postImageContainer"><img src="/blogpost/university.jpg" class="wideNonMovingPostimage" alt="university" /></div>
+<div className="postImageContainer"><img src="/blogpost/university.jpg" className="wideNonMovingPostimage" alt="university" /></div>
 
 Samuel Miller was one of the brightest minds America ever produced. He served as one of the founding professors of Princeton Seminary. A peaceful man by heart, Miller was drawn into many controversies surrounding the development of American Presbyterian thought in the eighteenth and nineteenth centuries. He protected the American church from drifting into Unitarianism, wrote essays on Infant Baptism and the position of Elder in the church, and on raising young children. He was simply a prodigious reader and writer.
 

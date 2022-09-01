@@ -1,4 +1,4 @@
-<div class="postImageContainer"><a href="https://amzn.to/3bJjxiS"><img src="/blogpost/sapiens.jpg" class="postImage" alt="Sapiens book" title="I want to write like this man 😍" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/3bJjxiS"><img src="/blogpost/sapiens.jpg" className="postImage" alt="Sapiens book" title="I want to write like this man 😍" /></a></div>
 
 One of the things I like to do is collect important phrases and quotes from my reading. 
 <br></br>

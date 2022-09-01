@@ -1,4 +1,4 @@
-<div class="postImageContainer"><a href="https://www.amazon.com/Psalms-Day-New-Devotional-Translation/dp/1781917167"><img src="/blogpost/psalms-by-the-day.png" class="postImage" alt="Psalms By The Day book" title="what a devotional" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Psalms-Day-New-Devotional-Translation/dp/1781917167"><img src="/blogpost/psalms-by-the-day.png" className="postImage" alt="Psalms By The Day book" title="what a devotional" /></a></div>
 
 I had a really good reading this morning in _Psalms By The Day_, by Alec Motyer, on Psalms 97 and 98. Below is his translation of the two psalms.
 

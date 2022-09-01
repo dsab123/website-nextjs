@@ -1,5 +1,5 @@
-<div class="postImageContainer"><img src="/blogpost/open-book.jpg" class="wideNonMovingPostimage" alt="chapter" title="nice Summary Statement, bro" /></div>
-<div class="captionText">Thanks to @Brando Makes Branding for making this <a href="https://unsplash.com/photos/PjhOkwN0ruY?utm_source=twitter&utm_medium=referral&utm_content=creditShareLink" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a> 🎁.</div>
+<div className="postImageContainer"><img src="/blogpost/open-book.jpg" className="wideNonMovingPostimage" alt="chapter" title="nice Summary Statement, bro" /></div>
+<div className="captionText">Thanks to @Brando Makes Branding for making this <a href="https://unsplash.com/photos/PjhOkwN0ruY?utm_source=twitter&utm_medium=referral&utm_content=creditShareLink" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a> 🎁.</div>
 
 _This post is second in the series on reading books well. You can read the first post <a href="/blog/18/up-your-2021-reading-with-evernote-and-tomatoes">here</a>._
 
@@ -17,7 +17,7 @@ Structure is your friend in this effort. With structure and a bit of effort you 
 
 So, let’s learn a reading strategy that will empower you to understand what you read, one chapter at a time.
 
-<div class="centeredText">— 📚 —</div>
+<div className="centeredText">— 📚 —</div>
 
 ## Reading Rule #1 - Find the Melodic Line 
 

@@ -1,4 +1,4 @@
-<div class="postImageContainer"><a href="https://amzn.to/3bJjxiS"><img src="/blogpost/prayer.jpg" class="postImage" target="_blank" alt="Prayer book" title="THIS BOOK IS AWESOME Taylor <3 I love you and miss you" /></a></div>
+<div className="postImageContainer"><a href="https://amzn.to/3bJjxiS"><img src="/blogpost/prayer.jpg" className="postImage" target="_blank" alt="Prayer book" title="THIS BOOK IS AWESOME Taylor <3 I love you and miss you" /></a></div>
 
 *Prayer* by Keller is a very helpful book that collects the thoughts of Calvin, Luther, and Augustine on the subject of Prayer.
 <br></br>

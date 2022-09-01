@@ -1,6 +1,6 @@
-<div class="postImageContainer"><img src="/blogpost/crisis.jpg" class="wideNonMovingPostimage" alt="crisis" title="crisis" /></div>
+<div className="postImageContainer"><img src="/blogpost/crisis.jpg" className="wideNonMovingPostimage" alt="crisis" title="crisis" /></div>
 
-<div class="captionText">Thanks to @Ignacio Amenábar for making this <a href="https://unsplash.com/photos/8b9O31aK7H0" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a> 🎁.</div>
+<div className="captionText">Thanks to @Ignacio Amenábar for making this <a href="https://unsplash.com/photos/8b9O31aK7H0" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a> 🎁.</div>
 
 
 The mid-1600's were a tumultuous time in England's history. The Emperor had been executed and the country descended into civil war.

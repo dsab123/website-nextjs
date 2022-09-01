@@ -4,7 +4,7 @@ Here's my reading roundup for this year. And here's a link to [last year's](../.
 
 ### Theology - _All That Is In God: Evangelical Theology and the Challenge of Classical Christian Theism_ by James Dolezal
 
-<div class="postImageContainer"><a href="https://www.amazon.com/All-That-God-Evangelical-Challenge/dp/1601785542" target="_blank"><img src="/blogpost/all-that-is-in-god.jpg" class="smallPostImage" alt="All That Is In God book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/All-That-God-Evangelical-Challenge/dp/1601785542" target="_blank"><img src="/blogpost/all-that-is-in-god.jpg" className="smallPostImage" alt="All That Is In God book" title="" /></a></div>
 
 **Why**: I read this book because I wanted to understand ths historic Christian understanding of God's impassability - does He have emotions in the same way we do? Does He _feel_ our pain?
 
@@ -16,7 +16,7 @@ Classical Christian Theism, the historical understanding of God as unchanging an
 
 ### Practical - _Struck Down But Not Destroyed: Living Faithfully with Anxiety_ by Pierce Taylor Hibbs
 
-<div class="postImageContainer"><a href="https://www.amazon.com/Struck-Down-but-Not-Destroyed-ebook/dp/B083V3VCJN" target="_blank"><img src="/blogpost/struck-down.jpg" class="smallPostImage" alt="Struck Down But Not Forsaken book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Struck-Down-but-Not-Destroyed-ebook/dp/B083V3VCJN" target="_blank"><img src="/blogpost/struck-down.jpg" className="smallPostImage" alt="Struck Down But Not Forsaken book" title="" /></a></div>
 
 **Why**: I've read Hibbs natural-theology devotional [Finding God In the Ordinary](https://www.amazon.com/Finding-Ordinary-Pierce-Taylor-Hibbs/dp/1532657684) and loved it.
 
@@ -30,7 +30,7 @@ Hibbs helpfully lines the pages with his own experiences of living with anxiety.
 
 ### Self-Development - _Essentialism: The Disciplined Pursuit of Less_ by Greg McKeown
 
-<div class="postImageContainer"><a href="https://www.amazon.com/Essentialism-Disciplined-Pursuit-Greg-McKeown/dp/0804137382/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1641164186&sr=1-1" target="_blank"><img src="/blogpost/essentialism.jpg" class="smallPostImage" alt="Essentialism book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Essentialism-Disciplined-Pursuit-Greg-McKeown/dp/0804137382/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1641164186&sr=1-1" target="_blank"><img src="/blogpost/essentialism.jpg" className="smallPostImage" alt="Essentialism book" title="" /></a></div>
 
 **Why**: One of my professors recommended this book to help his students think about the few important things in life, and how to do them well.
 
@@ -45,7 +45,7 @@ Wow, what an breezy and practical read! Greg McKeown educates you on what makes 
 
 ### Society & Culture - _Strange Rites: New Religions for a Godless World_ by Tara Isabella Burton
 
-<div class="postImageContainer"><a href="https://www.amazon.com/Strange-Rites-Religions-Godless-World/dp/1541762533/ref=sr_1_1?keywords=strange+rites&qid=1641164259&s=books&sprefix=strange+rites%2Cstripbooks%2C85&sr=1-1" target="_blank"><img src="/blogpost/strange-rites.jpg" class="smallPostImage" alt="Strange Rites book" title=""/></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Strange-Rites-Religions-Godless-World/dp/1541762533/ref=sr_1_1?keywords=strange+rites&qid=1641164259&s=books&sprefix=strange+rites%2Cstripbooks%2C85&sr=1-1" target="_blank"><img src="/blogpost/strange-rites.jpg" className="smallPostImage" alt="Strange Rites book" title=""/></a></div>
 
 **Why**: A group of brothers from church read this book together over a few months.
 
@@ -57,7 +57,7 @@ Though she's not a Christian, Burton's work is effectively a secular exposition 
 
 ### Fun: _Walden_ by Henry David Thoreau
 
-<div class="postImageContainer"><a href="https://www.amazon.com/Walden-Illustrated-Henry-David-Thoreau/dp/B09FCCDFFD/ref=sr_1_14?keywords=walden&qid=1641164377&s=books&sprefix=walden%2Cstripbooks%2C129&sr=1-14" target="_blank"><img src="/blogpost/walden.jpg" class="smallPostImage" alt="Walden book" title="" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Walden-Illustrated-Henry-David-Thoreau/dp/B09FCCDFFD/ref=sr_1_14?keywords=walden&qid=1641164377&s=books&sprefix=walden%2Cstripbooks%2C129&sr=1-14" target="_blank"><img src="/blogpost/walden.jpg" className="smallPostImage" alt="Walden book" title="" /></a></div>
 
 **Why**: My wife and I were on vacation in Rodanthe, NC and I needed an off-the-wall book to read.
 

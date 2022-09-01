@@ -1,4 +1,4 @@
-<div class="postImageContainer"><img loading="lazy" src="/blogpost/garden.jpg" class="nonMovingPostimage" alt="image of commentaries on bookshelf" title="Look at this majestic bookshelf" /></div>
+<div className="postImageContainer"><img loading="lazy" src="/blogpost/garden.jpg" className="nonMovingPostimage" alt="image of commentaries on bookshelf" title="Look at this majestic bookshelf" /></div>
 
 Did you know that the Bible speaks at length about gardens?
 <br></br>

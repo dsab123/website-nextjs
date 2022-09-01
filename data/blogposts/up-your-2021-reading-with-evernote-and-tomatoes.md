@@ -1,4 +1,4 @@
-<div class="postImageContainer"><img src="/blogpost/person-in-blue-button-up-shirt-eating-cherry-tomatoes.jpg" class="wideNonMovingPostimage" alt="Denethor" title="mmm, tomatoes 🍅" /></div>
+<div className="postImageContainer"><img src="/blogpost/person-in-blue-button-up-shirt-eating-cherry-tomatoes.jpg" className="wideNonMovingPostimage" alt="Denethor" title="mmm, tomatoes 🍅" /></div>
 
 _This post is first in a series. You can read the next one <a href="/blog/22/how-to-read-one-chapter-of-a-book">here</a>._
 
@@ -22,7 +22,7 @@ We've seen that an unstructured approach will cause you to lose steam; jumping i
 
 What I propose is a middle road between the two. A lightweight approach that establishes just enough structure, so that you're free <a href="https://www.danielsabbagh.com/blog/4/about">to read more, and read better</a>.
 
-<div class="centeredText">— 📚 —</div>
+<div className="centeredText">— 📚 —</div>
 
 Though not to Bauer's degree, I do keep track of the books I read, and I do write about them. But I don't use a physical notebook to do so. I use <a href="https://www.evernote.com" target="_blank">Evernote</a>. At some point in the future I'll write more about Evernote (it functions as my 'external brain'), but for now I'll say that it is the best note-taking app I've ever used, and perfect for this case. Evernote is available however you use your tech: on a smartphone, in the browser, and on a desktop or laptop.
 
@@ -54,12 +54,12 @@ You can create a note for each book you read, taking some note of its genre and 
 
 NOTE: Bauer recommends writing a summary statement of each chapter in the book as you read. This is a great idea! I'll expand on good book note-taking in another post.
 
-<div class="postImageContainer">
+<div className="postImageContainer">
     <a href="/blogpost/evernote-1.png">
-        <img src="/blogpost/evernote-1.png" class="wideNonMovingPostimage" alt="evernote web image" title="creating a new note in evernote" />
+        <img src="/blogpost/evernote-1.png" className="wideNonMovingPostimage" alt="evernote web image" title="creating a new note in evernote" />
     </a>
 </div>
-<div class="captionText">On <a href="www.evernote.com" target="_blank">evernote.com</a>, adding a new note is as easy as a mouse click</div>
+<div className="captionText">On <a href="www.evernote.com" target="_blank">evernote.com</a>, adding a new note is as easy as a mouse click</div>
 
 Next, we'll see how to link this single note with some others to erect our minimalist reading system.
 
@@ -79,21 +79,21 @@ If you can stick with a category for years, you'll find yourself a bonafide mast
 I like to plan out my reading right at the beginning of the year. To do this I create a note titled "Reading List 2021" or similar. Then I create a bulleted list for each category I've thought up, and fill it with links to the notes I created for each book in the prior suggestion. More on linked notes <a href="https://help.evernote.com/hc/en-us/articles/208313588-Create-internal-note-links" target="_blank">here</a>. 
 
 
-<div class="postImageContainer">
+<div className="postImageContainer">
     <a href="/blogpost/evernote-2.png">
-        <img src="/blogpost/evernote-2.png" class="wideNonMovingPostimage" alt="evernote web image" title="creating a note link in evernote" />
+        <img src="/blogpost/evernote-2.png" className="wideNonMovingPostimage" alt="evernote web image" title="creating a note link in evernote" />
     </a>
 </div>
-<div class="captionText">We copy the note link like this, then paste it in our 'Reading List' note and… </div>
+<div className="captionText">We copy the note link like this, then paste it in our 'Reading List' note and… </div>
 
 <br />
 
-<div class="postImageContainer">
+<div className="postImageContainer">
     <a href="/blogpost/evernote-3.png">
-        <img src="/blogpost/evernote-3.png" class="wideNonMovingPostimage" alt="evernote web image" title="pasting note link in evernote" />
+        <img src="/blogpost/evernote-3.png" className="wideNonMovingPostimage" alt="evernote web image" title="pasting note link in evernote" />
         </a>
 </div>
-<div class="captionText">Voila! A note link!</div>
+<div className="captionText">Voila! A note link!</div>
 
 ## Suggestion 3 — Time Yourself with Tomatoes
 
@@ -112,9 +112,9 @@ Let's lose neither our intellectual appetites nor our physical ones: It's time f
 ### Track it with Tomatoes
 To create time for myself to read, I use <a href="https://www.tomato-timer.com" target="_blank">this online Pomodoro timer</a>. What's a Pomodoro, you ask? It's Italian for 'tomato', and also a well-known <a href="https://www.wikipedia.org/Pomodoro" target="_blank">timeboxing method that manages focused work in twenty-five minute intervals</a>. You simply set the timer and focus on the task at hand until the timer rings. If twenty-five minutes seems too ambitious at first, you can start with five- or ten-minute intervals, and work your way up to the full-time Pomodoro.
 
-<div class="postImageContainer">
+<div className="postImageContainer">
     <a href="/blogpost/evernote-4.png">
-        <img src="/blogpost/evernote-4.png" class="wideNonMovingPostimage" alt="tomato-timer.com" title="tomato-timer" />
+        <img src="/blogpost/evernote-4.png" className="wideNonMovingPostimage" alt="tomato-timer.com" title="tomato-timer" />
     </a>
 </div>
 

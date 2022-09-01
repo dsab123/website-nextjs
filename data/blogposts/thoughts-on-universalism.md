@@ -1,4 +1,4 @@
-<div class="postImageContainer"><img loading="lazy" src="/blogpost/world.jpg" class="wideNonMovingPostimage" alt="this would never do as a paperweight" title="What a world" /></div>
+<div className="postImageContainer"><img loading="lazy" src="/blogpost/world.jpg" className="wideNonMovingPostimage" alt="this would never do as a paperweight" title="What a world" /></div>
 
 Recently I had an exchange with a friend on Universalism, the belief that everyone goes to heaven, eventually or otherwise. In advance of our in-person discussion, he sent me a list of verses that seem to make the case for it. Below is my response to him.
 

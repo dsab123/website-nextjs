@@ -1,9 +1,9 @@
-<div class="centeredText">SERMON</div>
+<div className="centeredText">SERMON</div>
 <br />
-<div class="centeredText">OBEDIENCE TO CHRIST GIVES ASSURANCE OF THE TRUTH OF HIS DOCTRINES</div>
+<div className="centeredText">OBEDIENCE TO CHRIST GIVES ASSURANCE OF THE TRUTH OF HIS DOCTRINES</div>
 <br />
 
-<div class="centeredText">Archibald Alexander</div>
+<div className="centeredText">Archibald Alexander</div>
 <br />
 If any man will do his will, he shall know of the doctrine whether it be of God. — JOHN 7:17.
 
