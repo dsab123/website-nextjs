@@ -5,10 +5,6 @@ import Image from 'next/image';
 import Likes from './Likes';
 import styles from './BlogPostCard.module.css';
 
-const isTargetLikeButton = async (e: any) => {
-
-}
-
 export default function BlogPostCard(props: { post: BlogPostInfo; isLoading: boolean; setIsLoading: Function; likes?: number }) { // add like from inside blogpostcard
   const {post, isLoading, setIsLoading, likes} = props;
   const [postCardLikes, setPostCardLikes] = useState(0);
