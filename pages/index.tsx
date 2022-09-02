@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-
 import styles from '../styles/Home.module.css';
 import SummaryStyles from '../styles/Summaries.module.css';
 import BlogPostCard from '../components/BlogPostCard';
+import BookHover from '../components/BookHover';
 
 async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
   let response = await fetch(`/api/blogpost-info/${blogPostId}`);
@@ -17,7 +17,7 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
 }
 
 async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
-  const ids = [6, 7];
+  const ids = [5, 6];
 
   let response = await fetch(`/api/booksummary-info/${ids.join(',')}`);
 
@@ -140,7 +140,9 @@ export default function Home() {
             <div className={isSummariesLoading ? SummaryStyles.loadingBookImage : ''}>
               {!isSummariesLoading &&
                 <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
-                  <img className={summary.isReady ? SummaryStyles.bookImage : SummaryStyles.nonAnimatedBookImage} src={summary.imageUri} />
+                  <a>
+                    <BookHover imageUri={summary.imageUri} size='small'/>
+                  </a>
                 </Link>}
             </div>
             <div className={SummaryStyles.cardText}>

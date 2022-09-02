@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import BookHover from '../components/BookHover';
 import styles from '../styles/Summaries.module.css';
 
 async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
@@ -64,7 +65,9 @@ export default function Summaries() {
                         <div className={isLoading ? styles.loadingBookImage : ''}>
                             {summary.isReady && 
                             <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
-                                <img className={!isLoading ? styles.bookImage : styles.hidden} src={summary.imageUri} />
+                                <a>
+                                    <BookHover imageUri={'/' + summary.imageUri} />
+                                </a>
                             </Link>}
                             {!summary.isReady &&
                             <div>

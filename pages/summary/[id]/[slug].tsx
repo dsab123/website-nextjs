@@ -7,6 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import summary from '../../../data/summary.json';
 import styles from '../../../styles/Summary.module.css';
+import BookHover from '../../../components/BookHover';
 
 export async function getStaticProps(context: GetStaticPropsContext) {
     try {
@@ -120,7 +121,7 @@ export default function Summary(props) {
 
                 <div className={styles.inner}>
                     <a className={styles.bookLink} href={props.summaryInfo?.link} target="_blank">
-                        <img className={styles.summaryBookImage} src={`/${props.summaryInfo?.imageUri}`} /> 
+                        <BookHover imageUri={'/' + props.summaryInfo?.imageUri} size='large' />
                     </a>
                     <div className={styles.teaserAndButton}>
                         <div className={styles.teaserWrapper}>

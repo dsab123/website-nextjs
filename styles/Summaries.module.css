@@ -115,18 +115,6 @@
     opacity: 0.5;
 }
 
-.bookImage {
-    height: 240px;
-    width: 150px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform .2s;
-}
-
-.bookImage:hover {
-    transform: scale(1.1) rotate(-7deg);
-}
-
 .cardText {
     display: flex;
     flex-direction: column;

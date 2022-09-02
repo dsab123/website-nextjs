@@ -41,8 +41,9 @@
 
 .teaserAndButton {
 	display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-left: 40px;
 }
 
 .teaserWrapper {
@@ -175,6 +176,7 @@
 		justify-content: space-around;
 		margin-top: 20px;
 		align-items: center;
+		margin-left: 0px;
 	}
 
 	.teaser {
