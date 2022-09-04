@@ -3,7 +3,7 @@
   height: 240px;
   position: relative;
   text-align: center;
-  margin:2.5%;
+  margin: 2.5%;
 }
 
 .largeBook {
@@ -119,4 +119,15 @@
   inset -12px 0 0 #dbdbdb,
   inset -13px 0 0 white,
   inset -14px 0 0 #dbdbdb;
+}
+
+@media screen and (max-width: 768px) {
+  .book {
+    height: 30em;
+    width: 18em;
+    position: relative;
+    text-align: center;
+    margin: 2.5%;
+    z-index: 0;
+  }
 }
