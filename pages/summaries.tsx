@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import BookHover from '../components/BookHover';
+import Disclaimer from '../components/Disclaimer';
 import styles from '../styles/Summaries.module.css';
 
 async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
@@ -26,8 +27,7 @@ export default function Summaries() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     
-    const intro = "Here is a curated list of recent books I've read that have helped me to become a better reader and thinker. Let me know if you buy any of these!";
-    const disclaimer = "I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.";
+    const intro = "Here is a running list of books I've read that have helped me to become a better reader and thinker. Let me know if you buy any of these!";
 
     useEffect(() => { 
         fetchBookSummaryLookup()
@@ -99,8 +99,8 @@ export default function Summaries() {
                     </div>
                 ))}
 
-                {!isLoading && <p className="disclaimerText">{disclaimer}</p>}
                 <br />
+                <Disclaimer />
             </div>
         </div>
     </>
