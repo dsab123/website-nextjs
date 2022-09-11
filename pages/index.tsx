@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css';
 import SummaryStyles from '../styles/Summaries.module.css';
 import BlogPostCard from '../components/BlogPostCard';
 import BookHover from '../components/BookHover';
+import Disclaimer from '../components/Disclaimer';
 
 async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
   let response = await fetch(`/api/blogpost-info/${blogPostId}`);
@@ -182,8 +183,6 @@ export default function Home() {
       </div>
     </div>
 
-    <div>
-      <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
-    </div>
+    <Disclaimer />
   </>;
 }

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState, useLayoutEffect, useEffect } from 'react';
 import styles from '../styles/Blogs.module.css';
 import BlogPostCard from '../components/BlogPostCard';
+import Disclaimer from '../components/Disclaimer';
 
 async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
     let response = await fetch('/api/blogpost-lookup');
@@ -84,8 +85,6 @@ export default function Blogs() {
         </div>
         <br />
 
-        <div>
-            <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
-        </div>
+        <Disclaimer />
     </>
 }

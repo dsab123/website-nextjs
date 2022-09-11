@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import summary from '../../../data/summary.json';
 import styles from '../../../styles/Summary.module.css';
 import BookHover from '../../../components/BookHover';
+import Disclaimer from '../../../components/Disclaimer';
 
 export async function getStaticProps(context: GetStaticPropsContext) {
     try {
@@ -155,9 +156,7 @@ export default function Summary(props) {
                     <br />
                 </div>
 
-                <div>
-                    <p className="disclaimerText">I'm a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.</p>
-                </div>
+                <Disclaimer />
             </div>
         </>
 }
