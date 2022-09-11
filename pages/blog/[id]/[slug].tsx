@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -74,7 +73,7 @@ export default function Blog(props) {
     <meta property="og:description" content={props.teaser} key="description" />
     <meta property="og:type" content="article" key="type" />
     <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
-    
+
     <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
     <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
     <meta name="twitter:description" content={props.teaser} key="twitter-description" />
@@ -86,7 +85,6 @@ export default function Blog(props) {
     </Head>
     <div className={styles.blogLayout}>
       <h1 className={styles.pageTitle}>{props.title}</h1>
-
 
       <div className={styles.topMatter}>
         <p className={styles.date}><em>{props.date}</em></p>
