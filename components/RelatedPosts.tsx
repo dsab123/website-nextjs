@@ -51,13 +51,13 @@ export default function RelatedPosts(props: {
    const [tag, setTag] = useState('');
 
   return <>
-  {props.tags?.length > 0 &&
+  {tags?.length > 0 &&
     <div className={styles.relatedPostsContainer}>
       <div className={styles.postTagContainer}>
         <div>
           <p className={styles.relatedPostsText}>related:</p>
         </div>
-        {props.tags.map((tag) => (
+        {tags.map((tag) => (
         <div key={tag} className={isRelatedPostsLoading ? `${styles.postTags} ${styles.dimOverlay}` : styles.postTags}>
           <a className={styles.postTag}
           onClick={() => displayBlogPostsByTag(tag)}>
