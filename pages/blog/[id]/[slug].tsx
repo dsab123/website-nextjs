@@ -12,6 +12,7 @@ import DaysMarried from '../../../components/DaysMarried';
 import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
 import Disclaimer from '../../../components/Disclaimer';
+import RelatedPosts from '../../../components/RelatedPosts';
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
@@ -99,8 +100,6 @@ export default function Blog(props) {
     setTag('');
   }, [dynamicRoute]);
 
-
-
   return <>
     <Head>
     <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
@@ -141,50 +140,13 @@ export default function Blog(props) {
         </div>
 
         <div className={styles.bottomMatter}>
-          {props.tags?.length > 0 &&
-          <div className={styles.relatedPostsContainer}>
-            <div className={styles.postTagContainer}>
-              <div>
-                <p className={styles.relatedPostsText}>related:</p>
-              </div>
-              {props.tags.map((tag) => (
-              <div key={tag} className={isRelatedPostsLoading ? `${styles.postTags} ${styles.dimOverlay}` : styles.postTags}>
-                <a className={styles.postTag}
-                onClick={() => displayBlogPostsByTag(tag)}>
-                  {tag}
-                </a>
-              </div>
-              ))}
-            </div>
-
-            <div className={showRelatedPosts ? `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsIn} ${styles.relatedPosts}` : `${styles.preloadRelatedPosts} ${styles.slideRelatedPostsOut} ${styles.relatedPosts}`}>
-              {relatedPosts.length > 0 &&
-              <p className={styles.relatedPostsText}>
-                <span>other posts tagged: <i>{tag}</i></span>
-              </p>}
-
-              {relatedPosts.length > 0 &&
-              <ul>
-                {relatedPosts.map((relatedPost) =>
-                <li key={relatedPost.blogpostId}>
-                  <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
-                    <a className={styles.postLinks}>
-                    {relatedPost.title}
-                    <ul>
-                      <li>
-                        {relatedPost.teaser}
-                      </li>
-                    </ul>
-                    </a>
-                  </Link>
-                </li>
-                )}
-              </ul>}
-
-            
-            {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
-          </div>
-        </div>}
+          <RelatedPosts
+            tags={props.tags}
+            relatedPosts={relatedPosts}
+            isRelatedPostsLoading={isRelatedPostsLoading}
+            displayBlogPostsByTag={displayBlogPostsByTag}
+            showRelatedPosts={showRelatedPosts}
+            tag={tag} />
           <br />
         </div>
         <Disclaimer />
