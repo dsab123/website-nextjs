@@ -1,22 +1,54 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import styles from './RelatedPosts.module.css';
+
+async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]> {
+  let response = await fetch(`/api/blogpost-info-by-tag/${tag}`);
+  if (response.status >= 400) {
+    throw new Error("Bad response from server") // todo make this better
+  }
+
+  return await response.json() as Promise<BlogPostInfoByTag[]>;
+}
 
 export default function RelatedPosts(props: { 
   tags: string[],
-  relatedPosts: BlogPostInfoByTag[]
-  isRelatedPostsLoading: boolean, 
-  displayBlogPostsByTag: Function, 
-  showRelatedPosts: boolean,
-  tag: string
+  blogPostId: Number
 }) {
-  const {
-    tags, 
-    relatedPosts,
-    isRelatedPostsLoading, 
-    displayBlogPostsByTag,
-    showRelatedPosts,
-    tag
-   } = props;
+  const { tags, blogPostId } = props;
+
+   const dynamicRoute = useRouter().asPath;
+
+   // clear related posts when loading new blog post
+   useEffect(() => {
+     setRelatedPosts([]);
+     setShowRelatedPosts(false);
+     setTag('');
+   }, [dynamicRoute]);
+ 
+     // examine this; it looks really bad to have four setters at the end there
+  async function displayBlogPostsByTag(newTag: string) {
+    if (newTag == tag) {
+      setShowRelatedPosts(!showRelatedPosts);
+      return;
+    }
+
+    setIsRelatedPostsLoading(true);
+
+    const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId != blogPostId);
+  
+    setRelatedPosts(related);
+    setShowRelatedPosts(true);
+    setTag(newTag);
+    setIsRelatedPostsLoading(false);
+  }
+
+  
+   const [showRelatedPosts, setShowRelatedPosts] = useState(true);
+   const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
+   const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
+   const [tag, setTag] = useState('');
 
   return <>
   {props.tags?.length > 0 &&

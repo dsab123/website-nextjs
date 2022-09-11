@@ -56,48 +56,15 @@ export async function getStaticPaths() {
   };
 }
 
-async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]> {
-  let response = await fetch(`/api/blogpost-info-by-tag/${tag}`);
-  if (response.status >= 400) {
-    throw new Error("Bad response from server") // todo make this better
-  }
-
-  return await response.json() as Promise<BlogPostInfoByTag[]>;
-}
 
 export default function Blog(props) {
-  const [showRelatedPosts, setShowRelatedPosts] = useState(true);
-  const [isRelatedPostsLoading, setIsRelatedPostsLoading] = useState(false);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPostInfoByTag[]>([]);
-  const [tag, setTag] = useState('');
   const [postLikes, setPostLikes] = useState(0);
 
+  // clear related posts when loading new blog post
   const dynamicRoute = useRouter().asPath;
 
-  // examine this; it looks really bad to have four setters at the end there
-  async function displayBlogPostsByTag(newTag: string) {
-    if (newTag == tag) {
-      setShowRelatedPosts(!showRelatedPosts);
-      return;
-    }
-
-    setIsRelatedPostsLoading(true);
-
-    const related = (await fetchBlogPostInfoByTag(newTag)).filter(x => x.blogpostId != props.id);
-  
-    setRelatedPosts(related);
-    setShowRelatedPosts(true);
-    setTag(newTag);
-    setIsRelatedPostsLoading(false);
-  }
-
-
-  // clear related posts when loading new blog post
   useEffect(() => {
-    setRelatedPosts([]);
-    setShowRelatedPosts(false);
     setPostLikes(0);
-    setTag('');
   }, [dynamicRoute]);
 
   return <>
@@ -140,13 +107,7 @@ export default function Blog(props) {
         </div>
 
         <div className={styles.bottomMatter}>
-          <RelatedPosts
-            tags={props.tags}
-            relatedPosts={relatedPosts}
-            isRelatedPostsLoading={isRelatedPostsLoading}
-            displayBlogPostsByTag={displayBlogPostsByTag}
-            showRelatedPosts={showRelatedPosts}
-            tag={tag} />
+          <RelatedPosts tags={props.tags} blogPostId={props.id}/>
           <br />
         </div>
         <Disclaimer />
