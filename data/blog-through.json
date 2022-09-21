@@ -1,0 +1,30 @@
+{
+  "books": [
+    {
+      "title": "The Wonderful Works of God",
+      "subtitle": "",
+      "slug": "wonderful-works",
+      "author": "Herman Bavinck",
+      "imageUri": "blog-through/wonderful-works.jpg",
+      "ogImageUri": "",
+      "teaser": "",
+      "tags": [],
+      "chapters": [
+        {
+          "number": 1,
+          "slug": "foreword-and-chapter-one",
+          "title": "Man's Highest Good",
+          "date": "9-2-2022",
+          "isReady": false
+        },
+        {
+          "number": 2,
+          "slug": "chapter-two",
+          "title": "The Knowledge of God",
+          "date": "9-8-2022",
+          "isReady": false
+        }
+      ]
+    }
+  ]
+}

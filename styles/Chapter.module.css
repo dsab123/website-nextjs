@@ -1,0 +1,11 @@
+.bookTitle {
+	font-family: var(--big-font-family);
+	font-size: 39px;
+	text-align: center;
+}
+
+.chapterTitle {
+  font-family: var(--big-font-family);
+	font-size: 30px;
+	text-align: center;
+}

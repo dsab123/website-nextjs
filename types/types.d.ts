@@ -72,3 +72,26 @@ type FaunaResponse = {
   statusCode: number;
   body: string;
 }
+
+type BlogThroughBook = {
+  slug: string,
+  title: string,
+  subtitle: string,
+  author: string,
+  imageUri: string,
+  ogImageUri: string,
+  teaser: string,
+  tags: string[],
+  chapters?: BlogThroughChapter[]
+}
+
+type BlogThroughChapter = {
+  number: number,
+  slug: string,
+  title: string,
+  date: string,
+  isReady: boolean,
+  teaser?: string,
+  imageUri?: string,
+  ogImageUri?: string
+}
