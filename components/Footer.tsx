@@ -4,7 +4,7 @@ import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
 import styles from './Footer.module.css'
 import * as EmailValidator from 'email-validator';
 import EspressoCup from './EspressoCup';
-import PatternMug from './patternMug';
+import PatternMug from './PatternMug';
 
 export enum SubscriptionStatus {
     NONE = "",
