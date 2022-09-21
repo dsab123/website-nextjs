@@ -162,6 +162,7 @@
     margin-right: 5px;
     margin-top: 0em;
     margin-bottom: 5px;
+    width: 120px;
 }
 
 .likesNumber {
@@ -179,5 +180,5 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
-    width: 145px;
+    width: 195px;
 }

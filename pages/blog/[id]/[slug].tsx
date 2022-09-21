@@ -12,6 +12,7 @@ import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
 import Disclaimer from '../../../components/Disclaimer';
 import RelatedPosts from '../../../components/RelatedPosts';
+import { makeDateFriendly } from '../../../lib/dateHelper';
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
@@ -87,7 +88,7 @@ export default function Blog(props) {
       <h1 className={styles.pageTitle}>{props.title}</h1>
 
       <div className={styles.topMatter}>
-        <p className={styles.date}><em>{props.date}</em></p>
+        <p className={styles.date}><em>{makeDateFriendly(props.date)}</em></p>
         <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
       </div>
       <div className={styles.separator}></div>

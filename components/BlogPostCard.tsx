@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Likes from './Likes';
 import styles from './BlogPostCard.module.css';
+import { makeDateFriendly } from '../lib/dateHelper';
 
 export default function BlogPostCard(props: { post: BlogPostInfo; isLoading: boolean; setIsLoading: Function; likes?: number }) { // add like from inside blogpostcard
   const {post, isLoading, setIsLoading, likes} = props;
@@ -23,7 +24,7 @@ export default function BlogPostCard(props: { post: BlogPostInfo; isLoading: boo
               <p className={isLoading ? `${styles.postCardTitle} ${styles.loadingTitleText}` : styles.postCardTitle}>{post.title}</p>
               <p className={isLoading ? `${styles.postCardTeaser} ${styles.loadingTeaserText}` : styles.postCardTeaser}>{post.teaser} </p>
             <div className={isLoading ? `${styles.postText} ${styles.loadingDateText}` : `${styles.postText}` }>
-              <p className={styles.postCardDate}>{post.date}</p>
+              <p className={styles.postCardDate}>{makeDateFriendly(post.date)}</p>
               <Likes id={post.blogpostId} slug={post.slug} likes={postCardLikes} setLikes={setPostCardLikes} size='small' isLoading={isLoading}></Likes>
             </div>
           </div>
