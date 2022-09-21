@@ -1,6 +1,34 @@
 {
     "blogposts": [
         {
+            "blogpostId": 28,
+            "slug": "wonderful-works-chapter-two",
+            "title": "The Wonderful Works of God - Chapter Two",
+            "teaser": "'God is the highest good of man'",
+            "tags": [
+                "reading",
+                "Bavinck",
+                "theology"
+            ],
+            "imageUri": "blogpost/wonderful-works.jpg",
+            "date": "9-20-2022",
+            "isReady": true
+        },
+        {
+            "blogpostId": 27,
+            "slug": "wonderful-works-foreword-and-chapter-one",
+            "title": "The Wonderful Works of God - Chapter One",
+            "teaser": "Our men's group at church is reading Bavinck!",
+            "tags": [
+                "reading",
+                "Bavinck",
+                "theology"
+            ],
+            "imageUri": "blogpost/wonderful-works.jpg",
+            "date": "9-15-2022",
+            "isReady": true
+        },
+        {
             "blogpostId": 26,
             "slug": "obedience-to-christ-gives-assurance",
             "title": "Obedience to Christ gives Assurance",
