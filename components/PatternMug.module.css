@@ -1,0 +1,50 @@
+.container {
+	position: relative;
+	top: 50px;
+}
+
+.cup {
+	position: relative;
+	width: 55px;
+	height: 65px;
+	background: linear-gradient(to right,maroon, #362d2d);
+	border-bottom-left-radius: 25%;
+	border-bottom-right-radius: 25%;
+  border: 2px solid black;
+}
+
+.cup:hover {
+  animation: fill 4.5s linear infinite alternate-reverse;
+}
+
+@keyframes fill {
+  0% {
+      background: linear-gradient(to top, 
+        #532D0A 0%, #532D0A 5%, transparent 50%);
+  }
+
+  15% {
+    background: linear-gradient(to top, #532D0A 25%, #6a533e 33%, transparent 60%);
+  }
+
+
+  25% {
+      background: linear-gradient(to top, #532D0A 15%, #6a533e 40%, transparent 60%);
+  }
+
+  50% {
+      background: linear-gradient(to top, #532D0A 30%, #532D0A 60%, transparent 70%);
+  }
+
+  60% {
+    background: linear-gradient(to top, #532D0A 60%, #532D0A 65%, transparent 70%);
+  }
+
+  75% {
+      background: linear-gradient(to top, #532D0A 55%, #532D0A 70%, transparent 90%);
+  }
+
+  100% {
+      background: linear-gradient(to top, #532D0A 65%, #532D0A 80%, transparent 95%);
+  }
+}

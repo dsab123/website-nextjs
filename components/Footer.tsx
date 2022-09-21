@@ -4,6 +4,7 @@ import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
 import styles from './Footer.module.css'
 import * as EmailValidator from 'email-validator';
 import EspressoCup from './EspressoCup';
+import PatternMug from './patternMug';
 
 export enum SubscriptionStatus {
     NONE = "",
@@ -101,7 +102,7 @@ export default function Footer() {
                             <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                             <input type="hidden" name="currency_code" value="USD" />
                             <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <img src="/static/coffee_cup.png" className={styles.medCoffeeCup}/>
+                                <PatternMug />
                             </button>
                         </form>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
