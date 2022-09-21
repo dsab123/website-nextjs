@@ -13,6 +13,8 @@ import styles from '../../../styles/Blog.module.css';
 import Disclaimer from '../../../components/Disclaimer';
 import RelatedPosts from '../../../components/RelatedPosts';
 import { makeDateFriendly } from '../../../lib/dateHelper';
+import readingTime from 'reading-time';
+
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
@@ -22,6 +24,7 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
     const fullPath = `${postsDirectory}/${context.params.slug}.md`;
     const postContents = fs.readFileSync(fullPath, 'utf8');
     const mdxSource = await serialize(postContents);
+    const timeToRead = Math.floor(readingTime(postContents).minutes);
 
     return {
       props: { 
@@ -32,7 +35,8 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         imageUri: postInfo.imageUri,
         tags: postInfo.tags,
         date: postInfo.date,
-        postContents: mdxSource
+        postContents: mdxSource,
+        timeToRead: timeToRead
       }
     }
   } catch (error) {
@@ -88,7 +92,8 @@ export default function Blog(props) {
       <h1 className={styles.pageTitle}>{props.title}</h1>
 
       <div className={styles.topMatter}>
-        <p className={styles.date}><em>{makeDateFriendly(props.date)}</em></p>
+      <p className={styles.date}><em>{makeDateFriendly(props.date)}</em></p>
+        {/* <p className={styles.readingTime}>{props.timeToRead} minutes</p> */}
         <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
       </div>
       <div className={styles.separator}></div>
