@@ -2,6 +2,20 @@
     "blogposts": [
         {
             "blogpostId": 28,
+            "slug": "the-tongue-an-untameable-fiery-evil",
+            "title": "The Tongue, an Untameable Fiery Evil",
+            "teaser": "I spent some time meditating on James 3",
+            "tags": [
+                "bible",
+                "James",
+                "tongue"
+            ],
+            "imageUri": "blogpost/tongue.jpg",
+            "date": "11-1-2022",
+            "isReady": true
+        },
+        {
+            "blogpostId": 28,
             "slug": "wonderful-works-chapter-two",
             "title": "The Wonderful Works of God - Chapter Two",
             "teaser": "'God is the highest good of man'",
@@ -199,15 +213,15 @@
             "blogpostId": 1,
             "slug": "outline-for-bible-study",
             "title": "My Outline for Bible Study",
-            "teaser": "How do you study the Bible? ",
+            "teaser": "How do you study the Bible?",
             "tags": [
                 "scripture",
                 "theology",
-                "fun"
+                "bible"
             ],
             "imageUri": "blogpost/silver.jpg",
             "date": "11-06-2020",
-            "isReady": false
+            "isReady": true
         },
         {
             "blogpostId": 4,
