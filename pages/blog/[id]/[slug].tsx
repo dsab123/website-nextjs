@@ -12,7 +12,7 @@ import blogpost from '../../../data/blogpost.json';
 import styles from '../../../styles/Blog.module.css';
 import Disclaimer from '../../../components/Disclaimer';
 import RelatedPosts from '../../../components/RelatedPosts';
-import { makeDateFriendly } from '../../../lib/dateHelper';
+import { formatDate } from '../../../lib/dateHelper';
 import readingTime from 'reading-time';
 
 
@@ -92,7 +92,7 @@ export default function Blog(props) {
       <h1 className={styles.pageTitle}>{props.title}</h1>
 
       <div className={styles.topMatter}>
-      <p className={styles.date}><em>{makeDateFriendly(props.date)}</em></p>
+      <p className={styles.date}><em>{formatDate(props.date)}</em></p>
         {/* <p className={styles.readingTime}>{props.timeToRead} minutes</p> */}
         <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
       </div>
