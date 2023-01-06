@@ -43,7 +43,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(23) // hardcoded for now
+    fetchLatestBlogPostInfo(29) // hardcoded for now
       .then(info => {
         if (isFirstPostLoading) {
           setFirstPostInfo(info);
@@ -53,7 +53,7 @@ export default function Home() {
   }, [isFirstPostLoading]);
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(26) // hardcoded for now
+    fetchLatestBlogPostInfo(28) // hardcoded for now
       .then(info => {
         if (isSecondPostLoading) {
           setSecondPostInfo(info);
