@@ -42,7 +42,6 @@ export default function Blogs() {
 
     useLayoutEffect(() => {
         const getAllLikes = async () => {
-            console.log('get all likes');
             const response = await fetch(`/api/all-likes`, {
               method: 'GET',
               headers: {
