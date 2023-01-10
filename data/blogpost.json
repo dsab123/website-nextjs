@@ -1,7 +1,20 @@
 {
     "blogposts": [
         {
-            "blogpostId": 29,
+            "blogpostId": 31,
+            "slug": "the-servant-in-battle",
+            "title": "The Servant in Battle",
+            "teaser": "O LORD, I bless Thee that the ...",
+            "tags": [
+                "puritan",
+                "prayer"
+            ],
+            "imageUri": "blogpost/valley-of-vision.jpg",
+            "date": "01-10-2022",
+            "isReady": true
+        },
+        {
+            "blogpostId": 30,
             "slug": "temple-and-the-churchs-mission",
             "title": "The Temple and the Church's Mission",
             "teaser": "Most Christians would agree that ...",
@@ -17,7 +30,7 @@
             "isReady": true
         },
         {
-            "blogpostId": 28,
+            "blogpostId": 29,
             "slug": "the-tongue-an-untameable-fiery-evil",
             "title": "The Tongue, an Untameable Fiery Evil",
             "teaser": "I spent some time meditating on James 3",
