@@ -73,9 +73,9 @@ a {
 
 .captionText {
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   font-style: italic;
-  margin-top: -7px;
+  margin-top: 0px;
   color: var(--caption-color);
 }
 
