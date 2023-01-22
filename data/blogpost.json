@@ -1,6 +1,19 @@
 {
     "blogposts": [
         {
+            "blogpostId": 32,
+            "slug": "2022-reading-in-review",
+            "title": "2022 Reading in Review",
+            "teaser": "I simply did not read as much last year.",
+            "tags": [
+                "reading",
+                "yearly"
+            ],
+            "imageUri": "blogpost/book-stack.jpg",
+            "date": "01-21-2023",
+            "isReady": true
+        },
+        {
             "blogpostId": 31,
             "slug": "the-servant-in-battle",
             "title": "The Servant in Battle",
@@ -10,7 +23,7 @@
                 "prayer"
             ],
             "imageUri": "blogpost/valley-of-vision.jpg",
-            "date": "01-10-2022",
+            "date": "01-10-2023",
             "isReady": true
         },
         {

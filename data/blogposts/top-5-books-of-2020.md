@@ -31,7 +31,7 @@ If you have little education about money, you’re probably more like the poor d
 
 ------
 
-### Antifragile by Nicholas Nassim Taleb
+### <a id="antifragile" href="#"></a> Antifragile by Nicholas Nassim Taleb
 
 <div className="postImageContainer"><a href="https://amzn.to/2LZkSsZ" target="_blank"><img src="/blogpost/antifragile.jpg" className="smallPostImage" alt="antifragile book" title="" /></a></div>
 
