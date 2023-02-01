@@ -1,6 +1,20 @@
 {
     "summaries": [
         {
+            "summaryId": 10,
+            "title": "The Temple and the Church's Mission",
+            "author": "G. K. Beale",
+            "link": "https://www.wtsbooks.com/products/temple-and-the-churchs-mission-g-k-beale-9780830826186?variant=10007135617071",
+            "imageUri": "summary/temple-and-the-churchs-mission.png",
+            "ogImageUri": "summary/temple-and-the-churchs-mission-book.png",
+            "isReady": true,
+            "slug": "temple-and-the-churchs-mission",
+            "quality": 5,
+            "payoff": 10,
+            "category": "christian",
+            "teaser": "Most Christians would agree that there are difficult parts ..."
+        },
+        {
             "summaryId": 4,
             "title": "Lit! A Christian Guide to Reading Books",
             "author": "Tony Reinke",
