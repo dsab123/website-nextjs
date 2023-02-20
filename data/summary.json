@@ -1,6 +1,20 @@
 {
     "summaries": [
         {
+            "summaryId": 11,
+            "title": "The Beauty and Glory of Christian Living",
+            "author": "edited by Joel Beeke",
+            "link": "https://www.heritagebooks.org/products/the-beauty-and-glory-of-christian-living-beeke-ed.html",
+            "imageUri": "summary/beauty-and-glory-of-christian-living.jpg",
+            "ogImageUri": "summary/beauty-and-glory-of-christian-living.png",
+            "isReady": true,
+            "slug": "beauty-and-glory-of-christian-living",
+            "quality": 4,
+            "payoff": 9,
+            "category": "christian",
+            "teaser": "The Christian life is compared to that of a tree - first comes the bud, then the roots and finally the branches."
+        },
+        {
             "summaryId": 10,
             "title": "The Temple and the Church's Mission",
             "author": "G. K. Beale",
