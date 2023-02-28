@@ -18,7 +18,7 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
 }
 
 async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
-  const ids = [5, 6];
+  const ids = [5, 11];
 
   let response = await fetch(`/api/booksummary-info/${ids.join(',')}`);
 
@@ -53,7 +53,7 @@ export default function Home() {
   }, [isFirstPostLoading]);
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(32) // hardcoded for now
+    fetchLatestBlogPostInfo(31) // hardcoded for now
       .then(info => {
         if (isSecondPostLoading) {
           setSecondPostInfo(info);
@@ -121,14 +121,14 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <h1 className={styles.title}>Welcome!</h1>
+    <h1 className={styles.title}>Welcome to my blog 👋</h1>
 
     <div className={styles.aboutPageTeaser}>
-      <h2 className={styles.headerTeaser}>My mission is to help you read more this year.</h2>
+      <h2 className={styles.headerTeaser}>I write at the intersection of reading and theology.</h2>
 
       <div className={styles.rightSideLink}>
         <Link href="/blog/4/about">
-          <a className={styles.teaserLink}>Why?</a>
+          <a className={styles.teaserLink}>Who am I?</a>
         </Link>
       </div>
     </div>
