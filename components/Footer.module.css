@@ -99,13 +99,6 @@
     transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.coffeeCup {
-    height: 18px;
-    width: 15px;
-    vertical-align: middle;
-    border: 0;
-}
-
 .donateButton {
     cursor: pointer;
     border: none;
@@ -133,55 +126,6 @@
     width: 350px;
     border: none;
     background-color: #889194;
-}
-
-.coffeeCups {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    margin-top: 20px;
-    width: 330px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-}
-
-.donateSubmitButton {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: visible;
-}
-
-.smallCoffeeCup {
-    width: 50px;
-    height: 60px;
-    transition: transform .2s;
-}
-
-.smallCoffeeCup:hover {
-    transform: scale(1.1);
-}
-
-.medCoffeeCup {
-    width: 60px;
-    height: 80px;
-    transition: transform .2s;
-}
-
-.medCoffeeCup:hover {
-    transform: scale(1.1);
-}
-
-.largeCoffeeCup {
-    width: 60px;
-    height: 110px;
-    transition: transform .2s;
-}
-
-.largeCoffeeCup:hover {
-    transform: scale(1.1);
 }
 
 .footerMoneyPlea {

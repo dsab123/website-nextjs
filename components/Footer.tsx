@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react';
 import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
 import styles from './Footer.module.css'
 import * as EmailValidator from 'email-validator';
-import EspressoCup from './EspressoCup';
-import PatternMug from './PatternMug';
+import dynamic from "next/dynamic";
 
-export enum SubscriptionStatus {
+const Cups = dynamic(() => import("./Cups/Cups"), {
+    ssr: false
+});
+
+  export enum SubscriptionStatus {
     NONE = "",
     LOADING = "...",
     NOT_ALLOWED = 'Are you a hacker? Nice',
@@ -88,32 +91,7 @@ export default function Footer() {
             <div className={styles.topHorizontalSeparator}></div>
             <div className={styles.feedbackBoxes}>
                 <div className={styles.donateBox}>
-                    <div className={styles.coffeeCups}>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_donations" />
-                            <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
-                            <input type="hidden" name="currency_code" value="USD" />
-                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <EspressoCup />
-                            </button>
-                        </form>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_donations" />
-                            <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
-                            <input type="hidden" name="currency_code" value="USD" />
-                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <PatternMug />
-                            </button>
-                        </form>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_donations" />
-                            <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
-                            <input type="hidden" name="currency_code" value="USD" />
-                            <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" > 
-                                <img src="/static/coffee_cup.png" className={styles.largeCoffeeCup}/>
-                            </button>
-                        </form>
-                </div>
+                    <Cups />
                     <p className={styles.footerMoneyPlea}> If you like this content, please consider supporting my work by clicking on a coffee cup.</p>
                 </div>
                 <div className={styles.emailSubscribeBox}>

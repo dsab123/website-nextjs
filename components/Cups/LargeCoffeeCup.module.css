@@ -1,0 +1,9 @@
+.largeCoffeeCup {
+  width: 60px;
+  height: 80px;
+  transition: transform .2s;
+}
+
+.largeCoffeeCup:hover {
+  transform: scale(1.1);
+}
