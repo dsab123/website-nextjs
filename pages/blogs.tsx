@@ -40,7 +40,7 @@ export default function Blogs() {
             .catch(error => isBlogPostsLoading ? console.log(error.toString()) : null);
     }, []);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const getAllLikes = async () => {
             const response = await fetch(`/api/all-likes`, {
               method: 'GET',
