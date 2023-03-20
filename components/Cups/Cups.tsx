@@ -28,10 +28,9 @@ export default function Cups() {
                         <input type="hidden" name="cmd" value="_donations" />
                         <input type="hidden" name="business" value="8Q32E3Q42WS3S" />
                         <input type="hidden" name="currency_code" value="USD" />
-                        <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls" />
-                        <div>
+                        <button name="submit" className={styles.donateSubmitButton} title="Buy me a Coffee pls">
                             <cup.type />
-                        </div>
+                        </button>
                     </form>
             ))}
         </div>
