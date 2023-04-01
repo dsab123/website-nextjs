@@ -46,7 +46,7 @@
 
 .preloadPost {
 	overflow-y: hidden;
-	max-height: 0px; /* approximate max height */
+	max-height: 0px;
 
 	transition-property: all;
 	transition-duration: 1s;
@@ -69,30 +69,22 @@
 }
 
 .socialIcon {
-	width: 25px; 
+	width: 25px;
 	height: 25px;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
 .postContents {
 	white-space: normal;
-    font-size: 20px;
-    font-family: var(--small-font-family);
+	font-size: 20px;
+	font-family: var(--small-font-family);
 }
 
 
 .moneyPlea {
 	font-style: italic;
-	font-family: var(--small-font-family);	
+	font-family: var(--small-font-family);
 }
 
 
@@ -116,14 +108,10 @@
 		font-size: 12px;
 	}
 
-
-
 	.postImage {
 		margin-left: auto;
 		margin-right: auto;
 		width: 28em;
 		height: auto;
-	}	
-
-
+	}
 }

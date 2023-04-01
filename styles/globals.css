@@ -81,7 +81,10 @@ a {
 
 .centeredText {
   text-align: center;
-  font-size: 30px;
+}
+
+.rightAlignedText {
+  text-align: right;
 }
 
 ::selection { 

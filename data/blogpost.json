@@ -1,6 +1,21 @@
 {
     "blogposts": [
         {
+            "blogpostId": 34,
+            "slug": "from-a-pastor-to-a-sister",
+            "title": "From a Pastor to a Sister",
+            "teaser": "Dear Sister, grace, mercy, and peace be to you.",
+            "tags": [
+                "puritan",
+                "theology",
+                "rutherford"
+            ],
+            "imageUri": "blogpost/rutherfords-walk.png",
+            "date": "04-01-2023",
+            "isReady": true
+        },
+
+        {
             "blogpostId": 33,
             "slug": "men-and-women-in-marriage",
             "title": "Men and Women in Marriage",
@@ -336,11 +351,12 @@
         {
             "blogpostId": 15,
             "slug": "o-consider-his-loveliness-and-beauty",
-            "title": "\"O Consider His Loveliness\"",
+            "title": "'O Consider His Loveliness and Beauty'",
             "teaser": "This is an excerpt of a letter from Samuel ...",
             "tags": [
                 "puritan",
-                "theology"
+                "theology",
+                "rutherford"
             ],
             "imageUri": "blogpost/silver.jpg",
             "date": "11-12-2020",
