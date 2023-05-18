@@ -29,12 +29,14 @@
 
 .readingTime {
 	font-family: var(--small-font-family);
-	font-size: 18px;
-	text-align: center;
+	font-size: 20px;
+	text-align: top;
 	margin-block-start: 6px;
-	margin-left: 10px;
+	margin-top: 3px;
+  margin-left: 20px;
 	margin-right: 50px;
-	margin-bottom: 0px;
+  margin-bottom: 0px;
+	
 }
 
 .separator {
@@ -114,4 +116,14 @@
 		width: 28em;
 		height: auto;
 	}
+}
+
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--caption-color);
+  transform-origin: 0%;
 }

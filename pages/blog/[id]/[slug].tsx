@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
@@ -14,7 +14,7 @@ import Disclaimer from '../../../components/Disclaimer';
 import RelatedPosts from '../../../components/RelatedPosts';
 import { formatDate } from '../../../lib/dateHelper';
 import readingTime from 'reading-time';
-
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
@@ -64,6 +64,15 @@ export async function getStaticPaths() {
 export default function Blog(props) {
   const [postLikes, setPostLikes] = useState(0);
 
+  // framer motion experiment
+  const postContents = useRef(null);
+  const { scrollYProgress } = useScroll({target: postContents});
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   // clear related posts when loading new blog post
   const dynamicRoute = useRouter().asPath;
 
@@ -89,21 +98,23 @@ export default function Blog(props) {
     {/* need to add twitter og tags */}
     </Head>
     <div className={styles.blogLayout}>
+      <motion.div className={styles.progressBar} style={{ scaleX }} />
+
       <h1 className={styles.pageTitle}>{props.title}</h1>
 
-      <div className={styles.topMatter}>
       <p className={styles.date}><em>{formatDate(props.date)}</em></p>
-        {/* <p className={styles.readingTime}>{props.timeToRead} minutes</p> */}
+      <div className={styles.topMatter}>
         <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
+        <p className={styles.readingTime}>{props.timeToRead} minutes</p>
+        
       </div>
       <div className={styles.separator}></div>
 
       <div >
         <br />
-        <div className={styles.postContents}>
-          <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
-        </div>
-
+          <div ref={postContents} className={styles.postContents}>
+            <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
+          </div>
         <br />
 
         <div className={styles.likesWrapper}>
