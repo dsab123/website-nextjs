@@ -18,7 +18,7 @@
     width: 350px;
     height: 40px;
     cursor: pointer;
-    background-image: url("/static/large-logo.png");
+    background-image: var(--large-logo-url);
 }
 
 .navItem {
@@ -86,6 +86,7 @@
     justify-content: flex-end;
     padding-bottom: 5px;
     margin-top: 10px;
+    margin-left: 25px;
 }
 
 .hamburger {
@@ -95,6 +96,10 @@
 /* hamburger menu */
 .hamburgerMenu {
     display: none;
+}
+
+.themeToggleVisibilityOnDesktop {
+  display: block;
 }
 
 @media all and (max-width: 1024px) {
@@ -130,10 +135,10 @@
 
     .title {
         justify-content: space-between;
-        background-image: url("/static/mobile-logo.png");
+        background-image: var(--mobile-logo-url);
         background-size: cover;
-        width: 10rem;
-        height: 4.3rem;
+        width: 9rem;
+        height: 3.6rem;
         cursor: pointer;
     }
 
@@ -148,7 +153,7 @@
         display: block;
 
         cursor: pointer;
-        max-height: 220px !important;
+        /* max-height: 220px !important; */
     
         transition-property: all;
         transition-duration: .5s;
@@ -169,6 +174,7 @@
         display: flex;
         flex-direction: column;
         text-align: center;
+        align-items: center;
         overflow-y: hidden;
     }
     
@@ -198,11 +204,15 @@
         text-decoration: none;
         font-family: var(--big-font-family);
         font-size: 28px;
-        --big-font-color: #D9A5FF; /* what is this? lol */
         margin-top: 20px;
     }
 
     .headerTop {
         display: none;
+    }
+
+    /* This is my life, I can do what I want */
+    .themeToggleVisibilityOnDesktop {
+      display: none;
     }
 }

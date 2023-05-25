@@ -134,6 +134,7 @@
     font-size: 18px;
     width: 300px;
     margin: auto;
+    color: var(--footer-color);
 }
 
 .emailSubscribeBox {
@@ -192,6 +193,8 @@
 .emailSubscribeText {
     font-size: 19px;
     margin-top: 15px;
+    color: var(--footer-color);
+
 }
 
 .emailSubscriptionStatusText {

@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import * as gtag from "../lib/gtag";
 import '../styles/globals.css'
+import ThemeToggle from "../components/ThemeToggle";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -39,13 +40,14 @@ function App({ Component, pageProps }: AppProps) {
     </Head>
 
     <div className="topBar"></div>
+    
     <div className="content" id="content">
-        <div className="stickyHeader">
-          <Header></Header>
-        </div>
-        <Component {...pageProps} />
-        <Footer></Footer>        
+    <Header></Header>
+      <div className="stickyHeader">
       </div>
+      <Component {...pageProps} />
+      <Footer></Footer>
+    </div>
     </>
   )
 }

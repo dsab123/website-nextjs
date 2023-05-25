@@ -21,6 +21,6 @@ export default function EspressoCup() {
       <div className={styles.saucer}></div>
 
       <div className={styles.shadow}></div>
-  </div>
+    </div>
   </>;
 }

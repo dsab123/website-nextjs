@@ -126,4 +126,5 @@
   height: 6px;
   background: var(--caption-color);
   transform-origin: 0%;
+  z-index: 2;
 }

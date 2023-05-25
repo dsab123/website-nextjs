@@ -2,6 +2,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styles from './Header.module.css'
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
+  ssr: false,
+});
 
 export default function Header() {
     const navItems = [
@@ -25,6 +30,7 @@ export default function Header() {
     
     return <>
         <div className={styles.headerContent}>
+            {/* mobile nav */}
             <div className={styles.logoRow}>
                 <Link href="/">
                     <a><div className={styles.title}></div></a>
@@ -43,16 +49,22 @@ export default function Header() {
                         onClick={() => toggleHamburgerAndNavigate(item.uri)}>{item.title}
                     </a>
                 ))}
+                <br />
+                <br />
+                <ThemeToggle />
             </div>
 
             {/* desktop nav */}
             <div className={styles.navigation}>
                 {navItems.map((item) => (
-                    <Link key={item.id} href={item.uri}>
+                  <Link key={item.id} href={item.uri}>
                         <a className={styles.navItem}>{item.title}</a>
                     </Link>
                 ))}
             </div> 
+            <div className={styles.themeToggleVisibilityOnDesktop}>
+                <ThemeToggle />
+              </div>
         </div>
     </>
 }

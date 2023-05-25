@@ -4,7 +4,6 @@ import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
 import styles from './Footer.module.css'
 import * as EmailValidator from 'email-validator';
 import dynamic from "next/dynamic";
-
 const Cups = dynamic(() => import("./Cups/Cups"), {
     ssr: false
 });
@@ -88,49 +87,49 @@ export default function Footer() {
     }, [subscriptionStatus]);
 
     return <div>
-            <div className={styles.topHorizontalSeparator}></div>
-            <div className={styles.feedbackBoxes}>
-                <div className={styles.donateBox}>
-                    <Cups />
-                    <p className={styles.footerMoneyPlea}> If you like this content, please consider supporting my work by clicking on a coffee cup.</p>
-                </div>
-                <div className={styles.emailSubscribeBox}>
-                    <p className={styles.emailSubscribeHeader}>Have 'Em Delivered</p>
-                    <div className={styles.emailSubscribeContent}>
-                        <div className={`${styles.emailSubscribeStatus} ${getSubscriptionStatusPopupClass(subscriptionStatus)}`}>
-                            <p className={styles.emailSubscriptionStatusText}>
-                                {subscriptionStatus}</p>
-                            <div className={styles.arrowDown}></div>
-                        </div>
-                        <input className={styles.emailInput} type="text" placeholder="you@example.com" onChange={(e) => setEmail(e.target.value)} />
-                        <button className={styles.emailSubscribeButton} onClick={() => subscribeEmail(email, pageUri, setSubscriptionStatus)}>
-                            Subscribe
-                        </button>
-                        <p className={styles.emailSubscribeText}><strong>Subscribe</strong> to receive resources that will help you read better this year.</p>
-                    </div>
-                </div>
-            </div>
+      <div className={styles.topHorizontalSeparator}></div>
+      <div className={styles.feedbackBoxes}>
+          <div className={styles.donateBox}>
+              <Cups />
+              <p className={styles.footerMoneyPlea}> If you like this content, please consider supporting my work by clicking on a coffee cup.</p>
+          </div>
+          <div className={styles.emailSubscribeBox}>
+              <p className={styles.emailSubscribeHeader}>Have 'Em Delivered</p>
+              <div className={styles.emailSubscribeContent}>
+                  <div className={`${styles.emailSubscribeStatus} ${getSubscriptionStatusPopupClass(subscriptionStatus)}`}>
+                      <p className={styles.emailSubscriptionStatusText}>
+                          {subscriptionStatus}</p>
+                      <div className={styles.arrowDown}></div>
+                  </div>
+                  <input className={styles.emailInput} type="text" placeholder="you@example.com" onChange={(e) => setEmail(e.target.value)} />
+                  <button className={styles.emailSubscribeButton} onClick={() => subscribeEmail(email, pageUri, setSubscriptionStatus)}>
+                      Subscribe
+                  </button>
+                  <p className={styles.emailSubscribeText}><strong>Subscribe</strong> to receive resources that will help you read better this year.</p>
+              </div>
+          </div>
+      </div>
 
-            <div className={styles.bottomHorizontalSeparator}></div>
-    
+      <div className={styles.bottomHorizontalSeparator}></div>
+
     <div>
-        <ul className={styles.contactList}>
-            <li className={styles.contactListItem}>
-                <a href="https://www.facebook.com/isReadingEssential" target="_blank"><Facebook color="black" size="medium"></Facebook></a>
-            </li>
-            <li className={styles.contactListItem}>
-                <a href="https://twitter.com/_danielsabbagh" target="_blank"><Twitter color="black" size="medium"></Twitter></a>
-            </li>
-            <li className={styles.contactListItem}>
-                <a href="mailto:dsabbaghumd@gmail.com" target="_blank"><Send className={styles.socialIcon} color="black" size="medium"></Send></a>
-            </li>
-            <li className={styles.contactListItem}>
-                <a href="/blog/19/privacy-policy" target="_blank"><Secure color="black" size="medium" className={styles.socialIcon}></Secure></a>
-            </li>
-        </ul>
+      <ul className={styles.contactList}>
+        <li className={styles.contactListItem}>
+          <a href="https://www.facebook.com/isReadingEssential" target="_blank"><Facebook color="black" size="medium"></Facebook></a>
+        </li>
+        <li className={styles.contactListItem}>
+          <a href="https://twitter.com/_danielsabbagh" target="_blank"><Twitter color="black" size="medium"></Twitter></a>
+        </li>
+        <li className={styles.contactListItem}>
+          <a href="mailto:dsabbaghumd@gmail.com" target="_blank"><Send className={styles.socialIcon} color="black" size="medium"></Send></a>
+        </li>
+          <li className={styles.contactListItem}>
+          <a href="/blog/19/privacy-policy" target="_blank"><Secure color="black" size="medium" className={styles.socialIcon}></Secure></a>
+        </li>
+      </ul>
     </div>
 
-    <p className={styles.emailMadeWithHeart}>~ Made with <span className={styles.heart}>❤️</span> by Emily ~</p>
+  <p className={styles.emailMadeWithHeart}>~ Made with <span className={styles.heart}>❤️</span> by Emily ~</p>
 
-    </div>
+  </div>
 }

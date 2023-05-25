@@ -159,7 +159,7 @@
 }
 
 .amazonLink {
-    color: #212324;
+    color: var(--text-color);
     background: var(--post-tag-color);
     padding: 8px;
     text-decoration: none;
