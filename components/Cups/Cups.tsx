@@ -8,18 +8,18 @@ import Teapot from './Teapot';
 
 type Cup = {
   id: number,
-  type: any
+  type: () => JSX.Element
 }
 
 export default function Cups() {
-  const allCups = [
+  const allCups: Cup[] = [
     { id: 0, type: EspressoCup },
   //  { id: 1, type: CampMug }, 
     { id: 2, type: PaperCup }, 
     { id: 3, type: TeabagMug }, 
     { id: 4, type: LargeCoffeeCup },
     { id: 5, type: Teapot }
-  ] as Cup[];
+  ];
 
   const shuffledCups = allCups.sort(() => 0.5 - Math.random());
   const numberOfCupsToShow = 1 + Math.floor(Math.random() * 3);;
