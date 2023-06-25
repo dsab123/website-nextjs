@@ -142,7 +142,7 @@ export default function Summary(props) {
       </div>
 
       <br />
-      <p className={styles.review}>Review</p>
+      <p className={styles.review}>Review/Summary/Reflections</p>
 
       <div className={!error && !props?.summaryContents ? styles.dimOverlay : ''}>
 

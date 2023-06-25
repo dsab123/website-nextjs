@@ -1,6 +1,20 @@
 {
     "summaries": [
         {
+          "summaryId": 12,
+          "title": "Competing Spectacles",
+          "author": "Tony Reinke",
+          "link": "https://www.wtsbooks.com/products/competing-spectacles-treasuring-christ-in-the-media-age-9781433563799",
+          "imageUri": "summary/competing-spectacles.jpg",
+          "ogImageUri": "summary/competing-spectacles.jpg",
+          "isReady": true,
+          "slug": "competing-spectacles",
+          "quality": 5,
+          "payoff": 10,
+          "category": "christian, reading, technology",
+          "teaser": "A sobering but hopeful primer on our collective technical gluttony along with the worshipful corrective we need."
+        },
+        {
             "summaryId": 11,
             "title": "The Beauty and Glory of Christian Living",
             "author": "edited by Joel Beeke",
