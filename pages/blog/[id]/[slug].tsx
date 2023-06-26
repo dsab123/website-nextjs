@@ -27,11 +27,11 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
     const timeToRead = Math.floor(readingTime(postContents).minutes);
 
     return {
-      props: { 
-        id: context.params.id, 
-        slug: context.params.slug.toString(), 
-        title: postInfo.title, 
-        teaser: postInfo.teaser, 
+      props: {
+        id: context.params.id,
+        slug: context.params.slug.toString(),
+        title: postInfo.title,
+        teaser: postInfo.teaser,
         imageUri: postInfo.imageUri,
         tags: postInfo.tags,
         date: postInfo.date,
@@ -46,12 +46,12 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
 
 export async function getStaticPaths() {
   const blogPosts = blogpost.blogposts;
-  
+
   return {
     paths: blogPosts.map((blogPostInfo) => {
       return {
-        params: { 
-          id: `${blogPostInfo.blogpostId}`, 
+        params: {
+          id: `${blogPostInfo.blogpostId}`,
           slug: blogPostInfo.slug
         }
       }
@@ -66,7 +66,7 @@ export default function Blog(props) {
 
   // framer motion experiment
   const postContents = useRef(null);
-  const { scrollYProgress } = useScroll({target: postContents});
+  const { scrollYProgress } = useScroll({ target: postContents });
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -82,20 +82,18 @@ export default function Blog(props) {
 
   return <>
     <Head>
-    <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
-    <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
-    <meta property="og:description" content={props.teaser} key="description" />
-    <meta property="og:type" content="article" key="type" />
-    <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
+      <title key="original-title">{`${props.title} | Daniel Sabbagh`}</title>
+      <meta property="og:title" content={`${props.title} | Daniel Sabbagh`} key="title" />
+      <meta property="og:description" content={props.teaser} key="description" />
+      <meta property="og:type" content="article" key="type" />
+      <meta property="og:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="image" />
 
-    <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
-    <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
-    <meta name="twitter:description" content={props.teaser} key="twitter-description" />
-    <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
-    <meta name="twitter:card"  content="summary_large_image" key="twitter-card" />
-    <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
-
-    {/* need to add twitter og tags */}
+      <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
+      <meta name="twitter:title" content={`${props.title} | Daniel Sabbagh`} key="twitter-title" />
+      <meta name="twitter:description" content={props.teaser} key="twitter-description" />
+      <meta name="twitter:image" content={`https://danielsabbagh.com/${props.imageUri}`} key="twitter-image" />
+      <meta name="twitter:card" content="summary_large_image" key="twitter-card" />
+      <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
     </Head>
     <div className={styles.blogLayout}>
       <motion.div className={styles.progressBar} style={{ scaleX }} />
@@ -104,29 +102,29 @@ export default function Blog(props) {
 
       <p className={styles.date}><em>{formatDate(props.date)}</em></p>
       <div className={styles.topMatter}>
-        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
+        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes} />
         <p className={styles.readingTime}>{props.timeToRead} minutes</p>
-        
+
       </div>
       <div className={styles.separator}></div>
 
       <div >
         <br />
-          <div ref={postContents} className={styles.postContents}>
-            <MDXRemote {...props?.postContents} components={{DaysMarried}}></MDXRemote>
-          </div>
+        <div ref={postContents} className={styles.postContents}>
+          <MDXRemote {...props?.postContents} components={{ DaysMarried }}></MDXRemote>
+        </div>
         <br />
 
         <div className={styles.likesWrapper}>
-            <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes}/>
+          <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes} />
         </div>
 
         <div className={styles.bottomMatter}>
-          <RelatedPosts tags={props.tags} blogPostId={props.id}/>
+          <RelatedPosts tags={props.tags} blogPostId={props.id} />
           <br />
         </div>
         <Disclaimer />
-        </div>
       </div>
-    </>
+    </div>
+  </>
 }
