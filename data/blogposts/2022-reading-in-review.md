@@ -13,7 +13,7 @@ Here's a list of all the books I read, with a little about the ones I chose to w
 ### _The Temple and the Church's Mission:  A Biblical Theology of the Dwelling Place of God_ by Greg Beale
 <div className="postImageContainer"><a href="https://www.amazon.com/Temple-Churchs-Mission-Biblical-Theology/dp/0830826181" target="_blank"><img src="/blogpost/temple-and-the-churchs-mission.png" className="smallPostImage" alt="Temple and the Church's mission Book" title="" /></a></div>
 
-I [wrote a review of this book here](/blog/30/temple-and-the-churchs-mission). This volume harmonizes the Old and New Testaments by demonstrating that the purpose of the temple does not terminate at the conclusion of the Old (and in fact has roots in the first chapters of Genesis), but persists all the way through the New, and ultimately finds its terminus in the New Heavens and New Earth.
+I [wrote a review of this book here](/summary/10/temple-and-the-churchs-mission). This volume harmonizes the Old and New Testaments by demonstrating that the purpose of the temple does not terminate at the conclusion of the Old (and in fact has roots in the first chapters of Genesis), but persists all the way through the New, and ultimately finds its terminus in the New Heavens and New Earth.
 
 --------
 
