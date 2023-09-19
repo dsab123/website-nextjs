@@ -1,6 +1,21 @@
 {
   "blogposts": [
     {
+      "blogpostId": 36,
+      "slug": "the-outlook-of-the-christian",
+      "title": "The Outlook of the Christian",
+      "teaser": "Hope, not possession, is that which gives tone and color to his life.",
+      "tags": [
+        "theology",
+        "Vos",
+        "The Gray Havens",
+        "bible"
+      ],
+      "imageUri": "blogpost/kingdom.jpg",
+      "date": "09-19-2023",
+      "isReady": true
+    },
+    {
       "blogpostId": 35,
       "slug": "some-meditations-on-psalm-119",
       "title": "Meditations on Psalm 119",
