@@ -25,8 +25,6 @@ export default function Cups() {
   const numberOfCupsToShow = 1 + Math.floor(Math.random() * 3);;
   const cups = shuffledCups.slice(0, numberOfCupsToShow);
 
-  console.table(cups);
-
   return <>
     <div className={styles.coffeeCups}>
       {cups.map((Cup: Cup) => (

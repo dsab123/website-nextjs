@@ -100,6 +100,17 @@
 	margin-top: 6px;
 }
 
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--caption-color);
+  transform-origin: 0%;
+  z-index: 20;
+}
+
 @media screen and (max-width: 768px) {
 	.pageTitle {
 		font-family: var(--big-font-family);
@@ -116,15 +127,4 @@
 		width: 28em;
 		height: auto;
 	}
-}
-
-.progressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: var(--caption-color);
-  transform-origin: 0%;
-  z-index: 2;
 }

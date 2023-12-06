@@ -131,13 +131,6 @@ body {
     display: none;
   }
 
-  .stickyHeader {
-      position: sticky;
-      position: -webkit-sticky;
-      top: 0;
-      background-color: var(--background-color);
-      z-index: 1;
-  }
 
   code {
       white-space: pre-wrap;
