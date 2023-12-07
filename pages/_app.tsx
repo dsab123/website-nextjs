@@ -6,7 +6,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import * as gtag from "../lib/gtag";
 import '../styles/globals.css'
-import ThemeToggle from "../components/ThemeToggle";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -42,9 +41,7 @@ function App({ Component, pageProps }: AppProps) {
     <div className="topBar"></div>
     
     <div className="content" id="content">
-    <Header></Header>
-      <div className="stickyHeader">
-      </div>
+      <Header></Header>
       <Component {...pageProps} />
       <Footer></Footer>
     </div>

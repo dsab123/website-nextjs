@@ -1,70 +1,118 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Header.module.css'
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
+import { Logo } from './svgs/Logo';
+import useScrollDirection from '../hooks/useScrollDirection';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
 });
 
+type navItem = {
+  id: number
+  title: string
+  uri: string
+}
+
 export default function Header() {
-    const navItems = [
-        { id: 0, title: 'Home', uri: '/' },
-        { id: 1, title: 'Why?', uri: '/blog/4/about' },
-        { id: 2, title: 'Blog', uri: '/blogs' },
-        { id: 3, title: 'Books I Like', uri: '/summaries' }
-    ];
+  const navItems: navItem[] = [
+    { id: 0, title: 'Home', uri: '/' },
+    { id: 1, title: 'Why?', uri: '/blog/4/about' },
+    { id: 2, title: 'Blog', uri: '/blogs' },
+    { id: 3, title: 'Books I Like', uri: '/summaries' }
+  ];
 
-    let [hamburgerOpen, setHamburgerOpen] = useState(false);
-    const router = useRouter();
+  const [theme, setTheme] = useState('');
 
-    const toggleHamburger = () => {
-        setHamburgerOpen(!hamburgerOpen);
+  useEffect(() => {
+    setTheme(window?.localStorage.getItem('theme'));
+  }, [])
+
+  const mobile = useMediaQuery('(max-width: 768px)');
+
+  const [paddingTop, setPaddingTop] = useState(0);
+
+  let titleHeight = 65;
+
+  let [hamburgerOpen, setHamburgerOpen] = useState(false);
+  let [titleWidth, setTitleWidth] = useState(0);
+
+
+  useEffect(() => {
+    // mobile is undefined for a few renders due to the useMediaQuery hook
+    if (mobile !== undefined) {
+      setPaddingTop(mobile ? 10 : 20);
+      setTitleWidth(mobile ? 120 : 400)
     }
-    
-    const toggleHamburgerAndNavigate = (href: string) => {
-        setHamburgerOpen(!hamburgerOpen);
-        router.push(href);
-    }
-    
-    return <>
-        <div className={styles.headerContent}>
-            {/* mobile nav */}
-            <div className={styles.logoRow}>
-                <Link href="/">
-                    <a><div className={styles.title}></div></a>
-                </Link>
-                <div className={hamburgerOpen ? `${styles.hamburger} ${styles.toggle}` : `${styles.hamburger}`} onClick={toggleHamburger}>
-                    <div className={styles.bar1}></div>
-                    <div className={styles.bar2}></div>
-                    <div className={styles.bar3}></div>
-                </div>
-            </div>
+  }, [mobile])
 
-            <div className={hamburgerOpen ? `${styles.hamburgerMenu} ${styles.hamburgerMenuOpened}` : `${styles.hamburgerMenu} ${styles.hamburgerMenuClosed}`}>
-                {navItems.map((item) => (
-                    <a key={item.id} 
-                        className={hamburgerOpen ? `${styles.hamburgerNavItem} ${styles.active}` : `${styles.hamburgerNavItem}`}
-                        onClick={() => toggleHamburgerAndNavigate(item.uri)}>{item.title}
-                    </a>
-                ))}
-                <br />
-                <br />
-                <ThemeToggle />
-            </div>
+  const scrollDirection = useScrollDirection();
+  const router = useRouter();
 
-            {/* desktop nav */}
-            <div className={styles.navigation}>
-                {navItems.map((item) => (
-                  <Link key={item.id} href={item.uri}>
-                        <a className={styles.navItem}>{item.title}</a>
-                    </Link>
-                ))}
-            </div> 
-            <div className={styles.themeToggleVisibilityOnDesktop}>
-                <ThemeToggle />
-              </div>
+  const toggleHamburgerAndNavigate = (href: string) => {
+    setHamburgerOpen(!hamburgerOpen);
+    router.push(href);
+  }
+
+  return <motion.div className={scrollDirection === "down" ? `${styles.headerContent} ${styles.hide}` : `${styles.headerContent}`}
+    style={{
+      marginTop: paddingTop + 'px',
+      marginBottom: mobile ? '' : '2rem'
+    }}
+  >
+    <div className={styles.logoWrapper} style={{ overflow: 'hidden' }}>
+      <Link href="/">
+        {mobile !== undefined ?
+          <Logo height={titleHeight} width={titleWidth} inverted={theme === 'true'} mobile={mobile}></Logo>
+          : <p></p>
+        }
+      </Link>
+
+      <div className={hamburgerOpen ? `${styles.hamburger} ${styles.toggle}` : `${styles.hamburger}`} onClick={() => setHamburgerOpen(!hamburgerOpen)}>
+        <div className={styles.bar1}></div>
+        <div className={styles.bar2}></div>
+        <div className={styles.bar3}></div>
+      </div>
+
+    </div>
+
+    {/* mobile nav */}
+    {mobile !== undefined && mobile == true &&
+      <div className={hamburgerOpen ? `${styles.hamburgerMenu} ${styles.hamburgerMenuOpened}` : `${styles.hamburgerMenu} ${styles.hamburgerMenuClosed}`}>
+        {navItems.map((item) => (
+          <a href={'#' + item.uri}
+            key={item.id}
+            className={styles.hamburgerNavItem}
+            onClick={(e) => { e.preventDefault(); toggleHamburgerAndNavigate(item.uri) }}>{item.title}
+          </a>
+        ))}
+        <div style={{display: 'flex', justifyContent: 'center', marginBottom: '10px'}}>
+          <ThemeToggle />
         </div>
-    </>
+      </div>
+    }
+
+    {/* desktop nav */}
+    {mobile !== undefined && mobile == false &&
+      <div className={styles.navigationWrapper}>
+        <div className={styles.navigation}>
+          {navItems.map((item) => (
+
+            <Link key={item.id} href={item.uri}>
+              <a className={styles.navItem}>{item.title}</a>
+            </Link>
+
+          ))}
+        </div>
+        <div className={styles.themeToggleWrapper}>
+          <ThemeToggle />
+        </div>
+      </div>
+    }
+
+  </motion.div>
 }

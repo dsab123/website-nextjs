@@ -1,218 +1,208 @@
 .headerContent {
-    padding-top: 20px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--background-color);
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-top: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: -30px;
+  height: 4rem;
+  background-color: var(--background-color);
+  margin-bottom: 120px;
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
-.logoRow {
-    padding-right: 6px;
-    display: flex;
+.hide {
+top: -4rem;
+}
+
+.logoWrapper {
+  display: flex;
 }
 
 .title {
-    display: flex;
-    justify-content: space-between;
-    background-size: cover;
-    width: 350px;
-    height: 40px;
-    cursor: pointer;
-    background-image: var(--large-logo-url);
+  display: flex;
+  justify-content: space-between; 
+  background-size: cover;
+  cursor: pointer;
 }
 
 .navItem {
-    text-decoration: none;
-    font-family: var(--big-font-family);
-    margin-right: 10px;
-    position: relative;
-    cursor: pointer;
+  text-decoration: none;
+  font-family: var(--big-font-family);
+  font-size: 16px;
+  margin-left: 10px;
+  position: relative;
+  cursor: pointer;
 }
 
 .navItem:before, .navItem:after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: black;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: black;
 }
 
 
 .navItem:before {
-    opacity: 0;
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
-    -webkit-transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
-    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
+  opacity: 0;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 .navItem:after {
-    opacity: 0;
-    -webkit-transform: translateY(4px);
-            transform: translateY(4px);
-    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navItem:hover:before, .navItem:hover:after, .navItem:focus:before, .navItem:focus:after {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .navItem:hover:before, .navItem:focus:before {
-    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s, -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navItem:hover:after, .navItem:focus:after {
-    -webkit-transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
-    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s;
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s 0.2s, -webkit-transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navigation {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    padding-bottom: 5px;
-    margin-top: 10px;
-    margin-left: 25px;
+  margin-top: 20px;
+  align-content: center;
 }
 
-.hamburger {
-    display: none;
+.themeToggleWrapper {
+  margin-top: 10px;
+  padding-left: 10px;
 }
-
-/* hamburger menu */
 .hamburgerMenu {
-    display: none;
+  display: none;
 }
 
-.themeToggleVisibilityOnDesktop {
-  display: block;
+.navigationWrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 @media all and (max-width: 1024px) {
-    .converter {
-        display: none;
-    }
+  .converter {
+      display: none;
+  }
 }
 
 @media all and (max-width: 768px) {
-    .navigation {
-        display: none;
-    }
-
-    .logoRow {
-        padding-bottom: 5px;
-    }
-
-    .navItems {
-        display: none;
-    }
-
-    .headerContent {
-        padding-top: 5px;
-        margin-bottom: 15px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .logoRow {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .title {
-        justify-content: space-between;
-        background-image: var(--mobile-logo-url);
-        background-size: cover;
-        width: 9rem;
-        height: 3.6rem;
-        cursor: pointer;
-    }
-
-    /* hamburger icon */
-    .hamburger {
-        cursor: pointer;
-        display: inline-block;
-        margin-top: 10px;
-    }
-
-    .hamburgerMenuOpened {
-        display: block;
-
-        cursor: pointer;
-        /* max-height: 220px !important; */
-    
-        transition-property: all;
-        transition-duration: .5s;
-        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-        overflow-y: hidden;
-        margin-bottom: 15px;
-    }
-    
-    .hamburgerMenuClosed {
-        max-height: 0px;
-
-        transition-property: all;
-        transition-duration: .5s;
-        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    }
-    
-    .hamburgerMenu {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        overflow-y: hidden;
-    }
-    
-    .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #000;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
-    
-    .toggle .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
-    }
-    
-    .toggle .bar2 {
-        opacity: 0;
-    }
-    
-    .toggle .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
-    }
-
-    .hamburgerNavItem {
-        text-decoration: none;
-        font-family: var(--big-font-family);
-        font-size: 28px;
-        margin-top: 20px;
-    }
-
-    .headerTop {
-        display: none;
-    }
-
-    /* This is my life, I can do what I want */
-    .themeToggleVisibilityOnDesktop {
+  .navigation {
       display: none;
-    }
+  }
+
+  .navItems {
+      display: none;
+  }
+
+  .headerContent {
+    display: block;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-bottom: 20px;
+  }
+
+  .logoWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  /* hamburger icon */
+  .hamburger {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .hamburgerMenuOpened {
+      display: block;
+      cursor: pointer;
+      margin-top: -5px;
+      max-height: 330px !important;
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      overflow-y: hidden;
+      margin-bottom: 15px;
+  }
+  
+  .hamburgerMenuClosed {
+      max-height: 0px;
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+  
+  .hamburgerMenu {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      overflow-y: hidden;
+      background-color: var(--background-color);
+  }
+  
+  .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #000;
+      margin: 6px 0;
+      transition: 0.4s;
+  }
+  
+  .toggle .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .toggle .bar2 {
+      opacity: 0;
+  }
+  
+  .toggle .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .hamburgerNavItem {
+      text-decoration: none;
+      font-family: var(--big-font-family);
+      font-size: 28px;
+      --big-font-color: #D9A5FF;
+      margin-top: 20px;
+  }
+
+  .headerTop {
+      display: none;
+  }
 }
