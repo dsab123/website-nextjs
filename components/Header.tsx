@@ -90,7 +90,7 @@ export default function Header() {
             onClick={(e) => { e.preventDefault(); toggleHamburgerAndNavigate(item.uri) }}>{item.title}
           </a>
         ))}
-        <div style={{display: 'flex', justifyContent: 'center', marginBottom: '10px'}}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
           <ThemeToggle />
         </div>
       </div>
@@ -107,9 +107,7 @@ export default function Header() {
             </Link>
 
           ))}
-        </div>
-        <div className={styles.themeToggleWrapper}>
-          <ThemeToggle />
+          <ThemeToggle className={styles.navItem} />
         </div>
       </div>
     }
