@@ -7,16 +7,16 @@ import { motion } from 'framer-motion';
 import { Logo } from './svgs/Logo';
 import useScrollDirection from '../hooks/useScrollDirection';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import useTheme from '../hooks/useTheme';
 
-const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
-  ssr: false,
-});
+import ThemeToggle from './ThemeToggle';
 
 type navItem = {
   id: number
   title: string
   uri: string
 }
+
 
 export default function Header() {
   const navItems: navItem[] = [
@@ -26,11 +26,7 @@ export default function Header() {
     { id: 3, title: 'Books I Like', uri: '/summaries' }
   ];
 
-  const [theme, setTheme] = useState('');
-
-  useEffect(() => {
-    setTheme(window?.localStorage.getItem('theme'));
-  }, [])
+  const { activeTheme, setActiveTheme } =  useTheme();
 
   const mobile = useMediaQuery('(max-width: 768px)');
 
@@ -67,7 +63,7 @@ export default function Header() {
     <div className={styles.logoWrapper} style={{ overflow: 'hidden' }}>
       <Link href="/">
         {mobile !== undefined ?
-          <Logo height={titleHeight} width={titleWidth} inverted={theme === 'true'} mobile={mobile}></Logo>
+          <Logo height={titleHeight} width={titleWidth} theme={activeTheme} mobile={mobile}></Logo>
           : <p></p>
         }
       </Link>
@@ -90,9 +86,7 @@ export default function Header() {
             onClick={(e) => { e.preventDefault(); toggleHamburgerAndNavigate(item.uri) }}>{item.title}
           </a>
         ))}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
-          <ThemeToggle />
-        </div>
+        <ThemeToggle className={styles.hamburgerNavItem} activeTheme={activeTheme} setActiveTheme={setActiveTheme} />
       </div>
     }
 
@@ -107,7 +101,7 @@ export default function Header() {
             </Link>
 
           ))}
-          <ThemeToggle className={styles.navItem} />
+          <ThemeToggle className={styles.navItem} activeTheme={activeTheme} setActiveTheme={setActiveTheme} />
         </div>
       </div>
     }

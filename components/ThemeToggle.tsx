@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
-const ThemeToggle = (props: {className?: string}) => {
-  const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
-  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+const ThemeToggle = (props: {className?: string, activeTheme?: string, setActiveTheme?: Dispatch<SetStateAction<string>>}) => {
+  const inactiveTheme = props.activeTheme === "light" ? "dark" : "light";
 
-  useEffect(() => {
-    document.body.dataset.theme = activeTheme;
-    window.localStorage.setItem("theme", activeTheme);
-  }, [activeTheme]);
+  const mobile = useMediaQuery('(max-width: 768px)');
+  let fontSize = mobile ? {fontSize: '20px'} : { fontSize: '12px'}
 
-  return <a className={props.className} style={{fontSize: '14px'}} href="/"
-      onClick={(e) => { e.preventDefault(); setActiveTheme(inactiveTheme) }}>
+  return <a className={props.className} style={fontSize} href="/"
+      onClick={(e) => { e.preventDefault(); props.setActiveTheme(inactiveTheme) }}>
       {inactiveTheme}?
     </a>
 };

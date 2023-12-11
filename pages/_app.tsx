@@ -2,10 +2,14 @@ import { useEffect } from "react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Head from 'next/head'
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import * as gtag from "../lib/gtag";
 import '../styles/globals.css'
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("../components/Header"), {
+  ssr: false,
+});
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

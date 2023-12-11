@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-export const Logo = (props: { inverted: boolean, height: number, width: number, mobile: boolean }) => {
+export const Logo = (props: { theme: string, height: number, width: number, mobile: boolean }) => {
   const logoPathProps = {
-    initial: props.inverted ? "default" : "inverted",
-    animate: props.inverted ? "inverted" : "default",
+    initial: props.theme === "light" ? "default" : "inverted",
+    animate: props.theme === "dark" ? "inverted" : "default",
     variants: {
       default: {
         fill: '#212324',
@@ -17,8 +17,8 @@ export const Logo = (props: { inverted: boolean, height: number, width: number, 
         }
       },
       inverted: {
-        fill: '#212324',
-        stroke: '#212324',
+        fill: '#fff',
+        stroke: '#fff',
         pathLength: 1,
         transition: {
           pathLength: 0,
@@ -32,8 +32,8 @@ export const Logo = (props: { inverted: boolean, height: number, width: number, 
   };
 
   const compactNamePathProps = {
-    initial: props.inverted ? "default" : "inverted",
-    animate: props.inverted ? "inverted" : "default",
+    initial:  props.theme === "light" ? "default" : "inverted",
+    animate:  props.theme === "dark" ? "inverted" : "default",
     variants: {
       default: {
         opacity: 1,
@@ -56,16 +56,10 @@ export const Logo = (props: { inverted: boolean, height: number, width: number, 
     strokeWidth: 3
   };
 
-
-  console.log('in logo; inverted is: ' + props.inverted);
-  console.log('props.mobile: ' + props.mobile)
-
   if (props.mobile) {
 
     return <div style={{marginLeft: '20px'}}>
-
-    <motion.svg className="ml-2" 
-        width={props.width} height={props.height} viewBox="0 0 225 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <motion.svg width={props.width} height={props.height} viewBox="0 0 225 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <motion.path
           {...logoPathProps}
           d="M182.835 0H0.887787V10.6667H182.835C200.433 10.6667 214.832 27.1667 214.832 47.3333C214.832 67.5 200.433 84 182.835 84H173.09V73.6667H179.78C192.434 73.6667 202.76 61.8333 202.76 47.3333V42L36.8118 41.8333V31.5H200.724C200.724 25.5 191.852 20.8333 186.616 20.8333H27.3581V52.5H192.579C190.689 58.5 185.598 62.8333 179.78 62.8333H27.3581V73.5H162.037V83.8333H0.887787V94.5H162.037V109.833L167.563 103.5L173.09 109.833V94.5H182.835C205.669 94.5 224.14 73.3333 224.14 47.1667C224.14 21.1667 205.669 0 182.835 0Z"
