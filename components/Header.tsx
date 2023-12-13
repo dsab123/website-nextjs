@@ -60,7 +60,7 @@ export default function Header() {
       marginBottom: mobile ? '' : '2rem'
     }}
   >
-    <div className={styles.logoWrapper} style={{ overflow: 'hidden' }}>
+    <div className={styles.logoWrapper} style={{ overflow: 'hidden', backgroundColor: 'var(--background-color)', flexGrow: 1 }}>
       <Link href="/">
         {mobile !== undefined ?
           <Logo height={titleHeight} width={titleWidth} theme={activeTheme} mobile={mobile}></Logo>
@@ -92,7 +92,7 @@ export default function Header() {
 
     {/* desktop nav */}
     {mobile !== undefined && mobile == false &&
-      <div className={styles.navigationWrapper}>
+      <div className={styles.navigationWrapper} style={{backgroundColor: 'var(--background-color)'}}>
         <div className={styles.navigation}>
           {navItems.map((item) => (
 

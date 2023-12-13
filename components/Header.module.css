@@ -3,14 +3,12 @@
   display: flex;
   justify-content: space-between;
   position: sticky;
-  top: 0;
+  top: 3px;
   z-index: 10;
-  padding-top: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-left: -30px;
   height: 4rem;
-  background-color: var(--background-color);
   margin-bottom: 120px;
   transition-property: all; 
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
