@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 37,
+      "slug": "notes-on-romans-1-1-7",
+      "title": "Study notes on Romans 1:1-7",
+      "teaser": "The Apostle of Jesus, the Gospel of Jesus, the Saints of Jesus",
+      "tags": [
+        "theology",
+        "Romans",
+        "bible"
+      ],
+      "imageUri": "blogpost/kingdom.jpg",
+      "date": "12-22-2023",
+      "isReady": true
+    },
+    {
       "blogpostId": 36,
       "slug": "the-outlook-of-the-christian",
       "title": "The Outlook of the Christian",
