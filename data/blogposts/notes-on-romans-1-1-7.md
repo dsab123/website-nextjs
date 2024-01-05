@@ -2,8 +2,6 @@
 
 <div className="captionText">Thanks to Kelly Sikkema for making this <a href="https://unsplash.com/photos/black-and-white-book-page-GPoh17DxqdM" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
 
-
-
 >_Paul,_
 
 >_&nbsp;&nbsp;&nbsp;&nbsp;a servant of Christ Jesus,_
@@ -12,19 +10,19 @@
 
 >_&nbsp;&nbsp;&nbsp;&nbsp;set apart for the gospel of God,_
 
->_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 which He promised beforehand through His prophets in the holy Scriptures,_
+>_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup> which He promised beforehand through His prophets in the holy Scriptures,_
 
->_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 concerning His Son,_
+>_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup> concerning His Son,_
 
->_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who was descended from David according to the the flesh 4 and was declared to be the Son of God in power according to the Spirit of holiness by His resurrection from the dead,_
+>_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who was descended from David according to the the flesh <sup>4</sup> and was declared to be the Son of God in power according to the Spirit of holiness by His resurrection from the dead,_
 
 >_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jesus Christ our Lord,_
 
->_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 through whom we have received grace and apostleship to bring about the obedience of [produced by] faith for the sake of His name among all the nations,_
+>_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>5</sup> through whom we have received grace and apostleship to bring about the obedience of [produced by] faith for the sake of His name among all the nations,_
 
->_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6 including you who are called to belong to Jesus Christ,_
+>_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>6</sup> including you who are called to belong to Jesus Christ,_
 
->_7 To all those in Rome who are loved by God and called to be saints:_
+>_<sup>7</sup> To all those in Rome who are loved by God and called to be saints:_
 
 >_&nbsp;&nbsp;&nbsp;&nbsp;Grace to you and peace from God our Father and the Lord Jesus Christ._
 
@@ -32,12 +30,20 @@
 
 <br />
 
-### My synthesis - _The powerful, resurrected Jesus gave grace and apostleship to bring about the obedience of faith among those called to be saints._
+### Summary Statement - _The powerful, resurrected Jesus gave grace and apostleship to bring about the obedience of faith among those called to be saints._
+
+#### My Outline:
+
+- The apostle of Jesus, 1
+- The Gospel of Jesus, 2-5
+  - Where and When
+  - Who, What and Why
+- The saints of Jesus, 6-7
 
 <br />
 
 ---
-Notes from Former Pastor's Sermons
+### Notes from Former Pastor's Sermons
 
 Outline
 1. The Great King (Jesus)
@@ -50,23 +56,23 @@ Quotes
 - "Paul is used to bring about the obedience of faith among the nations [prophesied beforehand] in Psalm 2."
 
 ---
-[_The Story Retold_](https://www.wtsbooks.com/products/the-story-retold-a-biblical-theological-introduction-to-the-new-testament-9780830852666) Notes
+### [_The Story Retold_](https://www.wtsbooks.com/products/the-story-retold-a-biblical-theological-introduction-to-the-new-testament-9780830852666) Notes
 
 - Elements of this greeting are mentioned again in the conclusion (16:25-27).
 
 
 ---
-[Greek Grammar (Wallace)](https://www.wtsbooks.com/products/greek-grammar-beyond-the-basics-daniel-wallace-9780310218951) Notes
+### [Wallace's Greek Grammar](https://www.wtsbooks.com/products/greek-grammar-beyond-the-basics-daniel-wallace-9780310218951) Notes
 
 1:5 -
-- δι᾽ οὗ ἐλάβομεν χάριν καὶ ἀποστολὴν εἰς ὑπακοὴν πίστεως [Jesus Christ], through whom we have received grace and apostleship to bring about the obedience of faith (accusatives bolded and relevant phrase italicized)
+- δι᾽ οὗ ἐλάβομεν χάριν καὶ ἀποστολὴν εἰς ὑπακοὴν πίστεως [Jesus Christ], through whom we have received grace and apostleship to bring about the obedience of faith
 	- 'of faith' is a possible Genitive of Production/Producer (see p 105,106); the obedience is an obedience produced by faith ❤️
 1:7 -
 - ἐν Ῥώμῃ ἀγαπητοῖς θεοῦ [to those] in Rome, beloved by God
 	- This is a Genitive of Agency (p 126); God is the agent by which the action (being beloved) is accomplished ❤️ 
 
 ---
-[Calvin’s](https://ccel.org/ccel/calvin/calcom38/calcom38.v.i.html) Notes
+### [Calvin’s](https://ccel.org/ccel/calvin/calcom38/calcom38.v.i.html) Notes
 
 - 1:3 - “they who seek to be wise without Christ, are not only foolish, but even completely insane.” lol
 - 1:4 - 
@@ -77,7 +83,7 @@ Quotes
 	- 🤲 My Lord, You have taught me this lesson, to pray for the things that You have promised to me, namely the promise of continued communion with You. Thank You so much for the time to draw near to You through Your Son. Thank You for the gospel, my Holy One. Please give me deeper understanding, my King! For I am Yours, and all Your blessings are for me. Be with us today, my Lord Jesus.
 
 ---
-[Luther's](https://www.abebooks.com/servlet/BookDetailsPL?bi=22618466235&searchurl=isbn%3D0825431190%26sortby%3D17&cm_sp=snippet-_-srp1-_-image1) Notes
+### [Luther's](https://www.abebooks.com/servlet/BookDetailsPL?bi=22618466235&searchurl=isbn%3D0825431190%26sortby%3D17&cm_sp=snippet-_-srp1-_-image1) Notes
 
 - Jesus was 'descended' from David according to the flesh. Luther's translation has 'made' instead; he magnifies the distinction between Christ's human nature being 'made' and His declaration to be the Son of God, which existed always.
 - By triumphing over sin and rising from the dead, He was declared to be the Son of God.
@@ -85,15 +91,15 @@ Quotes
 	- "The Gospel, then, is the joyous message of Christ, the Son of God, who first humbled Himself and then was glorified through the Holy Spirit." p 37
 
 ---
-My Notes
+### My Notes
 
 - Title - The powerful, resurrected Jesus gave grace and apostleship to bring about the obedience of faith among those called to be saints.
-- Outline (preliminary)
-	- The apostle of Jesus, 1
-	- The Gospel of Jesus, 2-5
+- Outline
+	- **The apostle of Jesus**, 1
+	- **The Gospel of Jesus**, 2-5
 		- Where and When
 		- Who, What and Why
-	- The saints of Jesus, 6-7
+	- **The saints of Jesus**, 6-7
 - Observations
 	- The Apostle of Jesus, 1
 		- Paul became an apostle in imitation to Christ, Himself the Apostle and High Priest of our confession (Heb 3:1).
@@ -103,7 +109,7 @@ My Notes
 		- Paul is set apart in Acts 13:2 - "While they were worshipping the Lord and fasting, the Holy Spirit said, 'Set apart for me Barnabas and Saul for the work to which I have called them.'" ❤️
 		- The Lord as Commander, directing the thoughts, words, and deeds of His servants
 			- Paul was called to be an apostle. He has detailed elsewhere that he had no option to deny this call - "For necessity is laid upon me. Woe to me if I do not preach the gospel!" 1 Corinthians 9:16
-				- May this be my prayer too, my Lord! Woe to me if I do not preach the gospel!
+				- 🤲 May this be my prayer too, my Lord! Woe to me if I do not preach the gospel!
 	- The Gospel of Jesus, 2-5
 		- Where and When
 			- This declaration of Jesus as the Son of God is straight from Psalm 2, as Dan Clifford said. This declaration is made in the midst of the enemies of God conspiring against Him and against His anointed. 

@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 38,
+      "slug": "2023-reading-in-review",
+      "title": "2023 Reading in Review",
+      "teaser": "My reading was much more consistent this year than last.",
+      "tags": [
+        "theology",
+        "yearly",
+        "reading"
+      ],
+      "imageUri": "blogpost/book-stack.jpg",
+      "date": "12-27-2023",
+      "isReady": true
+    },
+    {
       "blogpostId": 37,
       "slug": "notes-on-romans-1-1-7",
       "title": "Study notes on Romans 1:1-7",
