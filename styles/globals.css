@@ -1,6 +1,6 @@
 body,
 body[data-theme="light"] {
-  --background-color: #d0cfd6;
+  --background-color: #c6c6c6;
 	--post-tag-color: #889194;
 	--big-font-family: 'Libre Caslon Text', serif;
   --small-font-family: 'Crimson Text', serif;
@@ -9,6 +9,7 @@ body[data-theme="light"] {
   --error-color: #991b1b;
   --loading-color: #348fbd;
   --success-color: #209720;
+  --blog-card-color: #aaa9ac;
   --empty-color: hsla(0, 0%, 98%, 0);
   --caption-color: #4b4e4f;
   --color-background-toggle: #d0cfd6;
@@ -28,6 +29,7 @@ body[data-theme="dark"] {
   --error-color: #991b1b;
   --loading-color: #348fbd;
   --success-color: #209720;
+  --blog-card-color: #33375a;
   --empty-color: hsla(0, 0%, 98%, 0);
   --caption-color: #4b4e4f;
   --color-background-toggle: #1c1c3c;
