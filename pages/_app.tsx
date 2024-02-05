@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import * as gtag from "../lib/gtag";
 import '../styles/globals.css'
 import dynamic from "next/dynamic";
+import { Analytics } from '@vercel/analytics/react';
+
 
 const Header = dynamic(() => import("../components/Header"), {
   ssr: false,
@@ -48,6 +50,7 @@ function App({ Component, pageProps }: AppProps) {
       <Header></Header>
       <Component {...pageProps} />
       <Footer></Footer>
+      <Analytics />
     </div>
     </>
   )
