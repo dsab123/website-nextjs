@@ -2,6 +2,11 @@
 
 <div className="captionText">Thanks to Kelly Sikkema for making this <a href="https://unsplash.com/photos/black-and-white-book-page-GPoh17DxqdM" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
 
+
+[Study notes on Romans 1:8-15](/blog/39/notes-on-romans-1-8-15)
+
+---
+
 >_Paul,_
 
 >_&nbsp;&nbsp;&nbsp;&nbsp;a servant of Christ Jesus,_
@@ -32,7 +37,7 @@
 
 ### Summary Statement - _The powerful, resurrected Jesus gave grace and apostleship to bring about the obedience of faith among those called to be saints._
 
-#### My Outline:
+### My Outline:
 
 - The apostle of Jesus, 1
 - The Gospel of Jesus, 2-5
@@ -93,7 +98,8 @@ Quotes
 ---
 ### My Notes
 
-- Title - The powerful, resurrected Jesus gave grace and apostleship to bring about the obedience of faith among those called to be saints.
+### The powerful, resurrected Jesus gave grace and apostleship to bring about the obedience of faith among those called to be saints.
+
 - Outline
 	- **The apostle of Jesus**, 1
 	- **The Gospel of Jesus**, 2-5

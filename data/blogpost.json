@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 39,
+      "slug": "notes-on-romans-1-8-15",
+      "title": "Study notes on Romans 1:8-15",
+      "teaser": "True Christian fellowship longs to come alongside believers.",
+      "tags": [
+        "theology",
+        "Romans",
+        "bible"
+      ],
+      "imageUri": "blogpost/romans.jpg",
+      "date": "04-09-2024",
+      "isReady": true
+    },
+    {
       "blogpostId": 38,
       "slug": "2023-reading-in-review",
       "title": "2023 Reading in Review",
