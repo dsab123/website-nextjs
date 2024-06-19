@@ -2,7 +2,9 @@
 
 <div className="captionText">Thanks to Kelly Sikkema for making this <a href="https://unsplash.com/photos/black-and-white-book-page-GPoh17DxqdM" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
 
-[Study notes on Romans 1:1-7](/blog/37/notes-on-romans-1-1-7)
+Other notes in this series:
+- [Study notes on Romans 1:1-7](/blog/37/notes-on-romans-1-1-7)
+- [Study notes on Romans 1:16-17](/blog/41/notes-on-romans-1-16-17)
 
 ---
 

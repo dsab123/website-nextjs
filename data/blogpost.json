@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 41,
+      "slug": "notes-on-romans-1-16-17",
+      "title": "Study notes on Romans 1:16-17",
+      "teaser": "The Gospel - What it Is, What it Reveals, and Your Shame",
+      "tags": [
+        "theology",
+        "Romans",
+        "bible"
+      ],
+      "imageUri": "blogpost/romans.jpg",
+      "date": "06-19-2024",
+      "isReady": true
+    },
+    {
       "blogpostId": 40,
       "slug": "miriam",
       "title": "Miriam",
