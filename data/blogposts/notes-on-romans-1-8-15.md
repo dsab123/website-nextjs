@@ -4,7 +4,9 @@
 
 Other notes in this series:
 - [Study notes on Romans 1:1-7](/blog/37/notes-on-romans-1-1-7)
+- this blog post
 - [Study notes on Romans 1:16-17](/blog/41/notes-on-romans-1-16-17)
+- [Study notes on Romans 1:18-23](/blog/42/notes-on-romans-1-18-23)
 
 ---
 

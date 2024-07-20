@@ -5,6 +5,9 @@
 Other notes in this series:
 - [Study notes on Romans 1:1-7](/blog/37/notes-on-romans-1-1-7)
 - [Study notes on Romans 1:8-15](/blog/39/notes-on-romans-1-8-15)
+- this blog post
+- [Study notes on Romans 1:18-23](/blog/42/notes-on-romans-1-18-23)
+
 ---
 
 >_<sup>16</sup> For I am not ashamed of the gospel,_

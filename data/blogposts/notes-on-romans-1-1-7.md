@@ -5,6 +5,8 @@
 Other notes in this series:
 - [Study notes on Romans 1:8-15](/blog/39/notes-on-romans-1-8-15)
 - [Study notes on Romans 1:16-17](/blog/41/notes-on-romans-1-16-17)
+- [Study notes on Romans 1:18-23](/blog/42/notes-on-romans-1-18-23)
+
 ---
 
 >_Paul,_

@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 42,
+      "slug": "notes-on-romans-1-18-23",
+      "title": "Study notes on Romans 1:18-23",
+      "teaser": "God's wrath is revealed against those who rebel against His rule.",
+      "tags": [
+        "theology",
+        "Romans",
+        "bible"
+      ],
+      "imageUri": "blogpost/romans.jpg",
+      "date": "07-19-2024",
+      "isReady": true
+    },
+    {
       "blogpostId": 41,
       "slug": "notes-on-romans-1-16-17",
       "title": "Study notes on Romans 1:16-17",
