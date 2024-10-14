@@ -1,6 +1,20 @@
 {
     "summaries": [
         {
+          "summaryId": 13,
+          "title": "The Mystery of Providence",
+          "author": "John Flavel",
+          "link": "https://www.wtsbooks.com/products/competing-spectacles-treasuring-christ-in-the-media-age-9781433563799",
+          "imageUri": "summary/mystery-of-providence-book.jpg",
+          "ogImageUri": "summary/mystery-of-providence-book.png",
+          "isReady": true,
+          "slug": "the-mystery-of-providence",
+          "quality": 5,
+          "payoff": 10,
+          "category": "christian, puritan, meditation",
+          "teaser": "It is our duty to dive deep when we meditate. Flavel helps us"
+        },
+        {
           "summaryId": 12,
           "title": "Competing Spectacles",
           "author": "Tony Reinke",
