@@ -12,6 +12,19 @@
 	font-size: 26px;
 }
 
+.readingTime {
+	font-family: var(--small-font-family);
+	font-size: 20px;
+	text-align: top;
+	margin-block-start: 6px;
+	margin-top: 3px;
+  margin-left: 20px;
+	margin-right: 50px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-style: italic;
+}
+
 .metrics {
     display: flex;
     flex-direction: row;

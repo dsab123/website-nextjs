@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { GetStaticPropsContext } from 'next';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import readingTime from 'reading-time';
 import summary from '../../../data/summary.json';
 import styles from '../../../styles/Summary.module.css';
 import BookHover from '../../../components/BookHover';
@@ -20,11 +21,14 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     const postContents = fs.readFileSync(fullPath, 'utf8');
 
     const mdxSource = await serialize(postContents);
+    const timeToRead = Math.floor(readingTime(postContents).minutes);
+
     return {
       props: {
         id: context.params.id,
         summaryInfo: summaryInfo,
-        summaryContents: mdxSource
+        summaryContents: mdxSource,
+        timeToRead: timeToRead
       }
     }
   } catch (error) {
@@ -142,6 +146,12 @@ export default function Summary(props) {
       </div>
 
       <br />
+      <br />
+      <br />
+
+      <p className={styles.readingTime}>Time to read: {props.timeToRead} minutes</p>
+      <hr />
+
       <p className={styles.review}>Review/Summary/Reflections</p>
 
       <div className={!error && !props?.summaryContents ? styles.dimOverlay : ''}>
