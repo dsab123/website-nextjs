@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 43,
+      "slug": "shepherd-leader-chapters-3-and-4",
+      "title": "The Shepherd Leader Chapters 3 and 4",
+      "teaser": "Where did all the Shepherds go?",
+      "tags": [
+        "theology",
+        "shepherding",
+        "bible"
+      ],
+      "imageUri": "blogpost/shepherd-leader-book.jpg",
+      "date": "10-21-2024",
+      "isReady": true
+    },
+    {
       "blogpostId": 42,
       "slug": "notes-on-romans-1-18-23",
       "title": "Study notes on Romans 1:18-23",
