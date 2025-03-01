@@ -1,4 +1,4 @@
-<div className="postImageContainer"><img src="/blogpost/todo-list-person.jpg" className="wideNonMovingPostimage" alt="crisis" title="crisis" /></div>
+<div className="postImageContainer"><img src="/blogpost/todo-list-person.jpg" className="wideNonMovingPostimage" alt="drowning in work" title="drowning in work" /></div>
 
 <div className="captionText">Thanks to Luis Villasmil for making this <a href="https://unsplash.com/photos/people-sitting-on-chair-with-brown-wooden-table-mlVbMbxfWI4" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
 
