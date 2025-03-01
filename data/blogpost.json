@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 44,
+      "slug": "anxious-to-work-on-the-sabbath",
+      "title": "For when I'm anxious to work on the Sabbath",
+      "teaser": "Where did all the Shepherds go?",
+      "tags": [
+        "theology",
+        "anxiety",
+        "sabbath"
+      ],
+      "imageUri": "blogpost/todo-list-person.jpg",
+      "date": "10-24-2024",
+      "isReady": true
+    },
+    {
       "blogpostId": 43,
       "slug": "shepherd-leader-chapters-3-and-4",
       "title": "The Shepherd Leader Chapters 3 and 4",
