@@ -1,6 +1,19 @@
 {
   "blogposts": [
     {
+      "blogpostId": 46,
+      "slug": "proverbs-and-the-protoevangelium",
+      "title": "Proverbs and the Protoevangelium",
+      "teaser": "The Seed of the Woman and the Serpent shows up in Proverbs.",
+      "tags": [
+        "biblical theology",
+        "gospel"
+      ],
+      "imageUri": "blogpost/seed-to-flower.jpg",
+      "date": "07-27-2025",
+      "isReady": true
+    },
+    {
       "blogpostId": 45,
       "slug": "tangible-part-two",
       "title": "Tangible Part II",
@@ -17,7 +30,7 @@
       "blogpostId": 44,
       "slug": "anxious-to-work-on-the-sabbath",
       "title": "For when I'm anxious to work on the Sabbath",
-      "teaser": "Where did all the Shepherds go?",
+      "teaser": "Can 'checklist people' reallt rest on the Sabbath?",
       "tags": [
         "theology",
         "anxiety",
