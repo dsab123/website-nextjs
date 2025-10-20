@@ -5,7 +5,7 @@
 
 In Proverbs 7:1 and 7:24 and a few other places in Proverbs, 5:1 and 5:7 at least, Solomon's audience grows from one son to multiple sons:
 
-Main idea: the growth of the number of the sons of Solomon listening to his address, as well as the 'transcendent' victories of the adulteress are the tip of the iceberg of the revelation of the Protoevangelium in Proverbs!
+**Main idea: the growth of the number of the sons of Solomon listening to his address, as well as the 'transcendent' victories of the adulteress are the tip of the iceberg of the revelation of the Protoevangelium in Proverbs!**
 
 The adulterous woman, throughout the entirety of the chapter, is treated as a single entity, _until_ 7:26-7:27, when her conquests are descried as a mighty throng and as spiritual (her house is the way to Sheol). Clearly Solomon is broadening his scope to include more than just one adulterous woman.
 
