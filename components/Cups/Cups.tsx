@@ -5,6 +5,8 @@ import PaperCup from './PaperCup';
 import TeabagMug from './TeabagMug';
 import LargeCoffeeCup from './LargeCoffeeCup';
 import Teapot from './Teapot';
+import type { JSX } from 'react'
+
 
 type Cup = {
   id: number,

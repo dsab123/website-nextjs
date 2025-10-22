@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Likes from './Likes';
+// import Likes from './Likes';
 import styles from './BlogPostCard.module.css';
 import { formatDate } from '../lib/dateHelper';
 

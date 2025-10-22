@@ -14,7 +14,7 @@ import Disclaimer from '../../../components/Disclaimer';
 import RelatedPosts from '../../../components/RelatedPosts';
 import { formatDate } from '../../../lib/dateHelper';
 import readingTime from 'reading-time';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'motion/react';
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
@@ -102,7 +102,7 @@ export default function Blog(props) {
 
       <p className={styles.date}><em>{formatDate(props.date)}</em></p>
       <div className={styles.topMatter}>
-        <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes} />
+        {/* <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes} /> */}
         <p className={styles.readingTime}>{props.timeToRead} minutes</p>
 
       </div>
@@ -116,7 +116,7 @@ export default function Blog(props) {
         <br />
 
         <div className={styles.likesWrapper}>
-          <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes} />
+          {/* <Likes id={props.id} slug={props.slug} navigationChange={dynamicRoute} likes={postLikes} setLikes={setPostLikes} /> */}
         </div>
 
         <div className={styles.bottomMatter}>

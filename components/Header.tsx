@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from './Header.module.css'
 import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
+import { motion } from "motion/react";
 import { Logo } from './svgs/Logo';
 import useScrollDirection from '../hooks/useScrollDirection';
 import { useMediaQuery } from '../hooks/useMediaQuery';
@@ -63,7 +63,7 @@ export default function Header() {
     <div className={styles.logoWrapper} style={{ overflow: 'hidden', backgroundColor: 'var(--background-color)', flexGrow: 1 }}>
       <Link legacyBehavior href="/">
         {mobile !== undefined ?
-          <Logo height={titleHeight} width={titleWidth} theme={activeTheme} mobile={mobile}></Logo>
+          <Logo height={titleHeight} width={titleWidth} theme={activeTheme as "light" | "dark"} mobile={mobile}></Logo>
           : <p></p>
         }
       </Link>

@@ -1,74 +1,72 @@
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "motion/react";
 
-export const Logo = (props: { theme: string, height: number, width: number, mobile: boolean }) => {
+type LogoProps = { theme: "light" | "dark"; height: number; width: number; mobile: boolean };
+
+export const Logo = (props: LogoProps) => {
   const logoPathProps = {
     initial: props.theme === "light" ? "default" : "inverted",
     animate: props.theme === "dark" ? "inverted" : "default",
     variants: {
       default: {
-        fill: '#212324',
-        stroke: '#212324',
+        fill: "#212324",
+        stroke: "#212324",
         pathLength: 0,
         transition: {
-          pathLength: 1,
+          // value-specific override for pathLength
+          pathLength: { duration: 1, ease: easeInOut },
           duration: 1,
-          ease: "easeInOut",
-          repeatDelay: 1
-        }
+          ease: easeInOut,
+          repeatDelay: 1,
+        },
       },
       inverted: {
-        fill: '#fff',
-        stroke: '#fff',
+        fill: "#fff",
+        stroke: "#fff",
         pathLength: 1,
         transition: {
-          pathLength: 0,
+          pathLength: { duration: 1, ease: easeInOut },
           duration: 1,
-          ease: "easeInOut",
-          repeatDelay: 1
-        }
-      }
+          ease: easeInOut,
+          repeatDelay: 1,
+        },
+      },
     },
-    strokeWidth: 4
-  };
+    strokeWidth: 4,
+  } as const;
 
   const compactNamePathProps = {
-    initial:  props.theme === "light" ? "default" : "inverted",
-    animate:  props.theme === "dark" ? "inverted" : "default",
+    initial: props.theme === "light" ? "default" : "inverted",
+    animate: props.theme === "dark" ? "inverted" : "default",
     variants: {
       default: {
         opacity: 1,
-        fill: '#212324',
-        transition: {
-          duration: 1,
-          ease: "easeInOut",
-          repeatDelay: 1
-        }
+        fill: "#212324",
+        transition: { duration: 1, ease: easeInOut, repeatDelay: 1 },
       },
       inverted: {
         opacity: 0,
-        transition: {
-          duration: 1,
-          ease: "easeInOut",
-          repeatDelay: 1
-        }
-      }
+        transition: { duration: 1, ease: easeInOut, repeatDelay: 1 },
+      },
     },
-    strokeWidth: 3
-  };
+    strokeWidth: 3,
+  } as const;
 
   if (props.mobile) {
-
-    return <div style={{marginLeft: '20px'}}>
-    <motion.svg width={props.width} height={props.height} viewBox="0 0 225 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <motion.path
-          {...logoPathProps}
-          d="M182.835 0H0.887787V10.6667H182.835C200.433 10.6667 214.832 27.1667 214.832 47.3333C214.832 67.5 200.433 84 182.835 84H173.09V73.6667H179.78C192.434 73.6667 202.76 61.8333 202.76 47.3333V42L36.8118 41.8333V31.5H200.724C200.724 25.5 191.852 20.8333 186.616 20.8333H27.3581V52.5H192.579C190.689 58.5 185.598 62.8333 179.78 62.8333H27.3581V73.5H162.037V83.8333H0.887787V94.5H162.037V109.833L167.563 103.5L173.09 109.833V94.5H182.835C205.669 94.5 224.14 73.3333 224.14 47.1667C224.14 21.1667 205.669 0 182.835 0Z"
+    return (
+      <div style={{ marginLeft: "20px" }}>
+        <motion.svg width={props.width} height={props.height} viewBox="0 0 225 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <motion.path
+            {...logoPathProps}
+            d="M182.835 0H0.887787V10.6667H182.835C200.433 10.6667 214.832 27.1667 214.832 47.3333C214.832 67.5 200.433 84 182.835 84H173.09V73.6667H179.78C192.434 73.6667 202.76 61.8333 202.76 47.3333V42L36.8118 41.8333V31.5H200.724C200.724 25.5 191.852 20.8333 186.616 20.8333H27.3581V52.5H192.579C190.689 58.5 185.598 62.8333 179.78 62.8333H27.3581V73.5H162.037V83.8333H0.887787V94.5H162.037V109.833L167.563 103.5L173.09 109.833V94.5H182.835C205.669 94.5 224.14 73.3333 224.14 47.1667C224.14 21.1667 205.669 0 182.835 0Z"
           />
-      </motion.svg>
-          </div>
+        </motion.svg>
+      </div>
+    );
+  }
 
-  } else {
-    return <motion.svg width={props.width} height={props.height} viewBox="0 0 989 167" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return (
+    <motion.svg width={props.width} height={props.height} viewBox="0 0 989 167" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <motion.path {...logoPathProps} d="M315.962 29C330.506 29 337.196 39.1667 337.196 55.6667V109.667C337.196 126 330.506 136.167 315.962 136.167H294V29H315.962ZM315.816 125.333C323.234 125.333 326.87 120 326.87 110.167V55C326.87 45.1667 323.234 39.8333 315.671 39.8333H304.472V125.333H315.816Z" />
       <motion.path {...logoPathProps} d="M315.962 29C330.506 29 337.196 39.1667 337.196 55.6667V109.667C337.196 126 330.506 136.167 315.962 136.167H294V29H315.962ZM315.816 125.333C323.234 125.333 326.87 120 326.87 110.167V55C326.87 45.1667 323.234 39.8333 315.671 39.8333H304.472V125.333H315.816Z"  />
       <motion.path {...logoPathProps} d="M357.204 111.667L353.567 133.333H343.968L361.858 26.1667H376.984L394.873 133.333H384.401L380.765 111.667H357.204ZM358.658 101.5H379.456L368.839 39.6667L358.658 101.5Z"  />
       <motion.path {...logoPathProps} d="M412.326 133.333H403.017V26.1667H416.253L437.923 103.667V26.1667H447.086V133.333H436.324L412.326 46.6667V133.333Z"  />
@@ -84,7 +82,5 @@ export const Logo = (props: { theme: string, height: number, width: number, mobi
       <motion.path {...logoPathProps} d="M921.661 85.1667V133.333H911.189V26.1667H921.661V74.3333H944.64V26.1667H955.112V133.333H944.64V85.1667H921.661Z"  />
       <motion.path {...logoPathProps} d="M215.835 32H33.8878V42.6667H215.835C233.433 42.6667 247.832 59.1667 247.832 79.3333C247.832 99.5 233.433 116 215.835 116H206.09V105.667H212.78C225.434 105.667 235.76 93.8333 235.76 79.3333V74L69.8118 73.8333V63.5H233.724C233.724 57.5 224.852 52.8333 219.616 52.8333H60.3581V84.5H225.579C223.689 90.5 218.598 94.8333 212.78 94.8333H60.3581V105.5H195.037V115.833H33.8878V126.5H195.037V141.833L200.563 135.5L206.09 141.833V126.5H215.835C238.669 126.5 257.14 105.333 257.14 79.1667C257.14 53.1667 238.669 32 215.835 32Z"  />
     </motion.svg>
-
-  }
-
+  );
 }

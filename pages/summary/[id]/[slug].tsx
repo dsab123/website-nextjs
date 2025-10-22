@@ -87,7 +87,7 @@ function buildShareToSocialLink(selection: string, socialPlatform: string, setSo
 }
 
 export default function Summary(props) {
-  const refContainer = useRef();
+  const refContainer = useRef(null);
   const [socialLink, setSocialLink] = useState('');
 
   const [error, setError] = useState('');

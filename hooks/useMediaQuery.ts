@@ -42,13 +42,14 @@ export function useMediaQuery(
   const [matches, setMatches] = useState(
     getInitialValueInEffect ? initialValue : getInitialValue(query, initialValue)
   );
-  const queryRef = useRef<MediaQueryList>();
+  const queryRef = useRef<MediaQueryList | undefined>(undefined);
 
   useEffect(() => {
-    if ('matchMedia' in window) {
-      queryRef.current = window.matchMedia(query);
-      setMatches(queryRef.current.matches);
-      return attachMediaListener(queryRef.current, (event) => setMatches(event.matches));
+    if (typeof window !== 'undefined' && 'matchMedia' in window) {
+      const mql = window.matchMedia(query);
+      queryRef.current = mql;
+      setMatches(mql.matches);
+      return attachMediaListener(mql, (event) => setMatches(event.matches));
     }
 
     return undefined;

@@ -17,6 +17,7 @@
     "faunadb": "^4.6.0",
     "fs": "0.0.1-security",
     "grommet-icons": "^4.7.0",
+    "motion": "^12.23.24",
     "next": "^16.0.0",
     "next-mdx-remote": "^5.0.0",
     "path": "^0.12.7",
