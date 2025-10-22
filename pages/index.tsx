@@ -66,31 +66,31 @@ export default function Home() {
   const [isSummariesLoading, setIsSummariesLoading] = useState(true);
   const [summaries, setSummaries] = useState<BookSummaryInfo[]>(
     [{
-        summaryId: 999,
-        title: '',
-        author: '',
-        link: '',
-        teaser: '',
-        imageUri: '',
-        ogImageUri: '',
-        isReady: true,
-        slug: '',
-        quality: 1,
-        payoff: 1
-      },
-      {
-        summaryId: 9999,
-        title: '',
-        author: '',
-        link: '',
-        teaser: '',
-        imageUri: '',
-        ogImageUri: '',
-        isReady: true,
-        slug: '',
-        quality: 1,
-        payoff: 1
-      }]
+      summaryId: 999,
+      title: '',
+      author: '',
+      link: '',
+      teaser: '',
+      imageUri: '',
+      ogImageUri: '',
+      isReady: true,
+      slug: '',
+      quality: 1,
+      payoff: 1
+    },
+    {
+      summaryId: 9999,
+      title: '',
+      author: '',
+      link: '',
+      teaser: '',
+      imageUri: '',
+      ogImageUri: '',
+      isReady: true,
+      slug: '',
+      quality: 1,
+      payoff: 1
+    }]
   );
 
   useEffect(() => {
@@ -142,7 +142,7 @@ export default function Home() {
               {!isSummariesLoading &&
                 <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                   <a>
-                    <BookHover imageUri={summary.imageUri} size='small'/>
+                    <BookHover imageUri={summary.imageUri} size='small' />
                   </a>
                 </Link>}
             </div>

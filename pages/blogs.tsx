@@ -11,7 +11,7 @@ async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
         throw new Error("Bad response from server")
     }
 
-    const blogpostLookup =  await response.json() as BlogPostInfo[];
+    const blogpostLookup = await response.json() as BlogPostInfo[];
 
     return blogpostLookup.filter(x => x.isReady);
 }
@@ -21,12 +21,12 @@ export default function Blogs() {
     // const [allLikes, setAllLikes] = useState<LikesItem[]>([]);
 
     const [posts, setPosts] = useState<BlogPostInfo[]>([
-        {blogpostId: 1, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
-        {blogpostId: 2, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
-        {blogpostId: 3, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
-        {blogpostId: 4, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
-        {blogpostId: 5, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
-        {blogpostId: 6, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
+        { blogpostId: 1, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true },
+        { blogpostId: 2, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true },
+        { blogpostId: 3, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true },
+        { blogpostId: 4, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true },
+        { blogpostId: 5, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true },
+        { blogpostId: 6, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true },
     ]);
 
     useEffect(() => {
@@ -76,10 +76,10 @@ export default function Blogs() {
         <h1 className={styles.pageTitle}>Recent Posts</h1>
 
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
-            <div className={styles.cardRecentPostsContainer}>  
-            {posts.map((post) => (
-                <BlogPostCard key={post.blogpostId} isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading} likes={0}></BlogPostCard>
-            ))}
+            <div className={styles.cardRecentPostsContainer}>
+                {posts.map((post) => (
+                    <BlogPostCard key={post.blogpostId} isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading} likes={0}></BlogPostCard>
+                ))}
             </div>
         </div>
         <br />
