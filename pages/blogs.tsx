@@ -5,7 +5,7 @@ import BlogPostCard from '../components/BlogPostCard';
 import Disclaimer from '../components/Disclaimer';
 
 async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
-    let response = await fetch('/api/blogpost-lookup');
+    let response = await fetch('/api/blogposts');
 
     if (response.status >= 400) {
         throw new Error("Bad response from server")

@@ -30,6 +30,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
             } 
 
             res.setHeader('content-Type', 'application/json');
+
             return res.status(500).end();
 
         default:

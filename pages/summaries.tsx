@@ -6,7 +6,7 @@ import Disclaimer from '../components/Disclaimer';
 import styles from '../styles/Summaries.module.css';
 
 async function fetchBookSummaryLookup(): Promise<BookSummaryInfo[]> {
-  let response = await fetch('/api/booksummary-lookup');
+  let response = await fetch('/api/summaries');
 
   if (response.status >= 400) {
     throw new Error("Bad response from server")

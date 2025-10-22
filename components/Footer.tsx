@@ -25,7 +25,7 @@ async function subscribeEmail(emailCandidate: string, pageUri: string, setSubscr
         return;
     }
 
-    let response = await fetch('/api/email', {
+    let response = await fetch('/api/subscription', {
         method: 'POST',
         headers: {
             'content-Type': 'application/json'
@@ -105,7 +105,7 @@ export default function Footer() {
                   <button className={styles.emailSubscribeButton} onClick={() => subscribeEmail(email, pageUri, setSubscriptionStatus)}>
                       Subscribe
                   </button>
-                  <p className={styles.emailSubscribeText}><strong>Subscribe</strong> to receive resources that will help you read better this year.</p>
+                  <p className={styles.emailSubscribeText}><strong>Subscribe</strong> to receive these things by email.</p>
               </div>
           </div>
       </div>
