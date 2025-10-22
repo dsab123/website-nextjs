@@ -61,7 +61,7 @@ export default function Header() {
     }}
   >
     <div className={styles.logoWrapper} style={{ overflow: 'hidden', backgroundColor: 'var(--background-color)', flexGrow: 1 }}>
-      <Link href="/">
+      <Link legacyBehavior href="/">
         {mobile !== undefined ?
           <Logo height={titleHeight} width={titleWidth} theme={activeTheme} mobile={mobile}></Logo>
           : <p></p>
@@ -96,7 +96,7 @@ export default function Header() {
         <div className={styles.navigation}>
           {navItems.map((item) => (
 
-            <Link key={item.id} href={item.uri}>
+            <Link legacyBehavior key={item.id} href={item.uri}>
               <a className={styles.navItem}>{item.title}</a>
             </Link>
 

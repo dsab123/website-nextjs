@@ -18,7 +18,7 @@ async function fetchBlogPostLookup(): Promise<BlogPostInfo[]> {
 
 export default function Blogs() {
     const [isBlogPostsLoading, setIsBlogPostsLoading] = useState(true);
-    const [allLikes, setAllLikes] = useState<LikesItem[]>([]);
+    // const [allLikes, setAllLikes] = useState<LikesItem[]>([]);
 
     const [posts, setPosts] = useState<BlogPostInfo[]>([
         {blogpostId: 1, slug: "slug", title: "", teaser: "", tags: [], imageUri: "", date: "", isReady: true},
@@ -40,22 +40,22 @@ export default function Blogs() {
             .catch(error => isBlogPostsLoading ? console.log(error.toString()) : null);
     }, []);
 
-    useEffect(() => {
-        const getAllLikes = async () => {
-            const response = await fetch(`/api/all-likes`, {
-              method: 'GET',
-              headers: {
-                  'content-Type': 'application/json'
-              },
-            });
+    // useEffect(() => {
+    //     const getAllLikes = async () => {
+    //         const response = await fetch(`/api/all-likes`, {
+    //           method: 'GET',
+    //           headers: {
+    //               'content-Type': 'application/json'
+    //           },
+    //         });
 
-            const allLikesData = await response.json() as LikesItem[];
+    //         const allLikesData = await response.json() as LikesItem[];
 
-            setAllLikes(allLikesData);
-          };
+    //         setAllLikes(allLikesData);
+    //       };
 
-        getAllLikes();
-    }, []);
+    //     getAllLikes();
+    // }, []);
 
     return <>
         <Head>
@@ -78,7 +78,7 @@ export default function Blogs() {
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>  
             {posts.map((post) => (
-                <BlogPostCard key={post.blogpostId} isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading} likes={allLikes.find(i => i.id == post.blogpostId)?.likes ?? 0}></BlogPostCard>
+                <BlogPostCard key={post.blogpostId} isLoading={isBlogPostsLoading} post={post} setIsLoading={setIsBlogPostsLoading} likes={0}></BlogPostCard>
             ))}
             </div>
         </div>

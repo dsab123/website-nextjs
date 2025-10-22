@@ -127,7 +127,7 @@ export default function Home() {
       <h2 className={styles.headerTeaser}>I write at the intersection of reading and theology.</h2>
 
       <div className={styles.rightSideLink}>
-        <Link href="/blog/4/about">
+        <Link legacyBehavior href="/blog/4/about">
           <a className={styles.teaserLink}>Who am I?</a>
         </Link>
       </div>
@@ -140,7 +140,7 @@ export default function Home() {
           <div key={summary.summaryId} className={SummaryStyles.card}>
             <div className={isSummariesLoading ? SummaryStyles.loadingBookImage : ''}>
               {!isSummariesLoading &&
-                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                   <a>
                     <BookHover imageUri={summary.imageUri} size='small'/>
                   </a>
@@ -157,7 +157,7 @@ export default function Home() {
                 <p className={SummaryStyles.bookTeaser}>{summary.teaser}</p>
               </div>
               <div className={SummaryStyles.summaryDetail}>
-                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                   <a className={summary.isReady ? SummaryStyles.readMore : SummaryStyles.hidden}>
                     read review
                   </a>

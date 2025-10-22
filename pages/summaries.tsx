@@ -70,7 +70,7 @@ export default function Summaries() {
           <div key={summary.summaryId} className={styles.card}>
             <div className={isLoading ? styles.loadingBookImage : ''}>
               {summary.isReady &&
-                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                   <a>
                     <BookHover imageUri={'/' + summary.imageUri} />
                   </a>
@@ -91,7 +91,7 @@ export default function Summaries() {
                 <p className={styles.bookTeaser}>{summary.teaser}</p>
               </div>
               <div className={styles.summaryDetail}>
-                <Link href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                   <a className={summary.isReady ? styles.readMore : styles.hidden}>
                     read review
                   </a>

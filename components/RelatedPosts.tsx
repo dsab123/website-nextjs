@@ -77,7 +77,7 @@ export default function RelatedPosts(props: {
         <ul>
           {relatedPosts.map((relatedPost) =>
           <li key={relatedPost.blogpostId}>
-            <Link href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
+            <Link legacyBehavior href='/blog/[id]/[slug]' as={`/blog/${relatedPost.blogpostId}/${relatedPost.slug}`}>
               <a className={styles.postLinks}>
               {relatedPost.title}
               <ul>

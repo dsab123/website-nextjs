@@ -16,13 +16,14 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       }
 
       try {
-        const { body } = await databaseClient.getLikes(id, slug);
-        const foo = JSON.parse(body) as any;
+        // since Fauna is dead now 💀
+        // const { body } = await databaseClient.getLikes(id, slug);
+        // const foo = JSON.parse(body) as any;
         
-        res.setHeader('content-Type', 'application/json');
+        // res.setHeader('content-Type', 'application/json');
         return res.status(200).end(JSON.stringify({
           id: id, 
-          likes: foo.likes
+          likes: 1
         }));
         
       } catch (error) {
