@@ -1,20 +1,20 @@
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Secure, Facebook, Send, Twitter } from 'grommet-icons';
-import styles from './Footer.module.css'
+import styles from './Footer.module.css';
 import * as EmailValidator from 'email-validator';
-import dynamic from "next/dynamic";
-const Cups = dynamic(() => import("./Cups/Cups"), {
+import dynamic from 'next/dynamic';
+const Cups = dynamic(() => import('./Cups/Cups'), {
     ssr: false
 });
 
   export enum SubscriptionStatus {
-    NONE = "",
-    LOADING = "...",
+    NONE = '',
+    LOADING = '...',
     NOT_ALLOWED = 'Are you a hacker? Nice',
     BAD_EMAIL = 'Is that email format correct?',
     SERVER_ERROR = 'Oh no, an error! Try again?',
-    SUBSCRIBED = "Subscribed!"
+    SUBSCRIBED = 'Subscribed!'
 }
 
 async function subscribeEmail(emailCandidate: string, pageUri: string, setSubscriptionStatus: Function) {
@@ -25,7 +25,7 @@ async function subscribeEmail(emailCandidate: string, pageUri: string, setSubscr
         return;
     }
 
-    let response = await fetch('/api/subscription', {
+    const response = await fetch('/api/subscription', {
         method: 'POST',
         headers: {
             'content-Type': 'application/json'
@@ -131,5 +131,5 @@ export default function Footer() {
 
   <p className={styles.emailMadeWithHeart}>~ Made with <span className={styles.heart}>❤️</span> by Emily ~</p>
 
-  </div>
+  </div>;
 }

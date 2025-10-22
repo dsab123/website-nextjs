@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import styles from './Header.module.css'
+import styles from './Header.module.css';
 import dynamic from 'next/dynamic';
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 import { Logo } from './svgs/Logo';
 import useScrollDirection from '../hooks/useScrollDirection';
 import { useMediaQuery } from '../hooks/useMediaQuery';
@@ -32,19 +32,19 @@ export default function Header() {
 
   const [paddingTop, setPaddingTop] = useState(0);
 
-  let titleHeight = 65;
+  const titleHeight = 65;
 
-  let [hamburgerOpen, setHamburgerOpen] = useState(false);
-  let [titleWidth, setTitleWidth] = useState(0);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [titleWidth, setTitleWidth] = useState(0);
 
 
   useEffect(() => {
     // mobile is undefined for a few renders due to the useMediaQuery hook
     if (mobile !== undefined) {
       setPaddingTop(mobile ? 10 : 20);
-      setTitleWidth(mobile ? 120 : 400)
+      setTitleWidth(mobile ? 120 : 400);
     }
-  }, [mobile])
+  }, [mobile]);
 
   const scrollDirection = useScrollDirection();
   const router = useRouter();
@@ -52,9 +52,9 @@ export default function Header() {
   const toggleHamburgerAndNavigate = (href: string) => {
     setHamburgerOpen(!hamburgerOpen);
     router.push(href);
-  }
+  };
 
-  return <motion.div className={scrollDirection === "down" ? `${styles.headerContent} ${styles.hide}` : `${styles.headerContent}`}
+  return <motion.div className={scrollDirection === 'down' ? `${styles.headerContent} ${styles.hide}` : `${styles.headerContent}`}
     style={{
       marginTop: paddingTop + 'px',
       marginBottom: mobile ? '' : '2rem'
@@ -63,7 +63,7 @@ export default function Header() {
     <div className={styles.logoWrapper} style={{ overflow: 'hidden', backgroundColor: 'var(--background-color)', flexGrow: 1 }}>
       <Link legacyBehavior href="/">
         {mobile !== undefined ?
-          <Logo height={titleHeight} width={titleWidth} theme={activeTheme as "light" | "dark"} mobile={mobile}></Logo>
+          <Logo height={titleHeight} width={titleWidth} theme={activeTheme as 'light' | 'dark'} mobile={mobile}></Logo>
           : <p></p>
         }
       </Link>
@@ -83,7 +83,7 @@ export default function Header() {
           <a href={'#' + item.uri}
             key={item.id}
             className={styles.hamburgerNavItem}
-            onClick={(e) => { e.preventDefault(); toggleHamburgerAndNavigate(item.uri) }}>{item.title}
+            onClick={(e) => { e.preventDefault(); toggleHamburgerAndNavigate(item.uri); }}>{item.title}
           </a>
         ))}
         <ThemeToggle className={styles.hamburgerNavItem} activeTheme={activeTheme} setActiveTheme={setActiveTheme} />
@@ -106,5 +106,5 @@ export default function Header() {
       </div>
     }
 
-  </motion.div>
+  </motion.div>;
 }

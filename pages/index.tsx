@@ -8,10 +8,10 @@ import BookHover from '../components/BookHover';
 import Disclaimer from '../components/Disclaimer';
 
 async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
-  let response = await fetch(`/api/blogpost-info/${blogPostId}`);
+  const response = await fetch(`/api/blogpost/${blogPostId}`);
 
   if (response.status >= 400) {
-    throw new Error("Bad response from server");
+    throw new Error('Bad response from server');
   }
 
   return await response.json() as BlogPostInfo;
@@ -20,10 +20,10 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
 async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
   const ids = [6, 12];
 
-  let response = await fetch(`/api/booksummary-info/${ids.join(',')}`);
+  const response = await fetch(`/api/summary/${ids.join(',')}`);
 
   if (response.status >= 400) {
-    throw new Error("Bad response from server");
+    throw new Error('Bad response from server');
   }
 
   return await response.json() as BookSummaryInfo[];
@@ -109,11 +109,11 @@ export default function Home() {
       <meta property="og:title" content="Daniel Sabbagh | Reading Is Essential" key="title" />
       <meta property="og:description" content="Reading Is Essential." key="description" />
       <meta property="og:type" content="article" key="type" />
-      <meta property="og:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="image" />
+      <meta property="og:image" content={'https://danielsabbagh.com/static/mobile-logo-large.jpg'} key="image" />
 
       <meta name="twitter:title" content="Daniel Sabbagh | Reading Is Essential" key="twitter-title" />
       <meta name="twitter:description" content="Reading Is Essential." key="twitter-description" />
-      <meta name="twitter:image" content={`https://danielsabbagh.com/static/mobile-logo-large.jpg`} key="twitter-image" />
+      <meta name="twitter:image" content={'https://danielsabbagh.com/static/mobile-logo-large.jpg'} key="twitter-image" />
       <meta name="twitter:card" content="summary_large_image" key="twitter-card" />
       <meta name="twitter:creator" content="@_danielsabbagh" key="twitter-creator" />
       <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />

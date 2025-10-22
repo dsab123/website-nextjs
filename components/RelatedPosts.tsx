@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import styles from './RelatedPosts.module.css';
 
 async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]> {
-  let response = await fetch(`/api/blogpost-info-by-tag/${tag}`);
+  const response = await fetch(`/api/blogpost-by-tag/${tag}`);
   if (response.status >= 400) {
-    throw new Error("Bad response from server") // todo make this better
+    throw new Error('Bad response from server'); // todo make this better
   }
 
   return await response.json() as Promise<BlogPostInfoByTag[]>;
@@ -14,7 +14,7 @@ async function fetchBlogPostInfoByTag(tag: string): Promise<BlogPostInfoByTag[]>
 
 export default function RelatedPosts(props: { 
   tags: string[],
-  blogPostId: Number
+  blogPostId: number
 }) {
   const { tags, blogPostId } = props;
 
@@ -95,5 +95,5 @@ export default function RelatedPosts(props: {
       {relatedPosts.length == 0 && showRelatedPosts && <p className={styles.noRelatedPostsText}>Looks like there aren't any other posts with this tag 😔 <a href="mailto:dsabbaghumd@gmail.com" target="_blank">Want me to write one?</a></p>}
     </div>
   </div>}
-  </>
+  </>;
 }

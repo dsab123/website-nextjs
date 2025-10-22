@@ -85,7 +85,7 @@ export const databaseClient = {
           slug: i.data.slug,
           id: i.data.id,
           likes: i.data.likes
-        }
+        };
       });
 
     return {
@@ -93,4 +93,4 @@ export const databaseClient = {
       body: JSON.stringify(filteredData)
     };
   }
-}
+};

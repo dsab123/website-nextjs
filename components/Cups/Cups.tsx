@@ -1,11 +1,11 @@
-import styles from './Cups.module.css'
+import styles from './Cups.module.css';
 import EspressoCup from './EspressoCup';
 // import CampMug from './CampMug';
 import PaperCup from './PaperCup';
 import TeabagMug from './TeabagMug';
 import LargeCoffeeCup from './LargeCoffeeCup';
 import Teapot from './Teapot';
-import type { JSX } from 'react'
+import type { JSX } from 'react';
 
 
 type Cup = {
@@ -42,5 +42,5 @@ export default function Cups() {
         </div>
       ))}
     </div>
-  </>
+  </>;
 }

@@ -9,5 +9,5 @@ export default function Book() {
       width={300}
       alt="Quite a page turner"
     />
-  </>
+  </>;
 }

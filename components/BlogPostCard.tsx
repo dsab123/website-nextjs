@@ -32,5 +32,5 @@ export default function BlogPostCard(props: { post: BlogPostInfo; isLoading: boo
         </div>
       </a>
     </Link>
-  </>
+  </>;
 }

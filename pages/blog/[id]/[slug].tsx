@@ -38,11 +38,11 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
         postContents: mdxSource,
         timeToRead: timeToRead
       }
-    }
+    };
   } catch (error) {
-    return { notFound: true }
+    return { notFound: true };
   }
-}
+};
 
 export async function getStaticPaths() {
   const blogPosts = blogpost.blogposts;
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
           id: `${blogPostInfo.blogpostId}`,
           slug: blogPostInfo.slug
         }
-      }
+      };
     }),
     fallback: false
   };
@@ -126,5 +126,5 @@ export default function Blog(props) {
         <Disclaimer />
       </div>
     </div>
-  </>
+  </>;
 }

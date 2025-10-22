@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-    switch(req.method) {
+    switch (req.method) {
         case 'POST':
             const reqBody = req.body as EmailItem;
 
@@ -17,7 +17,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
                     'X-MailerLite-ApiKey': process.env.EMAIL_POST_API_KEY
                 },
                 body: JSON.stringify({
-                    email: reqBody.email, 
+                    email: reqBody.email,
                     fields: {
                         page_uri: reqBody.pageUri
                     }
@@ -27,7 +27,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
             if (response.status == 200) {
                 res.setHeader('content-Type', 'application/json');
                 return res.status(200).end();
-            } 
+            }
 
             res.setHeader('content-Type', 'application/json');
 
@@ -36,5 +36,5 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         default:
             res.setHeader('Content-Type', 'application/json');
             return res.status(405).end(); // method not allowed
-      }
+    }
 }

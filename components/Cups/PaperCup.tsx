@@ -9,5 +9,5 @@ export default function PaperCup() {
       width={60}
       alt="Building a website"
     />
-  </>
+  </>;
 }

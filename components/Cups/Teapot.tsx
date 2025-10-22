@@ -9,5 +9,5 @@ export default function Teapot() {
       width={70}
       alt="Building a website"
     />
-  </>
+  </>;
 }

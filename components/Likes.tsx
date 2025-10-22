@@ -17,13 +17,13 @@ export default function Likes(props: {id: number, slug: string, navigationChange
   
       const data = await response.json() as LikesItem;
       setLikes(data.likes);
-    }
+    };
 
     getLikes();
   }, [likes, navigationChange]);
 
   const addLike = async (id: number, slug: string) => {
-    const response = await fetch(`/api/likes`, {
+    const response = await fetch('/api/likes', {
       method: 'POST',
       headers: { 'content-Type': 'application/json' },
       body: JSON.stringify({
@@ -34,12 +34,12 @@ export default function Likes(props: {id: number, slug: string, navigationChange
 
     const data = await response.json() as LikesItem;
     setLikes(data.likes);
-  }
+  };
 
   return <div className={styles.outerLikesContainer}>
     <button className={isLoading ? `${styles.likesContainer} ${styles.hiddenLikesContainer}` : `${styles.likesContainer}` } onClick={(e) => {addLike(id, slug); e.preventDefault(); }}>
       <Like size={size ?? 'medium'} className={styles.likesIcon} />
       <p className={size === 'small' ? styles.smallLikesNumber : styles.likesNumber}>{likes}</p>
     </button>
-  </div>
+  </div>;
 }

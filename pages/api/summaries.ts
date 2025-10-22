@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 import summary from '../../data/summary.json';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {

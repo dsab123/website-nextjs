@@ -1,15 +1,15 @@
-import { motion, easeInOut } from "motion/react";
+import { motion, easeInOut } from 'motion/react';
 
-type LogoProps = { theme: "light" | "dark"; height: number; width: number; mobile: boolean };
+type LogoProps = { theme: 'light' | 'dark'; height: number; width: number; mobile: boolean };
 
 export const Logo = (props: LogoProps) => {
   const logoPathProps = {
-    initial: props.theme === "light" ? "default" : "inverted",
-    animate: props.theme === "dark" ? "inverted" : "default",
+    initial: props.theme === 'light' ? 'default' : 'inverted',
+    animate: props.theme === 'dark' ? 'inverted' : 'default',
     variants: {
       default: {
-        fill: "#212324",
-        stroke: "#212324",
+        fill: '#212324',
+        stroke: '#212324',
         pathLength: 0,
         transition: {
           // value-specific override for pathLength
@@ -20,8 +20,8 @@ export const Logo = (props: LogoProps) => {
         },
       },
       inverted: {
-        fill: "#fff",
-        stroke: "#fff",
+        fill: '#fff',
+        stroke: '#fff',
         pathLength: 1,
         transition: {
           pathLength: { duration: 1, ease: easeInOut },
@@ -35,12 +35,12 @@ export const Logo = (props: LogoProps) => {
   } as const;
 
   const compactNamePathProps = {
-    initial: props.theme === "light" ? "default" : "inverted",
-    animate: props.theme === "dark" ? "inverted" : "default",
+    initial: props.theme === 'light' ? 'default' : 'inverted',
+    animate: props.theme === 'dark' ? 'inverted' : 'default',
     variants: {
       default: {
         opacity: 1,
-        fill: "#212324",
+        fill: '#212324',
         transition: { duration: 1, ease: easeInOut, repeatDelay: 1 },
       },
       inverted: {
@@ -53,7 +53,7 @@ export const Logo = (props: LogoProps) => {
 
   if (props.mobile) {
     return (
-      <div style={{ marginLeft: "20px" }}>
+      <div style={{ marginLeft: '20px' }}>
         <motion.svg width={props.width} height={props.height} viewBox="0 0 225 110" fill="none" xmlns="http://www.w3.org/2000/svg">
           <motion.path
             {...logoPathProps}
@@ -83,4 +83,4 @@ export const Logo = (props: LogoProps) => {
       <motion.path {...logoPathProps} d="M215.835 32H33.8878V42.6667H215.835C233.433 42.6667 247.832 59.1667 247.832 79.3333C247.832 99.5 233.433 116 215.835 116H206.09V105.667H212.78C225.434 105.667 235.76 93.8333 235.76 79.3333V74L69.8118 73.8333V63.5H233.724C233.724 57.5 224.852 52.8333 219.616 52.8333H60.3581V84.5H225.579C223.689 90.5 218.598 94.8333 212.78 94.8333H60.3581V105.5H195.037V115.833H33.8878V126.5H195.037V141.833L200.563 135.5L206.09 141.833V126.5H215.835C238.669 126.5 257.14 105.333 257.14 79.1667C257.14 53.1667 238.669 32 215.835 32Z"  />
     </motion.svg>
   );
-}
+};

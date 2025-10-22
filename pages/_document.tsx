@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { GA_TRACKING_ID } from "../lib/gtag";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { GA_TRACKING_ID } from '../lib/gtag';
 
 export default class CustomDocument extends Document {
 
@@ -19,7 +19,7 @@ export default class CustomDocument extends Document {
                   : 'light'
       }
       document.body.dataset.theme = getUserPreference();
-    `
+    `;
 
     return (
       <Html>
@@ -42,6 +42,6 @@ export default class CustomDocument extends Document {
         </body>
         <NextScript />
       </Html>
-    )
+    );
   }
 }

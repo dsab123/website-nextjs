@@ -1,5 +1,5 @@
 import { databaseClient } from './../../lib/databaseClient';
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   let id = 0;

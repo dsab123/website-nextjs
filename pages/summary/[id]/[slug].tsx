@@ -30,9 +30,9 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         summaryContents: mdxSource,
         timeToRead: timeToRead
       }
-    }
+    };
   } catch (error) {
-    return { notFound: true }
+    return { notFound: true };
   }
 }
 
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
           id: `${summaryInfo.summaryId}`,
           slug: summaryInfo.slug
         }
-      }
+      };
     }),
     fallback: false
   };
@@ -65,22 +65,22 @@ function getQualityRanking(payoff: number) {
 }
 
 function buildShareToSocialLink(selection: string, socialPlatform: string, setSocialLink: Function): string {
-  if (typeof window === "undefined") {
+  if (typeof window === 'undefined') {
     return;
   }
 
-  let link = "";
+  let link = '';
 
-  if (socialPlatform == "twitter") {
-    link += "https://twitter.com/intent/tweet?";
-    link += "url=" + escape(document.URL);
-    link += "&text=" + escape(selection + ' ...');
-  } else if (socialPlatform == "facebook") {
-    link += "https://www.facebook.com/dialog/share?&display=popup";
+  if (socialPlatform == 'twitter') {
+    link += 'https://twitter.com/intent/tweet?';
+    link += 'url=' + escape(document.URL);
+    link += '&text=' + escape(selection + ' ...');
+  } else if (socialPlatform == 'facebook') {
+    link += 'https://www.facebook.com/dialog/share?&display=popup';
     link += `&href=${document.URL}`;
-    link += "&app_id=2863776890531694";
+    link += '&app_id=2863776890531694';
     link += `&redirect_uri=${document.URL}`;
-    link += "&quote=" + escape(selection) + ' ...';
+    link += '&quote=' + escape(selection) + ' ...';
   }
 
   setSocialLink(link);
@@ -132,11 +132,11 @@ export default function Summary(props) {
           <div className={styles.teaserWrapper}>
             <p className={styles.teaser}>{props.summaryInfo?.teaser}</p>
             <div className={styles.socialWrapper}>
-              <a href={socialLink} onClick={() => buildShareToSocialLink(props.summaryInfo?.teaser, "facebook", setSocialLink)} target="_blank">
+              <a href={socialLink} onClick={() => buildShareToSocialLink(props.summaryInfo?.teaser, 'facebook', setSocialLink)} target="_blank">
                 <img className={styles.socialIcon} alt="facebook share" src="/static/facebook-filled.png"></img>
               </a>
               &nbsp;
-              <a href={socialLink} onClick={() => buildShareToSocialLink(props.summaryInfo?.teaser, "twitter", setSocialLink)} target="_blank">
+              <a href={socialLink} onClick={() => buildShareToSocialLink(props.summaryInfo?.teaser, 'twitter', setSocialLink)} target="_blank">
                 <img className={styles.socialIcon} alt="twitter share" src="/static/twitter-filled.png"></img>
               </a>
             </div>
@@ -168,5 +168,5 @@ export default function Summary(props) {
 
       <Disclaimer />
     </div>
-  </>
+  </>;
 }
