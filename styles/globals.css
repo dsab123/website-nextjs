@@ -17,6 +17,7 @@ body[data-theme="light"] {
   --footer-color: black;
   --large-logo-url: url('/static/large-logo.png');
   --mobile-logo-url: url('/static/mobile-logo.png');
+  --border-color: black;
 }
 
 body[data-theme="dark"] {
@@ -37,6 +38,7 @@ body[data-theme="dark"] {
   --footer-color: black;
   --large-logo-url: url('/static/large-logo-inverted.png');
   --mobile-logo-url: url('/static/mobile-logo-inverted.png');
+  --border-color: rgba(0,0,0,0.08);
 }
 
 p, li, a, h1, h2, h3, h4 {

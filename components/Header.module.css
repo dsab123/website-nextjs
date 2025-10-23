@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   position: sticky;
-  top: 3px;
+  top: 0px;
   z-index: 10;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-left: -30px;
+  margin-right: -3px;
   height: 4rem;
   margin-bottom: 120px;
   transition-property: all; 
