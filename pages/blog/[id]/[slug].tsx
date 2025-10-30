@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
@@ -15,6 +13,8 @@ import RelatedPosts from '../../../components/RelatedPosts';
 import { formatDate } from '../../../lib/dateHelper';
 import readingTime from 'reading-time';
 import { motion, useScroll, useSpring } from 'motion/react';
+import path from 'path';
+import fs from 'fs';
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
@@ -23,7 +23,14 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
     const postsDirectory = path.join(process.cwd(), 'data/blogposts');
     const fullPath = `${postsDirectory}/${context.params.slug}.md`;
     const postContents = fs.readFileSync(fullPath, 'utf8');
-    const mdxSource = await serialize(postContents);
+    const mdxSource = await serialize(postContents, {
+      mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [],
+        useDynamicImport: true,
+      },
+      parseFrontmatter: true,
+    });
     const timeToRead = Math.floor(readingTime(postContents).minutes);
 
     return {
@@ -62,6 +69,7 @@ export async function getStaticPaths() {
 
 
 export default function Blog(props) {
+  console.log('made it?!');
   const [postLikes, setPostLikes] = useState(0);
 
   // framer motion experiment

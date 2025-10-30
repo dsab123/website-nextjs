@@ -33,7 +33,7 @@ export default function Summaries() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const intro = "Here is a running list of books I've read that have helped me to become a better reader, thinker and Christian. Let me know if you buy any of these!";
+  const intro = "When I read a book I like, I try to review and summarize it to get it in the long-term memory. Here are some of them.";
 
   useEffect(() => {
     fetchBookSummaryLookup()

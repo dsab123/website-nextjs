@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import CountUp from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
-
 
 export default function DaysMarried() {
-  const [visible, setVisible] = useState(false);
-  const days = Math.floor(((new Date()).getTime() - new Date('08-01-2020').getTime()) / (1000 * 60 * 60 * 24));
+  const days = useMemo(
+    () => Math.floor(((Date.now()) - new Date('2020-08-01').getTime()) / (1000*60*60*24)),
+    []
+  );
 
-  return <>
-    <CountUp end={days} useEasing={true}>
-      {({ countUpRef, start }) => (
-        <VisibilitySensor onChange={start} active={!visible}>
-          <span ref={countUpRef} />
-        </VisibilitySensor>
-      )}
+  return (
+    <CountUp
+      end={days}
+      duration={2}
+      enableScrollSpy
+      scrollSpyOnce
+    >
+      {({ countUpRef }) => <span ref={countUpRef} />}
     </CountUp>
-  </>;
+  );
 }
-

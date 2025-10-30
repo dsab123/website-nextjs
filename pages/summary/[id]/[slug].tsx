@@ -141,7 +141,7 @@ export default function Summary(props) {
               </a>
             </div>
           </div>
-          <a href={props.summaryInfo?.link} target="_blank"><img className={styles.buyButton} src="/static/amazon-button.png" /> </a>
+          {/* <a href={props.summaryInfo?.link} target="_blank"><img className={styles.buyButton} src="/static/wts-button.png" /> </a> */}
         </div>
       </div>
 

@@ -21,7 +21,7 @@ type navItem = {
 export default function Header() {
   const navItems: navItem[] = [
     { id: 0, title: 'Home', uri: '/' },
-    { id: 1, title: 'Why?', uri: '/blog/4/about' },
+    { id: 1, title: 'Why?', uri: '/about' },
     { id: 2, title: 'Blog', uri: '/blogs' },
     { id: 3, title: 'Books I Like', uri: '/summaries' }
   ];
