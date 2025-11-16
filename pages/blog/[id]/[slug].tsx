@@ -69,7 +69,6 @@ export async function getStaticPaths() {
 
 
 export default function Blog(props) {
-  console.log('made it?!');
   const [postLikes, setPostLikes] = useState(0);
 
   // framer motion experiment

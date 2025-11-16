@@ -8,7 +8,7 @@ const Cups = dynamic(() => import('./Cups/Cups'), {
     ssr: false
 });
 
-  export enum SubscriptionStatus {
+export enum SubscriptionStatus {
     NONE = '',
     LOADING = '...',
     NOT_ALLOWED = 'Are you a hacker? Nice',
@@ -16,6 +16,11 @@ const Cups = dynamic(() => import('./Cups/Cups'), {
     SERVER_ERROR = 'Oh no, an error! Try again?',
     SUBSCRIBED = 'Subscribed!'
 }
+
+const footerTexts = [
+    "Made with ❤️ by Emily",
+    "No AI was involved in the writing of this content"
+]
 
 async function subscribeEmail(emailCandidate: string, pageUri: string, setSubscriptionStatus: Function) {
     setSubscriptionStatus(SubscriptionStatus.LOADING);
@@ -86,6 +91,9 @@ export default function Footer() {
         }
     }, [subscriptionStatus]);
 
+    const randomIndex = Math.floor(Math.random() * footerTexts.length);
+    const footerText = footerTexts[randomIndex];
+
     return <div>
       <div className={styles.topHorizontalSeparator}></div>
       <div className={styles.feedbackBoxes}>
@@ -114,9 +122,9 @@ export default function Footer() {
 
     <div>
       <ul className={styles.contactList}>
-        <li className={styles.contactListItem}>
+        {/* <li className={styles.contactListItem}>
           <a href="https://www.facebook.com/isReadingEssential" target="_blank"><Facebook color="black" size="medium"></Facebook></a>
-        </li>
+        </li> */}
         <li className={styles.contactListItem}>
           <a href="https://twitter.com/_danielsabbagh" target="_blank"><Twitter color="black" size="medium"></Twitter></a>
         </li>
@@ -129,7 +137,7 @@ export default function Footer() {
       </ul>
     </div>
 
-  <p className={styles.emailMadeWithHeart}>~ Made with <span className={styles.heart}>❤️</span> by Emily ~</p>
+  <p className={styles.footerText}>~ {footerText} ~</p>
 
   </div>;
 }
