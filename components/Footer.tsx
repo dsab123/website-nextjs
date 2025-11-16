@@ -80,6 +80,13 @@ function getSubscriptionStatusPopupClass(status: SubscriptionStatus): string {
 export default function Footer() {
     const [email, setEmail] = useState('');
     const [subscriptionStatus, setSubscriptionStatus] = useState<SubscriptionStatus>(SubscriptionStatus.NONE);
+    const [footerText, setFooterText] = useState(footerTexts[0]);
+
+  useEffect(() => {
+    // This runs only on the client, after hydration
+    const randomIndex = Math.floor(Math.random() * footerTexts.length);
+    setFooterText(footerTexts[randomIndex]);
+  }, []);
 
     const pageUri = useRouter().asPath;
 
@@ -90,9 +97,6 @@ export default function Footer() {
               }, 3000);
         }
     }, [subscriptionStatus]);
-
-    const randomIndex = Math.floor(Math.random() * footerTexts.length);
-    const footerText = footerTexts[randomIndex];
 
     return <div>
       <div className={styles.topHorizontalSeparator}></div>
