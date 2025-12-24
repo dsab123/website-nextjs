@@ -1,17 +1,33 @@
 {
   "summaries": [
     {
+      "summaryId": 14,
+      "title": "Strange New World",
+      "author": "Carl Trueman",
+      "link": "https://www.wtsbooks.com/products/strange-new-world-how-thinkers-and-activists-redefined-identity-and-sparked-the-sexual-revolution-9781433579301",
+      "imageUri": "summary/strange-new-world.jpg",
+      "ogImageUri": "summary/strange-new-world.jpg",
+      "isReady": true,
+      "slug": "strange-new-world",
+      "quality": 5,
+      "payoff": 10,
+      "category": "culture, worldview, history",
+      "seller": "WTS Books",
+      "teaser": "The historical plumbing that explains how we came to accept statements like \"I'm a man trapped in a woman's body\" as normal."
+    },
+    {
       "summaryId": 13,
       "title": "The Mystery of Providence",
       "author": "John Flavel",
       "link": "https://www.wtsbooks.com/products/competing-spectacles-treasuring-christ-in-the-media-age-9781433563799",
       "imageUri": "summary/mystery-of-providence-book.jpg",
-      "ogImageUri": "summary/mystery-of-providence-book.png",
+      "ogImageUri": "summary/mystery-of-providence-book.jpg",
       "isReady": true,
       "slug": "the-mystery-of-providence",
       "quality": 4,
       "payoff": 10,
       "category": "christian, puritan, meditation",
+      "seller": "WTS Books",
       "teaser": "It is our duty to dive deep when we meditate. Flavel helps us do slow down and do this well."
     },
     {
@@ -26,6 +42,7 @@
       "quality": 5,
       "payoff": 10,
       "category": "christian, reading, technology",
+      "seller": "WTS Books",
       "teaser": "A sobering but hopeful primer on our collective technical gluttony along with the worshipful corrective we need."
     },
     {
@@ -40,6 +57,7 @@
       "quality": 4,
       "payoff": 9,
       "category": "christian",
+      "seller": "RHB Books",
       "teaser": "The Christian life is compared to that of a tree - first comes the bud, then the roots and finally the branches."
     },
     {
@@ -54,13 +72,14 @@
       "quality": 5,
       "payoff": 10,
       "category": "christian",
+      "seller": "WTS Books",
       "teaser": "Most Christians would agree that there are difficult parts ..."
     },
     {
       "summaryId": 4,
       "title": "Lit! A Christian Guide to Reading Books",
       "author": "Tony Reinke",
-      "link": "https://amzn.to/3l91wyB",
+      "link": "https://www.wtsbooks.com/products/lit-tony-reinke-9781433522260",
       "teaser": "The motto of the reading Christian is a dazzling doxology: 'In Your light we see light.' (Psalm 36:9)",
       "imageUri": "summary/lit.jpg",
       "ogImageUri": "summary/lit-book.png",
@@ -68,13 +87,14 @@
       "slug": "lit",
       "quality": 5,
       "payoff": 8,
+      "seller": "WTS Books",
       "category": "christian"
     },
     {
       "summaryId": 2,
       "title": "Spurgeon's Sorrows",
       "author": "Zack Eswine",
-      "link": "https://amzn.to/3j4N5cX",
+      "link": "https://www.wtsbooks.com/products/spurgeons-sorrows-realistic-hope-for-those-who-suffer-from-depression-zack-eswine-9781781915387",
       "teaser": "Might it surprise you to know that the 'Prince of Preachers' suffered from crippling depression?",
       "imageUri": "summary/spurgeons_sorrows.jpg",
       "ogImageUri": "summary/spurgeons-sorrows-book.png",
@@ -82,13 +102,14 @@
       "slug": "spurgeons-sorrows",
       "quality": null,
       "payoff": null,
+      "seller": "WTS Books",
       "category": "christian"
     },
     {
       "summaryId": 8,
       "title": "Untangling Emotions",
       "author": "J. Alisdair Groves & Winston Smith",
-      "link": "https://amzn.to/2Er2SUu",
+      "link": "https://www.wtsbooks.com/products/untangling-emotions-9781433557828",
       "teaser": "Our emotions are always pressuring us to act. This book will help you to identify, examine and evaluate your emotions before you do something you can't take back.",
       "imageUri": "summary/untangling_emotions.jpg",
       "ogImageUri": "summary/untangling-emotions-book.png",
@@ -96,13 +117,14 @@
       "slug": "untangling-emotions",
       "quality": 5,
       "payoff": 10,
+      "seller": "WTS Books",
       "category": "christian"
     },
     {
       "summaryId": 9,
       "title": "Job - The Wisdom Of The Cross",
       "author": "Christopher Ash",
-      "link": "https://amzn.to/31lMIog",
+      "link": "https://www.wtsbooks.com/products/job-the-wisdom-of-the-cross-christopher-ash-9781433513121",
       "teaser": "Job is a book about how God treats His friends.",
       "imageUri": "summary/job.jpg",
       "ogImageUri": "summary/job-book.png",
@@ -110,13 +132,14 @@
       "slug": "job-the-wisdom-of-the-cross",
       "quality": 4,
       "payoff": 7,
+      "seller": "WTS Books",
       "category": "christian"
     },
     {
       "summaryId": 5,
       "title": "Think Like a Rocket Scientist",
       "author": "Ozan Varol",
-      "link": "https://amzn.to/3nYLDvQ",
+      "link": "https://www.thriftbooks.com/w/think-like-a-rocket-scientist-simple-strategies-you-can-use-to-make-giant-leaps-in-work-and-life_ozan-varol/23118771",
       "teaser": "You're not a rocket scientist, but sometimes life is that hard. Learn how to think like one.",
       "imageUri": "summary/rocket-scientist.jpg",
       "ogImageUri": "summary/rocket-science-book.png",
@@ -124,13 +147,14 @@
       "slug": "think-like-a-rocket-scientist",
       "quality": 5,
       "payoff": 10,
+      "seller": "ThriftBooks",
       "category": "bestseller"
     },
     {
       "summaryId": 6,
       "title": "The Gospel Comes With A House Key",
       "author": "Rosaria Butterfield",
-      "link": "https://www.amazon.com/Gospel-Comes-House-Key-Post-Christian/dp/143355786X",
+      "link": "https://www.wtsbooks.com/products/gospel-comes-house-key-rosaria-butterfield-9781433557866",
       "teaser": "Radical Ordinary Hospitality is not a natural thing for a Christian to participate in.",
       "imageUri": "summary/gospel-comes-with-a-house-key.png",
       "ogImageUri": "summary/gospel-comes-with-a-house-key-book.jpg",
@@ -138,13 +162,14 @@
       "slug": "gospel-comes-with-a-house-key",
       "quality": 5,
       "payoff": 10,
+      "seller": "WTS Books",
       "category": "christian"
     },
     {
       "summaryId": 7,
       "title": "Sharing a Meal with Jesus",
       "author": "Tim Chester",
-      "link": "https://www.amazon.com/Meal-Jesus-Discovering-Community-Mission/dp/1433521369",
+      "link": "https://www.wtsbooks.com/products/a-meal-with-jesus-tim-chester-9781433521362",
       "teaser": "'In Luke's Gospel Jesus got Himself killed because of the way He ate.'",
       "imageUri": "summary/sharing-a-meal-with-jesus.jpg",
       "ogImageUri": "summary/sharing-a-meal-with-jesus-book.png",
@@ -152,6 +177,7 @@
       "slug": "sharing-a-meal-with-jesus",
       "quality": 5,
       "payoff": 10,
+      "seller": "WTS Books",
       "category": "christian"
     }
   ]

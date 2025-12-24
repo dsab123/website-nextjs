@@ -36,6 +36,7 @@ type BookSummaryInfo = {
   isReady: boolean,
   slug: string,
   quality: number,
+  seller: string,
   payoff: number
 };
 

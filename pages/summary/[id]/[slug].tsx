@@ -94,7 +94,7 @@ export default function Summary(props) {
 
   return <>
     <Head>
-      <title key="original-title">{`${props.summaryInfo.title} | Daniel Sabbagh`}</title>
+      <title key="original-title">{`${props.summaryInfo.title} Review | Daniel Sabbagh`}</title>
       <meta property="og:title" content={`${props.summaryInfo.title} | Daniel Sabbagh`} key="title" />
       <meta property="og:description" content={props.summaryInfo.teaser} key="description" />
       <meta property="og:type" content="article" key="type" />
@@ -112,16 +112,6 @@ export default function Summary(props) {
       <h1 className={styles.summaryBookTitle}>{props.summaryInfo?.title}</h1>
       <p className={styles.author}>{props.summaryInfo?.author}</p>
 
-      <div className={styles.metrics}>
-        <div className={styles.metricsTitles}>
-          <p className={styles.qualityTitle}>Quality </p>
-          <p className={styles.payoffTitle}>Payoff </p>
-        </div>
-        <div className={styles.metricsMeasures}>
-          <p className={styles.qualityMeasure}>{getQualityRanking(props.summaryInfo?.quality)}</p>
-          <p className={styles.payoffMeasure}>{getPayoffRanking(props.summaryInfo?.payoff)}</p>
-        </div>
-      </div>
       <br />
 
       <div className={styles.inner}>
@@ -129,6 +119,18 @@ export default function Summary(props) {
           <BookHover imageUri={'/' + props.summaryInfo?.imageUri} size='large' />
         </a>
         <div className={styles.teaserAndButton}>
+
+          <div className={styles.metrics}>
+            <div className={styles.metricsTitles}>
+              <p className={styles.qualityTitle}>Quality </p>
+              <p className={styles.payoffTitle}>Payoff </p>
+            </div>
+            <div className={styles.metricsMeasures}>
+              <p className={styles.qualityMeasure}>{getQualityRanking(props.summaryInfo?.quality)}</p>
+              <p className={styles.payoffMeasure}>{getPayoffRanking(props.summaryInfo?.payoff)}</p>
+            </div>
+          </div>
+
           <div className={styles.teaserWrapper}>
             <p className={styles.teaser}>{props.summaryInfo?.teaser}</p>
             <div className={styles.socialWrapper}>

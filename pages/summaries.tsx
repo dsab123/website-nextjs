@@ -19,21 +19,21 @@ export default function Summaries() {
   const [summaries, setSummaries] = useState<BookSummaryInfo[]>([
     {
       summaryId: 1, title: '', author: '', link: '', teaser: '', imageUri: '', ogImageUri: '',
-      isReady: true, slug: '', quality: 4, payoff: 4
+      isReady: true, slug: '', quality: 4, seller: '', payoff: 4
     },
     {
       summaryId: 2, title: '', author: '', link: '', teaser: '', imageUri: '', ogImageUri: '',
-      isReady: true, slug: '', quality: 4, payoff: 4
+      isReady: true, slug: '', quality: 4, seller: '',  payoff: 4
     },
     {
       summaryId: 3, title: '', author: '', link: '', teaser: '', imageUri: '', ogImageUri: '',
-      isReady: true, slug: '', quality: 4, payoff: 4
+      isReady: true, slug: '', quality: 4, seller: '',  payoff: 4
     },
   ]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const intro = "When I read a book I like, I try to review and summarize it to get it in the long-term memory. Here are some of them.";
+  const intro = "When I read a book I like, I try to review and summarize it to get it in the ol' long-term memory. Here are some of them.";
 
   useEffect(() => {
     fetchBookSummaryLookup()
@@ -99,7 +99,7 @@ export default function Summaries() {
                 <p className={summary.isReady ? styles.hidden : styles.comingSoon}>
                   review coming soon
                 </p>
-                <a className={isLoading ? `${styles.amazonLink} ${styles.inactiveLink}` : styles.amazonLink} href={isLoading ? '' : summary.link} target="_blank">buy from amazon</a>
+                <a className={isLoading ? `${styles.amazonLink} ${styles.inactiveLink}` : styles.amazonLink} href={isLoading ? '' : summary.link} target="_blank">buy from {summary.seller}</a>
               </div>
             </div>
           </div>
