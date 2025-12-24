@@ -76,6 +76,7 @@ export default function Home() {
       isReady: true,
       slug: '',
       quality: 1,
+      seller: '',
       payoff: 1
     },
     {
@@ -89,6 +90,7 @@ export default function Home() {
       isReady: true,
       slug: '',
       quality: 1,
+      seller: '',
       payoff: 1
     }]
   );
