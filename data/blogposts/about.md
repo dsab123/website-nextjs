@@ -3,9 +3,9 @@
 
 ### Why
 
-I used to do a lot more writing, but never published it to the wider internet.
+I used to do a lot of writing, but never published it to the wider internet.
 
-In this stage of my life, I find it a lot harder to write, so this blog is my attempt at keeping myself honest and writing more regularly. I don't put much work into distributing or marketing my content, so if you've found it and you're not a bot, you've likely already done a bit of searching. 
+In my current stage of my life, I find it a lot harder to write, so this blog is my attempt at keeping myself honest and writing more regularly. I don't put much work into distributing or marketing my content, so if you've found it and you're not a bot, you've likely already done a bit of searching. 
 
 If so, I'd love to hear from you!
 
@@ -15,4 +15,4 @@ These are mostly theological musings, pieces written more or less completely. Wh
 
 ### Who
 
-I'm a Christian, member at [Acacia Reformed Church](https://arcopc.org) and have been married to the love of my life for <DaysMarried /> days, with multiple little children.
+I'm a Christian, member at [Acacia Reformed Church](https://arcopc.org) and have been married to the love of my life for <DaysMarried /> days, with many little children.
