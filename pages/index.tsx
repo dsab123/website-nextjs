@@ -18,7 +18,7 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
 }
 
 async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
-  const ids = [6, 12];
+  const ids = [14, 13];
 
   const response = await fetch(`/api/summary/${ids.join(',')}`);
 
@@ -43,7 +43,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(42) // hardcoded for now
+    fetchLatestBlogPostInfo(46) // hardcoded for now
       .then(info => {
         if (isFirstPostLoading) {
           setFirstPostInfo(info);
@@ -53,7 +53,7 @@ export default function Home() {
   }, [isFirstPostLoading]);
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(41) // hardcoded for now
+    fetchLatestBlogPostInfo(47) // hardcoded for now
       .then(info => {
         if (isSecondPostLoading) {
           setSecondPostInfo(info);
