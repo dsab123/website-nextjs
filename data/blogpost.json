@@ -1,6 +1,19 @@
 {
   "blogposts": [
     {
+      "blogpostId": 48,
+      "slug": "2025-reading-in-review",
+      "title": "2025 Reading In Review",
+      "teaser": "Twenty-took books this year.",
+      "tags": [
+        "yearly",
+        "reading"
+      ],
+      "imageUri": "blogpost/book-stack.jpg",
+      "date": "12-28-2025",
+      "isReady": true
+    },
+    {
       "blogpostId": 47,
       "slug": "thoughts-on-theonomy-and-eschatology",
       "title": "Thoughts on Theonomy and Eschatology",

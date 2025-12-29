@@ -16,6 +16,8 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import path from 'path';
 import fs from 'fs';
 
+import BookHover from '../../../components/BookHover';
+
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   try {
     // get blog post (move to separate function)
@@ -118,7 +120,7 @@ export default function Blog(props) {
       <div >
         <br />
         <div ref={postContents} className={styles.postContents}>
-          <MDXRemote {...props?.postContents} components={{ DaysMarried }}></MDXRemote>
+          <MDXRemote {...props?.postContents} components={{ DaysMarried, BookHover }}></MDXRemote>
         </div>
         <br />
 
