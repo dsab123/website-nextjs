@@ -16,7 +16,7 @@ Here are the books I read this year. Links are to [Westminster Bookstore](https:
 
 
 ### _Foundations for Covenant Theology_ by Lane G. Tipton
-<div className="postImageContainer"><a href="https://reformedforum.org/product/foundations-of-covenant-theology-paperback" target="_blank"><img src="/blogpost/foundations-of-covenant-theology.jpg" className="smallPostImage" alt=" Book" title="Foundations for Covenant Theology book" /></a></div>
+<div className="postImageContainer"><a href="https://reformedforum.org/product/foundations-of-covenant-theology-paperback" target="_blank"><BookHover imageUri="/blogpost/foundations-of-covenant-theology.jpg" size='large' /></a></div>
 
 A beautiful little walkthrough on the first three chapters of the Bible. Engaging and accessible, this book is the most straightforward on-ramp to understanding the Garden of Eden and God's covenantal relationships with humans from a redemptive-historical perspective. The format is simple: a passage of Scripture, then a one- or two-paragraph explanation of the passage. The format is simple because comparing Scripture with Scripture is the best way to understand God's word. From the Scriptures we learn that Eden is on a mountain (Ezekiel 28:12-15), the Garden was an earthly replica of the invisible heavens (Psalm 104:2, Exodus 40:33-38, Psalm 78:69), and that Adam was meant for a higher, heavenly life with God. Adam failed, of course. Tipton shows the grace of God in giving the first Gospel word and sacrament in Genesis 3:15, which points to the Promised Seed. Highly recommend 10/10.
 
@@ -24,7 +24,7 @@ A beautiful little walkthrough on the first three chapters of the Bible. Engagin
 <br />
 
 ### _Covenantal Apologetics_ by K. Scott Oliphint
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/covenantal-apologetics-principles-and-practice-in-defense-of-our-faith-9781433576362" target="_blank"><img src="/blogpost/covenantal-apologetics.jpg" className="smallPostImage" alt=" Book" title="Covenantal Apologetics book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/covenantal-apologetics-principles-and-practice-in-defense-of-our-faith-9781433576362" target="_blank"><BookHover imageUri="/blogpost/covenantal-apologetics.jpg" size='large' /></a></div>
 
 I enjoyed the introduction of this volume, which traces the origins of reformed apologetics to the New Holland Reformation.
 
@@ -40,7 +40,7 @@ My words here do not do the book justice!
 <br />
 
 ### _Grace & Glory_ by Geerhardus Vos
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/grace-and-glory-sermons-preached-at-princeton-seminary-9781848719187" target="_blank"><img src="/blogpost/grace-and-glory.jpg" className="smallPostImage" alt=" Book" title="Grace & Glory book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/grace-and-glory-sermons-preached-at-princeton-seminary-9781848719187" target="_blank"><BookHover imageUri="/blogpost/grace-and-glory.jpg" size='large' /></a></div>
 
 
 This volume is an expanded edition of a collection of Vos's chapel addresses to seminarians at Princeton in the early 1900's. I read the original, which contained only five or six. This one has nineteen or twenty.
@@ -55,7 +55,7 @@ As with the prior book, my words do not do the author justice. I do believe this
 <br />
 
 ### _B. B. Warfield: Essays on his Life & Thought_ edited by Gary Johnson
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/b-b-warfield-gary-l-w-johnson-9781596380370?variant=9799638843439" target="_blank"><img src="/blogpost/b-b-warfield-essays.jpg" className="smallPostImage" alt=" Book" title="B. B. Warfield Essays book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/b-b-warfield-gary-l-w-johnson-9781596380370?variant=9799638843439" target="_blank"><BookHover imageUri="/blogpost/b-b-warfield-essays.jpg" size='large' /></a></div>
 
 A bit dry at times. Begins with a biographical sketch, followed by deep dives into various aspects of Warfield's legacy and its effects on the modern day. Includes his thoughts on the post-slavery era and Jim Crow, his apologetical sword-crossings with Kuyperians, his seminal work on inerrancy and his ambivalent relations with Fundamentalists in the church.
 
@@ -66,7 +66,7 @@ A bit dry at times. Begins with a biographical sketch, followed by deep dives in
 ## Theology General
 
 ### _The Beauty and Glory of Christian Living_ edited by Joel Beeke
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/the-beauty-and-glory-of-christian-living-joel-r-beeke-9781601783356?variant=9795478552623" target="_blank"><img src="/summary/beauty-and-glory-of-christian-living.jpg" className="smallPostImage" alt=" Book" title="The Beauty and Glory of Christian Living Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/the-beauty-and-glory-of-christian-living-joel-r-beeke-9781601783356?variant=9795478552623" target="_blank"><BookHover imageUri="/summary/beauty-and-glory-of-christian-living.jpg" size='large' /></a></div>
 
 I wrote a full review of this book [here](/summary/11/beauty-and-glory-of-christian-living).
 
@@ -74,7 +74,7 @@ I wrote a full review of this book [here](/summary/11/beauty-and-glory-of-christ
 <br />
 
 ### _Making All Things New: Restoring Joy to the Sexually Broken_ by David Powlison
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/making-all-things-new-david-powlison-9781433556142?variant=9781890744367" target="_blank"><img src="/blogpost/making-all-things-new.jpg" className="smallPostImage" alt=" Book" title="Making All Things New Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/making-all-things-new-david-powlison-9781433556142?variant=9781890744367" target="_blank"><BookHover imageUri="/blogpost/making-all-things-new.jpg" size='large'/></a></div>
 
 Powlison shows that every one of us are somewhere on the spectrum of sexual sin, whether the sin is ours or another's. Not only adultery or pornography/masturbation, but very look and every thought, even memories of past sins are included in this pale. "Where do you struggle with sex?" p 25.
 
@@ -86,7 +86,7 @@ Powlison demonstrates that every one of us exist somewhere on the spectrum of se
 <br />
 
 ### _Mere Christianity_ by C. S. Lewis
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/mere-christianity-c-s-lewis-9780060652920?variant=10007092265007" target="_blank"><img src="/blogpost/mere-christianity.jpg" className="smallPostImage" alt=" Book" title="Mere Christianity Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/mere-christianity-c-s-lewis-9780060652920?variant=10007092265007" target="_blank"><BookHover imageUri="/blogpost/mere-christianity.jpg" size='large' /></a></div>
 
 Lewis's conversational demeanor and striking metaphors make for an engaging read. Here is an inviting apologetic for the truth of the Christian faith.
 
@@ -99,7 +99,7 @@ Many Christian readers will find the apologetic arguments familiar, because the 
 <br />
 
 ### _God of the Garden_ by Andrew Peterson
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/the-god-of-the-garden-thoughts-on-creation-culture-and-the-kingdom-9781087736952?variant=41044084654280" target="_blank"><img src="/blogpost/god-of-the-garden.jpg" className="smallPostImage" alt=" Book" title="God of the Garden Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/the-god-of-the-garden-thoughts-on-creation-culture-and-the-kingdom-9781087736952?variant=41044084654280" target="_blank"><BookHover imageUri="/blogpost/god-of-the-garden.jpg" size='large' /></a></div>
 
 Really enjoyed this read. Sadly, I did not write anything about the book while I read it, so I have little more than warm feelings when I think about it.
 
@@ -107,7 +107,7 @@ Really enjoyed this read. Sadly, I did not write anything about the book while I
 <br />
 
 ### _Competing Spectacles_ by Tony Reinke
-<div className="postImageContainer"><a href="" target="_blank"><img src="/summary/competing-spectacles.jpg" className="smallPostImage" alt=" Book" title="Competing Spectacles Book" /></a></div>
+<div className="postImageContainer"><a href="" target="_blank"><BookHover imageUri="/summary/competing-spectacles.jpg" size='large' /></a></div>
 
 I wrote a full-length review of this book [here](/summary/12/competing-spectacles).
 
@@ -115,7 +115,7 @@ I wrote a full-length review of this book [here](/summary/12/competing-spectacle
 <br />
 
 ### _One with God_ by Pierce Taylor Hibbs
-<div className="postImageContainer"><a href="https://www.amazon.com/One-God-Finding-Identity-Purpose/dp/B0C5Z3K9J7" target="_blank"><img src="/blogpost/one-with-god.jpg" className="smallPostImage" alt=" Book" title="One with God Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/One-God-Finding-Identity-Purpose/dp/B0C5Z3K9J7" target="_blank"><BookHover imageUri="/blogpost/one-with-god.jpg" size='large' /></a></div>
 
 Hibbs is a deeply engaging writer. His work always deserves to be read with a calm prayerful heart. Here he reminds us how refreshing communion with God is supposed to be.
 
@@ -125,7 +125,7 @@ His treatment of Paul's words in Philippians 4:12-13 is gold. Paul was a spiritu
 <br />
 
 ### _Making Faith Magnetic_ by Daniel Strange
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/making-faith-magnetic-five-hidden-themes-our-culture-cant-stop-talking-about-and-how-to-connect-them-to-christ-1-9781784986506" target="_blank"><img src="/blogpost/making-faith-magnetic.jpg" className="smallPostImage" alt=" Book" title="Making Faith Magnetic Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/making-faith-magnetic-five-hidden-themes-our-culture-cant-stop-talking-about-and-how-to-connect-them-to-christ-1-9781784986506" target="_blank"><BookHover imageUri="/blogpost/making-faith-magnetic.jpg" size='large' /></a></div>
 
 The Magnetic points are the poles of our existential consciousness, the five concepts that are always on our minds in some manner. Totality, Norm, Deliverance, Destiny, Higher Power. As image bearers of God, each of these points finds its fullest fulfillment for us in Christ. 
 
@@ -134,14 +134,14 @@ By training ourselves to spot these points in common conversation, we can connec
 <br />
 
 ### _Knowing the Trinity_ by Ryan M. McGraw
-<div className="postImageContainer"><a href="https://www.amazon.com/Knowing-Trinity-Practical-Thoughts-Daily-ebook/dp/B073QZ2L6B" target="_blank"><img src="/blogpost/knowing-the-trinity.jpg" className="smallPostImage" alt=" Book" title="Knowing the Trinity Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Knowing-Trinity-Practical-Thoughts-Daily-ebook/dp/B073QZ2L6B" target="_blank"><BookHover imageUri="/blogpost/knowing-the-trinity.jpg" size='large' /></a></div>
 
 A concise, engaging devotional on the trinitarian passages of the Bible. The application questions at the end of each paragraph are good springboards for meditation and prayer.
 
 <br />
 
 ### _Terraform_ by Propaganda
-<div className="postImageContainer"><a href="https://www.amazon.com/Terraform-Building-Better-World-Propaganda/dp/006303624X" target="_blank"><img src="/blogpost/terraform.jpg" className="smallPostImage" alt=" Book" title="Terraform Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Terraform-Building-Better-World-Propaganda/dp/006303624X" target="_blank"><BookHover imageUri="/blogpost/terraform.jpg" size='large' /></a></div>
 
 
 What a wild ride. Propaganda believes that we make culture, and culture makes us. So let's make culture awesome. Each chapter culminates in a "terraforming project" for the reader to remake the world around them. The projects are designed to slow us down, consider the earth and the people around us, and how we can make both better. I wrote down a few of the projects and intend to implement them - try a day without Google maps, get a new hobby, pay attention to your rituals to name a few. Peppered throughout the prose are poems and raps, many of which paint the evils of chattel slavery and the struggle of black people. My struggle with the book is two-fold: those poems, in which white people seemingly at large are painted as complicit in slavery, and his quoting of Pete Enns and ambivalence on whether Genesis 1 is historical are quite alarming.
@@ -151,7 +151,7 @@ A cute aside - I use a product called <a href="https://www.terraform.io" target=
 <br />
 
 ### _J.R.R. Tolkien: A Biography_ by Humphrey Carpenter
-<div className="postImageContainer"><a href="https://www.amazon.com/J-R-R-Tolkien-Biography-Humphrey-Carpenter/dp/0618057021" target="_blank"><img src="/blogpost/j-r-r-tolkien-bio.jpg" className="smallPostImage" alt=" Book" title="Tolkien Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/J-R-R-Tolkien-Biography-Humphrey-Carpenter/dp/0618057021" target="_blank"><BookHover imageUri="/blogpost/j-r-r-tolkien-bio.jpg" size='large' /></a></div>
 
 A fun and whimsical look at the author of one of society's greatest authors. The insight into Tolkien's mind and his decades-long struggle to produce and perfect the _Lord of the Rings_ trilogy is very comforting to this mediocre writer with young children who oftentimes strains to join two sentences together.
 
@@ -159,7 +159,7 @@ A fun and whimsical look at the author of one of society's greatest authors. The
 <br />
 
 ### _Zeitoun_ by Dave Eggers
-<div className="postImageContainer"><a href="https://www.amazon.com/Zeitoun-Eggers-Dave-2010-06-15-Paperback/dp/B012YSU0BY" target="_blank"><img src="/blogpost/zeitoun.jpg" className="smallPostImage" alt=" Book" title="Tolkien Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Zeitoun-Eggers-Dave-2010-06-15-Paperback/dp/B012YSU0BY" target="_blank"><BookHover imageUri="/blogpost/zeitoun.jpg" size='large' /></a></div>
 
 This was a great read, but the subtle (and at times not-so-subtle) hagiographical protrayal of the main character generated enough suspicion in me to google the family. The results were unfortunate. I am arabic, so I have a lot of thoughts about this. I'll keep them to myself.
 
@@ -167,7 +167,7 @@ This was a great read, but the subtle (and at times not-so-subtle) hagiographica
 <br />
 
 ### _The Count of Monte Cristo_ by Alexandre Dumas
-<div className="postImageContainer"><a href="https://www.amazon.com/Count-Monte-Cristo-Bantam-Classics/dp/0553213504" target="_blank"><img src="/blogpost/count-of-monte-cristo.jpg" className="smallPostImage" alt=" Book" title="Count of Monte Cristo Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Count-Monte-Cristo-Bantam-Classics/dp/0553213504" target="_blank"><BookHover imageUri="/blogpost/count-of-monte-cristo.jpg" size='large' /></a></div>
 
 I could not put this book down. Loved it.
 
@@ -175,12 +175,12 @@ I could not put this book down. Loved it.
 <br />
 
 ### _The Iliad_ by Homer
-<div className="postImageContainer"><a href="https://www.amazon.com/Iliad-Homer/dp/0140275363" target="_blank"><img src="/blogpost/the-iliad.jpg" className="smallPostImage" alt=" Book" title="The Iliad Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.amazon.com/Iliad-Homer/dp/0140275363" target="_blank"><BookHover imageUri="/blogpost/the-iliad.jpg" size='large' /></a></div>
 
 
 <br />
 
 ### _Gospel-Shaped Marriage_ by Chad & Emily Van Dixhoorn
-<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/gospel-shaped-marriage-grace-for-sinners-to-love-like-saints-9781433580710?variant=41783429234888" target="_blank"><img src="/blogpost/gospel-shaped-marriage.jpg" className="smallPostImage" alt=" Book" title="Gospel-Shaped Marriage Book" /></a></div>
+<div className="postImageContainer"><a href="https://www.wtsbooks.com/products/gospel-shaped-marriage-grace-for-sinners-to-love-like-saints-9781433580710?variant=41783429234888" target="_blank"><BookHover imageUri="/blogpost/gospel-shaped-marriage.jpg" size='large' /></a></div>
 
 I wrote about this book [here](/blog/33/men-and-women-in-marriage).
