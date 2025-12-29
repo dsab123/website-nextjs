@@ -10,7 +10,6 @@ type BlogPostInfo = {
   teaser: string,
   isReady: boolean,
   imageUri: string,
-  isReady: boolean,
   date: string,
   tags: Array<string>,
   likes?: number

@@ -6,8 +6,29 @@ import SummaryStyles from '../styles/Summaries.module.css';
 import BlogPostCard from '../components/BlogPostCard';
 import BookHover from '../components/BookHover';
 import Disclaimer from '../components/Disclaimer';
+import blogpost from '../data/blogpost.json';
 
-async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
+async function fetchAllSummaries(): Promise<BookSummaryInfo[]> {
+  const response = await fetch('/api/summaries');
+
+  if (response.status >= 400) {
+    throw new Error('Bad response from server');
+  }
+
+  return await response.json() as BookSummaryInfo[];
+}
+
+async function fetchAllBlogPosts(): Promise<BlogPostInfo[]> {
+  const response = await fetch('/api/blogposts');
+
+  if (response.status >= 400) {
+    throw new Error('Bad response from server');
+  }
+
+  return await response.json() as BlogPostInfo[];
+}
+
+async function fetchBlogPostInfo(blogPostId: number): Promise<BlogPostInfo> {
   const response = await fetch(`/api/blogpost/${blogPostId}`);
 
   if (response.status >= 400) {
@@ -17,9 +38,7 @@ async function fetchLatestBlogPostInfo(blogPostId: number): Promise<BlogPostInfo
   return await response.json() as BlogPostInfo;
 }
 
-async function fetchFrontPageBookSummaries(): Promise<BookSummaryInfo[]> {
-  const ids = [6, 12];
-
+async function fetchFrontPageBookSummaries(ids: number[]): Promise<BookSummaryInfo[]> {
   const response = await fetch(`/api/summary/${ids.join(',')}`);
 
   if (response.status >= 400) {
@@ -41,26 +60,52 @@ export default function Home() {
     { blogpostId: 1, slug: '', title: '', teaser: '', tags: [], imageUri: '', date: '', isReady: true },
   );
 
+  function pickTwoDistinct<T>(arr: T[]): [T, T] | null {
+    if (arr.length < 2) return null;
+    const firstIdx = Math.floor(Math.random() * arr.length);
+    let secondIdx = Math.floor(Math.random() * (arr.length - 1));
+    if (secondIdx >= firstIdx) secondIdx += 1;
+    return [arr[firstIdx], arr[secondIdx]];
+  }
 
   useEffect(() => {
-    fetchLatestBlogPostInfo(42) // hardcoded for now
-      .then(info => {
-        if (isFirstPostLoading) {
-          setFirstPostInfo(info);
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const all = await fetchAllBlogPosts();
+
+        const candidates = all.filter(p => p.isReady);
+
+        const picked = pickTwoDistinct(candidates.length >= 2 ? candidates : all);
+        if (!picked) return;
+
+        const [a, b] = picked;
+
+        // fetch both in parallel
+        const [info1, info2] = await Promise.all([
+          fetchBlogPostInfo(a.blogpostId),
+          fetchBlogPostInfo(b.blogpostId),
+        ]);
+
+        if (cancelled) return;
+
+        setFirstPostInfo(info1);
+        setSecondPostInfo(info2);
+      } finally {
+        if (!cancelled) {
           setIsFirstPostLoading(false);
-        }
-      });
-  }, [isFirstPostLoading]);
-
-  useEffect(() => {
-    fetchLatestBlogPostInfo(41) // hardcoded for now
-      .then(info => {
-        if (isSecondPostLoading) {
-          setSecondPostInfo(info);
           setIsSecondPostLoading(false);
         }
-      });
-  }, [isSecondPostLoading]);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+
 
   // BookSummary state
   const [isSummariesLoading, setIsSummariesLoading] = useState(true);
@@ -96,13 +141,33 @@ export default function Home() {
   );
 
   useEffect(() => {
-    fetchFrontPageBookSummaries()
-      .then(summaries2 => {
-        if (isSummariesLoading) {
-          setSummaries(summaries2);
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const all = await fetchAllSummaries();
+
+        const candidates = all.filter(s => s.isReady);
+
+        const picked = pickTwoDistinct(candidates.length >= 2 ? candidates : all);
+        if (!picked) return;
+
+        const [a, b] = picked;
+
+        fetchFrontPageBookSummaries([a.summaryId, b.summaryId])
+          .then(data => {
+            if (isSummariesLoading) {
+              setSummaries(data);
+              setIsSummariesLoading(false);
+            }
+          });
+
+      } finally {
+        if (!cancelled) {
           setIsSummariesLoading(false);
         }
-      });
+      }
+    })();
   }, [isSummariesLoading]);
 
   return <>
@@ -136,7 +201,7 @@ export default function Home() {
     </div>
 
     <div className={styles.summariesPageTeaser}>
-      <h2 className={styles.title}>Featured Book Summaries</h2>
+      <h2 className={styles.title}>Featured (Random) Book Summaries</h2>
       <div className={isSummariesLoading ? styles.dimOverlay : ''}>
         {summaries.map((summary) => (
           <div key={summary.summaryId} className={SummaryStyles.card}>
