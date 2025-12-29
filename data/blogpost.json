@@ -1,6 +1,20 @@
 {
   "blogposts": [
     {
+      "blogpostId": 49,
+      "slug": "isaiah-25-35-biblical-theology-readings",
+      "title": "Isaiah 25-35 Biblical Theology Readings",
+      "teaser": "I've been working my way through Isaiah.",
+      "tags": [
+        "Isaiah",
+        "theology",
+        "biblical theology"
+      ],
+      "imageUri": "blogpost/isaiah.jpg",
+      "date": "12-29-2025",
+      "isReady": true
+    },
+    {
       "blogpostId": 48,
       "slug": "2025-reading-in-review",
       "title": "2025 Reading In Review",
