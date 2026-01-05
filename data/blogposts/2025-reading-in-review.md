@@ -2,14 +2,14 @@
 
 <div className="captionText">Thanks to @Kimberly Farmer for making this <a href="https://unsplash.com/photos/lUaaKCUANVI" target="_blank">photo</a> available freely on <a href="https://www.unsplash.com" target="_blank">unsplash</a>.</div>
 
-## Total Book Count: 22
-
-
+## Total Book Count: 24
 
 -------
 ## Biblical Theology
 
 ### _Fullness of Joy: A Biblical Theology of God with Us_ by Daniel Ragusa
+---
+
 <a id="fullness-of-joy"></a>
 
 <div className="postImageContainer">
@@ -27,6 +27,8 @@ This is a great introduction to Biblical Theology. The references to Scripture a
 
 
 ### _Wisdom Christology: How Jesus Becomes God's Wisdom for Us_ by Daniel Ebert
+---
+
 <a id="wisdom-christology"></a>
 
 <div className="postImageContainer">
@@ -44,6 +46,8 @@ The thought that Jesus reveals God's Wisdom to us, and that that wisdom is a "he
 ---
 ## Theology General
 
+---
+
 <a id="tangible"></a>
 
 ### _Tangible: Making God Known Through Deeds of Mercy and Words of Truth_ by Chris Sicks
@@ -52,6 +56,8 @@ The thought that Jesus reveals God's Wisdom to us, and that that wisdom is a "he
 
 I wrote about this book [here](/blog/45/tangible-part-two).
 
+
+---
 
 <a id="the-shepherd-leader-at-home"></a>
 
@@ -65,6 +71,8 @@ A basic primer on leading your family. Witmer applies the four categories from [
 <div className="postImageContainer"><a href="https://www.wtsbooks.com/products/faithful-and-fruitful-essays-for-elders-and-deacons-9781935369257" target="_blank"><BookHover imageUri="/blogpost/faithful-and-fruitful.jpg" size='large' /></a></div>
 
 Very helpful and informative. I loved the chapters on Catechesis and Clerking. I'll be returning to these two for sure.
+
+---
 
 <a id="how-to-lead-your-family"></a>
 
@@ -86,6 +94,8 @@ Here are the quotes I bookmarked:
 - "As for your parenting, you may feel like a father who was once discouraged because things were not going well with his children. He did not know what to do. A friend saw what was happening, and said, 'Remember that the essence of parenting is to make disciples, and the One with all authority in heaven and on earth said, 'I am with you.'" 66
 
 
+---
+
 <a id="a-little-theology-of-exercise"></a>
 
 ### _A Little Theology of Exercise: Enjoying Christ in Body and Soul_ by David Mathis
@@ -95,6 +105,8 @@ Here are the quotes I bookmarked:
 This book helps us tether how we view exercise to how the New Testament views the body. In an age where we are encouraged to be sedentary, to have technology do the work of moving for us, Mathis shows us the Bible assumes an _always-moving_ Christian. His starting point is 1 Timothy 4. Paul teaches us that all bodily blessings, like sex and food, are to be enjoyed and "made holy by the Word of God and prayer" (1 Timothy 4:5). Contrary to the "anti-body" disposition of the false teachers Timothy must contend with (16), Paul exhorts us to receive this bodily benefits gladly. It is in light of this exhortation that Paul says that "bodily training is of some value," 1 Timothy 4:8. 
 
 In the pattern of 1 Timothy 4:5, then, Part I of the book discovers what the word of God is for our bodies, i.e. what God's word says about our bodies, and "practically how we might respond in prayer to what God tells us about our bodies" (17). Part II expands on Christian incentives for regular exercise, devoting a chapter to each - it glorifies God, builds and conditions the brain, strengthens the will to engage in hard things, serves our joy in Christ for the rest of the day, and facilitates our ability to perform good works for our neighbors. Each of these chapters is short and helpful. Mathis makes abundant use of Scripture in each, and in the spirit (Spirit?) of Paul, easily demonstrates how almost all of our efforts at imaging God involve physical movement. It must be this way, because Jesus used His body for the glory of God and the accomplishment of our salvation.
+
+---
 
 <a id="tim-keller-on-the-christian-life"></a>
 
@@ -106,6 +118,8 @@ In the pattern of 1 Timothy 4:5, then, Part I of the book discovers what the wor
 
 A beautiful distillation of the main emphases of Keller's ministry touching the life of the Christian. His exegesis of Luke 15, which I first read in The Prodigal God, hit me like a freight train. It is far more spiritually dangerous to be an elder brother than a prodigal son.
 
+
+---
 
 <a id="king-of-kings"></a>
 
@@ -127,6 +141,8 @@ I would have liked a fuller treatment, but this is a helpful start to the comple
 ---
 ## Fiction
 
+---
+
 <a id="short-stories-checkhov"></a>
 
 ### _Short Stories_ by Anton Checkhov
@@ -139,6 +155,8 @@ Checkov is a master of the short story. A few of the entries in this volume were
 [_The Black Monk_](https://en.wikipedia.org/wiki/The_Black_Monk) is the most haunting of the stories, in my estimation.
 
 
+---
+
 <a id="woe-to-the-scribes-and-pharisees"></a>
 
 ### _Woe to the Scribes and Pharisees: A Jon Mote Mystery_ by Daniel Taylor
@@ -149,6 +167,8 @@ Wonderful read. Initially turned off by the inner monologue of the main characte
 
 Based on the endorsements on the back of the book I (perhaps unfairly) speculate that the author has third way sympathies, of the kind that frames the fundamental in a bad light. Maybe I'm wrong though.
 
+
+---
 
 <a id="the-phoenix-project"></a>
 
@@ -166,6 +186,8 @@ Another is to have a single process for a thing. If you do paper tickets, don't 
 
 Last one is to remove impediments for adopting new paradigms on the team. If it's not easy, then your new workflow/tech/recommendation won't be followed.
 
+---
+
 <a id="of-mice-and-men"></a>
 
 ### _Of Mice and Men_ by John Steinbeck
@@ -174,6 +196,8 @@ Last one is to remove impediments for adopting new paradigms on the team. If it'
 
 A sad story. I think I'll get into Steinbeck more soon, his writing depicts the struggle of the common people in the lower sharecropper class in California in the 20's and 30's. Enjoyed the introduction which construed the novel as containing characteristics of a play.
 
+
+---
 
 <a id="alices-adventures-in-wonderland"></a>
 
@@ -184,6 +208,8 @@ A sad story. I think I'll get into Steinbeck more soon, his writing depicts the 
 
 I did not enjoy this. I should listen to [some podcasts on this book](https://mereorthodoxy.com/christians-reading-classics) to understand what I missed.
 
+---
+
 <a id="the-year-of-jubilee"></a>
 
 ### _The Year of Jubilee_ by Cindy Morgan
@@ -192,6 +218,8 @@ I did not enjoy this. I should listen to [some podcasts on this book](https://me
 <div className="postImageContainer"><a href="https://www.thriftbooks.com/w/the-year-of-jubilee_cindy-morgan/37146271/?resultid=33d58593-63c1-4b3d-b35e-9f2637b00205#edition=65115840&idiq=63136689" target="_blank"><BookHover imageUri="/blogpost/the-year-of-jubilee.jpg" size='large' /></a></div>
 
 A good read, I could not put this down. It is a predictable and tasteful derivative of _To Kill a Mockingbird_.
+
+---
 
 <a id="leaf-by-niggle"></a>
 
@@ -203,6 +231,8 @@ A good read, I could not put this down. It is a predictable and tasteful derivat
 While reading this short story, I realized I've avoided a lot of Tolkien to my harm and shame. _The Lord of the Rings_ and _The Hobbit_ I have read multiple times, and the nostalgia, sorrow and otherworldly-ness I would feel upon completing them was almost too much to bear. Leaf by Niggle evokes the same feelings in my soul. I am stunned, I don't know what to say or write about it.
 
 I immediately identify with Niggle, I long to be focused and bring my projects to completion. The books reminds me of the gospel hope that in the new world all will be made well.
+
+---
 
 <a id="the-great-divorce"></a>
 
@@ -216,6 +246,23 @@ I am not worthy to write a review of this book!
 ---
 ## History/Biography/Sociology
 
+---
+
+<a id="strange-new-world"></a>
+
+### _The Pearl_ by John Steinbeck
+
+
+<div className="postImageContainer"><a href="https://www.thriftbooks.com/w/the-pearl_john-steinbeck/250208/?resultid=a846ed7f-5690-441d-a78b-e5872e3e1f1b#isbn=014017737X" target="_blank"><BookHover imageUri="/blogpost/the-pearl.jpg" size='large' /></a></div>
+
+I couldn't stay away from Steinbeck. And I regretted it.
+
+Well, not really. But he tugs at my heartstrings so hard. Kino's obsession with the pearl appears healthy at first, but there is too much evil and greed in the world to let him satisfy his obsession for the good of his child.
+
+I'm sure I learned a lot from this little novel. I definitely _feel_ a lot more.
+
+---
+
 <a id="strange-new-world"></a>
 
 ### _Strange New World_ by Carl Trueman
@@ -225,6 +272,8 @@ I am not worthy to write a review of this book!
 
 I wrote a review of this book [here](/summary/14/strange-new-world).
 
+
+---
 
 <a id="infidel"></a>
 
@@ -238,6 +287,8 @@ Ali writes beautifully about her childhood in Somalia, her struggles to conform 
 
 I read this as written by my sister in Christ, oftentimes pausing to thank the Lord that He delivered her from the evils of Islam into the light of Christ.
 
+---
+
 <a id="the-oldest-cure-in-the-world"></a>
 
 ### _The Oldest Cure in the World: Adventures in the Art and Science of Fasting_ by Steve Hendricks
@@ -245,6 +296,8 @@ I read this as written by my sister in Christ, oftentimes pausing to thank the L
 <div className="postImageContainer"><a href="https://www.thriftbooks.com/w/the-oldest-cure-in-the-world-adventures-in-the-art-and-science-of-fasting_steve-hendricks/35367371/?resultid=58f31516-1270-4070-aeda-7b59fc1c3e43#edition=66188581&idiq=55635157" target="_blank"><BookHover imageUri="/blogpost/the-oldest-cure-in-the-world.jpg" size='large' /></a></div>
 
 A fascinating survey of fasting across the centuries. The principle of extended fasting is simple, and yet so vehemently opposed by modern medicine.
+
+---
 
 <a id="dominion"></a>
 
@@ -258,6 +311,8 @@ What presuppositional logic is in a conversation, _Dominion_ is in a survey of h
 
 The happy result is that Christianity has given us a stable footing for a prosperous society, even among those who are opposed to it. And those opposed had better take a second look at what Christianity has brought to them, as opposed to, say Islam.
 
+---
+
 <a id="shepherding-a-childs-heart"></a>
 
 ### _Shepherding A Child's Heart_ by Ted Tripp
@@ -267,6 +322,8 @@ The happy result is that Christianity has given us a stable footing for a prospe
 I am thankful for the Tripp family. _Shepherding A Child's Heart_ is a parenting classic among parents who seem to have raised godly children, in my experience.
 
 The whole book is worth rereading multiplt times. I found his treatment of communication with your child to be most helpful. God has given parents both speaking and the rod for communcating with our child. To spurn either would be to spurn God's gifts to parents to raise their children rightly.
+
+---
 
 <a id="left-of-bang"></a>
 
