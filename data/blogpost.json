@@ -1,6 +1,19 @@
 {
   "blogposts": [
     {
+      "blogpostId": 50,
+      "slug": "new-testament-reading-plan",
+      "title": "A New Testament Reading Plan",
+      "teaser": "This plan gets you through the New Testament with weekends for catch-up.",
+      "tags": [
+        "Bible",
+        "reading"
+      ],
+      "imageUri": "blogpost/open-bible.jpg",
+      "date": "01-30-2026",
+      "isReady": true
+    },
+    {
       "blogpostId": 49,
       "slug": "isaiah-25-35-biblical-theology-readings",
       "title": "Isaiah 25-35 Biblical Theology Readings",
