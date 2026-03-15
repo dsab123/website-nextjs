@@ -1,6 +1,21 @@
 {
   "summaries": [
     {
+      "summaryId": 15,
+      "title": "In the House of Tom Bombadil",
+      "author": "C.R. Wiley",
+      "link": "https://www.amazon.com/House-Tom-Bombadil-C-Wiley/dp/1954887027?crid=3R91HXL9GJY7Y&dib=eyJ2IjoiMSJ9.Icslr-jMk4X-382D723KoR8kS7lKrm0VflcrgGECKYclXSXp6HLy-fQTSyyePlccuokfYNFKX7S3YpMaZrx8_SwLNHGlNbUmF9MUJdDA6JGM6xGU890B94QYWHhUHGWl4u1uAXIJ5b8Ymd-SNTWevtlTnDtKlwoT9MxyE42cOi8PkD6w1DY7RuoHcYXeB9CGm2izEUsucKMWtMHscUI4dWdCRqbEoYFiumgK9ag2dOg.706wOxcQgWFec7QdGVYkSDRb8FVkZnKOgqkdCqbizXg&dib_tag=se&keywords=in+the+house+of+tom+bombadil&qid=1773610660&sprefix=in+the+house+of+tom+b%2Caps%2C135&sr=8-1",
+      "imageUri": "summary/in-the-house-of-tom-bombadil.jpg",
+      "ogImageUri": "summary/in-the-house-of-tom-bombadil.jpg",
+      "isReady": true,
+      "slug": "in-the-house-of-tom-bombadil",
+      "quality": 5,
+      "payoff": 10,
+      "category": "Tolkien, eschatology",
+      "seller": "Amazon",
+      "teaser": "Who is Tom Bombadil?"
+    },
+    {
       "summaryId": 14,
       "title": "Strange New World",
       "author": "Carl Trueman",
