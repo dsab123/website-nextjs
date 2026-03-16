@@ -15,4 +15,4 @@ These are mostly theological musings, pieces written more or less completely. Wh
 
 ### Who
 
-I'm a Christian, member at [Acacia Reformed Church](https://arcopc.org) and have been married to the love of my life for <DaysMarried /> days, with many little children.
+I'm a Christian, Elder at [Acacia Reformed Church](https://arcopc.org) and have been married to the love of my life for <DaysMarried /> days, with many little children.
