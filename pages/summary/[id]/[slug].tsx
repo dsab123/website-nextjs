@@ -154,7 +154,7 @@ export default function Summary(props) {
       <p className={styles.readingTime}>Time to read: {props.timeToRead} minutes</p>
       <hr />
 
-      <p className={styles.review}>Review/Summary/Reflections</p>
+      <p className={styles.review}>My Thoughts</p>
 
       <div className={!error && !props?.summaryContents ? styles.dimOverlay : ''}>
 

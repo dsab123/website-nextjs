@@ -1,6 +1,21 @@
 {
   "summaries": [
     {
+      "summaryId": 16,
+      "title": "Christians Reading Classics",
+      "author": "Nadya Williams",
+      "link": "https://zondervanacademic.com/products/christians-reading-classics",
+      "imageUri": "summary/christians-reading-classics.jpg",
+      "ogImageUri": "summary/christians-reading-classics.jpg",
+      "isReady": true,
+      "slug": "christians-reading-classics",
+      "quality": 5,
+      "payoff": 10,
+      "category": "classics, christian, education",
+      "seller": "Zondervan",
+      "teaser": "What benefits do the classics have for Christians?"
+    },
+    {
       "summaryId": 15,
       "title": "In the House of Tom Bombadil",
       "author": "C.R. Wiley",
