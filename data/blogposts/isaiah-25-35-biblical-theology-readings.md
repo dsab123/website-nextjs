@@ -8,8 +8,10 @@ I have the privilege of serving as an elder at [Acacia Reformed Church](https://
 
 Our practice during morning worship is to read through a chapter of the bible in addition to the passage that is preached, and to briefly summarize it and show how it teaches us about Christ. We're making our way through Isaiah right now.
 
-Here are my attempts for Isaiah 25 through 35.
+Here are my biblical-theological reflections Isaiah 25 through 35.
 
+You can read the earlier posts in this series here:
+- [Isaiah 36-45](/blog/51/isaiah-36-45-biblical-theology-readings)
 
 ---
 
