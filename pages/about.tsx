@@ -1,9 +1,10 @@
-import type { GetStaticProps } from 'next';
-import Blog, { getStaticProps as blogGetStaticProps } from './blog/[id]/[slug]';
+import type { GetServerSideProps } from 'next';
+import Blog, { getServerSideProps as blogGetServerSideProps } from './blog/[id]/[slug]';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   // Pretend we're building /blog/4/about
-  return await blogGetStaticProps({
+  return await blogGetServerSideProps({
+    ...context,
     params: { id: '4', slug: 'about' },
   } as any);
 };

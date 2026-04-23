@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
-import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
@@ -13,18 +13,15 @@ import RelatedPosts from '../../../components/RelatedPosts';
 import { formatDate } from '../../../lib/dateHelper';
 import readingTime from 'reading-time';
 import { motion, useScroll, useSpring } from 'motion/react';
-import path from 'path';
-import fs from 'fs';
 
 import BookHover from '../../../components/BookHover';
 
-export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   try {
-    // get blog post (move to separate function)
     const postInfo = blogpost.blogposts.find(x => x.blogpostId == Number(context.params.id));
-    const postsDirectory = path.join(process.cwd(), 'data/blogposts');
-    const fullPath = `${postsDirectory}/${context.params.slug}.md`;
-    const postContents = fs.readFileSync(fullPath, 'utf8');
+    if (!postInfo) return { notFound: true };
+
+    const postContents = (await import(`../../../data/blogposts/${context.params.slug}.md`)).default as unknown as string;
     const mdxSource = await serialize(postContents, {
       mdxOptions: {
         remarkPlugins: [],
@@ -52,22 +49,6 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
     return { notFound: true };
   }
 };
-
-export async function getStaticPaths() {
-  const blogPosts = blogpost.blogposts;
-
-  return {
-    paths: blogPosts.map((blogPostInfo) => {
-      return {
-        params: {
-          id: `${blogPostInfo.blogpostId}`,
-          slug: blogPostInfo.slug
-        }
-      };
-    }),
-    fallback: false
-  };
-}
 
 
 export default function Blog(props) {
