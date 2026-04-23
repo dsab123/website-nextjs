@@ -10,6 +10,7 @@ import summary from '../../../data/summary.json';
 import styles from '../../../styles/Summary.module.css';
 import BookHover from '../../../components/BookHover';
 import Disclaimer from '../../../components/Disclaimer';
+import ScrollBook from '../../../components/ScrollBook';
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   try {
@@ -108,6 +109,7 @@ export default function Summary(props) {
       <meta name="twitter:site" content="@_danielsabbagh" key="twitter-site" />
     </Head>
     <div className={styles.outer}>
+      <ScrollBook />
 
       <h1 className={styles.summaryBookTitle}>{props.summaryInfo?.title}</h1>
       <p className={styles.author}>{props.summaryInfo?.author}</p>

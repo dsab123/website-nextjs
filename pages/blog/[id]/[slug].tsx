@@ -15,6 +15,7 @@ import readingTime from 'reading-time';
 import { motion, useScroll, useSpring } from 'motion/react';
 
 import BookHover from '../../../components/BookHover';
+import ScrollBook from '../../../components/ScrollBook';
 
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   try {
@@ -87,6 +88,7 @@ export default function Blog(props) {
     </Head>
     <div className={styles.blogLayout}>
       <motion.div className={styles.progressBar} style={{ scaleX }} />
+      <ScrollBook />
 
       <h1 className={styles.pageTitle}>{props.title}</h1>
 
