@@ -1,6 +1,21 @@
 {
   "summaries": [
     {
+      "summaryId": 17,
+      "title": "Lost in Thought",
+      "author": "Zena Hitz",
+      "link": "https://www.thriftbooks.com/w/lost-in-thought-the-hidden-pleasures-of-an-intellectual-life_zena-hitz/22082544/",
+      "imageUri": "summary/lost-in-thought.jpg",
+      "ogImageUri": "summary/lost-in-thought-book.png",
+      "isReady": true,
+      "slug": "lost-in-thought",
+      "quality": 5,
+      "payoff": 10,
+      "category": "reading, contemplation",
+      "seller": "ThriftBooks",
+      "teaser": "A tonic to one who feels an urge to buck against the fast-paced efficiencies of life."
+    },
+    {
       "summaryId": 16,
       "title": "Christians Reading Classics",
       "author": "Nadya Williams",
