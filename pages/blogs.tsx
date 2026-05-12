@@ -74,6 +74,9 @@ export default function Blogs() {
         </Head>
 
         <h1 className={styles.pageTitle}>Recent Posts</h1>
+        <br />
+        {/* <p className={styles.intro}>Essays and notes — mostly about reading, faith, and ideas I keep coming back to.</p> */}
+
 
         <div className={isBlogPostsLoading ? styles.dimOverlay : ''}>
             <div className={styles.cardRecentPostsContainer}>

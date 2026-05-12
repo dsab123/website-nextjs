@@ -10,6 +10,14 @@
 .pageTitle {
     font-family: var(--big-font-family);
     font-size: 31px;
+    margin-bottom: 8px;
+}
+
+.intro {
+    font-family: var(--big-font-family);
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 24px;
 }
 
 .loadingText {
@@ -26,8 +34,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: -30px;
+    justify-content: center;
+    gap: 32px;
 }
 
 .cardPostContainer {

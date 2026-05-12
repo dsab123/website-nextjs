@@ -82,7 +82,15 @@ export default function Summaries() {
             </div>
             <div className={styles.cardText}>
               <div className={isLoading ? styles.loadingBookText : ''}>
-                <p className={styles.bookTitle}>{summary.title}</p>
+                {summary.isReady ? (
+                  <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
+                    <a className={styles.bookTitleLink}>
+                      <p className={styles.bookTitle}>{summary.title}</p>
+                    </a>
+                  </Link>
+                ) : (
+                  <p className={styles.bookTitle}>{summary.title}</p>
+                )}
               </div>
               <div className={isLoading ? styles.loadingBookText : ''}>
                 <p className={styles.bookAuthor}>{summary.author}</p>
@@ -93,7 +101,7 @@ export default function Summaries() {
               <div className={styles.summaryDetail}>
                 <Link legacyBehavior href='/summary/[id]/[slug]' as={`/summary/${summary.summaryId}/${summary.slug}`}>
                   <a className={summary.isReady ? styles.readMore : styles.hidden}>
-                    read review
+                    Read summary →
                   </a>
                 </Link>
                 <p className={summary.isReady ? styles.hidden : styles.comingSoon}>
